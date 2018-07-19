@@ -1,0 +1,979 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
+		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
+		BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59E190210035550004EC56 /* LaunchScreen.storyboard */; };
+		BF59E195210035550004EC56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E194210035550004EC56 /* main.m */; };
+		BF59E19F210035550004EC56 /* CoolestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E19E210035550004EC56 /* CoolestTests.m */; };
+		BF59E1AA210035550004EC56 /* CoolestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1A9210035550004EC56 /* CoolestUITests.m */; };
+		BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1C521003A6C0004EC56 /* AppDelegate+ViewController.m */; };
+		BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1C821003AC30004EC56 /* AppDelegate+AppService.m */; };
+		BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1CB21003AF70004EC56 /* NSString+StringTool.m */; };
+		BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */; };
+		BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1D121003B580004EC56 /* UIView+Utils.m */; };
+		BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */; };
+		BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */; };
+		BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */; };
+		BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1DD210044A50004EC56 /* BaseTabBarViewController.m */; };
+		BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1E0210044C80004EC56 /* BaseNavigationController.m */; };
+		BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1E3210044DC0004EC56 /* BaseViewController.m */; };
+		BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1E6210045E70004EC56 /* PasswordInputWindow.m */; };
+		BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1E9210046320004EC56 /* CommonMethods.m */; };
+		BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1EC210046940004EC56 /* AFNetworkingManager.m */; };
+		BF59E200210050D60004EC56 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E1FF210050D60004EC56 /* FirstViewController.m */; };
+		BF59E203210050E50004EC56 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E202210050E50004EC56 /* SecondViewController.m */; };
+		BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E205210050F50004EC56 /* ThirdViewController.m */; };
+		BF59E209210051090004EC56 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E208210051090004EC56 /* FourViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF59E19B210035550004EC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF59E17A210035530004EC56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF59E181210035530004EC56;
+			remoteInfo = Coolest;
+		};
+		BF59E1A6210035550004EC56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF59E17A210035530004EC56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF59E181210035530004EC56;
+			remoteInfo = Coolest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59E185210035530004EC56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BF59E186210035530004EC56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BF59E18E210035550004EC56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF59E191210035550004EC56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF59E193210035550004EC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF59E194210035550004EC56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BF59E19A210035550004EC56 /* CoolestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59E19E210035550004EC56 /* CoolestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestTests.m; sourceTree = "<group>"; };
+		BF59E1A0210035550004EC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF59E1A5210035550004EC56 /* CoolestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF59E1A9210035550004EC56 /* CoolestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestUITests.m; sourceTree = "<group>"; };
+		BF59E1AB210035550004EC56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF59E1C1210039B80004EC56 /* Coolest.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coolest.pch; sourceTree = "<group>"; };
+		BF59E1C2210039F00004EC56 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		BF59E1C321003A000004EC56 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		BF59E1C421003A6C0004EC56 /* AppDelegate+ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ViewController.h"; sourceTree = "<group>"; };
+		BF59E1C521003A6C0004EC56 /* AppDelegate+ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ViewController.m"; sourceTree = "<group>"; };
+		BF59E1C721003AC30004EC56 /* AppDelegate+AppService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+AppService.h"; sourceTree = "<group>"; };
+		BF59E1C821003AC30004EC56 /* AppDelegate+AppService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+AppService.m"; sourceTree = "<group>"; };
+		BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+StringTool.h"; sourceTree = "<group>"; };
+		BF59E1CB21003AF70004EC56 /* NSString+StringTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringTool.m"; sourceTree = "<group>"; };
+		BF59E1CD21003B240004EC56 /* UIAlertView+Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Block.h"; sourceTree = "<group>"; };
+		BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Block.m"; sourceTree = "<group>"; };
+		BF59E1D021003B580004EC56 /* UIView+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Utils.h"; sourceTree = "<group>"; };
+		BF59E1D121003B580004EC56 /* UIView+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utils.m"; sourceTree = "<group>"; };
+		BF59E1D321003BA30004EC56 /* NSURL+CFURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+CFURL.h"; sourceTree = "<group>"; };
+		BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+CFURL.m"; sourceTree = "<group>"; };
+		BF59E1D6210043BF0004EC56 /* UIViewController+MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MBProgressHUD.h"; sourceTree = "<group>"; };
+		BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MBProgressHUD.m"; sourceTree = "<group>"; };
+		BF59E1D9210044320004EC56 /* UIScrollView+ContentInset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+ContentInset.h"; sourceTree = "<group>"; };
+		BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ContentInset.m"; sourceTree = "<group>"; };
+		BF59E1DC210044A50004EC56 /* BaseTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarViewController.h; sourceTree = "<group>"; };
+		BF59E1DD210044A50004EC56 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
+		BF59E1DF210044C80004EC56 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		BF59E1E0210044C80004EC56 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		BF59E1E2210044DC0004EC56 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		BF59E1E3210044DC0004EC56 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		BF59E1E5210045E70004EC56 /* PasswordInputWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordInputWindow.h; sourceTree = "<group>"; };
+		BF59E1E6210045E70004EC56 /* PasswordInputWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordInputWindow.m; sourceTree = "<group>"; };
+		BF59E1E8210046320004EC56 /* CommonMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMethods.h; sourceTree = "<group>"; };
+		BF59E1E9210046320004EC56 /* CommonMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonMethods.m; sourceTree = "<group>"; };
+		BF59E1EB210046940004EC56 /* AFNetworkingManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFNetworkingManager.h; sourceTree = "<group>"; };
+		BF59E1EC210046940004EC56 /* AFNetworkingManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFNetworkingManager.m; sourceTree = "<group>"; };
+		BF59E1FE210050D60004EC56 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		BF59E1FF210050D60004EC56 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		BF59E201210050E50004EC56 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		BF59E202210050E50004EC56 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		BF59E204210050F50004EC56 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		BF59E205210050F50004EC56 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		BF59E207210051090004EC56 /* FourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		BF59E208210051090004EC56 /* FourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		D4421720B31DEBAD90F3946F /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF59E17F210035530004EC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E197210035550004EC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E1A2210035550004EC56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		787CCAB28AF396DEFF448519 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */,
+				13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF59E179210035530004EC56 = {
+			isa = PBXGroup;
+			children = (
+				BF59E184210035530004EC56 /* Coolest */,
+				BF59E19D210035550004EC56 /* CoolestTests */,
+				BF59E1A8210035550004EC56 /* CoolestUITests */,
+				BF59E183210035530004EC56 /* Products */,
+				787CCAB28AF396DEFF448519 /* Pods */,
+				CE6BCBB5A8D358AFB755B862 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF59E183210035530004EC56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E182210035530004EC56 /* Coolest.app */,
+				BF59E19A210035550004EC56 /* CoolestTests.xctest */,
+				BF59E1A5210035550004EC56 /* CoolestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF59E184210035530004EC56 /* Coolest */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1C02100382D0004EC56 /* Manager */,
+				BF59E1BF2100381A0004EC56 /* Libs */,
+				BF59E1BE210038110004EC56 /* UITools */,
+				BF59E1BD210038070004EC56 /* Singleton */,
+				BF59E1BC210037FE0004EC56 /* Base */,
+				BF59E1BB210037F50004EC56 /* Details */,
+				BF59E1BA210037E90004EC56 /* Category */,
+				BF59E1B9210037DC0004EC56 /* Define */,
+				BF59E1B8210037CC0004EC56 /* Resource */,
+				BF59E1B7210037410004EC56 /* Others */,
+			);
+			path = Coolest;
+			sourceTree = "<group>";
+		};
+		BF59E19D210035550004EC56 /* CoolestTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E19E210035550004EC56 /* CoolestTests.m */,
+				BF59E1A0210035550004EC56 /* Info.plist */,
+			);
+			path = CoolestTests;
+			sourceTree = "<group>";
+		};
+		BF59E1A8210035550004EC56 /* CoolestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1A9210035550004EC56 /* CoolestUITests.m */,
+				BF59E1AB210035550004EC56 /* Info.plist */,
+			);
+			path = CoolestUITests;
+			sourceTree = "<group>";
+		};
+		BF59E1B7210037410004EC56 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E185210035530004EC56 /* AppDelegate.h */,
+				BF59E186210035530004EC56 /* AppDelegate.m */,
+				BF59E193210035550004EC56 /* Info.plist */,
+				BF59E194210035550004EC56 /* main.m */,
+				BF59E190210035550004EC56 /* LaunchScreen.storyboard */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		BF59E1B8210037CC0004EC56 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E18E210035550004EC56 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		BF59E1B9210037DC0004EC56 /* Define */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1C1210039B80004EC56 /* Coolest.pch */,
+				BF59E1C2210039F00004EC56 /* Define.h */,
+				BF59E1C321003A000004EC56 /* Config.h */,
+			);
+			path = Define;
+			sourceTree = "<group>";
+		};
+		BF59E1BA210037E90004EC56 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1C421003A6C0004EC56 /* AppDelegate+ViewController.h */,
+				BF59E1C521003A6C0004EC56 /* AppDelegate+ViewController.m */,
+				BF59E1C721003AC30004EC56 /* AppDelegate+AppService.h */,
+				BF59E1C821003AC30004EC56 /* AppDelegate+AppService.m */,
+				BF59E1D6210043BF0004EC56 /* UIViewController+MBProgressHUD.h */,
+				BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */,
+				BF59E1D9210044320004EC56 /* UIScrollView+ContentInset.h */,
+				BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */,
+				BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */,
+				BF59E1CB21003AF70004EC56 /* NSString+StringTool.m */,
+				BF59E1CD21003B240004EC56 /* UIAlertView+Block.h */,
+				BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */,
+				BF59E1D021003B580004EC56 /* UIView+Utils.h */,
+				BF59E1D121003B580004EC56 /* UIView+Utils.m */,
+				BF59E1D321003BA30004EC56 /* NSURL+CFURL.h */,
+				BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BF59E1BB210037F50004EC56 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1EE21004FFD0004EC56 /* FirstViewControllers */,
+				BF59E1F2210050140004EC56 /* SecondViewControllers */,
+				BF59E1F6210050240004EC56 /* ThirdViewControllers */,
+				BF59E1FA210050320004EC56 /* FourViewControllers */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		BF59E1BC210037FE0004EC56 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1DC210044A50004EC56 /* BaseTabBarViewController.h */,
+				BF59E1DD210044A50004EC56 /* BaseTabBarViewController.m */,
+				BF59E1DF210044C80004EC56 /* BaseNavigationController.h */,
+				BF59E1E0210044C80004EC56 /* BaseNavigationController.m */,
+				BF59E1E2210044DC0004EC56 /* BaseViewController.h */,
+				BF59E1E3210044DC0004EC56 /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BF59E1BD210038070004EC56 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1E5210045E70004EC56 /* PasswordInputWindow.h */,
+				BF59E1E6210045E70004EC56 /* PasswordInputWindow.m */,
+			);
+			path = Singleton;
+			sourceTree = "<group>";
+		};
+		BF59E1BE210038110004EC56 /* UITools */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1E8210046320004EC56 /* CommonMethods.h */,
+				BF59E1E9210046320004EC56 /* CommonMethods.m */,
+			);
+			path = UITools;
+			sourceTree = "<group>";
+		};
+		BF59E1BF2100381A0004EC56 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		BF59E1C02100382D0004EC56 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1EB210046940004EC56 /* AFNetworkingManager.h */,
+				BF59E1EC210046940004EC56 /* AFNetworkingManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BF59E1EE21004FFD0004EC56 /* FirstViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1EF21004FFD0004EC56 /* Controller */,
+				BF59E1F021004FFD0004EC56 /* Model */,
+				BF59E1F121004FFD0004EC56 /* View */,
+			);
+			path = FirstViewControllers;
+			sourceTree = "<group>";
+		};
+		BF59E1EF21004FFD0004EC56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1FE210050D60004EC56 /* FirstViewController.h */,
+				BF59E1FF210050D60004EC56 /* FirstViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF59E1F021004FFD0004EC56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF59E1F121004FFD0004EC56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF59E1F2210050140004EC56 /* SecondViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1F3210050140004EC56 /* Controller */,
+				BF59E1F4210050140004EC56 /* Model */,
+				BF59E1F5210050140004EC56 /* View */,
+			);
+			path = SecondViewControllers;
+			sourceTree = "<group>";
+		};
+		BF59E1F3210050140004EC56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E201210050E50004EC56 /* SecondViewController.h */,
+				BF59E202210050E50004EC56 /* SecondViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF59E1F4210050140004EC56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF59E1F5210050140004EC56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1F7210050240004EC56 /* Controller */,
+				BF59E1F8210050240004EC56 /* Model */,
+				BF59E1F9210050240004EC56 /* View */,
+			);
+			path = ThirdViewControllers;
+			sourceTree = "<group>";
+		};
+		BF59E1F7210050240004EC56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E204210050F50004EC56 /* ThirdViewController.h */,
+				BF59E205210050F50004EC56 /* ThirdViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF59E1F8210050240004EC56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF59E1F9210050240004EC56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF59E1FA210050320004EC56 /* FourViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E1FB210050320004EC56 /* Controller */,
+				BF59E1FC210050320004EC56 /* Model */,
+				BF59E1FD210050320004EC56 /* View */,
+			);
+			path = FourViewControllers;
+			sourceTree = "<group>";
+		};
+		BF59E1FB210050320004EC56 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF59E207210051090004EC56 /* FourViewController.h */,
+				BF59E208210051090004EC56 /* FourViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF59E1FC210050320004EC56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF59E1FD210050320004EC56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE6BCBB5A8D358AFB755B862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4421720B31DEBAD90F3946F /* libPods-Coolest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF59E181210035530004EC56 /* Coolest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF59E1AE210035550004EC56 /* Build configuration list for PBXNativeTarget "Coolest" */;
+			buildPhases = (
+				E3CA29A62A3CF11CC480A870 /* [CP] Check Pods Manifest.lock */,
+				BF59E17E210035530004EC56 /* Sources */,
+				BF59E17F210035530004EC56 /* Frameworks */,
+				BF59E180210035530004EC56 /* Resources */,
+				C59C0B77554B66F77A7F40F4 /* [CP] Embed Pods Frameworks */,
+				ED39EE609F718738BFCB1129 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coolest;
+			productName = Coolest;
+			productReference = BF59E182210035530004EC56 /* Coolest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF59E199210035550004EC56 /* CoolestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF59E1B1210035550004EC56 /* Build configuration list for PBXNativeTarget "CoolestTests" */;
+			buildPhases = (
+				BF59E196210035550004EC56 /* Sources */,
+				BF59E197210035550004EC56 /* Frameworks */,
+				BF59E198210035550004EC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF59E19C210035550004EC56 /* PBXTargetDependency */,
+			);
+			name = CoolestTests;
+			productName = CoolestTests;
+			productReference = BF59E19A210035550004EC56 /* CoolestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF59E1A4210035550004EC56 /* CoolestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF59E1B4210035550004EC56 /* Build configuration list for PBXNativeTarget "CoolestUITests" */;
+			buildPhases = (
+				BF59E1A1210035550004EC56 /* Sources */,
+				BF59E1A2210035550004EC56 /* Frameworks */,
+				BF59E1A3210035550004EC56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF59E1A7210035550004EC56 /* PBXTargetDependency */,
+			);
+			name = CoolestUITests;
+			productName = CoolestUITests;
+			productReference = BF59E1A5210035550004EC56 /* CoolestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF59E17A210035530004EC56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = CoolestLee707;
+				TargetAttributes = {
+					BF59E181210035530004EC56 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					BF59E199210035550004EC56 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = BF59E181210035530004EC56;
+					};
+					BF59E1A4210035550004EC56 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = BF59E181210035530004EC56;
+					};
+				};
+			};
+			buildConfigurationList = BF59E17D210035530004EC56 /* Build configuration list for PBXProject "Coolest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF59E179210035530004EC56;
+			productRefGroup = BF59E183210035530004EC56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF59E181210035530004EC56 /* Coolest */,
+				BF59E199210035550004EC56 /* CoolestTests */,
+				BF59E1A4210035550004EC56 /* CoolestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF59E180210035530004EC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */,
+				BF59E18F210035550004EC56 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E198210035550004EC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E1A3210035550004EC56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C59C0B77554B66F77A7F40F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coolest/Pods-Coolest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3CA29A62A3CF11CC480A870 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Coolest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED39EE609F718738BFCB1129 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Coolest/Pods-Coolest-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Coolest/Pods-Coolest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF59E17E210035530004EC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
+				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
+				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
+				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
+				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
+				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
+				BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */,
+				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
+				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
+				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
+				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
+				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
+				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
+				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
+				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
+				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
+				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
+				BF59E195210035550004EC56 /* main.m in Sources */,
+				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E196210035550004EC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59E19F210035550004EC56 /* CoolestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF59E1A1210035550004EC56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF59E1AA210035550004EC56 /* CoolestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF59E19C210035550004EC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF59E181210035530004EC56 /* Coolest */;
+			targetProxy = BF59E19B210035550004EC56 /* PBXContainerItemProxy */;
+		};
+		BF59E1A7210035550004EC56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF59E181210035530004EC56 /* Coolest */;
+			targetProxy = BF59E1A6210035550004EC56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF59E190210035550004EC56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF59E191210035550004EC56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF59E1AC210035550004EC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BF59E1AD210035550004EC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF59E1AF210035550004EC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PHSYCV4RUY;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		BF59E1B0210035550004EC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PHSYCV4RUY;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		BF59E1B2210035550004EC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoolestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.CoolestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coolest.app/Coolest";
+			};
+			name = Debug;
+		};
+		BF59E1B3210035550004EC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoolestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.CoolestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coolest.app/Coolest";
+			};
+			name = Release;
+		};
+		BF59E1B5210035550004EC56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoolestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.CoolestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coolest;
+			};
+			name = Debug;
+		};
+		BF59E1B6210035550004EC56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CoolestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.CoolestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Coolest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF59E17D210035530004EC56 /* Build configuration list for PBXProject "Coolest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59E1AC210035550004EC56 /* Debug */,
+				BF59E1AD210035550004EC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF59E1AE210035550004EC56 /* Build configuration list for PBXNativeTarget "Coolest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59E1AF210035550004EC56 /* Debug */,
+				BF59E1B0210035550004EC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF59E1B1210035550004EC56 /* Build configuration list for PBXNativeTarget "CoolestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59E1B2210035550004EC56 /* Debug */,
+				BF59E1B3210035550004EC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF59E1B4210035550004EC56 /* Build configuration list for PBXNativeTarget "CoolestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF59E1B5210035550004EC56 /* Debug */,
+				BF59E1B6210035550004EC56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF59E17A210035530004EC56 /* Project object */;
+}
