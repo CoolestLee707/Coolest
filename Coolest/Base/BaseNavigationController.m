@@ -93,7 +93,7 @@
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setImage:[UIImage imageNamed:@"Nav_back"] forState:UIControlStateNormal];
-        button.frame = CGRectMake(0, 0, 44, 44);
+        button.frame = CGRectMake(0, 0, 45, 45);
         // 让按钮内部的所有内容左对齐
         button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [button addTarget:self action:@selector(backBarButtonItemAction) forControlEvents:UIControlEventTouchUpInside];

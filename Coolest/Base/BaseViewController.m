@@ -106,7 +106,7 @@
 - (void)createBackButton
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:@"Nav_back"] forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, 44, 44);
     // 让按钮内部的所有内容左对齐
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
