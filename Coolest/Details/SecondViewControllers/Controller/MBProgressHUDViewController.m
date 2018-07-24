@@ -33,6 +33,14 @@
     
     return _mainTableView;
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +49,10 @@
     
     self.dataArray = @[@"成功",@"失败",@"一条消息",@"等待",@"加载",@"带文字加载"];
     [self createUI];
+    
+    NSURL *url = [NSURL URLWithString:@"http://freekicker-img.oss-cn-beijing.aliyuncs.com/twitter/recommendImg/2017-06-09/edab2abb126236078e81609124ff333f.jpg"];
+    
+    ADLog(@"url - %@",url);
     
 }
 

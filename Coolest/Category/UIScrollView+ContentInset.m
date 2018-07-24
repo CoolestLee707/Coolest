@@ -7,6 +7,7 @@
 //
 
 #import "UIScrollView+ContentInset.h"
+#import "NSObject+SwizzledMethod.h"
 
 @implementation UIScrollView (ContentInset)
 
@@ -15,22 +16,13 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        Class class = [self class];
-        SEL originalSelector = @selector(setContentInset:);
-        SEL swizzledSelector = @selector(Cool_SetContentInset:);
-        
-        Method originalMethod = class_getInstanceMethod(class,originalSelector);
-        
-        Method swizzledMethod = class_getInstanceMethod(class,swizzledSelector);
-        
-        method_exchangeImplementations(originalMethod, swizzledMethod);
+        [self swizzledInstanceSEL:@selector(setContentInset:) withSEL:@selector(Cool_SetContentInset:)];
         
     });
 }
 
 - (void)Cool_SetContentInset:(UIEdgeInsets)contentInset
 {
-    
     [self Cool_SetContentInset:contentInset];
     
     //    关闭UIScrollViewContentInsetAdjustmentAutomatic

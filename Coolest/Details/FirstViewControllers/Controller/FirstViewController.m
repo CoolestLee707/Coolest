@@ -10,6 +10,8 @@
 
 @interface FirstViewController ()
 
+@property (nonatomic,copy)dispatch_block_t block;
+
 @end
 
 @implementation FirstViewController
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+   
 }
 
 - (void)didReceiveMemoryWarning {

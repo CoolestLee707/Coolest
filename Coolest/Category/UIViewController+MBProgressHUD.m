@@ -37,6 +37,7 @@ static MBProgressHUD * HUD = nil;
         HUD.contentColor=[UIColor whiteColor];
         HUD.bezelView.color = [UIColor blackColor];
         HUD.removeFromSuperViewOnHide=YES;
+        HUD.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     }
     
     [[self getHUDSuperView] addSubview:HUD];

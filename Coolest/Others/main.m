@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
+CFAbsoluteTime startTime;
+
 int main(int argc, char * argv[]) {
+
+    startTime = CFAbsoluteTimeGetCurrent();
+    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

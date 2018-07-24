@@ -38,6 +38,8 @@
 		BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E216210067D90004EC56 /* MBProgressHUDViewController.m */; };
 		BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */; };
 		BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */; };
+		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
+		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,10 @@
 		BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetViewController.m; sourceTree = "<group>"; };
 		BF59E21B2100686B0004EC56 /* TZImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TZImagePickerViewController.h; sourceTree = "<group>"; };
 		BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerViewController.m; sourceTree = "<group>"; };
+		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
+		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
+		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
+		BFDC0F242107320800185A31 /* UIViewController+Appear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Appear.m"; sourceTree = "<group>"; };
 		D4421720B31DEBAD90F3946F /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +264,8 @@
 				BF59E1C821003AC30004EC56 /* AppDelegate+AppService.m */,
 				BF59E1D6210043BF0004EC56 /* UIViewController+MBProgressHUD.h */,
 				BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */,
+				BFDC0F232107320800185A31 /* UIViewController+Appear.h */,
+				BFDC0F242107320800185A31 /* UIViewController+Appear.m */,
 				BF59E1D9210044320004EC56 /* UIScrollView+ContentInset.h */,
 				BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */,
 				BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */,
@@ -268,6 +276,8 @@
 				BF59E1D121003B580004EC56 /* UIView+Utils.m */,
 				BF59E1D321003BA30004EC56 /* NSURL+CFURL.h */,
 				BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */,
+				BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */,
+				BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -675,6 +685,7 @@
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
+				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
@@ -688,6 +699,7 @@
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,

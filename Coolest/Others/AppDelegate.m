@@ -15,8 +15,11 @@
 
 @implementation AppDelegate
 
+extern CFAbsoluteTime startTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    main函数执行后时间
+    ADLog(@"Labched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
     
     [self setAppWindows];
     

@@ -80,7 +80,7 @@ NSString *footerIdentifier = @"footer";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"视频";
+    self.title = @"Second";
     
     self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-",@"6-"],@[@"7",@"8",@"9"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
     
