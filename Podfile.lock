@@ -35,6 +35,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - DZNEmptyDataSet
+  - FBRetainCycleDetector
   - FDFullscreenPopGesture
   - IQKeyboardManager
   - Masonry
@@ -63,6 +64,6 @@ SPEC CHECKSUMS:
   TZImagePickerController: 2a8f41ba058e215bc9b699ade241fdbcc910c2bd
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: af1649d3c4e73e307950268bd140b944deb86097
+PODFILE CHECKSUM: 6af6e6c1d01edf0734a5ba9a428c124ed16067f6
 
 COCOAPODS: 1.4.0

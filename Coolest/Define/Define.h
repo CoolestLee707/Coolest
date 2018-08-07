@@ -10,6 +10,7 @@
 #define Define_h
 
 #pragma mark --- 系统版本判断
+#define VERSION    [UIDevice currentDevice].systemVersion.floatValue
 #define IOS6_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)

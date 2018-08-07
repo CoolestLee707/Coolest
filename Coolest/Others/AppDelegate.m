@@ -19,7 +19,7 @@ extern CFAbsoluteTime startTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    main函数执行后时间
-    ADLog(@"Labched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
+//    ADLog(@"Labched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
     
     [self setAppWindows];
     
@@ -33,8 +33,7 @@ extern CFAbsoluteTime startTime;
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     
-    //    [[PasswordInputWindow shareInstance]show];
-
+//    [[PasswordInputWindow shareInstance]show];
 }
 
 
@@ -51,7 +50,7 @@ extern CFAbsoluteTime startTime;
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     
-    //    [[PasswordInputWindow shareInstance]show];
+//    [[PasswordInputWindow shareInstance]show];
 
 }
 

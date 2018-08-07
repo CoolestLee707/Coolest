@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
 		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
 		BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59E190210035550004EC56 /* LaunchScreen.storyboard */; };
@@ -38,6 +39,8 @@
 		BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E216210067D90004EC56 /* MBProgressHUDViewController.m */; };
 		BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */; };
 		BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */; };
+		BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F121194243000C8693 /* NSString+Hash.m */; };
+		BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
+		BF4C45922111ABB80085E749 /* RunLoopObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopObject1.m; sourceTree = "<group>"; };
 		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59E185210035530004EC56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF59E186210035530004EC56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +130,10 @@
 		BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetViewController.m; sourceTree = "<group>"; };
 		BF59E21B2100686B0004EC56 /* TZImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TZImagePickerViewController.h; sourceTree = "<group>"; };
 		BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerViewController.m; sourceTree = "<group>"; };
+		BF6B08F021194243000C8693 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		BF6B08F121194243000C8693 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintPasswordViewController.h; sourceTree = "<group>"; };
+		BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintPasswordViewController.m; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
@@ -270,6 +279,8 @@
 				BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */,
 				BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */,
 				BF59E1CB21003AF70004EC56 /* NSString+StringTool.m */,
+				BF6B08F021194243000C8693 /* NSString+Hash.h */,
+				BF6B08F121194243000C8693 /* NSString+Hash.m */,
 				BF59E1CD21003B240004EC56 /* UIAlertView+Block.h */,
 				BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */,
 				BF59E1D021003B580004EC56 /* UIView+Utils.h */,
@@ -355,6 +366,8 @@
 			children = (
 				BF59E1FE210050D60004EC56 /* FirstViewController.h */,
 				BF59E1FF210050D60004EC56 /* FirstViewController.m */,
+				BF4C45912111ABB80085E749 /* RunLoopObject1.h */,
+				BF4C45922111ABB80085E749 /* RunLoopObject1.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,6 +409,8 @@
 				BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */,
 				BF59E21B2100686B0004EC56 /* TZImagePickerViewController.h */,
 				BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */,
+				BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */,
+				BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -562,6 +577,11 @@
 				TargetAttributes = {
 					BF59E181210035530004EC56 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					BF59E199210035550004EC56 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -695,6 +715,7 @@
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
+				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
@@ -704,8 +725,10 @@
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
+				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
+				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,
@@ -873,9 +896,12 @@
 			baseConfigurationReference = E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -895,9 +921,12 @@
 			baseConfigurationReference = 13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

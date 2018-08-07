@@ -8,10 +8,13 @@
 
 #import "PasswordInputWindow.h"
 
-@implementation PasswordInputWindow {
-    
-    UITextField *_textField;
-}
+@interface PasswordInputWindow()
+
+@property (nonatomic,strong)UITextField *passWordTextField;
+
+@end
+
+@implementation PasswordInputWindow
 
 + (instancetype)shareInstance {
     
@@ -28,7 +31,7 @@
 
 - (void)show {
     
-    _textField.text = @"";
+    self.passWordTextField.text = @"";
     [self makeKeyAndVisible];
     self.hidden = NO;
 }
@@ -56,7 +59,7 @@
         textfield.secureTextEntry = YES;
         textfield.borderStyle = UITextBorderStyleLine;
         [vc.view addSubview:textfield];
-        _textField = textfield;
+        self.passWordTextField = textfield;
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(Main_Screen_Width/2-30, 320, 80, 50);
@@ -75,8 +78,8 @@
 
 - (void)completeClick {
     
-    if([_textField.text isEqualToString:@"11111"]) {
-        [_textField resignFirstResponder];
+    if([self.passWordTextField.text isEqualToString:@"11111"]) {
+        [self.passWordTextField resignFirstResponder];
         [self resignKeyWindow];
         self.hidden = YES;
     }else {
@@ -85,7 +88,7 @@
 }
 
 - (void)showError {
-    [_textField resignFirstResponder];
+    [self.passWordTextField resignFirstResponder];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"密码错误" message:@"正确密码11111" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -93,8 +96,8 @@
     
     UIAlertAction *again = [UIAlertAction actionWithTitle:@"再试一次" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        _textField.text = @"";
-        [_textField becomeFirstResponder];
+        self.passWordTextField.text = @"";
+        [self.passWordTextField becomeFirstResponder];
     }];
     [alertController addAction:again];
     

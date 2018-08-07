@@ -7,10 +7,10 @@
 //
 
 #import "FirstViewController.h"
+#import "RunLoopObject1.h"
+#import "NSString+Hash.h"
 
 @interface FirstViewController ()
-
-@property (nonatomic,copy)dispatch_block_t block;
 
 @end
 
@@ -18,8 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-   
+
+    
+//    RunLoopObject1 *rl1 = [[RunLoopObject1 alloc]init];
+//
+//    NSTimer *timer1 = [NSTimer timerWithTimeInterval:1.0 target:rl1 selector:@selector(eat) userInfo:nil repeats:YES];
+//
+    //    [[NSRunLoop currentRunLoop]addTimer:timer1 forMode:NSRunLoopCommonModes];
+    
+    
+    
+    NSString *md5str1 = @"12312313";
+    md5str1 = md5str1.md5String;
+    ADLog(@"%@",md5str1);
+    
 }
 
 - (void)didReceiveMemoryWarning {

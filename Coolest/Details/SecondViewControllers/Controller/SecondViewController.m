@@ -13,6 +13,7 @@
 #import "MBProgressHUDViewController.h"
 #import "DZNEmptyDataSetViewController.h"
 #import "TZImagePickerViewController.h"
+#import "FingerprintPasswordViewController.h"
 
 #define shareWidth  (Main_Screen_Width/3);
 
@@ -82,7 +83,7 @@ NSString *footerIdentifier = @"footer";
     
     self.title = @"Second";
     
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-",@"6-"],@[@"7",@"8",@"9"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-"],@[@"7",@"8",@"9"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
     
     [self createUI];
     
@@ -197,7 +198,8 @@ NSString *footerIdentifier = @"footer";
                     
                 case 1:
                 {
-                   
+                    FingerprintPasswordViewController* vc = [[FingerprintPasswordViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                     
