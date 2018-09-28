@@ -16,7 +16,5 @@ pod 'DZNEmptyDataSet'
 pod 'TZImagePickerController'
 pod 'FDFullscreenPopGesture'
 pod 'SDCycleScrollView','~> 1.75'
-pod 'MLeaksFinder'
-pod 'FBRetainCycleDetector'
 end
 

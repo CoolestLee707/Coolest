@@ -14,6 +14,10 @@
 #import "DZNEmptyDataSetViewController.h"
 #import "TZImagePickerViewController.h"
 #import "FingerprintPasswordViewController.h"
+#import "HitTestViewController.h"
+#import "CoreTextViewController.h"
+#import "NSThreadViewController.h"
+#import "GCDViewController.h"
 
 #define shareWidth  (Main_Screen_Width/3);
 
@@ -83,7 +87,7 @@ NSString *footerIdentifier = @"footer";
     
     self.title = @"Second";
     
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-"],@[@"7",@"8",@"9"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
     
     [self createUI];
     
@@ -205,7 +209,8 @@ NSString *footerIdentifier = @"footer";
                     
                 case 2:
                 {
-                   
+                    HitTestViewController* vc = [[HitTestViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                     
@@ -221,19 +226,22 @@ NSString *footerIdentifier = @"footer";
             switch (indexPath.row) {
                 case 0:
                 {
-                    
+                    CoreTextViewController* vc = [[CoreTextViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                     
                 case 1:
                 {
-                    
+                    NSThreadViewController* vc = [[NSThreadViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                     
                 case 2:
                 {
-                    
+                    GCDViewController* vc = [[GCDViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                     

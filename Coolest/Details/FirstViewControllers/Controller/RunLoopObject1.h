@@ -11,4 +11,5 @@
 @interface RunLoopObject1 : NSObject
 
 - (void)eat;
+
 @end

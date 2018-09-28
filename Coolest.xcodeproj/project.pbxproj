@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF39AF50215CAC1B00C05CEF /* GCDViewController.m */; };
 		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
 		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
@@ -41,6 +42,11 @@
 		BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */; };
 		BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F121194243000C8693 /* NSString+Hash.m */; };
 		BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */; };
+		BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F7211D3E5E000C8693 /* HitTestViewController.m */; };
+		BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08FA211D415E000C8693 /* HitTestBackView.m */; };
+		BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D38214FA1880000B157 /* CoreTextViewController.m */; };
+		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
+		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 /* End PBXBuildFile section */
@@ -64,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		BF39AF50215CAC1B00C05CEF /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
 		BF4C45922111ABB80085E749 /* RunLoopObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopObject1.m; sourceTree = "<group>"; };
 		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +142,16 @@
 		BF6B08F121194243000C8693 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintPasswordViewController.h; sourceTree = "<group>"; };
 		BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintPasswordViewController.m; sourceTree = "<group>"; };
+		BF6B08F6211D3E5E000C8693 /* HitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestViewController.h; sourceTree = "<group>"; };
+		BF6B08F7211D3E5E000C8693 /* HitTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestViewController.m; sourceTree = "<group>"; };
+		BF6B08F9211D415E000C8693 /* HitTestBackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestBackView.h; sourceTree = "<group>"; };
+		BF6B08FA211D415E000C8693 /* HitTestBackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestBackView.m; sourceTree = "<group>"; };
+		BF6B6D37214FA1880000B157 /* CoreTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreTextViewController.h; sourceTree = "<group>"; };
+		BF6B6D38214FA1880000B157 /* CoreTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreTextViewController.m; sourceTree = "<group>"; };
+		BF6B6D3A214FA2820000B157 /* CoolDispalyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolDispalyView.h; sourceTree = "<group>"; };
+		BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolDispalyView.m; sourceTree = "<group>"; };
+		BF7479E5215B68CC00511A2A /* NSThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThreadViewController.h; sourceTree = "<group>"; };
+		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
@@ -411,6 +429,14 @@
 				BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */,
 				BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */,
 				BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */,
+				BF6B08F6211D3E5E000C8693 /* HitTestViewController.h */,
+				BF6B08F7211D3E5E000C8693 /* HitTestViewController.m */,
+				BF6B6D37214FA1880000B157 /* CoreTextViewController.h */,
+				BF6B6D38214FA1880000B157 /* CoreTextViewController.m */,
+				BF7479E5215B68CC00511A2A /* NSThreadViewController.h */,
+				BF7479E6215B68CC00511A2A /* NSThreadViewController.m */,
+				BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */,
+				BF39AF50215CAC1B00C05CEF /* GCDViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -429,6 +455,10 @@
 				BF59E20D210066BE0004EC56 /* ShareCollectionViewCell.m */,
 				BF59E20F210067250004EC56 /* HeaderCollectionReusableView.h */,
 				BF59E210210067250004EC56 /* HeaderCollectionReusableView.m */,
+				BF6B08F9211D415E000C8693 /* HitTestBackView.h */,
+				BF6B08FA211D415E000C8693 /* HitTestBackView.m */,
+				BF6B6D3A214FA2820000B157 /* CoolDispalyView.h */,
+				BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,21 +745,27 @@
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
+				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
+				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
+				BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
 				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
+				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
+				BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,

@@ -27,6 +27,7 @@
     
     
 //    至于为什么要先用class_addMethod方法做一次判断，是因为我们要替换的方法有可能并没有在这个类中被实现，而是在他的父类中实现的，这个时候originSEL获取到的方法就是他父类中的方法。所以我们要在当前的类中添加一个originSEL方法，但是用destSEL也就是我们自己方法的实现去实现它。然后再把父类方法的实现替换给我们自己的方法。这样就将originSEL和destSEL的实现进行了交换。
+//    先尝试給源SEL添加IMP，这里是为了避免源SEL没有实现IMP的情况
 }
 
 + (void)swizzledClassSEL:(SEL)originalSEL withSEL:(SEL)swizzledSEL
