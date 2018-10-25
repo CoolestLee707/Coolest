@@ -57,7 +57,6 @@
     NSLog(@"+++strong string:%@ %p, %p", self.strongString,self.strongString, &_strongString);
     NSLog(@"+++copy string:%@ %p, %p", self.copyedString,self.copyedString, &_copyedString);
     
-    
 
 }
 
