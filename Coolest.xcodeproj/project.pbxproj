@@ -47,6 +47,7 @@
 		BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D38214FA1880000B157 /* CoreTextViewController.m */; };
 		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
 		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
+		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 /* End PBXBuildFile section */
@@ -152,6 +153,8 @@
 		BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolDispalyView.m; sourceTree = "<group>"; };
 		BF7479E5215B68CC00511A2A /* NSThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThreadViewController.h; sourceTree = "<group>"; };
 		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
+		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
+		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 		BF59E1F9210050240004EC56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFCDA0D721816B710020D49B /* CoolestCell.h */,
+				BFCDA0D821816B710020D49B /* CoolestCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -751,6 +756,7 @@
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */,
 				BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
@@ -932,6 +938,7 @@
 			baseConfigurationReference = E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -957,6 +964,7 @@
 			baseConfigurationReference = 13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

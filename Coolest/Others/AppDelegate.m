@@ -21,6 +21,8 @@ extern CFAbsoluteTime startTime;
 //    main函数执行后时间
 //    ADLog(@"Labched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
     
+//    ADLog(@"+++ %f-%f",Main_Screen_Width,Main_Screen_Height);
+    
     [self setAppWindows];
     
     [self setRootViewController];

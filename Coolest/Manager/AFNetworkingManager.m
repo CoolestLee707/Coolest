@@ -64,7 +64,7 @@ static AFHTTPSessionManager *AFNManager = nil;
     [AFNManager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     [AFNManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    [[AFNetworkingManager shareInstance] GET:urlString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [AFNManager GET:urlString parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *) task.response;
         

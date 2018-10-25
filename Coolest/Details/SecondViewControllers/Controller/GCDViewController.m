@@ -13,6 +13,8 @@
     dispatch_semaphore_t  semaphoreLock;
 }
 
+@property (nonatomic,copy) NSArray *array;
+
 @property (nonatomic,assign)int ticketSurplusCount;
 
 @end
@@ -23,6 +25,18 @@
     [super viewDidLoad];
     
     self.title = @"GCD";
+
+    NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
+    
+    self.array = tempArr;
+    
+    ADLog(@"tempArr+++ %@ -- %p",tempArr,tempArr);
+    ADLog(@"self.array+++ %@ -- %p",self.array,self.array);
+    
+    [tempArr addObject:@"4"];
+    
+    ADLog(@"tempArr--- %@ -- %p",tempArr,tempArr);
+    ADLog(@"self.array--- %@ -- %p",self.array,self.array);
 
 //    [self method1];
 
@@ -181,7 +195,7 @@
     ADLog(@"semaphore---begin");
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);//设置信号量初始值
     
     __block int number = 0;
     dispatch_async(queue, ^{
@@ -191,10 +205,10 @@
         
         number = 100;
         
-        dispatch_semaphore_signal(semaphore);
+        dispatch_semaphore_signal(semaphore);//任务完成，信号量+1
     });
     
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//只有信号量>0时，才执行后面的代码，信号量-1；否则，处于等待状态。
     ADLog(@"semaphore---end,number = %d",number);
 }
 
