@@ -23,6 +23,9 @@
     [appearance setTitleTextAttributes:attrs forState:UIControlStateSelected];
     
     [appearance setTitlePositionAdjustment:UIOffsetMake(0, -3)];
+    
+//    iOS 12.1 跳转页面时 tabBar闪动
+    [[UITabBar appearance] setTranslucent:NO];
 }
 
 - (void)viewDidLoad {

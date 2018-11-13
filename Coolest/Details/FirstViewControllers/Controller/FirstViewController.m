@@ -31,7 +31,11 @@
 
 //    [self firstTest];
     
-    [self createUI];
+//    [self createUI];
+    
+//    int a = 10;
+//    NSLog(@"- %d -- %p", a, &a);
+
 
     
 }

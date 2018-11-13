@@ -27,7 +27,7 @@ PODS:
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
-  - TZImagePickerController (3.0.9)
+  - TZImagePickerController (3.1.1)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -57,7 +57,7 @@ SPEC CHECKSUMS:
   MyLayout: 833c4b24a69a1e3fd33abe827eeb2fdf19193408
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
-  TZImagePickerController: ea3e906af8caa7088f612ad673feb73cc6aa6bfc
+  TZImagePickerController: b33cb21ea66c1ed4c56443a0e8c84494c44be560
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 265901e8bb579fbaa8f7c93c138e41711db44b49
