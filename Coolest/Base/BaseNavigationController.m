@@ -40,14 +40,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    self.navigationController.navigationBar.clipsToBounds = YES;
-    
     //去掉底部线条
-    UIImageView *navBarHairlineImageView;
-    navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationBar];
-    navBarHairlineImageView.hidden = YES;
+    if (@available(iOS 12.0, *)) {
+        //iOS 12-设置底部线条颜色
+        [self.navigationBar setShadowImage: [CommonMethods createImageWithColor:NavBackColor]];
+    }else {
+        //iOS 12以下隐藏
+        UIImageView *navBarHairlineImageView;
+        navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationBar];
+        navBarHairlineImageView.hidden = YES;
+    }
+
     //    设置阴影
-    [self dropShadowWithOffset:CGSizeMake(1, 1) radius:5 color:[UIColor grayColor] opacity:0.5];
+    [self dropShadowWithOffset:CGSizeMake(1, 1) radius:3 color:[UIColor grayColor] opacity:0.5];
 }
 
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view {

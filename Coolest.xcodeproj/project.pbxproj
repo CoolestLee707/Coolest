@@ -47,6 +47,7 @@
 		BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D38214FA1880000B157 /* CoreTextViewController.m */; };
 		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
 		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
+		BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9BB3CC219EAD1B0026BDD8 /* person.m */; };
 		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
@@ -153,6 +154,8 @@
 		BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolDispalyView.m; sourceTree = "<group>"; };
 		BF7479E5215B68CC00511A2A /* NSThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThreadViewController.h; sourceTree = "<group>"; };
 		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
+		BF9BB3CB219EAD1B0026BDD8 /* person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = person.h; sourceTree = "<group>"; };
+		BF9BB3CC219EAD1B0026BDD8 /* person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = person.m; sourceTree = "<group>"; };
 		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
 		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 		BF59E1F021004FFD0004EC56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF9BB3CB219EAD1B0026BDD8 /* person.h */,
+				BF9BB3CC219EAD1B0026BDD8 /* person.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -739,6 +744,7 @@
 			files = (
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
+				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,

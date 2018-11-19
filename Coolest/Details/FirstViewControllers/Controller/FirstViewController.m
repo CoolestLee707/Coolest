@@ -9,6 +9,7 @@
 #import "FirstViewController.h"
 #import "RunLoopObject1.h"
 #import "NSString+Hash.h"
+#import "person.h"
 
 @interface FirstViewController ()
 
@@ -36,10 +37,33 @@
 //    int a = 10;
 //    NSLog(@"- %d -- %p", a, &a);
 
-
+    //谓词筛选
+    [self methodPredicate];
     
+   
 }
 
+ //谓词筛选
+- (void)methodPredicate {
+    
+    @autoreleasepool {
+        NSMutableArray *persons =[NSMutableArray arrayWithCapacity:0];
+        
+        for (int i=0; i<20; i++) {
+            person *p = [[person alloc]init];
+            p.age = i;
+            [persons addObject:p];
+        }
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"age<%d",10];
+        
+        //使用谓词条件过滤数组中的元素,过滤之后返回查询的结果
+        NSArray *array = [persons filteredArrayUsingPredicate:predicate];
+        
+        ADLog(@"persons - %@",persons);
+        
+        ADLog(@"array - %@",array);
+    }
+}
 
 - (void)createUI
 {
