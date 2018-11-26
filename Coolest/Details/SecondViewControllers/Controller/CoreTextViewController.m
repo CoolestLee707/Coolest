@@ -26,6 +26,10 @@
     dispaleView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:dispaleView];
     
+    //访问成员变量->
+    dispaleView->_name = @"1212";
+    ADLog(@"dispaleView->_name - %@",dispaleView->_name);
+    
     // Do any additional setup after loading the view.
 }
 

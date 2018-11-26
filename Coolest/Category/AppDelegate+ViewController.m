@@ -21,7 +21,7 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     [self.window makeKeyAndVisible];
     

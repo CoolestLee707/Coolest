@@ -28,13 +28,14 @@
 #define kNavigationBarHeight   (StatusBarHeight + 44)
 #define StatusBarHeight        ([UIApplication sharedApplication].statusBarFrame.size.height)
 
-//#define BottomBarHeight        (Main_Screen_Height==812?83.f:49.f)
-//#define BottomEmptyHeight      (Main_Screen_Height==812?34.f:0)
 
 #define isiPhoneX (IS_IPHONE_X==YES || IS_IPHONE_Xr ==YES || IS_IPHONE_Xs== YES || IS_IPHONE_Xs_Max== YES)
 
 #define BottomBarHeight (isiPhoneX ? 83.0f : 49.0f)
 #define BottomEmptyHeight (isiPhoneX ? 34.0f : 0.0f)
+
+//比例
+#define PhotoMultiple  (Main_Screen_Height/Main_Screen_Width)
 
 //机型判断
 //判断是否是ipad

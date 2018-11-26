@@ -38,7 +38,7 @@
 //    NSLog(@"- %d -- %p", a, &a);
 
     //谓词筛选
-    [self methodPredicate];
+//    [self methodPredicate];
     
    
 }
@@ -85,6 +85,26 @@
     NSLog(@"+++strong string:%@ %p, %p", self.strongString,self.strongString, &_strongString);
     NSLog(@"+++copy string:%@ %p, %p", self.copyedString,self.copyedString, &_copyedString);
     
+    //创建一个普通的Label
+    UILabel *testLabel = [[UILabel alloc] init];
+    //中央对齐
+    testLabel.textAlignment = NSTextAlignmentCenter;
+    testLabel.backgroundColor = [UIColor yellowColor];
+    testLabel.numberOfLines = 0;
+    testLabel.frame = CGRectMake(0, 200, self.view.frame.size.width, 30);
+    [self.view addSubview:testLabel];
+    
+    //设置Attachment
+    NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
+    //使用一张图片作为Attachment数据
+    attachment.image = [UIImage imageNamed:@"tabbar_icon3_selected"];
+    //这里bounds的x值并不会产生影响
+    attachment.bounds = CGRectMake(-600, 0, 20, 20);
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:@"这是一串字"];
+    [attributedString insertAttributedString:[NSAttributedString attributedStringWithAttachment:attachment] atIndex:0];
+    
+    testLabel.attributedText = attributedString;
+
 
 }
 

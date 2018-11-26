@@ -9,6 +9,9 @@
 #import "ThirdViewController.h"
 #import "CoolestCell.h"
 
+
+#import "ImageEditViewController.h"
+
 @interface ThirdViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *mainTableView;
@@ -76,7 +79,28 @@
     return [[UIView alloc]init];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+ 
+    switch (indexPath.row) {
+        case 0 :
+        {
+            ImageEditViewController* vc = [[ImageEditViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+           
+        case 1 :
+        {
+            
+        }
+            
+        case 2 :
+        {
+            
+        }
+            
+        default:
+            break;
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

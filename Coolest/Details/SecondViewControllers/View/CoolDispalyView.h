@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CoolDispalyView : UIView
-
+{
+    @public
+    NSString *_name;
+}
 @end

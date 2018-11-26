@@ -87,7 +87,7 @@ NSString *footerIdentifier = @"footer";
     
     self.title = @"Second";
     
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20",@"21"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -133,7 +133,11 @@ NSString *footerIdentifier = @"footer";
     return CGSizeMake(Main_Screen_Width, CGFLOAT_MIN);
 }
 
-
+//定义每个UICollectionView 的大小
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return CGSizeMake(Main_Screen_Width/3, Main_Screen_Width/3);
+//}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {

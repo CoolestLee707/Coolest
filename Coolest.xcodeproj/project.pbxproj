@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18287E21A7FF4C00361219 /* ImageEditViewController.m */; };
+		BF18288221A8026200361219 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288121A8026200361219 /* CameraViewController.m */; };
+		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF39AF50215CAC1B00C05CEF /* GCDViewController.m */; };
 		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
@@ -72,6 +75,12 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		BF18287D21A7FF4C00361219 /* ImageEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
+		BF18287E21A7FF4C00361219 /* ImageEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
+		BF18288021A8026200361219 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		BF18288121A8026200361219 /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		BF18288321A807B900361219 /* CameraManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraManager.h; sourceTree = "<group>"; };
+		BF18288421A807B900361219 /* CameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
 		BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		BF39AF50215CAC1B00C05CEF /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
@@ -199,6 +208,43 @@
 				13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BF18287621A7F06000361219 /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				BF18287721A7F06000361219 /* Controller */,
+				BF18287821A7F06000361219 /* Model */,
+				BF18287921A7F06000361219 /* View */,
+			);
+			path = TakePhoto;
+			sourceTree = "<group>";
+		};
+		BF18287721A7F06000361219 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF18287D21A7FF4C00361219 /* ImageEditViewController.h */,
+				BF18287E21A7FF4C00361219 /* ImageEditViewController.m */,
+				BF18288021A8026200361219 /* CameraViewController.h */,
+				BF18288121A8026200361219 /* CameraViewController.m */,
+				BF18288321A807B900361219 /* CameraManager.h */,
+				BF18288421A807B900361219 /* CameraManager.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF18287821A7F06000361219 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF18287921A7F06000361219 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF59E179210035530004EC56 = {
@@ -474,6 +520,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF18287621A7F06000361219 /* TakePhoto */,
 				BF59E1F7210050240004EC56 /* Controller */,
 				BF59E1F8210050240004EC56 /* Model */,
 				BF59E1F9210050240004EC56 /* View */,
@@ -744,6 +791,7 @@
 			files = (
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
+				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
@@ -751,6 +799,7 @@
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
+				BF18288521A807B900361219 /* CameraManager.m in Sources */,
 				BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */,
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
@@ -767,6 +816,7 @@
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
+				BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,

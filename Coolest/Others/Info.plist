@@ -30,9 +30,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>访问您的相机</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>访问您的相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>访问您的相册</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
