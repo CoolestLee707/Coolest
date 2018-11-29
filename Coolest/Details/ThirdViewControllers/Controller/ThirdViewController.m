@@ -8,7 +8,7 @@
 
 #import "ThirdViewController.h"
 #import "CoolestCell.h"
-
+#import "msgSendViewController.h"
 
 #import "ImageEditViewController.h"
 
@@ -42,7 +42,10 @@
     
     self.title = @"Third";
 
-    self.dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    @synchronized (self) {
+        
+    }
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -90,7 +93,9 @@
            
         case 1 :
         {
-            
+            msgSendViewController* vc = [[msgSendViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
         }
             
         case 2 :
