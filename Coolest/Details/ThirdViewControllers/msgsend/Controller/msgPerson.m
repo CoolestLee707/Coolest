@@ -71,7 +71,7 @@
 
 #pragma mark -- 第二阶段：进行消息转发
 
-//一、找备用的接受者
+#pragma mark  一、找备用的接受者
 
 //实例
 - (id)forwardingTargetForSelector:(SEL)aSelector
@@ -110,7 +110,7 @@
     return [super forwardingTargetForSelector:aSelector];
 }
 
-//二、消息转发
+#pragma mark  二、消息转发
 
 //1、方法签名--实例
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {

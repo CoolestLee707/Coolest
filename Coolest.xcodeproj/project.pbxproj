@@ -11,6 +11,7 @@
 		BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136A21AFC76F002E5FAB /* msgSendViewController.m */; };
 		BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136D21AFC829002E5FAB /* msgPerson.m */; };
 		BF14137121AFC836002E5FAB /* msgDog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14137021AFC836002E5FAB /* msgDog.m */; };
+		BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BF15B58A21B51C7A00006432 /* UIButton+CMButton.m */; };
 		BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18287E21A7FF4C00361219 /* ImageEditViewController.m */; };
 		BF18288221A8026200361219 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288121A8026200361219 /* CameraViewController.m */; };
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
@@ -85,6 +86,8 @@
 		BF14136D21AFC829002E5FAB /* msgPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgPerson.m; sourceTree = "<group>"; };
 		BF14136F21AFC836002E5FAB /* msgDog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgDog.h; sourceTree = "<group>"; };
 		BF14137021AFC836002E5FAB /* msgDog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgDog.m; sourceTree = "<group>"; };
+		BF15B58921B51C7A00006432 /* UIButton+CMButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+CMButton.h"; sourceTree = "<group>"; };
+		BF15B58A21B51C7A00006432 /* UIButton+CMButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CMButton.m"; sourceTree = "<group>"; };
 		BF18287D21A7FF4C00361219 /* ImageEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageEditViewController.h; sourceTree = "<group>"; };
 		BF18287E21A7FF4C00361219 /* ImageEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageEditViewController.m; sourceTree = "<group>"; };
 		BF18288021A8026200361219 /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 				BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */,
 				BF59E1D021003B580004EC56 /* UIView+Utils.h */,
 				BF59E1D121003B580004EC56 /* UIView+Utils.m */,
+				BF15B58921B51C7A00006432 /* UIButton+CMButton.h */,
+				BF15B58A21B51C7A00006432 /* UIButton+CMButton.m */,
 				BF59E1D321003BA30004EC56 /* NSURL+CFURL.h */,
 				BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */,
 				BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */,
@@ -862,6 +867,7 @@
 				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
+				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,

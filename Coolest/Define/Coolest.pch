@@ -19,6 +19,7 @@
 #import "UIAlertView+Block.h"
 #import "UIView+Utils.h"
 #import "UIViewController+MBProgressHUD.h"
+#import "UIButton+CMButton.h"
 
 //自定义
 #import "CommonMethods.h"
