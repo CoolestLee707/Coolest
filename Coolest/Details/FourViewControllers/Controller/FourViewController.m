@@ -17,6 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    NSString *dsdsd = @"ffsdfsfdsfsXX";
+    NSString *dsdsd1 = @"DDsdfsfdsfsXX";
+
+    NSString *dsdsd2 = @"你是沙和尚";
+    
+    NSString *reStr = [dsdsd capitalizedString];
+    NSString *reStr1 = [dsdsd1 capitalizedString];
+    NSString *reStr2 = [dsdsd2 capitalizedString];
+
+    ADLog(@"%@ - %@ - %@",reStr,reStr1,reStr2);
+    
     UIButton *add = [UIButton buttonWithType:UIButtonTypeCustom];
     add.frame = CGRectMake(100, 100, 120,120);
     add.backgroundColor = [UIColor redColor];
@@ -38,6 +50,24 @@
         ADLog(@"22222");
     }];
     
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    
+    NSArray *arr = @[@"1",@"2",@"3",@"4"];
+    
+    NSArray *arr1 = @[@"1",@"2",@"1",@"3",@"5",@"2"];
+
+    for (NSString *str in arr) {
+        
+        for (NSString *str1 in arr1) {
+            
+            if ([str1 isEqualToString:str]) {
+                [array addObject:str];
+                break;
+            }
+        }
+    }
+
+    ADLog(@"array - %@",array);
     
 }
 - (void)click

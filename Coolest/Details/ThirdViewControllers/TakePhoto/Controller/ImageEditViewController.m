@@ -34,7 +34,7 @@
     [self.view addSubview:self.resultImageView];
     
     self.resultImageView.image = [UIImage imageNamed:@"TakePhoto_add"];
-    self.resultImageView.contentMode = UIViewContentModeCenter;
+    self.resultImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.resultImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.mas_equalTo(20+kNavigationBarHeight);
@@ -56,7 +56,7 @@
         vc.takeComplete = ^(UIImage * resultImage) {
             
             weakSelf.resultImageView.image = resultImage;
-            weakSelf.resultImageView.contentMode = UIViewContentModeScaleAspectFit;
+            weakSelf.resultImageView.contentMode = UIViewContentModeScaleAspectFill;
         };
         [weakSelf presentViewController:vc animated:YES completion:nil];
         

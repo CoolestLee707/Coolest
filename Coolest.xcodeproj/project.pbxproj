@@ -17,6 +17,8 @@
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF18288821AD16A800361219 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288721AD16A800361219 /* MessageViewController.m */; };
 		BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF39AF50215CAC1B00C05CEF /* GCDViewController.m */; };
+		BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */; };
+		BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */; };
 		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
 		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
@@ -98,6 +100,10 @@
 		BF18288721AD16A800361219 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		BF39AF50215CAC1B00C05CEF /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		BF4AAC6C21EC6A97005FB62C /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
+		BF4AAC6F21EC707A005FB62C /* PresentOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentOneViewController.h; sourceTree = "<group>"; };
+		BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentOneViewController.m; sourceTree = "<group>"; };
 		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
 		BF4C45922111ABB80085E749 /* RunLoopObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopObject1.m; sourceTree = "<group>"; };
 		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +192,8 @@
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
 		BFDC0F242107320800185A31 /* UIViewController+Appear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Appear.m"; sourceTree = "<group>"; };
+		BFE105C221D9B6E90036709A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		BFE105C321D9B7020036709A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D4421720B31DEBAD90F3946F /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -547,6 +555,10 @@
 				BF39AF50215CAC1B00C05CEF /* GCDViewController.m */,
 				BF18288621AD16A800361219 /* MessageViewController.h */,
 				BF18288721AD16A800361219 /* MessageViewController.m */,
+				BF4AAC6C21EC6A97005FB62C /* PresentViewController.h */,
+				BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */,
+				BF4AAC6F21EC707A005FB62C /* PresentOneViewController.h */,
+				BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -848,6 +860,7 @@
 			files = (
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
+				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
@@ -878,6 +891,7 @@
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
 				BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */,
+				BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */,
 				BF18288821AD16A800361219 /* MessageViewController.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
@@ -932,6 +946,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				BF59E191210035550004EC56 /* Base */,
+				BFE105C221D9B6E90036709A /* zh-Hans */,
+				BFE105C321D9B7020036709A /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -943,6 +959,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1002,6 +1019,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

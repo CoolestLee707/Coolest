@@ -19,6 +19,8 @@
 #import "NSThreadViewController.h"
 #import "GCDViewController.h"
 #import "MessageViewController.h"
+#import "PresentViewController.h"
+#import "BaseNavigationController.h"
 
 #define shareWidth  (Main_Screen_Width/3);
 
@@ -88,7 +90,7 @@ NSString *footerIdentifier = @"footer";
     
     self.title = @"Second";
     
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -269,7 +271,12 @@ NSString *footerIdentifier = @"footer";
                     
                 case 1:
                 {
+                    PresentViewController *vc = [[PresentViewController alloc]init];
+//                    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
                     
+                    [self.tabBarController presentViewController:vc animated:YES completion:^{
+                        ADLog(@"跳转");
+                    }];
                 }
                     break;
                     

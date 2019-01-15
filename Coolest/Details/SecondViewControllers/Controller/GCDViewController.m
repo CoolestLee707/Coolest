@@ -26,17 +26,17 @@
     
     self.title = @"GCD";
 
-    NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
-    
-    self.array = tempArr;
-    
-    ADLog(@"tempArr+++ %@ -- %p",tempArr,tempArr);
-    ADLog(@"self.array+++ %@ -- %p",self.array,self.array);
-    
-    [tempArr addObject:@"4"];
-    
-    ADLog(@"tempArr--- %@ -- %p",tempArr,tempArr);
-    ADLog(@"self.array--- %@ -- %p",self.array,self.array);
+//    NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
+//
+//    self.array = tempArr;
+//
+//    ADLog(@"tempArr+++ %@ -- %p",tempArr,tempArr);
+//    ADLog(@"self.array+++ %@ -- %p",self.array,self.array);
+//
+//    [tempArr addObject:@"4"];
+//
+//    ADLog(@"tempArr--- %@ -- %p",tempArr,tempArr);
+//    ADLog(@"self.array--- %@ -- %p",self.array,self.array);
 
 //    [self method1];
 
@@ -100,6 +100,147 @@
 //    线程安全
 //    [self initTicketStatusSave];
     
+//    [self testCommunication];
+    
+//    [self test1];
+    
+//    [self test2];
+
+//    [self test3];
+
+    [self test4];
+
+}
+
+- (void)test1 {
+    
+    ADLog(@"1---%@",[NSThread currentThread]);
+    
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+
+    //CPU调度耗时，主线程不堵塞执行5
+    dispatch_async(queue, ^{
+        
+        //子线程
+        
+        ADLog(@"2---%@",[NSThread currentThread]);   //number = 3
+        //堵塞
+        dispatch_sync(queue, ^{
+            ADLog(@"3---%@",[NSThread currentThread]);   //number = 3
+        });
+        ADLog(@"4---%@",[NSThread currentThread]);   //number = 3
+    });
+    
+    ADLog(@"5---%@",[NSThread currentThread]);
+
+    //1 5 2 3 4
+}
+
+- (void)test2 {
+    
+    ADLog(@"1---%@",[NSThread currentThread]);
+    
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+    
+    //CPU调度耗时，主线程不堵塞执行5
+    dispatch_async(queue, ^{
+        
+        //子线程
+        
+        ADLog(@"2---%@",[NSThread currentThread]);   //number = 3
+        
+        dispatch_async(queue, ^{
+            ADLog(@"3---%@",[NSThread currentThread]);  //number = 4，又开启一条新线程
+        });
+        ADLog(@"4---%@",[NSThread currentThread]);   //number = 3
+    });
+    
+    ADLog(@"5---%@",[NSThread currentThread]);
+    
+    //1 5 2 4 3
+}
+
+#pragma mark 严重堵塞卡死
+- (void)test3 {
+    
+    ADLog(@"1---%@",[NSThread currentThread]);
+    
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_SERIAL);
+    
+    //CPU调度耗时，主线程不堵塞执行5
+    dispatch_async(queue, ^{
+        
+        //子线程
+        
+        ADLog(@"2---%@",[NSThread currentThread]);   //number = 3
+        //堵塞-串行队列正在执行异步任务，互相等待中。。
+        dispatch_sync(queue, ^{
+            ADLog(@"3---%@",[NSThread currentThread]);
+        });
+        ADLog(@"4---%@",[NSThread currentThread]);
+    });
+    
+    ADLog(@"5---%@",[NSThread currentThread]);
+    
+    //1 5 2
+}
+
+- (void)test4 {
+    
+    ADLog(@"1---%@",[NSThread currentThread]);
+    
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_SERIAL);
+    
+    //CPU调度耗时，主线程不堵塞执行5
+    dispatch_async(queue, ^{
+        
+        //子线程
+        
+        ADLog(@"2---%@",[NSThread currentThread]);   //number = 3
+        dispatch_async(queue, ^{
+            ADLog(@"3---%@",[NSThread currentThread]);  //number = 3，异步执行具备开启新线程的能力，串行队列只开启一个线程
+        });
+        ADLog(@"4---%@",[NSThread currentThread]);   //number = 3
+    });
+    
+    ADLog(@"5---%@",[NSThread currentThread]);
+    
+    //1 5 2 4 3
+}
+
+- (void)testCommunication {
+    
+    // 获取全局并发队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    //获取主队列
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    
+    dispatch_async(queue, ^{
+        
+        // 异步追加任务
+        for (int i = 0; i < 20; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            ADLog(@"0---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+    });
+    
+    dispatch_async(queue, ^{
+        
+        // 异步追加任务
+        for (int i = 0; i < 10; ++i) {
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            ADLog(@"1---%@",[NSThread currentThread]);      // 打印当前线程
+        }
+        
+        // 回到主线程
+        dispatch_async(mainQueue, ^{
+            
+            // 追加在主线程中执行的任务
+            [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+            ADLog(@"2---%@",[NSThread currentThread]);      // 打印当前线程
+        });
+    });
 }
 
 #pragma mark ---线程安全：使用 semaphore 加锁, 初始化火车票数量、卖票窗口(线程安全)、并开始卖票
@@ -125,6 +266,7 @@
     dispatch_async(queue2, ^{
         [weakSelf saleTicketSafe];
     });
+    
 }
 
 #pragma mark --- 售卖火车票(线程安全)
@@ -319,6 +461,9 @@
         }
         ADLog(@"group---end");
     });
+    
+    ADLog(@"group---======");
+
 }
 
 #pragma mark ---   快速迭代方法 dispatch_apply
