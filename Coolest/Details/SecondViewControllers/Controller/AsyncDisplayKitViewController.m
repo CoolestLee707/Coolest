@@ -139,8 +139,11 @@
 }
 
 // UITableView 的 cell 点击事件方法一模一样
-- (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (void)tableNode:(ASTableNode *)tableNode didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AsyncDisplayModel *model = self.dataArray[indexPath.row];
+    
+    ADLog(@"%@-%@-%@-%zd",model.name,model.title,model.descContent,indexPath.row);
 }
 
 - (void)loadPageWithContext:(ASBatchContext *)context {

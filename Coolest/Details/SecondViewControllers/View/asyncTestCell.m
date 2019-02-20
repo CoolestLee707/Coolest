@@ -18,12 +18,14 @@
 
 @property (strong, nonatomic) ASImageNode *iconImageView;
 @property (strong, nonatomic) ASDisplayNode *lineNode;
+@property (nonatomic,strong) UIView * lineView;
+
+@property (strong, nonatomic) ASDisplayNode *topLineNode;
 
 @property (strong, nonatomic) ASButtonNode *firstButton;
 @property (strong, nonatomic) ASButtonNode *secondButton;
 @property (strong, nonatomic) ASButtonNode *thirdButton;
 
-@property (nonatomic,strong) UIView * lineView;
 
 @property (nonatomic,strong) AsyncDisplayModel *asyncModel;
 
@@ -45,9 +47,18 @@
 //不需要设置框架（frame）。这是因为它们的构建和布局是分开进行的（这就是框架名字中 Async 异步的由来了），在初始化方法中，你只管构建好了，布局在另一个方法中进行
 - (void)addNode {
     
+    _topLineNode = [[ASDisplayNode alloc]initWithViewBlock:^UIView * _Nonnull{
+        UIView *topLineView = [[UIView alloc]init];
+        topLineView.backgroundColor =[UIColor grayColor];
+        return topLineView;
+    }];
+    _topLineNode.style.preferredSize = CGSizeMake(Main_Screen_Width-32, 0.5);
+
+    [self addSubnode:_topLineNode];
+    
     _lineNode = [[ASDisplayNode alloc]initWithViewBlock:^UIView * _Nonnull{
         self.lineView = [[UIView alloc]init];
-        self.lineView.backgroundColor = [UIColor redColor];
+        self.lineView.backgroundColor = [UIColor blackColor];
         return self.lineView;
     }];
     _lineNode.style.preferredSize = CGSizeMake(Main_Screen_Width-32, 0.5);
@@ -69,6 +80,7 @@
     
     _descContentLabel = [[ASTextNode alloc]init];
     _descContentLabel.backgroundColor = [UIColor orangeColor];
+    _descContentLabel.style.height = ASDimensionMake(20);
     [self addSubnode:_descContentLabel];
     
     _detailCountLabel = [[ASTextNode alloc]init];
@@ -83,7 +95,8 @@
 //    设置绝对size
 //    _firstButton.style.height = ASDimensionMake(40);
     _firstButton.style.preferredSize = CGSizeMake(100, 50);
-
+    _firstButton.cornerRadius = 5;
+    _firstButton.clipsToBounds = YES;
     [_firstButton setBackgroundColor:[UIColor greenColor]];
     [self addSubnode:_firstButton];
     [_firstButton addTarget:self action:@selector(firstButtonClick:) forControlEvents:ASControlNodeEventTouchUpInside];
@@ -93,9 +106,24 @@
     [_secondButton setTitle:@"second" withFont:[UIFont systemFontOfSize:17] withColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_secondButton setBackgroundColor:[UIColor redColor]];
     _secondButton.style.preferredSize = CGSizeMake(100, 50);
+    _secondButton.cornerRadius = 5;
+    _secondButton.clipsToBounds = YES;
     [self addSubnode:_secondButton];
     [_secondButton addTarget:self action:@selector(secondButtonClick:) forControlEvents:ASControlNodeEventTouchUpInside];
 
+    
+    _thirdButton = [[ASButtonNode alloc]init];
+    [_thirdButton setTitle:@"大的按钮" withFont:[UIFont systemFontOfSize:20] withColor:[UIColor purpleColor] forState:UIControlStateNormal];
+    [_thirdButton setImage:[UIImage imageNamed:@"book"] forState:UIControlStateNormal];
+    
+    _thirdButton.imageAlignment = ASButtonNodeImageAlignmentBeginning;
+    _thirdButton.contentVerticalAlignment = ASVerticalAlignmentCenter;
+    _thirdButton.contentHorizontalAlignment = ASHorizontalAlignmentMiddle;
+    [_thirdButton setBackgroundColor:[UIColor lightGrayColor]];
+
+    [self addSubnode:_thirdButton];
+    _thirdButton.style.preferredSize = CGSizeMake(200, 50);
+    [_thirdButton addTarget:self action:@selector(thirdButtonClick) forControlEvents:ASControlNodeEventTouchUpInside];
 }
 
 #pragma mark --- 所有的 ASNode 都必须在这个方法中进行布局
@@ -120,8 +148,8 @@
     ASStackLayoutSpec *VSpace0 = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:5.0 justifyContent:ASStackLayoutJustifyContentCenter alignItems:ASStackLayoutAlignItemsStart children:@[_contentLabel]];
 
     
-    //设置descContent
-    ASRelativeLayoutSpec *descCountSpec = [ASRelativeLayoutSpec relativePositionLayoutSpecWithHorizontalPosition:ASRelativeLayoutSpecPositionStart verticalPosition:ASRelativeLayoutSpecPositionCenter sizingOption:ASRelativeLayoutSpecSizingOptionMinimumSize child:_descContentLabel];
+    //设置descContent -- ASRelativeLayoutSpecSizingOptionMinimumHeight不会折行，需要先高度固定会...
+    ASRelativeLayoutSpec *descCountSpec = [ASRelativeLayoutSpec relativePositionLayoutSpecWithHorizontalPosition:ASRelativeLayoutSpecPositionStart verticalPosition:ASRelativeLayoutSpecPositionCenter sizingOption:ASRelativeLayoutSpecSizingOptionMinimumHeight child:_descContentLabel];
     
     descCountSpec.style.flexShrink = 1.0;
 
@@ -136,16 +164,21 @@
     detailCountSpec.style.flexShrink = 1.0;
     
     
-    //按钮
+    //按钮1\2
     ASStackLayoutSpec *ButtonSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:2.0 justifyContent:ASStackLayoutJustifyContentSpaceBetween alignItems:ASStackLayoutAlignItemsStart children:@[_firstButton,_secondButton]];
+//    补白
+    ASInsetLayoutSpec *ButtonInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(5, 30, 5, 30) child:ButtonSpec];
     
-     ASInsetLayoutSpec *ButtonInsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(5, 30, 5, 30) child:ButtonSpec];
+    //按钮3
+    ASStackLayoutSpec *ButtonSpec3 = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:2.0 justifyContent:ASStackLayoutJustifyContentCenter alignItems:ASStackLayoutAlignItemsStart children:@[_thirdButton]];
     
     //6、加上分割线
+       ASStackLayoutSpec *lineSpec0 = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:2.0 justifyContent:ASStackLayoutJustifyContentCenter alignItems:ASStackLayoutAlignItemsStretch children:@[_topLineNode]];
+    
     ASStackLayoutSpec *lineSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionHorizontal spacing:2.0 justifyContent:ASStackLayoutJustifyContentCenter alignItems:ASStackLayoutAlignItemsStretch children:@[_lineNode]];
     
     //7、要将 3个标签放到一块，上下顺序布局，需要将 3 者（即前面的数组，我们已经将 3 者放到一个数组了）添加到一个 stack 布局中。stack 布局类似自动布局中的 UIStackView，专门作为其他节点的容器，并且可以方便地指定这些节点的排列方式。这里我们在构建 stack 布局时指定三者为垂直排列，行间距 8，主轴方向(y轴)顶对齐，交叉轴方向(x轴)占据行宽。ASStackLayoutAlignItemsStretch--填充满
-    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8.0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch children:@[HSpec2,VSpace0,descCountSpec,detailCountSpec,ButtonInsetSpec,lineSpec]];
+    ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8.0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch children:@[HSpec2,lineSpec0,VSpace0,descCountSpec,detailCountSpec,ButtonInsetSpec,ButtonSpec3,lineSpec]];
     
     //8、最后在 stack 布局的基础上补白。并返回补白后的 Inset 布局
     ASInsetLayoutSpec *InsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(8, 16, 8, 16) child:contentSpec];
@@ -179,4 +212,8 @@
     ADLog(@"second");
 }
 
+- (void)thirdButtonClick
+{
+    ADLog(@"san");
+}
 @end
