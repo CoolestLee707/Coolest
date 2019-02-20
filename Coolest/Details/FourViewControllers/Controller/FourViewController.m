@@ -10,6 +10,9 @@
 
 @interface FourViewController ()
 
+//mutableArray若用copy修饰会返回一个NSArray类型，若调用可变类型的添加、删除、修改方法时会因为找不到对应的方法而crash
+@property (nonatomic,strong)NSMutableArray *array;
+
 @end
 
 @implementation FourViewController
@@ -17,16 +20,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self test2];
     
+}
+
+- (void)test2 {
+    
+    self.array = [NSMutableArray array];
+    
+    [self.array addObject:@"1"];
+    
+}
+- (void)test1 {
+ 
     NSString *dsdsd = @"ffsdfsfdsfsXX";
     NSString *dsdsd1 = @"DDsdfsfdsfsXX";
-
+    
     NSString *dsdsd2 = @"你是沙和尚";
     
     NSString *reStr = [dsdsd capitalizedString];
     NSString *reStr1 = [dsdsd1 capitalizedString];
     NSString *reStr2 = [dsdsd2 capitalizedString];
-
+    
     ADLog(@"%@ - %@ - %@",reStr,reStr1,reStr2);
     
     UIButton *add = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -40,11 +55,11 @@
         button.backgroundColor = [UIColor blackColor];
     }];
     
-//    [add addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    //    [add addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *sdsd = [[UIView alloc]initWithFrame:CGRectMake(110, 150, 120,120)];
     sdsd.backgroundColor = [UIColor grayColor];
-//    [self.view addSubview:sdsd];
+    //    [self.view addSubview:sdsd];
     
     [sdsd setTapActionWithBlock:^{
         ADLog(@"22222");
@@ -55,7 +70,7 @@
     NSArray *arr = @[@"1",@"2",@"3",@"4"];
     
     NSArray *arr1 = @[@"1",@"2",@"1",@"3",@"5",@"2"];
-
+    
     for (NSString *str in arr) {
         
         for (NSString *str1 in arr1) {
@@ -66,9 +81,8 @@
             }
         }
     }
-
-    ADLog(@"array - %@",array);
     
+    ADLog(@"array - %@",array);
 }
 - (void)click
 {

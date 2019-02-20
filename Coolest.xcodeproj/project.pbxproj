@@ -58,6 +58,9 @@
 		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
 		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
 		BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9BB3CC219EAD1B0026BDD8 /* person.m */; };
+		BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */; };
+		BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */; };
+		BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */; };
 		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
@@ -186,6 +189,12 @@
 		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
 		BF9BB3CB219EAD1B0026BDD8 /* person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = person.h; sourceTree = "<group>"; };
 		BF9BB3CC219EAD1B0026BDD8 /* person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = person.m; sourceTree = "<group>"; };
+		BFB72E57221BA9D5002F4743 /* AsyncDisplayKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDisplayKitViewController.h; sourceTree = "<group>"; };
+		BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDisplayKitViewController.m; sourceTree = "<group>"; };
+		BFB72E5A221BE0C3002F4743 /* asyncTestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asyncTestCell.h; sourceTree = "<group>"; };
+		BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = asyncTestCell.m; sourceTree = "<group>"; };
+		BFB72E5D221BF7D5002F4743 /* AsyncDisplayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDisplayModel.h; sourceTree = "<group>"; };
+		BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDisplayModel.m; sourceTree = "<group>"; };
 		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
 		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
@@ -559,6 +568,8 @@
 				BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */,
 				BF4AAC6F21EC707A005FB62C /* PresentOneViewController.h */,
 				BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */,
+				BFB72E57221BA9D5002F4743 /* AsyncDisplayKitViewController.h */,
+				BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -566,6 +577,8 @@
 		BF59E1F4210050140004EC56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFB72E5D221BF7D5002F4743 /* AsyncDisplayModel.h */,
+				BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,6 +594,8 @@
 				BF6B08FA211D415E000C8693 /* HitTestBackView.m */,
 				BF6B6D3A214FA2820000B157 /* CoolDispalyView.h */,
 				BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */,
+				BFB72E5A221BE0C3002F4743 /* asyncTestCell.h */,
+				BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -884,6 +899,7 @@
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */,
 				BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */,
 				BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */,
 				BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */,
@@ -893,6 +909,7 @@
 				BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */,
 				BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */,
 				BF18288821AD16A800361219 /* MessageViewController.m in Sources */,
+				BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
@@ -903,6 +920,7 @@
 				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
+				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,
 				BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,

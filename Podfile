@@ -17,5 +17,8 @@ pod 'TZImagePickerController'
 pod 'FDFullscreenPopGesture'
 pod 'SDCycleScrollView','~> 1.75'
 pod 'MyLayout'
+pod 'FMDB'
+pod 'Texture'
+
 end
 

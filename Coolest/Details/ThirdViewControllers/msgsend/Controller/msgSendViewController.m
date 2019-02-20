@@ -11,13 +11,17 @@
 
 @interface msgSendViewController ()
 
+@property (nonatomic,copy) NSString *name;
+
 @end
 
 @implementation msgSendViewController
 
+@synthesize name = _coolName;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    _coolName = @"e44";
     self.title = @"消息转发处理";
 
     //实例方法
