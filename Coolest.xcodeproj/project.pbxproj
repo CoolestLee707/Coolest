@@ -20,6 +20,7 @@
 		BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */; };
 		BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */; };
 		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
+		BF54707D2230C81900458592 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF54707C2230C81900458592 /* BlockViewController.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
 		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
 		BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF59E190210035550004EC56 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,12 @@
 		BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */; };
 		BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */; };
 		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
+		BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */; };
+		BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7722366CAE001B4F26 /* MVPViewController.m */; };
+		BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7A22366CCB001B4F26 /* MVPModel.m */; };
+		BFDA8B7E22366CDC001B4F26 /* MVPCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7D22366CDC001B4F26 /* MVPCell.m */; };
+		BFDA8B8222367081001B4F26 /* MVPPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B8122367081001B4F26 /* MVPPresent.m */; };
+		BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B8A22375C72001B4F26 /* MVPService.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 /* End PBXBuildFile section */
@@ -109,6 +116,8 @@
 		BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentOneViewController.m; sourceTree = "<group>"; };
 		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
 		BF4C45922111ABB80085E749 /* RunLoopObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopObject1.m; sourceTree = "<group>"; };
+		BF54707B2230C81900458592 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
+		BF54707C2230C81900458592 /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
 		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59E185210035530004EC56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BF59E186210035530004EC56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -197,6 +206,19 @@
 		BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDisplayModel.m; sourceTree = "<group>"; };
 		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
 		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
+		BFDA8B6E22363D7F001B4F26 /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
+		BFDA8B7622366CAE001B4F26 /* MVPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPViewController.h; sourceTree = "<group>"; };
+		BFDA8B7722366CAE001B4F26 /* MVPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPViewController.m; sourceTree = "<group>"; };
+		BFDA8B7922366CCB001B4F26 /* MVPModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPModel.h; sourceTree = "<group>"; };
+		BFDA8B7A22366CCB001B4F26 /* MVPModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPModel.m; sourceTree = "<group>"; };
+		BFDA8B7C22366CDC001B4F26 /* MVPCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPCell.h; sourceTree = "<group>"; };
+		BFDA8B7D22366CDC001B4F26 /* MVPCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPCell.m; sourceTree = "<group>"; };
+		BFDA8B8022367081001B4F26 /* MVPPresent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPPresent.h; sourceTree = "<group>"; };
+		BFDA8B8122367081001B4F26 /* MVPPresent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPPresent.m; sourceTree = "<group>"; };
+		BFDA8B8922375C72001B4F26 /* MVPService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPService.h; sourceTree = "<group>"; };
+		BFDA8B8A22375C72001B4F26 /* MVPService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVPService.m; sourceTree = "<group>"; };
+		BFDA8B8E22375E74001B4F26 /* MVPProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPProtocol.h; sourceTree = "<group>"; };
 		BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzledMethod.h"; sourceTree = "<group>"; };
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
@@ -570,6 +592,10 @@
 				BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */,
 				BFB72E57221BA9D5002F4743 /* AsyncDisplayKitViewController.h */,
 				BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */,
+				BF54707B2230C81900458592 /* BlockViewController.h */,
+				BF54707C2230C81900458592 /* BlockViewController.m */,
+				BFDA8B6E22363D7F001B4F26 /* NSOperationViewController.h */,
+				BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -603,6 +629,8 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFDA8B83223755A2001B4F26 /* MVVM */,
+				BFDA8B7122366C2B001B4F26 /* MVP */,
 				BF14136521AFC740002E5FAB /* msgsend */,
 				BF18287621A7F06000361219 /* TakePhoto */,
 				BF59E1F7210050240004EC56 /* Controller */,
@@ -668,6 +696,111 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFDA8B7122366C2B001B4F26 /* MVP */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B8C22375D43001B4F26 /* Protocol */,
+				BFDA8B8822375C5B001B4F26 /* Service */,
+				BFDA8B7522366C7A001B4F26 /* Presenter */,
+				BFDA8B7222366C2B001B4F26 /* Controller */,
+				BFDA8B7322366C2B001B4F26 /* Model */,
+				BFDA8B7422366C2B001B4F26 /* View */,
+			);
+			path = MVP;
+			sourceTree = "<group>";
+		};
+		BFDA8B7222366C2B001B4F26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B7622366CAE001B4F26 /* MVPViewController.h */,
+				BFDA8B7722366CAE001B4F26 /* MVPViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFDA8B7322366C2B001B4F26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B7922366CCB001B4F26 /* MVPModel.h */,
+				BFDA8B7A22366CCB001B4F26 /* MVPModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFDA8B7422366C2B001B4F26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B7C22366CDC001B4F26 /* MVPCell.h */,
+				BFDA8B7D22366CDC001B4F26 /* MVPCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFDA8B7522366C7A001B4F26 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B8022367081001B4F26 /* MVPPresent.h */,
+				BFDA8B8122367081001B4F26 /* MVPPresent.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BFDA8B83223755A2001B4F26 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B84223755A2001B4F26 /* ViewModel */,
+				BFDA8B85223755A2001B4F26 /* Controller */,
+				BFDA8B86223755A2001B4F26 /* Model */,
+				BFDA8B87223755A2001B4F26 /* View */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		BFDA8B84223755A2001B4F26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BFDA8B85223755A2001B4F26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFDA8B86223755A2001B4F26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFDA8B87223755A2001B4F26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFDA8B8822375C5B001B4F26 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B8922375C72001B4F26 /* MVPService.h */,
+				BFDA8B8A22375C72001B4F26 /* MVPService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BFDA8B8C22375D43001B4F26 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BFDA8B8E22375E74001B4F26 /* MVPProtocol.h */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CE6BCBB5A8D358AFB755B862 /* Frameworks */ = {
@@ -898,11 +1031,14 @@
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
+				BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
 				BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */,
+				BFDA8B7E22366CDC001B4F26 /* MVPCell.m in Sources */,
 				BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */,
 				BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */,
 				BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */,
+				BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
@@ -913,11 +1049,14 @@
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
+				BF54707D2230C81900458592 /* BlockViewController.m in Sources */,
+				BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */,
 				BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
 				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
+				BFDA8B8222367081001B4F26 /* MVPPresent.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
 				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,
@@ -925,6 +1064,7 @@
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
+				BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

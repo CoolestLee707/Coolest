@@ -40,11 +40,12 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
+  - ReactiveObjC (3.1.0)
   - SDCycleScrollView (1.75):
     - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
   - Texture (2.8):
     - Texture/AssetsLibrary (= 2.8)
     - Texture/Core (= 2.8)
@@ -65,7 +66,7 @@ PODS:
     - Texture/Core
   - Texture/Video (2.8):
     - Texture/Core
-  - TZImagePickerController (3.1.1)
+  - TZImagePickerController (3.2.0)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -79,6 +80,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MyLayout
+  - ReactiveObjC
   - SDCycleScrollView (~> 1.75)
   - SDWebImage
   - Texture
@@ -99,12 +101,13 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: a6219e6fc9db9c269eb7a7b871ac193bcf400aac
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   Texture: fc6e0157201f3a6e503d364c147b1872e365cef4
-  TZImagePickerController: b33cb21ea66c1ed4c56443a0e8c84494c44be560
+  TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 0b671886a1db9cd8cdc9c8a3c5e943b274c2638d
+PODFILE CHECKSUM: 714f511e1814fb323ae46295bdd791b201866123
 
 COCOAPODS: 1.4.0

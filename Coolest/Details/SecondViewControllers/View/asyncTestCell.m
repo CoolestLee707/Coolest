@@ -10,6 +10,8 @@
 @interface asyncTestCell ()
 
 //一个 ASTextNode，用于显示标题文本。ASTextNode 相当于 UILabel，不同的是能够在 ASCellNode 上使用。通常情况下，在 ASCellNode 中你不能使用 UIKit 中的UI 组件，而只能使用它们的 ASDK 的封装类。
+@property (strong, nonatomic) ASDisplayNode *cellBg;
+
 @property (strong, nonatomic) ASTextNode *nameLabel;
 @property (strong, nonatomic) ASTextNode *titleLabel;
 @property (strong, nonatomic) ASTextNode *contentLabel;
@@ -46,6 +48,12 @@
 
 //不需要设置框架（frame）。这是因为它们的构建和布局是分开进行的（这就是框架名字中 Async 异步的由来了），在初始化方法中，你只管构建好了，布局在另一个方法中进行
 - (void)addNode {
+    
+    _cellBg = [[ASDisplayNode alloc]init];
+    [self addSubnode:_cellBg];
+    _cellBg.cornerRadius = 3;
+    _cellBg.backgroundColor = [UIColor orangeColor];
+    _cellBg.clipsToBounds = YES;
     
     _topLineNode = [[ASDisplayNode alloc]initWithViewBlock:^UIView * _Nonnull{
         UIView *topLineView = [[UIView alloc]init];
@@ -125,7 +133,10 @@
     _thirdButton.style.preferredSize = CGSizeMake(200, 50);
     [_thirdButton addTarget:self action:@selector(thirdButtonClick) forControlEvents:ASControlNodeEventTouchUpInside];
 }
-
+//第一次出现的会调用
+- (void)layout {
+    [super layout];
+}
 #pragma mark --- 所有的 ASNode 都必须在这个方法中进行布局
 - (ASLayoutSpec *)layoutSpecThatFits:(ASSizeRange)constrainedSize {
     
@@ -181,8 +192,15 @@
     ASStackLayoutSpec *contentSpec = [ASStackLayoutSpec stackLayoutSpecWithDirection:ASStackLayoutDirectionVertical spacing:8.0 justifyContent:ASStackLayoutJustifyContentStart alignItems:ASStackLayoutAlignItemsStretch children:@[HSpec2,lineSpec0,VSpace0,descCountSpec,detailCountSpec,ButtonInsetSpec,ButtonSpec3,lineSpec]];
     
     //8、最后在 stack 布局的基础上补白。并返回补白后的 Inset 布局
-    ASInsetLayoutSpec *InsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(8, 16, 8, 16) child:contentSpec];
-    return InsetSpec;
+    ASInsetLayoutSpec *InsetSpec = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(15, 15, 0, 15) child:contentSpec];
+    
+    
+    //(边框约束)
+    ASInsetLayoutSpec *cellBackInset = [ASInsetLayoutSpec insetLayoutSpecWithInsets:UIEdgeInsetsMake(10, 10, 0, 10) child:_cellBg];
+
+    ASBackgroundLayoutSpec *bottomToolBackgroud = [ASBackgroundLayoutSpec backgroundLayoutSpecWithChild:InsetSpec background:cellBackInset];
+    
+    return bottomToolBackgroud;
 }
 
 -(void)drawCellWithData:(AsyncDisplayModel *)model

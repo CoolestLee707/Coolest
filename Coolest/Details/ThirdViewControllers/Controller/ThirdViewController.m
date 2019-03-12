@@ -9,6 +9,7 @@
 #import "ThirdViewController.h"
 #import "CoolestCell.h"
 #import "msgSendViewController.h"
+#import "MVPViewController.h"
 
 #import "ImageEditViewController.h"
 
@@ -45,7 +46,7 @@
     @synchronized (self) {
         
     }
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -100,7 +101,9 @@
             
         case 2 :
         {
-            
+            MVPViewController* vc = [[MVPViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
         }
             
         default:

@@ -21,6 +21,8 @@
 #import "MessageViewController.h"
 #import "PresentViewController.h"
 #import "AsyncDisplayKitViewController.h"
+#import "BlockViewController.h"
+#import "NSOperationViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -92,7 +94,7 @@ NSString *footerIdentifier = @"footer";
     
     self.title = @"Second";
     
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13",@"14",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -164,7 +166,7 @@ NSString *footerIdentifier = @"footer";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%@",indexPath);
+//    NSLog(@"%@",indexPath);
     
     switch (indexPath.section) {
         case 0:
@@ -290,6 +292,30 @@ NSString *footerIdentifier = @"footer";
                     break;
                     
                     
+                default:
+                    break;
+            }
+        }
+        case 4:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    BlockViewController *vc = [[BlockViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                case 1:
+                {
+                    NSOperationViewController* vc = [[NSOperationViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                case 2:
+                {
+                    
+                }
+                    break;
                 default:
                     break;
             }

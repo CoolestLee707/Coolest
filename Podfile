@@ -19,6 +19,7 @@ pod 'SDCycleScrollView','~> 1.75'
 pod 'MyLayout'
 pod 'FMDB'
 pod 'Texture'
+pod 'ReactiveObjC'
 
 end
 
