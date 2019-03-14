@@ -10,6 +10,7 @@
 #import "CoolestCell.h"
 #import "msgSendViewController.h"
 #import "MVPViewController.h"
+#import "MVVM+RAC_ViewController.h"
 
 #import "ImageEditViewController.h"
 
@@ -46,7 +47,7 @@
     @synchronized (self) {
         
     }
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5",@"6",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -105,7 +106,13 @@
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
-            
+           
+        case 3 :
+        {
+            MVVM_RAC_ViewController* vc = [[MVVM_RAC_ViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
         default:
             break;
     }

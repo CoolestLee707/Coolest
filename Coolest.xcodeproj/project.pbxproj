@@ -16,6 +16,11 @@
 		BF18288221A8026200361219 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288121A8026200361219 /* CameraViewController.m */; };
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF18288821AD16A800361219 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288721AD16A800361219 /* MessageViewController.m */; };
+		BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */; };
+		BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87052238EA8500A51E33 /* MVVM_RAC_ViewModel.m */; };
+		BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87082238EA9000A51E33 /* MVVM_RAC_Model.m */; };
+		BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D870B223A430B00A51E33 /* MVVM_RAC_Service.m */; };
+		BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D870E223A436B00A51E33 /* MVVM_RAC_Cell.m */; };
 		BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF39AF50215CAC1B00C05CEF /* GCDViewController.m */; };
 		BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */; };
 		BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */; };
@@ -108,6 +113,16 @@
 		BF18288421A807B900361219 /* CameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
 		BF18288621AD16A800361219 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		BF18288721AD16A800361219 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		BF2D87012238EA4B00A51E33 /* MVVM+RAC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVVM+RAC_ViewController.h"; sourceTree = "<group>"; };
+		BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVVM+RAC_ViewController.m"; sourceTree = "<group>"; };
+		BF2D87042238EA8500A51E33 /* MVVM_RAC_ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_ViewModel.h; sourceTree = "<group>"; };
+		BF2D87052238EA8500A51E33 /* MVVM_RAC_ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVM_RAC_ViewModel.m; sourceTree = "<group>"; };
+		BF2D87072238EA9000A51E33 /* MVVM_RAC_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_Model.h; sourceTree = "<group>"; };
+		BF2D87082238EA9000A51E33 /* MVVM_RAC_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVM_RAC_Model.m; sourceTree = "<group>"; };
+		BF2D870A223A430B00A51E33 /* MVVM_RAC_Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_Service.h; sourceTree = "<group>"; };
+		BF2D870B223A430B00A51E33 /* MVVM_RAC_Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVM_RAC_Service.m; sourceTree = "<group>"; };
+		BF2D870D223A436B00A51E33 /* MVVM_RAC_Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_Cell.h; sourceTree = "<group>"; };
+		BF2D870E223A436B00A51E33 /* MVVM_RAC_Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVM_RAC_Cell.m; sourceTree = "<group>"; };
 		BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
 		BF39AF50215CAC1B00C05CEF /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		BF4AAC6C21EC6A97005FB62C /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
@@ -761,6 +776,10 @@
 		BFDA8B84223755A2001B4F26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BF2D87042238EA8500A51E33 /* MVVM_RAC_ViewModel.h */,
+				BF2D87052238EA8500A51E33 /* MVVM_RAC_ViewModel.m */,
+				BF2D870A223A430B00A51E33 /* MVVM_RAC_Service.h */,
+				BF2D870B223A430B00A51E33 /* MVVM_RAC_Service.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -768,6 +787,8 @@
 		BFDA8B85223755A2001B4F26 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF2D87012238EA4B00A51E33 /* MVVM+RAC_ViewController.h */,
+				BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -775,6 +796,8 @@
 		BFDA8B86223755A2001B4F26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF2D87072238EA9000A51E33 /* MVVM_RAC_Model.h */,
+				BF2D87082238EA9000A51E33 /* MVVM_RAC_Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -782,6 +805,8 @@
 		BFDA8B87223755A2001B4F26 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF2D870D223A436B00A51E33 /* MVVM_RAC_Cell.h */,
+				BF2D870E223A436B00A51E33 /* MVVM_RAC_Cell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1010,6 +1035,7 @@
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
+				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
@@ -1018,6 +1044,7 @@
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
+				BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */,
 				BF18288521A807B900361219 /* CameraManager.m in Sources */,
 				BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */,
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
@@ -1026,8 +1053,10 @@
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
+				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
+				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
@@ -1064,6 +1093,7 @@
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
+				BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */,
 				BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

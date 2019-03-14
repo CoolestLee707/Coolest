@@ -69,6 +69,8 @@
 #define kWeakSelf(A)          __weak  typeof(self) A = self;
 #define kStrongSelf(A,B)     __strong typeof(self) A = B;
 
+#define WEAK  @weakify(self);
+#define STRONG  @strongify(self);
 
 ///颜色(RGB)
 #define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]

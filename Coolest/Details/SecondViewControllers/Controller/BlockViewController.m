@@ -24,6 +24,8 @@
     [self createMallocBlock];
 
 //    [self createStackBlock];
+    
+    [self testBlock];
 
 }
 
@@ -89,5 +91,21 @@
     });
 }
 
+
+- (void)testBlock
+{
+    [self testBlock:^NSString *(NSString *result) {
+        
+        ADLog(@"%@",result);
+        
+        return @"block返回值";
+    }];
+}
+
+- (void)testBlock:(NSString *(^)(NSString *result))complete {
+    
+    NSString *str = complete(@"block入参");
+    ADLog(@"%@",str);
+}
 
 @end
