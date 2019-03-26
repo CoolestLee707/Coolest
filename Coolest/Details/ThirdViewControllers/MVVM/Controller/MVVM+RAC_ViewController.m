@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"[MVVM_RAC";
+    self.title = @"MVVM_RAC";
     
     [self createUI];
 
@@ -87,7 +87,7 @@
     //    1、创建信号
     RACSubject *subject = [RACSubject subject];
     
-    //    2、订阅信号
+    //    2、订阅信号，RACSubject该对象会把订阅者放到之前创建的数组里面，然后啥都不做了
     [subject subscribeNext:^(id  _Nullable x) {
         // block调用时刻：当信号发出新值，就会调用.
         ADLog(@"第一个订阅者%@",x);
@@ -98,7 +98,7 @@
         ADLog(@"第二个订阅者%@",x);
     }];
     
-    //    3、发送信号
+    //    3、发送信号，当他调用sendNext的时候，是会进行数组的遍历，然后挨个对订阅者发送消息
     [subject sendNext:@"1"];
     
 }

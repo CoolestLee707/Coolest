@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MVVM_RAC_Cell.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,6 +30,8 @@ typedef void(^faileBlock)(void);
 - (instancetype)initWithSuccess:(successBlock)successBlock Faile:(faileBlock)faileBlock;
 
 - (void)getData;
+
+- (void)configCell:(MVVM_RAC_Cell *)cell CellIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

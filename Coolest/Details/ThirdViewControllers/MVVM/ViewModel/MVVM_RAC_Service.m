@@ -43,8 +43,10 @@
         cell = [[MVVM_RAC_Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
-    MVVM_RAC_Model *model = self.viewModel.dataArray[indexPath.row];
-    cell.nameLabel.text = model.name;
+    [self.viewModel configCell:cell CellIndexPath:indexPath];
+    cell.tapBlock = ^(NSString * _Nonnull tapString) {
+        ADLog(@"tapString - - %@",tapString);
+    };
     
     return cell;
 }

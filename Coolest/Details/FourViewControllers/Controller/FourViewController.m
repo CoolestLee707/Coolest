@@ -7,8 +7,12 @@
 //
 
 #import "FourViewController.h"
+#import "drawRectTestView.h"
 
 @interface FourViewController ()
+
+@property(nonatomic,strong)drawRectTestView *drawView;
+
 
 //mutableArray若用copy修饰会返回一个NSArray类型，若调用可变类型的添加、删除、修改方法时会因为找不到对应的方法而crash
 @property (nonatomic,strong)NSMutableArray *array;
@@ -16,6 +20,14 @@
 @end
 
 @implementation FourViewController
+
+- (drawRectTestView *)drawView {
+    if (!_drawView) {
+        _drawView = [[drawRectTestView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height-kNavigationBarHeight)];
+        //        _cir.backgroundColor = [UIColor whiteColor];
+    }
+    return _drawView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,10 +38,11 @@
 
 - (void)test2 {
     
-    self.array = [NSMutableArray array];
+//    self.array = [NSMutableArray array];
+//    
+//    [self.array addObject:@"1"];
     
-    [self.array addObject:@"1"];
-    
+    [self.view addSubview:self.drawView];
 }
 - (void)test1 {
  

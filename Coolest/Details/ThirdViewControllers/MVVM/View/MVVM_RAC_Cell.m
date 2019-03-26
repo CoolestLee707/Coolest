@@ -35,6 +35,16 @@
         make.left.top.mas_equalTo(20);
         make.right.bottom.mas_equalTo(-20);
     }];
+    
+    _nameLabel.userInteractionEnabled = YES;
+    kWeakSelf(weakSelf);
+    [_nameLabel setTapActionWithBlock:^{
+        
+        if (weakSelf.tapBlock) {
+            weakSelf.tapBlock(weakSelf.nameLabel.text);
+        }
+        
+    }];
 }
 - (void)awakeFromNib {
     [super awakeFromNib];

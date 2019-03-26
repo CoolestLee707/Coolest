@@ -16,6 +16,7 @@
 		BF18288221A8026200361219 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288121A8026200361219 /* CameraViewController.m */; };
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF18288821AD16A800361219 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288721AD16A800361219 /* MessageViewController.m */; };
+		BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A0D3322409C48007D0789 /* drawRectTestView.m */; };
 		BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */; };
 		BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87052238EA8500A51E33 /* MVVM_RAC_ViewModel.m */; };
 		BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87082238EA9000A51E33 /* MVVM_RAC_Model.m */; };
@@ -113,6 +114,8 @@
 		BF18288421A807B900361219 /* CameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
 		BF18288621AD16A800361219 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		BF18288721AD16A800361219 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		BF1A0D3222409C48007D0789 /* drawRectTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawRectTestView.h; sourceTree = "<group>"; };
+		BF1A0D3322409C48007D0789 /* drawRectTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawRectTestView.m; sourceTree = "<group>"; };
 		BF2D87012238EA4B00A51E33 /* MVVM+RAC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVVM+RAC_ViewController.h"; sourceTree = "<group>"; };
 		BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVVM+RAC_ViewController.m"; sourceTree = "<group>"; };
 		BF2D87042238EA8500A51E33 /* MVVM_RAC_ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_ViewModel.h; sourceTree = "<group>"; };
@@ -709,6 +712,8 @@
 		BF59E1FD210050320004EC56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF1A0D3222409C48007D0789 /* drawRectTestView.h */,
+				BF1A0D3322409C48007D0789 /* drawRectTestView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -929,6 +934,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = BF59E179210035530004EC56;
 			productRefGroup = BF59E183210035530004EC56 /* Products */;
@@ -1053,6 +1060,7 @@
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
+				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,

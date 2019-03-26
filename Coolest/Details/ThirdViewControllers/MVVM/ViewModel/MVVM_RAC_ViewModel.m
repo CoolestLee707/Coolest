@@ -78,4 +78,10 @@
         
     });
 }
+
+- (void)configCell:(MVVM_RAC_Cell *)cell CellIndexPath:(NSIndexPath *)indexPath
+{
+    MVVM_RAC_Model *model = self.dataArray[indexPath.row];
+    cell.nameLabel.text = model.name;
+}
 @end

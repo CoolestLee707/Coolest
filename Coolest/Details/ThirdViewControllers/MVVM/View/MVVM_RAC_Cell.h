@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,copy) UILabel *nameLabel;
 
+@property (nonatomic,copy) void (^tapBlock)(NSString *tapString);
+
 @end
 
 NS_ASSUME_NONNULL_END

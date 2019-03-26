@@ -33,15 +33,16 @@
     self.resultImageView = [[UIImageView alloc]init];
     [self.view addSubview:self.resultImageView];
     
-    self.resultImageView.image = [UIImage imageNamed:@"TakePhoto_add"];
+    self.resultImageView.image = [UIImage imageNamed:@"tabbar_icon4_selected"];
+    
+    self.resultImageView.transform = CGAffineTransformMakeRotation(M_PI_2);
+
     self.resultImageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.resultImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.top.mas_equalTo(20+kNavigationBarHeight);
-        make.left.mas_equalTo(50);
-        make.right.mas_equalTo(-50);
-        make.height.mas_equalTo(self.resultImageView.mas_width).multipliedBy(PhotoMultiple);
-
+        make.width.height.mas_equalTo(200);
+        make.centerX.equalTo(self.view);
     }];
     
     _resultImageView.layer.borderWidth = 3.0;
