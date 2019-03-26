@@ -137,4 +137,9 @@
         }
     }
 }
+
+- (void)dealloc
+{
+    ADLog(@"dealloc");
+}
 @end

@@ -43,6 +43,7 @@
 //    [self.array addObject:@"1"];
     
     [self.view addSubview:self.drawView];
+
 }
 - (void)test1 {
  

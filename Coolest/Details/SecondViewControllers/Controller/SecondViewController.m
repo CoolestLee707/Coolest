@@ -172,32 +172,32 @@ NSString *footerIdentifier = @"footer";
         case 0:
         {
             switch (indexPath.row) {
-                case 0:
-                {
-                    WKWebviewViewController* vc = [[WKWebviewViewController alloc]init];
-                    vc.webUrl = @"https://www.baidu.com";
-                    [self.navigationController pushViewController:vc animated:YES];
-                }
-                    break;
-                    
-                case 1:
-                {
-                    MBProgressHUDViewController* vc = [[MBProgressHUDViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                }
-                    break;
-                    
-                case 2:
-                {
-                    DZNEmptyDataSetViewController* vc = [[DZNEmptyDataSetViewController alloc]init];
-                    [self.navigationController pushViewController:vc animated:YES];
-                }
-                    break;
-                    
-                    
-                default:
-                    break;
+            case 0:
+            {
+                WKWebviewViewController* vc = [[WKWebviewViewController alloc]init];
+                vc.webUrl = @"https://www.baidu.com";
+                [self.navigationController pushViewController:vc animated:YES];
             }
+                break;
+                
+            case 1:
+            {
+                MBProgressHUDViewController* vc = [[MBProgressHUDViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            case 2:
+            {
+                DZNEmptyDataSetViewController* vc = [[DZNEmptyDataSetViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+                
+            default:
+                break;
+        }
         }
             break;
             
@@ -256,7 +256,6 @@ NSString *footerIdentifier = @"footer";
                 }
                     break;
                     
-                    
                 default:
                     break;
             }
@@ -296,6 +295,8 @@ NSString *footerIdentifier = @"footer";
                     break;
             }
         }
+            break;
+            
         case 4:
         {
             switch (indexPath.row) {
