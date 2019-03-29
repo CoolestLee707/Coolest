@@ -24,9 +24,16 @@
 //    self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    [self.view addSubview:self.imageView];
     
-    [self initTicketStatusSave];
+//    [self initTicketStatusSave];
+
+
+    NSThread *thread = [[NSThread alloc] initWithBlock:^{
+        ADLog(@"---%@",[NSThread currentThread]);
+    }];
     
+    [thread start];
 }
+
 
 /**
  * 创建一个线程下载图片

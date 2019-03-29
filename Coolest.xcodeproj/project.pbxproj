@@ -68,6 +68,9 @@
 		BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */; };
 		BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */; };
 		BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */; };
+		BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBF7720224B1CE400A3FE88 /* RACViewController.m */; };
+		BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBF7723224B1E3B00A3FE88 /* RACView.m */; };
+		BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBF7726224B29DC00A3FE88 /* RACLabel.m */; };
 		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
 		BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */; };
 		BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7722366CAE001B4F26 /* MVPViewController.m */; };
@@ -222,6 +225,12 @@
 		BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = asyncTestCell.m; sourceTree = "<group>"; };
 		BFB72E5D221BF7D5002F4743 /* AsyncDisplayModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDisplayModel.h; sourceTree = "<group>"; };
 		BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsyncDisplayModel.m; sourceTree = "<group>"; };
+		BFBF771F224B1CE400A3FE88 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
+		BFBF7720224B1CE400A3FE88 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
+		BFBF7722224B1E3B00A3FE88 /* RACView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACView.h; sourceTree = "<group>"; };
+		BFBF7723224B1E3B00A3FE88 /* RACView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACView.m; sourceTree = "<group>"; };
+		BFBF7725224B29DC00A3FE88 /* RACLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACLabel.h; sourceTree = "<group>"; };
+		BFBF7726224B29DC00A3FE88 /* RACLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLabel.m; sourceTree = "<group>"; };
 		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
 		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
 		BFDA8B6E22363D7F001B4F26 /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
@@ -647,6 +656,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFBF771B224B1CC500A3FE88 /* RAC */,
 				BFDA8B83223755A2001B4F26 /* MVVM */,
 				BFDA8B7122366C2B001B4F26 /* MVP */,
 				BF14136521AFC740002E5FAB /* msgsend */,
@@ -714,6 +724,43 @@
 			children = (
 				BF1A0D3222409C48007D0789 /* drawRectTestView.h */,
 				BF1A0D3322409C48007D0789 /* drawRectTestView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFBF771B224B1CC500A3FE88 /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF771C224B1CC500A3FE88 /* Controller */,
+				BFBF771D224B1CC500A3FE88 /* Model */,
+				BFBF771E224B1CC500A3FE88 /* View */,
+			);
+			path = RAC;
+			sourceTree = "<group>";
+		};
+		BFBF771C224B1CC500A3FE88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF771F224B1CE400A3FE88 /* RACViewController.h */,
+				BFBF7720224B1CE400A3FE88 /* RACViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFBF771D224B1CC500A3FE88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFBF771E224B1CC500A3FE88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFBF7722224B1E3B00A3FE88 /* RACView.h */,
+				BFBF7723224B1E3B00A3FE88 /* RACView.m */,
+				BFBF7725224B29DC00A3FE88 /* RACLabel.h */,
+				BFBF7726224B29DC00A3FE88 /* RACLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1045,6 +1092,8 @@
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
+				BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */,
+				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
@@ -1067,6 +1116,7 @@
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
+				BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
@@ -1279,7 +1329,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1305,7 +1355,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
