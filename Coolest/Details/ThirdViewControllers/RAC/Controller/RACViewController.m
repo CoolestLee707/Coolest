@@ -53,19 +53,82 @@
 //    }];
     
 //    textField代理方法
-    [racview.textField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
-        ADLog(@"----%@",x);
-    }];
+//    [racview.textField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+//        ADLog(@"----%@",x);
+//    }];
+    
+    
+//    Map监听文本框的内容改变，把结构重新映射成一个新值.
+//    [[racview.textField.rac_textSignal map:^id _Nullable(NSString * _Nullable value) {
+//
+//        // 当源信号发出，就会调用这个block，修改源信号的内容
+//        // 返回值：就是处理完源信号的内容。
+//        return [NSString stringWithFormat:@"输出:%@",value];
+//
+//    }] subscribeNext:^(id  _Nullable x) {
+//        ADLog(@"----%@",x);
+//    }];
+    
+    
+    NSArray *numbers = @[@(1),@(2),@(3),@(4),@(5)];
+    
+    //-----filter:h过滤掉不要的值
+//    - (RACSequence<ValueType> *)filter:(BOOL (^)(id _Nullable value))block;
+
+    
+//    NSArray *result = [[[numbers rac_sequence] filter:^BOOL(NSNumber   *value) {
+//        return [value intValue] %2 ==0;
+//
+//    }] array];
+//
+//    ADLog(@"results = %@",result);
+//    results = (
+//               2,
+//               4
+//               )
+
+    
+    //-----map:将值进行转换
+//    NSArray *result = [[[numbers rac_sequence] map:^id _Nullable(NSNumber  *value) {
+//
+//        long square = [value intValue] * [value intValue];
+//        return @(square);
+//    }] array];
+//
+//     ADLog(@"results = %@",result);
+    
+//    results = (
+//               1,
+//               4,
+//               9,
+//               16,
+//               25
+//               )
+
+    
+     //------ filter + map:
+    
+//    NSArray *result = [[[[numbers rac_sequence] filter:^BOOL(NSNumber   *value) {
+////        找出偶数
+//        return [value intValue] %2 ==0;
+//
+//    }] map:^id _Nullable(NSNumber *value) {
+//
+////        找出偶数算平方
+//        long square = [value intValue] * [value intValue];
+//        return @(square);
+//
+//    }] array];
+//
+//    ADLog(@"results = %@",result);
+    
+    
+//    results = (
+//               4,
+//               16
+//               )
+
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

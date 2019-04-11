@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self createUI1];
+    [self createUI1];
     
     NSArray *array = @[@"1",@"2",@"4",@"6",@"3",@"5",@"9",@"7",];
 
@@ -64,13 +64,16 @@
     [button addTarget:self action:@selector(didClickedButton) forControlEvents:UIControlEventTouchUpInside];
     [self.backImageView addSubview:button];
     
-
+    [button setExclusiveTouch:YES];
+    
+    CGPoint redCenterInView = [self.backImageView convertPoint:CGPointMake(10, 10) toView:button];
+    ADLog(@"++++ %@",NSStringFromCGPoint(redCenterInView));
 }
 
 - (void)didClickedButton
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Tips" message:@"Alert" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-    [alertView show];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Tips" message:@"Alert" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+//    [alertView show];
 }
 
 - (void)dealloc

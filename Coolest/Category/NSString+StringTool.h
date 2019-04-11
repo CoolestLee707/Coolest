@@ -12,4 +12,6 @@
 
 - (NSURL *)url;
 
++ (NSString *)getThisYearString;
+
 @end

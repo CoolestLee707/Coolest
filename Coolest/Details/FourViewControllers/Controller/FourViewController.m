@@ -8,6 +8,7 @@
 
 #import "FourViewController.h"
 #import "drawRectTestView.h"
+#import "BaseTabBarViewController.h"
 
 @interface FourViewController ()
 
@@ -32,8 +33,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self test2];
+    [self test1];
     
+//    NSString *yearStr = [NSString getThisYearString];
+//
+    
+//    ADLog(@"%@",yearStr);
+    
+    
+//    NSString *dsdsd = @"2323,ddfdfd";
+//    NSArray *positionsNumberArray = [@"1,2,3,4" componentsSeparatedByString:@","];
+
+//    ADLog(@"%@",positionsNumberArray);
 }
 
 - (void)test2 {
@@ -63,13 +74,13 @@
     add.backgroundColor = [UIColor redColor];
     [self.view addSubview:add];
     
-    [add addTargetSelected:^(UIButton * _Nonnull button) {
-        
-        ADLog(@"11111");
-        button.backgroundColor = [UIColor blackColor];
-    }];
+//    [add addTargetSelected:^(UIButton * _Nonnull button) {
+//
+//        ADLog(@"11111");
+//        button.backgroundColor = [UIColor blackColor];
+//    }];
     
-    //    [add addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
+    [add addTarget:self action:@selector(click) forControlEvents:UIControlEventTouchUpInside];
     
     UIView *sdsd = [[UIView alloc]initWithFrame:CGRectMake(110, 150, 120,120)];
     sdsd.backgroundColor = [UIColor grayColor];
@@ -101,20 +112,15 @@
 - (void)click
 {
     ADLog(@"1212");
+//    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//
+//    BaseTabBarViewController *tbc = (BaseTabBarViewController *)app.window.rootViewController;
+//    tbc.tabBar.hidden = !tbc.tabBar.hidden;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

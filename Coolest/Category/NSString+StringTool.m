@@ -17,4 +17,15 @@
 #pragma clang diagnostic pop
 }
 
++ (NSString *)getThisYearString
+{
+    NSDate *senddate=[NSDate date];
+    NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
+    [dateformatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateformatter setDateFormat:@"yyyy"];
+    NSTimeZone* timeZone = [NSTimeZone timeZoneWithName:@"Asia/Beijing"];
+    [dateformatter setTimeZone:timeZone];
+    NSString *yearStr =  [dateformatter stringFromDate:senddate];
+    return yearStr;
+}
 @end
