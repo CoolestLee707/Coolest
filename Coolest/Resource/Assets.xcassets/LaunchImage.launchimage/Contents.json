@@ -4,62 +4,56 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "2688h",
-      "filename" : "WechatIMG91-8.png",
+      "filename" : "6.5.png",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
       "scale" : "3x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "12.0",
       "subtype" : "1792h",
-      "filename" : "WechatIMG91-7.png",
-      "minimum-system-version" : "12.0",
-      "orientation" : "portrait",
       "scale" : "2x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
-      "subtype" : "2436h",
-      "filename" : "WechatIMG91-9.png",
+      "extent" : "full-screen",
       "minimum-system-version" : "11.0",
-      "orientation" : "portrait",
+      "subtype" : "2436h",
       "scale" : "3x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "8.0",
       "subtype" : "736h",
-      "filename" : "WechatIMG91-3.jpeg",
-      "minimum-system-version" : "8.0",
-      "orientation" : "portrait",
       "scale" : "3x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
-      "subtype" : "667h",
-      "filename" : "WechatIMG91-10.png",
+      "extent" : "full-screen",
       "minimum-system-version" : "8.0",
-      "orientation" : "portrait",
+      "subtype" : "667h",
       "scale" : "2x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "WechatIMG91-12.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
       "scale" : "2x"
     },
     {
-      "extent" : "full-screen",
+      "orientation" : "portrait",
       "idiom" : "iphone",
+      "extent" : "full-screen",
+      "minimum-system-version" : "7.0",
       "subtype" : "retina4",
-      "filename" : "WechatIMG91-11.png",
-      "minimum-system-version" : "7.0",
-      "orientation" : "portrait",
       "scale" : "2x"
     }
   ],
