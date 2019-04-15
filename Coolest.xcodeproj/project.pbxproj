@@ -64,6 +64,9 @@
 		BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D38214FA1880000B157 /* CoreTextViewController.m */; };
 		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
 		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
+		BF769ED022643281004A3E9A /* PersonBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = BF769ECF22643281004A3E9A /* PersonBlock.m */; };
+		BF875BDD226070B80060B5DB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF875BDB226070B80060B5DB /* HomeCell.m */; };
+		BF875BDE226070B80060B5DB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF875BDC226070B80060B5DB /* HomeCell.xib */; };
 		BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9BB3CC219EAD1B0026BDD8 /* person.m */; };
 		BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E58221BA9D5002F4743 /* AsyncDisplayKitViewController.m */; };
 		BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */; };
@@ -217,6 +220,11 @@
 		BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolDispalyView.m; sourceTree = "<group>"; };
 		BF7479E5215B68CC00511A2A /* NSThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThreadViewController.h; sourceTree = "<group>"; };
 		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
+		BF769ECE22643281004A3E9A /* PersonBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonBlock.h; sourceTree = "<group>"; };
+		BF769ECF22643281004A3E9A /* PersonBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonBlock.m; sourceTree = "<group>"; };
+		BF875BDA226070B80060B5DB /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		BF875BDB226070B80060B5DB /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
+		BF875BDC226070B80060B5DB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		BF9BB3CB219EAD1B0026BDD8 /* person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = person.h; sourceTree = "<group>"; };
 		BF9BB3CC219EAD1B0026BDD8 /* person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = person.m; sourceTree = "<group>"; };
 		BFB72E57221BA9D5002F4743 /* AsyncDisplayKitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncDisplayKitViewController.h; sourceTree = "<group>"; };
@@ -574,6 +582,9 @@
 		BF59E1F121004FFD0004EC56 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF875BDA226070B80060B5DB /* HomeCell.h */,
+				BF875BDB226070B80060B5DB /* HomeCell.m */,
+				BF875BDC226070B80060B5DB /* HomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -649,6 +660,8 @@
 				BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */,
 				BFB72E5A221BE0C3002F4743 /* asyncTestCell.h */,
 				BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */,
+				BF769ECE22643281004A3E9A /* PersonBlock.h */,
+				BF769ECF22643281004A3E9A /* PersonBlock.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1002,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */,
+				BF875BDE226070B80060B5DB /* HomeCell.xib in Resources */,
 				BF59E18F210035550004EC56 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1106,12 +1120,14 @@
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
+				BF875BDD226070B80060B5DB /* HomeCell.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
+				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,

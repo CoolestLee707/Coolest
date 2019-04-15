@@ -7,6 +7,7 @@
 //
 
 #import "BlockViewController.h"
+#import "PersonBlock.h"
 
 @interface BlockViewController ()
 
@@ -20,13 +21,18 @@
     self.title = @"Block";
     
 //    [self createGlobalBlock];
-    
-    [self createMallocBlock];
+//
+//    [self createMallocBlock];
 
 //    [self createStackBlock];
     
-    [self testBlock];
+//    [self testBlock];
+    
+//    [self PersonBlock1];
+    
+    [self PersonBlock2];
 
+    
 }
 
 //静态Block
@@ -107,5 +113,34 @@
     NSString *str = complete(@"block入参");
     ADLog(@"%@",str);
 }
+
+
+- (void)PersonBlock1
+{
+    PersonBlock *person = [[PersonBlock alloc]init];
+    [[person run1] study1];
+    
+//    [person.run1 study1];
+
+}
+
+- (void)PersonBlock2
+{
+    PersonBlock *person = [[PersonBlock alloc]init];
+    
+    //目标
+//    person.runBlock().studyBlock().runBlock();
+
+    
+//    person.chooseBlock = ^NSString * _Nonnull(NSInteger number) {
+//
+//    }
+    
+//    person.run2().study2();
+    
+    person.run3(@"cool").study3(@"coder");
+
+}
+
 
 @end

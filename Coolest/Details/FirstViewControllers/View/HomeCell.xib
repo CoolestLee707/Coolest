@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="HomeCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFs-qt-tK9" colorLabel="IBBuiltInLabel-Blue">
+                        <rect key="frame" x="20" y="10" width="235" height="79.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.61176470589999998" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <color key="textColor" red="1" green="0.59607843140000005" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHJ-7A-wJQ">
+                        <rect key="frame" x="285" y="10" width="80" height="79.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Rl7-mv-Pnf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" title="查看">
+                            <color key="titleColor" red="1" green="0.59607843140000005" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="buttonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RHk-wx-NbX"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hFs-qt-tK9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="B2i-tA-RfO"/>
+                    <constraint firstAttribute="trailing" secondItem="VHJ-7A-wJQ" secondAttribute="trailing" constant="10" id="C1G-Wi-2C4"/>
+                    <constraint firstItem="hFs-qt-tK9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Iky-1a-IRZ"/>
+                    <constraint firstItem="VHJ-7A-wJQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="bpj-8i-DYx"/>
+                    <constraint firstItem="VHJ-7A-wJQ" firstAttribute="leading" secondItem="hFs-qt-tK9" secondAttribute="trailing" constant="30" id="qBH-Mh-mG8"/>
+                    <constraint firstAttribute="bottom" secondItem="hFs-qt-tK9" secondAttribute="bottom" constant="10" id="tEM-gD-df8"/>
+                    <constraint firstAttribute="bottom" secondItem="VHJ-7A-wJQ" secondAttribute="bottom" constant="10" id="uqN-G9-wDf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="nameLabel" destination="hFs-qt-tK9" id="Mp2-MX-fu1"/>
+                <outlet property="selectButton" destination="VHJ-7A-wJQ" id="WY9-0n-cb7"/>
+            </connections>
+            <point key="canvasLocation" x="177.536231884058" y="88.392857142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

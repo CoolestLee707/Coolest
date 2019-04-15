@@ -23,6 +23,8 @@ extern CFAbsoluteTime startTime;
     
 //    ADLog(@"+++ %f-%f",Main_Screen_Width,Main_Screen_Height);
     
+    [NSThread sleepForTimeInterval:0.2];
+    
     [self setAppWindows];
     
     [self setRootViewController];
