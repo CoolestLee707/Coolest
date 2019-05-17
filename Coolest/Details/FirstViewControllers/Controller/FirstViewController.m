@@ -52,9 +52,23 @@ static NSString *HomeCellId = @"HomeCellId";
     [super viewDidLoad];
 
     self.title = @"First";
-    
+  
     self.dataArray = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"天津",@"苏州",@"成都",@"武汉",@"杭州",@"南京",@"长沙",@"郑州",@"西安",@"沈阳",@"合肥",@"青岛",@"大连",@"石家庄",@"太原",@"南昌",@"邢台"];
     [self createUI];
+    
+    
+    id obj = [[NSObject alloc]init];
+    
+    ADLog("retain count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));
+    
+    
+//    NSString *strtr = @"1212dshdhasjk sajhdkjas d sajkdh  dsajkhd kl h dsalh dakshd ";
+//    self.copyedString = strtr;
+//
+//    ADLog(@"---%@",self.copyedString);
+//
+//    strtr = @"好吃健康证 块点饭啥看法 多少了开发的顺口溜发的啥开了房的时空裂缝手离开发电量将的史莱克";
+//    ADLog(@"+++%@",self.copyedString);
     
 }
 

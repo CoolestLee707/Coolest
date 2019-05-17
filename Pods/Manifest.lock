@@ -43,9 +43,9 @@ PODS:
   - ReactiveObjC (3.1.0)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.0.0):
-    - SDWebImage/Core (= 5.0.0)
-  - SDWebImage/Core (5.0.0)
+  - SDWebImage (5.0.1):
+    - SDWebImage/Core (= 5.0.1)
+  - SDWebImage/Core (5.0.1)
   - Texture (2.8):
     - Texture/AssetsLibrary (= 2.8)
     - Texture/Core (= 2.8)
@@ -68,6 +68,9 @@ PODS:
     - Texture/Core
   - TZImagePickerController (3.2.0)
   - YYModel (1.0.4)
+  - ZXingObjC (3.6.5):
+    - ZXingObjC/All (= 3.6.5)
+  - ZXingObjC/All (3.6.5)
 
 DEPENDENCIES:
   - AFNetworking
@@ -86,6 +89,7 @@ DEPENDENCIES:
   - Texture
   - TZImagePickerController
   - YYModel
+  - ZXingObjC
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -103,11 +107,12 @@ SPEC CHECKSUMS:
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
   Texture: fc6e0157201f3a6e503d364c147b1872e365cef4
   TZImagePickerController: 7850b158d025065b162a1a963d445040b828abc9
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 714f511e1814fb323ae46295bdd791b201866123
+PODFILE CHECKSUM: 6947d1d812c47ff0c714a1118b63ca561f98be05
 
 COCOAPODS: 1.4.0

@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MVVM_RAC_Cell : UITableViewCell
 
-@property (nonatomic,copy) UILabel *nameLabel;
+@property (nonatomic,strong) UILabel *nameLabel;
 
 @property (nonatomic,copy) void (^tapBlock)(NSString *tapString);
 

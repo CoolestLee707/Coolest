@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #import "UINavigationController+FDFullscreenPopGesture.h"
+#import <MessageUI/MessageUI.h>
 #import <objc/runtime.h>
 
 @interface _FDFullscreenPopGestureRecognizerDelegate : NSObject <UIGestureRecognizerDelegate>
@@ -111,6 +112,11 @@ typedef void (^_FDViewControllerWillAppearInjectBlock)(UIViewController *viewCon
 
 - (void)fd_pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
+//    if ([self isKindOfClass:NSClassFromString(@"MFMessageComposeViewController")]) {
+//        [self fd_pushViewController:viewController animated:animated];
+//        return;
+//    }
+    
     if (![self.interactivePopGestureRecognizer.view.gestureRecognizers containsObject:self.fd_fullscreenPopGestureRecognizer]) {
         
         // Add our own gesture recognizer to where the onboard screen edge pan gesture recognizer is attached to.
@@ -130,10 +136,18 @@ typedef void (^_FDViewControllerWillAppearInjectBlock)(UIViewController *viewCon
     // Handle perferred navigation bar appearance.
     [self fd_setupViewControllerBasedNavigationBarAppearanceIfNeeded:viewController];
     
+//    if ([self isKindOfClass:[MFMessageComposeViewController class]]) {
+//        [self fd_pushViewController:viewController animated:animated];
+//        [[self.viewControllers lastObject] navigationItem].rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissModal:)];
+//        return;
+//    }
+  
     // Forward to primary implementation.
     [self fd_pushViewController:viewController animated:animated];
 }
-
+- (void)dismissModal:(UIButton *)sender{
+    [[self.viewControllers lastObject] dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)fd_setupViewControllerBasedNavigationBarAppearanceIfNeeded:(UIViewController *)appearingViewController
 {
     if (!self.fd_viewControllerBasedNavigationBarAppearanceEnabled) {

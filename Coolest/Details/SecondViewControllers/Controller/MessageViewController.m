@@ -32,11 +32,14 @@
     if ([MFMessageComposeViewController canSendText]) {
         MFMessageComposeViewController *msgVC = [[MFMessageComposeViewController alloc]init];
 
+        
+        UIViewController *rootViewController = msgVC.viewControllers.firstObject;
+        rootViewController.fd_prefersNavigationBarHidden = YES;
+        
         msgVC.navigationBar.tintColor = [UIColor redColor];
         msgVC.messageComposeDelegate = self;
         msgVC.body = @"你好2121212" ;
         msgVC.recipients = @[@"15032268839"];
-        [[[[msgVC viewControllers] lastObject] navigationItem] setTitle:@"自定义短信"];//修改短信界面标题
 
         [self presentViewController:msgVC animated:YES completion:NULL];
     }

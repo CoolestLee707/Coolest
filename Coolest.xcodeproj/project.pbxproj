@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -65,6 +65,12 @@
 		BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */; };
 		BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7479E6215B68CC00511A2A /* NSThreadViewController.m */; };
 		BF769ED022643281004A3E9A /* PersonBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = BF769ECF22643281004A3E9A /* PersonBlock.m */; };
+		BF769ED322645C09004A3E9A /* ZXingObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF769ED222645C09004A3E9A /* ZXingObjCViewController.m */; };
+		BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7B054D228286F0008EDCF8 /* FDtwoViewController.m */; };
+		BF7B0552228287B6008EDCF8 /* FDoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7B0550228287B6008EDCF8 /* FDoneViewController.m */; };
+		BF7B0553228287B6008EDCF8 /* FDoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7B0551228287B6008EDCF8 /* FDoneViewController.xib */; };
+		BF7B055922845035008EDCF8 /* objc1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7B055822845035008EDCF8 /* objc1.m */; };
+		BF7B055C2284503F008EDCF8 /* objc2.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7B055B2284503F008EDCF8 /* objc2.m */; };
 		BF875BDD226070B80060B5DB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF875BDB226070B80060B5DB /* HomeCell.m */; };
 		BF875BDE226070B80060B5DB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF875BDC226070B80060B5DB /* HomeCell.xib */; };
 		BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9BB3CC219EAD1B0026BDD8 /* person.m */; };
@@ -222,6 +228,17 @@
 		BF7479E6215B68CC00511A2A /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
 		BF769ECE22643281004A3E9A /* PersonBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonBlock.h; sourceTree = "<group>"; };
 		BF769ECF22643281004A3E9A /* PersonBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonBlock.m; sourceTree = "<group>"; };
+		BF769ED122645C09004A3E9A /* ZXingObjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXingObjCViewController.h; sourceTree = "<group>"; };
+		BF769ED222645C09004A3E9A /* ZXingObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXingObjCViewController.m; sourceTree = "<group>"; };
+		BF7B054C228286F0008EDCF8 /* FDtwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDtwoViewController.h; sourceTree = "<group>"; };
+		BF7B054D228286F0008EDCF8 /* FDtwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDtwoViewController.m; sourceTree = "<group>"; };
+		BF7B054F228287B6008EDCF8 /* FDoneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FDoneViewController.h; sourceTree = "<group>"; };
+		BF7B0550228287B6008EDCF8 /* FDoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FDoneViewController.m; sourceTree = "<group>"; };
+		BF7B0551228287B6008EDCF8 /* FDoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FDoneViewController.xib; sourceTree = "<group>"; };
+		BF7B055722845035008EDCF8 /* objc1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objc1.h; sourceTree = "<group>"; };
+		BF7B055822845035008EDCF8 /* objc1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc1.m; sourceTree = "<group>"; };
+		BF7B055A2284503F008EDCF8 /* objc2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = objc2.h; sourceTree = "<group>"; };
+		BF7B055B2284503F008EDCF8 /* objc2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = objc2.m; sourceTree = "<group>"; };
 		BF875BDA226070B80060B5DB /* HomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
 		BF875BDB226070B80060B5DB /* HomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		BF875BDC226070B80060B5DB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
@@ -634,6 +651,8 @@
 				BF54707C2230C81900458592 /* BlockViewController.m */,
 				BFDA8B6E22363D7F001B4F26 /* NSOperationViewController.h */,
 				BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */,
+				BF769ED122645C09004A3E9A /* ZXingObjCViewController.h */,
+				BF769ED222645C09004A3E9A /* ZXingObjCViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -721,6 +740,11 @@
 			children = (
 				BF59E207210051090004EC56 /* FourViewController.h */,
 				BF59E208210051090004EC56 /* FourViewController.m */,
+				BF7B054F228287B6008EDCF8 /* FDoneViewController.h */,
+				BF7B0550228287B6008EDCF8 /* FDoneViewController.m */,
+				BF7B0551228287B6008EDCF8 /* FDoneViewController.xib */,
+				BF7B054C228286F0008EDCF8 /* FDtwoViewController.h */,
+				BF7B054D228286F0008EDCF8 /* FDtwoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -728,6 +752,10 @@
 		BF59E1FC210050320004EC56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BF7B055722845035008EDCF8 /* objc1.h */,
+				BF7B055822845035008EDCF8 /* objc1.m */,
+				BF7B055A2284503F008EDCF8 /* objc2.h */,
+				BF7B055B2284503F008EDCF8 /* objc2.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -988,7 +1016,7 @@
 				};
 			};
 			buildConfigurationList = BF59E17D210035530004EC56 /* Build configuration list for PBXProject "Coolest" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1017,6 +1045,7 @@
 				BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */,
 				BF875BDE226070B80060B5DB /* HomeCell.xib in Resources */,
 				BF59E18F210035550004EC56 /* Assets.xcassets in Resources */,
+				BF7B0553228287B6008EDCF8 /* FDoneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1149,7 @@
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
+				BF7B055C2284503F008EDCF8 /* objc2.m in Sources */,
 				BF875BDD226070B80060B5DB /* HomeCell.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
@@ -1128,6 +1158,7 @@
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
+				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
@@ -1157,7 +1188,10 @@
 				BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
+				BF7B055922845035008EDCF8 /* objc1.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
+				BF7B0552228287B6008EDCF8 /* FDoneViewController.m in Sources */,
+				BF769ED322645C09004A3E9A /* ZXingObjCViewController.m in Sources */,
 				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
 				BFDA8B8222367081001B4F26 /* MVPPresent.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
@@ -1340,6 +1374,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1366,6 +1401,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

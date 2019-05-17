@@ -9,11 +9,15 @@
 #import "FourViewController.h"
 #import "drawRectTestView.h"
 #import "BaseTabBarViewController.h"
+#import "FDoneViewController.h"
+#import "FDtwoViewController.h"
+
 
 @interface FourViewController ()
 
-@property(nonatomic,strong)drawRectTestView *drawView;
+@property (nonatomic,copy)NSString *testStr;
 
+@property(nonatomic,strong)drawRectTestView *drawView;
 
 //mutableArray若用copy修饰会返回一个NSArray类型，若调用可变类型的添加、删除、修改方法时会因为找不到对应的方法而crash
 @property (nonatomic,strong)NSMutableArray *array;
@@ -33,8 +37,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self test1];
+    NSString *rer =@"216731273|";
+
+    NSArray *movieCodeArr = [rer componentsSeparatedByString:@"|"];
+
+    ADLog(@"%@",movieCodeArr);
+//    [self fdT];
     
+//    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(10, 100, 100, 100)];
+   
+//    UIImageView *v =  [[UIImageView alloc]initWithFrame:CGRectMake(10, 100, 100, 100)];
+//    v.image = [UIImage imageNamed:@"Icon-60"];
+//    
+//    v.layer.cornerRadius=10;
+//    v.layer.shadowColor=[UIColor redColor].CGColor;
+//    v.layer.shadowOffset=CGSizeMake(10, 10);
+//    v.layer.shadowOpacity=0.5;
+//    v.layer.shadowRadius=5;
+//    v.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.view addSubview:v];
+//    
+    
+//    [self test1];
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    label.backgroundColor = [UIColor clearColor];
+//    label.textColor = [UIColor blackColor];
+//    label.text = @"eqweqweqw";
+//    [self.view addSubview:label];
+    
+  
 //    NSString *yearStr = [NSString getThisYearString];
 //
     
@@ -170,10 +201,34 @@
 }
 
 
+- (void)fdT
+{
+    kWeakSelf(weakSelf);
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    btn.frame = CGRectMake(100, 120, 20, 20);
+    [self.view addSubview:btn];
+    [btn addTargetSelected:^(UIButton * _Nonnull button) {
+        
+//        FDoneViewController *vc = [[FDoneViewController alloc]init];
+//        [weakSelf.navigationController pushViewController:vc animated:YES];
+        
+        NSMutableArray * viewControllers = [self.navigationController.viewControllers mutableCopy];//获取到当前导航控制器栈中所有vc
+        
+        UIViewController *vcB=[FDoneViewController new];
+        UIViewController *vcC=[FDtwoViewController new];
+
+        [viewControllers addObjectsFromArray:@[vcB]];
+        
+        [weakSelf.navigationController setViewControllers:viewControllers animated:NO];
+        
+        [weakSelf.navigationController pushViewController:vcC animated:NO];
+
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

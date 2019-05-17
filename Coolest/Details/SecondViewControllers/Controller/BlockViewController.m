@@ -9,7 +9,17 @@
 #import "BlockViewController.h"
 #import "PersonBlock.h"
 
+#import "objc1.h"
+#import "objc2.h"
+
 @interface BlockViewController ()
+
+@property (nonatomic,assign)NSInteger count;
+@property (nonatomic,copy)NSString *name;
+
+
+@property (nonatomic,strong) objc1 *ob1;
+@property (nonatomic,strong) objc2 *ob2;
 
 @end
 
@@ -30,11 +40,35 @@
     
 //    [self PersonBlock1];
     
-    [self PersonBlock2];
+//    [self PersonBlock2];
 
     
-}
+//    void (^globalBlock) (void) = ^{
+//        ADLog(@"block");
+//    };
+//
+//    globalBlock();
+//
+//    ADLog(@"globalBlock - %@",globalBlock);
+    
+    self.ob1 = [[objc1 alloc]init];
+    self.ob2 = [[objc2 alloc]init];
+    
+    self.ob1.ob2 = self.ob2;
+    
+    [self.ob1 run];
+    [self.ob2 run2];
 
+    [self.ob1 run12];
+
+    [self.ob1.ob2 run2];
+    
+    
+}
+- (void)dealloc
+{
+    
+}
 //静态Block
 - (void)createGlobalBlock
 {

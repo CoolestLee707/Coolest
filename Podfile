@@ -20,6 +20,7 @@ pod 'MyLayout'
 pod 'FMDB'
 pod 'Texture'
 pod 'ReactiveObjC'
+pod 'ZXingObjC'
 
 end
 

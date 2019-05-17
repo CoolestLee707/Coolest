@@ -23,6 +23,7 @@
 #import "AsyncDisplayKitViewController.h"
 #import "BlockViewController.h"
 #import "NSOperationViewController.h"
+#import "ZXingObjCViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -60,7 +61,7 @@ NSString *footerIdentifier = @"footer";
         
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
-        _shareCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - BottomBarHeight - kNavigationBarHeight) collectionViewLayout:layout];
+        _shareCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height - BottomBarHeight) collectionViewLayout:layout];
         _shareCollectionView.backgroundColor = [UIColor whiteColor];
         _shareCollectionView.dataSource = self;
         _shareCollectionView.delegate = self;
@@ -71,6 +72,12 @@ NSString *footerIdentifier = @"footer";
         
         [_shareCollectionView registerClass:[HeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
         
+        if (@available(iOS 11.0, *)) {
+            _shareCollectionView.contentInset =UIEdgeInsetsMake(0,0,0,0);
+            _shareCollectionView.scrollIndicatorInsets =_shareCollectionView.contentInset;
+        }else {
+            _shareCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        }
         
     }
     return _shareCollectionView;
@@ -92,9 +99,9 @@ NSString *footerIdentifier = @"footer";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Second";
-    
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
+//    self.title = @"Second";
+    self.fd_prefersNavigationBarHidden = YES;
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -314,7 +321,8 @@ NSString *footerIdentifier = @"footer";
                     break;
                 case 2:
                 {
-                    
+                    ZXingObjCViewController* vc = [[ZXingObjCViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                 default:

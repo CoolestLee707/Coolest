@@ -36,7 +36,8 @@
         _mainTableView.dataSource = self;
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _mainTableView.backgroundColor = ContentBackColor;
-        _mainTableView.contentInset = UIEdgeInsetsMake(0, 0, BottomEmptyHeight, 0);
+        _mainTableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
     }
     return _mainTableView;
 }
