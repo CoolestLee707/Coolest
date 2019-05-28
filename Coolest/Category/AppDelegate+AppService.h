@@ -30,4 +30,9 @@
  */
 - (void)getUserData;
 
+
+/**
+ 设置3D touch
+ */
+- (void)setTouchService:(UIApplication *)application Options:(NSDictionary *)launchOptions;
 @end

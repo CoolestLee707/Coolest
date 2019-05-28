@@ -1,0 +1,14 @@
+/* 
+  InfoPlist.strings
+  Coolest
+
+  Created by daoj on 2019/5/22.
+  Copyright © 2019 CoolestLee707. All rights reserved.
+*/
+
+CFBundleDisplayName="酷李斯特";
+
+NSCameraUsageDescription = "酷李斯特需要使用您的相机权限来获取头像";
+
+NSPhotoLibraryUsageDescription = "酷李斯特需要访问您的相册权限来获取头像";
+

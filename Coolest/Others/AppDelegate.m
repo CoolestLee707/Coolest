@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "PasswordInputWindow.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITraitEnvironment>
 
 @end
 
@@ -25,11 +25,20 @@ extern CFAbsoluteTime startTime;
     
     [NSThread sleepForTimeInterval:0.2];
     
+        
+    NSString *selectLanguage = @"en";
+
+//    NSString *selectLanguage = @"zh-Hans";
+    
+    ADSetLocalLanguage(selectLanguage);
+    
     [self setAppWindows];
     
     [self setRootViewController];
     
     [self systemConfigration];
+    
+    [self setTouchService:application Options:launchOptions];
     
     return YES;
 }

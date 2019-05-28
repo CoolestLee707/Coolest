@@ -57,7 +57,9 @@
     
     NSArray * controllClass     = @[@"FirstViewController",@"SecondViewController",@"ThirdViewController",@"FourViewController"];
     self.delegate               = self;
-    NSArray * itemTitles        = @[@"First",@"Second",@"Third",@"Four"];
+//    NSArray * itemTitles        = @[@"First",@"Second",@"Third",@"Four"];
+    NSArray * itemTitles        = @[ADLocalizedString(@"一"),ADLocalizedString(@"二"),ADLocalizedString(@"三"),ADLocalizedString(@"四")];
+
     NSMutableArray * controllers = [[NSMutableArray alloc]init];
     
     for (int i = 0; i < normalItems.count; i++)

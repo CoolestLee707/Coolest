@@ -25,6 +25,8 @@
 #import "CommonMethods.h"
 #import "Define.h"
 #import "Config.h"
+#import "Const.h"
+#import "GlobalLanguage.h"
 
 //第三方
 #import "AFNetworkingManager.h"

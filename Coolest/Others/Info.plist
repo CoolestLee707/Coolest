@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Coolest</string>
+	<string>Coolests</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,11 +30,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>访问您的相机</string>
+	<string>酷李斯特需要使用您的相机权限来获取头像</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>访问您的相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>访问您的相册</string>
+	<string>酷李斯特需要访问您的相册权限来获取头像</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
