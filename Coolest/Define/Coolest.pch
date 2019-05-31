@@ -28,6 +28,10 @@
 #import "Const.h"
 #import "GlobalLanguage.h"
 
+//single
+#import "WeakManager.h"
+
+
 //第三方
 #import "AFNetworkingManager.h"
 #import "UIImageView+WebCache.h"

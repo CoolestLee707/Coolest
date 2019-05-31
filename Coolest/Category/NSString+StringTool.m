@@ -7,6 +7,7 @@
 //
 
 #import "NSString+StringTool.h"
+#import "NSObject+SwizzledMethod.h"
 
 @implementation NSString (StringTool)
 
@@ -28,4 +29,5 @@
     NSString *yearStr =  [dateformatter stringFromDate:senddate];
     return yearStr;
 }
+
 @end

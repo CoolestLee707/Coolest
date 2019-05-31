@@ -17,6 +17,9 @@
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF18288821AD16A800361219 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288721AD16A800361219 /* MessageViewController.m */; };
 		BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A0D3322409C48007D0789 /* drawRectTestView.m */; };
+		BF1F2A4D229FE72100ED248C /* WeakManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F2A4C229FE72100ED248C /* WeakManager.m */; };
+		BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */; };
+		BF1F2A53229FEC5400ED248C /* weakTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F2A52229FEC5400ED248C /* weakTestView.m */; };
 		BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */; };
 		BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87052238EA8500A51E33 /* MVVM_RAC_ViewModel.m */; };
 		BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2D87082238EA9000A51E33 /* MVVM_RAC_Model.m */; };
@@ -131,8 +134,12 @@
 		BF18288721AD16A800361219 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		BF1A0D3222409C48007D0789 /* drawRectTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawRectTestView.h; sourceTree = "<group>"; };
 		BF1A0D3322409C48007D0789 /* drawRectTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawRectTestView.m; sourceTree = "<group>"; };
-		BF1F2A48229D434200ED248C /* FrameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
-		BF1F2A49229D434200ED248C /* FrameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
+		BF1F2A4B229FE72100ED248C /* WeakManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakManager.h; sourceTree = "<group>"; };
+		BF1F2A4C229FE72100ED248C /* WeakManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakManager.m; sourceTree = "<group>"; };
+		BF1F2A4E229FEB9300ED248C /* WeakTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakTestViewController.h; sourceTree = "<group>"; };
+		BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakTestViewController.m; sourceTree = "<group>"; };
+		BF1F2A51229FEC5400ED248C /* weakTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = weakTestView.h; sourceTree = "<group>"; };
+		BF1F2A52229FEC5400ED248C /* weakTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weakTestView.m; sourceTree = "<group>"; };
 		BF2D87012238EA4B00A51E33 /* MVVM+RAC_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MVVM+RAC_ViewController.h"; sourceTree = "<group>"; };
 		BF2D87022238EA4C00A51E33 /* MVVM+RAC_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MVVM+RAC_ViewController.m"; sourceTree = "<group>"; };
 		BF2D87042238EA8500A51E33 /* MVVM_RAC_ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVM_RAC_ViewModel.h; sourceTree = "<group>"; };
@@ -551,6 +558,8 @@
 			children = (
 				BF59E1E5210045E70004EC56 /* PasswordInputWindow.h */,
 				BF59E1E6210045E70004EC56 /* PasswordInputWindow.m */,
+				BF1F2A4B229FE72100ED248C /* WeakManager.h */,
+				BF1F2A4C229FE72100ED248C /* WeakManager.m */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -667,8 +676,8 @@
 				BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */,
 				BF769ED122645C09004A3E9A /* ZXingObjCViewController.h */,
 				BF769ED222645C09004A3E9A /* ZXingObjCViewController.m */,
-				BF1F2A48229D434200ED248C /* FrameViewController.h */,
-				BF1F2A49229D434200ED248C /* FrameViewController.m */,
+				BF1F2A4E229FEB9300ED248C /* WeakTestViewController.h */,
+				BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -697,6 +706,8 @@
 				BFB72E5B221BE0C3002F4743 /* asyncTestCell.m */,
 				BF769ECE22643281004A3E9A /* PersonBlock.h */,
 				BF769ECF22643281004A3E9A /* PersonBlock.m */,
+				BF1F2A51229FEC5400ED248C /* weakTestView.h */,
+				BF1F2A52229FEC5400ED248C /* weakTestView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1157,6 +1168,7 @@
 			files = (
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
+				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
@@ -1193,6 +1205,7 @@
 				BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */,
+				BF1F2A4D229FE72100ED248C /* WeakManager.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
 				BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */,
 				BFDA8B7E22366CDC001B4F26 /* MVPCell.m in Sources */,
@@ -1222,6 +1235,7 @@
 				BF769ED322645C09004A3E9A /* ZXingObjCViewController.m in Sources */,
 				BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */,
 				BFDA8B8222367081001B4F26 /* MVPPresent.m in Sources */,
+				BF1F2A53229FEC5400ED248C /* weakTestView.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
 				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,

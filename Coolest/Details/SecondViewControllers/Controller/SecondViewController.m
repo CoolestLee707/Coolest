@@ -24,6 +24,7 @@
 #import "BlockViewController.h"
 #import "NSOperationViewController.h"
 #import "ZXingObjCViewController.h"
+#import "WeakTestViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -101,7 +102,7 @@ NSString *footerIdentifier = @"footer";
     
 //    self.title = @"Second";
     self.fd_prefersNavigationBarHidden = YES;
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16",@"17",@"18"],@[@"19",@"20"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17",@"18"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -323,6 +324,31 @@ NSString *footerIdentifier = @"footer";
                 {
                     ZXingObjCViewController* vc = [[ZXingObjCViewController alloc]init];
                     [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+            
+        case 5:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    WeakTestViewController *vc = [[WeakTestViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                case 1:
+                {
+                   
+                }
+                    break;
+                case 2:
+                {
+                   
                 }
                     break;
                 default:

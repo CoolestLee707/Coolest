@@ -11,9 +11,15 @@
 #import "NSString+Hash.h"
 #import "person.h"
 #import "HomeCell.h"
+#import <Messages/Messages.h>
+#import "NSObject+SwizzledMethod.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource>
+{
+    NSInteger count1;
+    NSInteger count2;
 
+}
 @property (nonatomic,copy)NSString *firstName;
 
 @property (nonatomic,strong)UIImageView *imageView;
@@ -31,6 +37,11 @@
 @synthesize firstName = _myfirstname;
 
 static NSString *HomeCellId = @"HomeCellId";
+
+static IMP __origin_method_imp = nil;
+
+
+
 
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
@@ -52,10 +63,15 @@ static NSString *HomeCellId = @"HomeCellId";
     [super viewDidLoad];
 
     self.title = @"First";
-  
+    count1 = 0;
+    count2 = 0;
+
     self.dataArray = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"天津",@"苏州",@"成都",@"武汉",@"杭州",@"南京",@"长沙",@"郑州",@"西安",@"沈阳",@"合肥",@"青岛",@"大连",@"石家庄",@"太原",@"南昌",@"邢台"];
+    
     [self createUI];
     
+//    ((void(*)(id, SEL))objc_msgSend)(self, @selector(createUI));
+
     
     id obj = [[NSObject alloc]init];
     
@@ -70,11 +86,52 @@ static NSString *HomeCellId = @"HomeCellId";
 //    strtr = @"好吃健康证 块点饭啥看法 多少了开发的顺口溜发的啥开了房的时空裂缝手离开发电量将的史莱克";
 //    ADLog(@"+++%@",self.copyedString);
     
+    
 }
++ (void)load
+{
+    [self swizzledInstanceSEL:@selector(createUI) withSEL:@selector(swizeCreateUI)];
+    
+//    Method orm = class_getInstanceMethod([self class], @selector(createUI));
+//
+//    __origin_method_imp = method_setImplementation(orm, class_getMethodImplementation(self, @selector(swizeCreateUI)));
+    
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    ((void(*)(id, SEL))objc_msgSend)(self, @selector(createUI));
+//    ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
 
+}
 - (void)createUI
 {
+//    assert([NSStringFromSelector(_cmd) isEqualToString:@"createUI"]);
+    
     [self.view addSubview:self.mainTableView];
+//    ADLog(@"_____________****  %@",NSStringFromSelector(_cmd));
+    count1++;
+//    ADLog(@"++++++++++ = %ld",count1);
+
+    if (count1 < 5) {
+        ADLog(@"++++++++++ = %ld",count1);
+        [self createUI];
+
+//         ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
+    }
+}
+
+- (void)swizeCreateUI
+{
+    count2 ++;
+    ADLog(@"-------- = %ld",count2);
+    
+    [[FirstViewController class] load];
+    [self createUI];
+//    ((void(*)(id, SEL))objc_msgSend)(self, @selector(swizeCreateUI));
+
+    
+//    ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -98,6 +155,8 @@ static NSString *HomeCellId = @"HomeCellId";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLabel.text = [NSString stringWithFormat:@"%ld--%@",(long)indexPath.row,self.dataArray[indexPath.row]];
     
+    kWeakSelf(WeakSelf);
+
     cell.clickBlock = ^(NSString * _Nonnull selectCity) {
         ADLog(@"%@",selectCity);
     };
