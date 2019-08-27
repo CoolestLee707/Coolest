@@ -16,6 +16,8 @@
 		BF18288221A8026200361219 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288121A8026200361219 /* CameraViewController.m */; };
 		BF18288521A807B900361219 /* CameraManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288421A807B900361219 /* CameraManager.m */; };
 		BF18288821AD16A800361219 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18288721AD16A800361219 /* MessageViewController.m */; };
+		BF18FCC822C0CC9800A772CD /* CouponsTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF18FCC622C0CC9800A772CD /* CouponsTestCell.m */; };
+		BF18FCC922C0CC9800A772CD /* CouponsTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF18FCC722C0CC9800A772CD /* CouponsTestCell.xib */; };
 		BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1A0D3322409C48007D0789 /* drawRectTestView.m */; };
 		BF1F2A4D229FE72100ED248C /* WeakManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F2A4C229FE72100ED248C /* WeakManager.m */; };
 		BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */; };
@@ -60,6 +62,10 @@
 		BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E216210067D90004EC56 /* MBProgressHUDViewController.m */; };
 		BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */; };
 		BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */; };
+		BF61BBFD230C02E100D020F5 /* SimpleFactoryPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BBFC230C02E000D020F5 /* SimpleFactoryPatternViewController.m */; };
+		BF61BC00230C03E500D020F5 /* SimpleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BBFF230C03E500D020F5 /* SimpleFactory.m */; };
+		BF61BC03230C040200D020F5 /* ProductA.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BC02230C040200D020F5 /* ProductA.m */; };
+		BF61BC06230C040B00D020F5 /* ProductB.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BC05230C040B00D020F5 /* ProductB.m */; };
 		BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F121194243000C8693 /* NSString+Hash.m */; };
 		BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */; };
 		BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F7211D3E5E000C8693 /* HitTestViewController.m */; };
@@ -95,6 +101,7 @@
 		BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B8A22375C72001B4F26 /* MVPService.m */; };
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
+		BFDC9DC022B7837500D78527 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC9DBF22B7837500D78527 /* Son.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +139,9 @@
 		BF18288421A807B900361219 /* CameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraManager.m; sourceTree = "<group>"; };
 		BF18288621AD16A800361219 /* MessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		BF18288721AD16A800361219 /* MessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		BF18FCC522C0CC9800A772CD /* CouponsTestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CouponsTestCell.h; sourceTree = "<group>"; };
+		BF18FCC622C0CC9800A772CD /* CouponsTestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CouponsTestCell.m; sourceTree = "<group>"; };
+		BF18FCC722C0CC9800A772CD /* CouponsTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CouponsTestCell.xib; sourceTree = "<group>"; };
 		BF1A0D3222409C48007D0789 /* drawRectTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawRectTestView.h; sourceTree = "<group>"; };
 		BF1A0D3322409C48007D0789 /* drawRectTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawRectTestView.m; sourceTree = "<group>"; };
 		BF1F2A4B229FE72100ED248C /* WeakManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakManager.h; sourceTree = "<group>"; };
@@ -224,6 +234,15 @@
 		BF59E2192100681D0004EC56 /* DZNEmptyDataSetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DZNEmptyDataSetViewController.m; sourceTree = "<group>"; };
 		BF59E21B2100686B0004EC56 /* TZImagePickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TZImagePickerViewController.h; sourceTree = "<group>"; };
 		BF59E21C2100686B0004EC56 /* TZImagePickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerViewController.m; sourceTree = "<group>"; };
+		BF61BBFB230C02E000D020F5 /* SimpleFactoryPatternViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleFactoryPatternViewController.h; sourceTree = "<group>"; };
+		BF61BBFC230C02E000D020F5 /* SimpleFactoryPatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleFactoryPatternViewController.m; sourceTree = "<group>"; };
+		BF61BBFE230C03E500D020F5 /* SimpleFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleFactory.h; sourceTree = "<group>"; };
+		BF61BBFF230C03E500D020F5 /* SimpleFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleFactory.m; sourceTree = "<group>"; };
+		BF61BC01230C040200D020F5 /* ProductA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductA.h; sourceTree = "<group>"; };
+		BF61BC02230C040200D020F5 /* ProductA.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductA.m; sourceTree = "<group>"; };
+		BF61BC04230C040B00D020F5 /* ProductB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductB.h; sourceTree = "<group>"; };
+		BF61BC05230C040B00D020F5 /* ProductB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductB.m; sourceTree = "<group>"; };
+		BF61BC07230C062300D020F5 /* SimpleProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleProtocol.h; sourceTree = "<group>"; };
 		BF6B08F021194243000C8693 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		BF6B08F121194243000C8693 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintPasswordViewController.h; sourceTree = "<group>"; };
@@ -294,6 +313,8 @@
 		BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzledMethod.m"; sourceTree = "<group>"; };
 		BFDC0F232107320800185A31 /* UIViewController+Appear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Appear.h"; sourceTree = "<group>"; };
 		BFDC0F242107320800185A31 /* UIViewController+Appear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Appear.m"; sourceTree = "<group>"; };
+		BFDC9DBE22B7837500D78527 /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
+		BFDC9DBF22B7837500D78527 /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		BFE105C221D9B6E90036709A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		D4421720B31DEBAD90F3946F /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -615,6 +636,8 @@
 			children = (
 				BF9BB3CB219EAD1B0026BDD8 /* person.h */,
 				BF9BB3CC219EAD1B0026BDD8 /* person.m */,
+				BFDC9DBE22B7837500D78527 /* Son.h */,
+				BFDC9DBF22B7837500D78527 /* Son.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -625,6 +648,9 @@
 				BF875BDA226070B80060B5DB /* HomeCell.h */,
 				BF875BDB226070B80060B5DB /* HomeCell.m */,
 				BF875BDC226070B80060B5DB /* HomeCell.xib */,
+				BF18FCC522C0CC9800A772CD /* CouponsTestCell.h */,
+				BF18FCC622C0CC9800A772CD /* CouponsTestCell.m */,
+				BF18FCC722C0CC9800A772CD /* CouponsTestCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,6 +741,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BF61BBF4230C025900D020F5 /* FactoryPattern */,
 				BFBF771B224B1CC500A3FE88 /* RAC */,
 				BFDA8B83223755A2001B4F26 /* MVVM */,
 				BFDA8B7122366C2B001B4F26 /* MVP */,
@@ -792,6 +819,46 @@
 			children = (
 				BF1A0D3222409C48007D0789 /* drawRectTestView.h */,
 				BF1A0D3322409C48007D0789 /* drawRectTestView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF61BBF4230C025900D020F5 /* FactoryPattern */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BBF5230C025900D020F5 /* Controller */,
+				BF61BBF6230C025900D020F5 /* Protocol */,
+				BF61BBF7230C025900D020F5 /* View */,
+			);
+			path = FactoryPattern;
+			sourceTree = "<group>";
+		};
+		BF61BBF5230C025900D020F5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BBFB230C02E000D020F5 /* SimpleFactoryPatternViewController.h */,
+				BF61BBFC230C02E000D020F5 /* SimpleFactoryPatternViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BF61BBF6230C025900D020F5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BC07230C062300D020F5 /* SimpleProtocol.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		BF61BBF7230C025900D020F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF61BBFE230C03E500D020F5 /* SimpleFactory.h */,
+				BF61BBFF230C03E500D020F5 /* SimpleFactory.m */,
+				BF61BC01230C040200D020F5 /* ProductA.h */,
+				BF61BC02230C040200D020F5 /* ProductA.m */,
+				BF61BC04230C040B00D020F5 /* ProductB.h */,
+				BF61BC05230C040B00D020F5 /* ProductB.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,6 +1146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */,
+				BF18FCC922C0CC9800A772CD /* CouponsTestCell.xib in Resources */,
 				BF9007772294FAEF0051DD7B /* Localizable.strings in Resources */,
 				BF875BDE226070B80060B5DB /* HomeCell.xib in Resources */,
 				BF59E18F210035550004EC56 /* Assets.xcassets in Resources */,
@@ -1167,6 +1235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
+				BF18FCC822C0CC9800A772CD /* CouponsTestCell.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
@@ -1175,6 +1244,7 @@
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */,
+				BF61BC06230C040B00D020F5 /* ProductB.m in Sources */,
 				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
@@ -1182,11 +1252,13 @@
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
+				BFDC9DC022B7837500D78527 /* Son.m in Sources */,
 				BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */,
 				BF18288521A807B900361219 /* CameraManager.m in Sources */,
 				BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */,
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
+				BF61BC03230C040200D020F5 /* ProductA.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
 				BF7B055C2284503F008EDCF8 /* objc2.m in Sources */,
 				BF875BDD226070B80060B5DB /* HomeCell.m in Sources */,
@@ -1197,6 +1269,7 @@
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
+				BF61BBFD230C02E100D020F5 /* SimpleFactoryPatternViewController.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
@@ -1244,6 +1317,7 @@
 				BF59E195210035550004EC56 /* main.m in Sources */,
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
 				BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */,
+				BF61BC00230C03E500D020F5 /* SimpleFactory.m in Sources */,
 				BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

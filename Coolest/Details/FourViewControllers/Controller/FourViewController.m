@@ -37,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CGSize tempStringSize = [@"Valid from 2019-07-09 until until until 43" sizeWithFont:[UIFont systemFontOfSize:11] constrainedToSize:CGSizeMake(250-40-5, MAXFLOAT)];
+    ADLog(@"----- %f",tempStringSize.height);
+    
     NSString *rer =@"216731273|";
 
     NSArray *movieCodeArr = [rer componentsSeparatedByString:@"|"];
@@ -76,6 +79,26 @@
 //    NSArray *positionsNumberArray = [@"1,2,3,4" componentsSeparatedByString:@","];
 
 //    ADLog(@"%@",positionsNumberArray);
+    
+    UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
+    sc.backgroundColor = [UIColor orangeColor];
+    sc.contentSize = CGSizeMake(sc.width*3, sc.height);
+    
+    [self.view addSubview:sc];
+    
+    UIView *v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    v1.backgroundColor = [UIColor blueColor];
+    [sc addSubview:v1];
+    
+    
+    UIView *v2 = [[UIView alloc]initWithFrame:CGRectMake(sc.width+ 100, 100, 100, 100)];
+    v2.backgroundColor = [UIColor redColor];
+    [sc addSubview:v2];
+    
+    UIView *v3 = [[UIView alloc]initWithFrame:CGRectMake(sc.width*2+ 100, 100, 100, 100)];
+    v3.backgroundColor = [UIColor grayColor];
+    [sc addSubview:v3];
+    
 }
 
 - (void)test2 {

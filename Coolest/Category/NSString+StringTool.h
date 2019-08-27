@@ -14,4 +14,6 @@
 
 + (NSString *)getThisYearString;
 
+- (CGSize)sizeWithFont:(UIFont *)font
+     constrainedToSize:(CGSize)constrainedToSize;
 @end

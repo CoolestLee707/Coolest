@@ -10,6 +10,7 @@
 #import "RunLoopObject1.h"
 #import "NSString+Hash.h"
 #import "person.h"
+#import "Son.h"
 #import "HomeCell.h"
 #import <Messages/Messages.h>
 #import "NSObject+SwizzledMethod.h"
@@ -48,7 +49,7 @@ static IMP __origin_method_imp = nil;
         
         _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight) style:UITableViewStyleGrouped];
         
-        _mainTableView.rowHeight = 70;
+        _mainTableView.rowHeight = 100;
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -59,16 +60,36 @@ static IMP __origin_method_imp = nil;
     return _mainTableView;
 }
 
+//递归函数
+- (NSInteger)selectMaxNumberBig:(NSInteger)bigNumber Small:(NSInteger)smallNumber
+{
+    NSInteger a = bigNumber % smallNumber;
+    if (a==0) {
+        return smallNumber;
+    }else {
+        return [self selectMaxNumberBig:smallNumber Small:a];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSInteger aa = [self selectMaxNumberBig:168 Small:63];
+    ADLog(@"+++-----%zd",aa);
+    
+    person *p = [[person alloc]init];
+//    Son *s = [[Son alloc]init];
+    
+    [p eat];
+//    [s eat];
+    
     self.title = @"First";
     count1 = 0;
     count2 = 0;
 
     self.dataArray = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"天津",@"苏州",@"成都",@"武汉",@"杭州",@"南京",@"长沙",@"郑州",@"西安",@"沈阳",@"合肥",@"青岛",@"大连",@"石家庄",@"太原",@"南昌",@"邢台"];
     
-    [self createUI];
+//    [self createUI];
     
 //    ((void(*)(id, SEL))objc_msgSend)(self, @selector(createUI));
 
@@ -118,7 +139,11 @@ static IMP __origin_method_imp = nil;
 
 //         ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
     }
+    
+    
+
 }
+
 
 - (void)swizeCreateUI
 {
@@ -147,13 +172,13 @@ static IMP __origin_method_imp = nil;
     return CGFLOAT_MIN;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return CGFLOAT_MIN;
+    return 14.f;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
     HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeCellId];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.nameLabel.text = [NSString stringWithFormat:@"%ld--%@",(long)indexPath.row,self.dataArray[indexPath.row]];
+//    cell.nameLabel.text = [NSString stringWithFormat:@"%ld--%@",(long)indexPath.row,self.dataArray[indexPath.row]];
     
     kWeakSelf(WeakSelf);
 

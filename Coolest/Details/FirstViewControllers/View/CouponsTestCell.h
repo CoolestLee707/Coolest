@@ -1,8 +1,8 @@
 //
-//  HomeCell.h
+//  CouponsTestCell.h
 //  Coolest
 //
-//  Created by daoj on 2019/4/12.
+//  Created by daoj on 2019/6/24.
 //  Copyright © 2019 CoolestLee707. All rights reserved.
 //
 
@@ -10,10 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeCell : UITableViewCell
-
-
-@property (nonatomic,copy)void(^clickBlock)(NSString *selectCity);
+@interface CouponsTestCell : UITableViewCell
 
 @end
 

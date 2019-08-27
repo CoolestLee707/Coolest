@@ -29,3 +29,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+//业务逻辑
+//网络请求数据处理和过程页面不同效果展示封装sdk

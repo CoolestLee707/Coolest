@@ -30,4 +30,30 @@
     return yearStr;
 }
 
+
+- (CGSize)sizeWithFont:(UIFont *)font
+     constrainedToSize:(CGSize)constrainedToSize
+{
+    return [self sizeWithFont:font
+            constrainedToSize:constrainedToSize
+                lineBreakMode:NSLineBreakByWordWrapping];
+}
+
+- (CGSize)sizeWithFont:(UIFont *)font
+     constrainedToSize:(CGSize)constrainedToSize
+         lineBreakMode:(NSLineBreakMode)lineBreakMode
+{
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    paragraphStyle.lineBreakMode = lineBreakMode;
+    paragraphStyle.alignment = NSTextAlignmentLeft;
+    
+    NSDictionary *attributes = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paragraphStyle};
+    
+    CGRect rect = [self boundingRectWithSize:constrainedToSize
+                                     options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                  attributes:attributes
+                                     context:nil];
+    return rect.size;
+}
+
 @end

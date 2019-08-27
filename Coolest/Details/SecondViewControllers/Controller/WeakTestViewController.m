@@ -25,16 +25,35 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 @property (nonatomic,copy) NSString *name;
 
+
+
+/**
+ weak 弱引用的变量初始化后用临时变量指向要不就会释放，除非timer用scheduledTimerWithTimeInterval初始化后就加到runloop中不会释放
+ */
+@property (nonatomic,weak) NSTimer *timer;
+
+@property (nonatomic,weak) UIView *weakView1;
+
 @end
 
 @implementation WeakTestViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+//    timer强弱都可以dealloc， 非block的timer要在这里invalidate
+    [self.timer invalidate];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"weak";
-   
-    [self Test1];
+    
+    
+//    kWeakSelf(WeakSelf);
+//self被WeakManager强引用，就不会delloc
+//    [[WeakManager shareInstance]openH5URLWithViewController:self withURL:@"https://www.baidu.com"];
+
+//    [self Test1];
     
 //    [self Test2];
 
@@ -44,6 +63,52 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    [self Test5];
 
+    [self Test6];
+    
+//    [self Test7];
+
+}
+
+- (void)Test7
+{
+//    self.weakView1 = [[UIView alloc]init];
+    
+    UIView *view = [UIView new];
+    self.weakView1 = view;
+    
+    if (self.weakView1 == nil) {
+        ADLog(@"weakView1 被释放了");
+    }
+}
+- (void)Test6
+{
+    // 创建 NSTimer
+//    NSTimer *doNotWorkTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
+//    // NSTimer 加入 NSRunLoop
+//    [[NSRunLoop currentRunLoop] addTimer:doNotWorkTimer forMode:NSDefaultRunLoopMode];
+//    // 赋值给 weak 变量
+//    self.timer = doNotWorkTimer;
+  
+    
+//    weak-timer，为nil，strong-timer，不为nil
+//    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
+    
+    
+    //weak-timer，不为nil
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
+
+//    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        ADLog(@"it is log!");
+//    }];
+    
+    if (self.timer == nil) {
+        ADLog(@"timer 被释放了");
+    }
+}
+
+- (void)outputLog:(NSTimer *)timer{
+    ADLog(@"it is log!");
 }
 
 - (void)Test5
@@ -125,12 +190,12 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     kWeakSelf(WeakSelf);
     
     self.weakView.touchBlock = ^{
-        
-        //        [[WeakManager shareInstance]openH5URLWithViewController:WeakSelf withURL:@"https://www.baidu.com"];
+//        不加w__week:controller又被强引用不会释放走delloc
+                [[WeakManager shareInstance]openH5URLWithViewController:WeakSelf withURL:@"https://www.baidu.com"];
         
 //        [WeakSelf gotoWebview:WeakSelf Url:@"https://www.baidu.com"];
         
-        [WeakSelf goggoo];
+//        [WeakSelf goggoo];
     };
 }
 - (void)gotoWebview:(UIViewController *)vc Url:(NSString *)url
@@ -148,6 +213,9 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 }
 - (void)dealloc
 {
+//    block的timer可以在这里invalidate
+//    [self.timer invalidate];
+
     ADLog(@"___________");
 }
 

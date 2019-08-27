@@ -1,16 +1,14 @@
 //
-//  HomeCell.m
+//  CouponsTestCell.m
 //  Coolest
 //
-//  Created by daoj on 2019/4/12.
+//  Created by daoj on 2019/6/24.
 //  Copyright © 2019 CoolestLee707. All rights reserved.
 //
 
-#import "HomeCell.h"
+#import "CouponsTestCell.h"
 
-@implementation HomeCell
-
-
+@implementation CouponsTestCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

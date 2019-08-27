@@ -31,10 +31,10 @@ static id weakManager = nil;
 
 - (void)openH5URLWithViewController:(UIViewController *)controller withURL:(NSString *)url
 {
-    wtController = controller;
-    WKWebviewViewController* vc = [[WKWebviewViewController alloc]init];
-    vc.webUrl = url;
-    
-    [wtController.navigationController pushViewController:vc animated:YES];
+    wtController = controller;//不加w__week:controller又被强引用不会释放走delloc
+//    WKWebviewViewController* vc = [[WKWebviewViewController alloc]init];
+//    vc.webUrl = url;
+//
+//    [wtController.navigationController pushViewController:vc animated:YES];
 }
 @end

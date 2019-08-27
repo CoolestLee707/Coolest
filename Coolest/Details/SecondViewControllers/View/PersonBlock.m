@@ -24,8 +24,6 @@
 
 }
 
-
-
 -(PersonBlock* (^)(void))run2
 {
     PersonBlock* (^block)(void) = ^{

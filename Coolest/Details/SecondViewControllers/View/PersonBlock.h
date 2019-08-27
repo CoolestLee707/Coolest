@@ -6,7 +6,7 @@
 //  Copyright © 2019 CoolestLee707. All rights reserved.
 //
 //函数式编程
-
+//链式编程
 //函数式编程总结
 //
 //如果想再去调用别的方法，那么就需要返回一个对象；

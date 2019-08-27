@@ -283,9 +283,9 @@ NSString *footerIdentifier = @"footer";
                 case 1:
                 {
                     PresentViewController *vc = [[PresentViewController alloc]init];
-//                    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
+                    BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
                     
-                    [self.tabBarController presentViewController:vc animated:YES completion:^{
+                    [self.tabBarController presentViewController:nav animated:YES completion:^{
                         ADLog(@"跳转");
                     }];
                 }
