@@ -35,11 +35,12 @@
         
         UIViewController *rootViewController = msgVC.viewControllers.firstObject;
         rootViewController.fd_prefersNavigationBarHidden = YES;
-        
+
         msgVC.navigationBar.tintColor = [UIColor redColor];
         msgVC.messageComposeDelegate = self;
         msgVC.body = @"你好2121212" ;
         msgVC.recipients = @[@"15032268839"];
+        msgVC.modalPresentationStyle = UIModalPresentationFullScreen;
 
         [self presentViewController:msgVC animated:YES completion:NULL];
     }

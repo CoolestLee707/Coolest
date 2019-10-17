@@ -17,6 +17,8 @@
 
 @property (nonatomic,assign)int ticketSurplusCount;
 
+@property (nonatomic,copy) NSString *targetString;
+
 @end
 
 @implementation GCDViewController
@@ -108,7 +110,9 @@
 
 //    [self test3];
 
-    [self test4];
+//    [self test4];
+
+    [self test5];
 
 }
 
@@ -208,6 +212,22 @@
     //1 5 2 4 3
 }
 
+- (void)test5 {
+    
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+    for (int i=0; i<100; i++) {
+        dispatch_async(queue, ^{
+            
+            self.targetString = [NSString stringWithFormat:@"%d",i];
+        });
+    }
+    
+//    把任务添加到并发队列中，全部添加完以后打印的时候不确定哪个任务完成修改了targetString的值
+    ADLog(@"---1----- %@",self.targetString);
+    ADLog(@"---2----- %@",self.targetString);
+    ADLog(@"---3----- %@",self.targetString);
+
+}
 - (void)testCommunication {
     
     // 获取全局并发队列

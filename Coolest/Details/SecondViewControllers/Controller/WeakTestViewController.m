@@ -63,21 +63,34 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    [self Test5];
 
-    [self Test6];
+//    [self Test6];
     
-//    [self Test7];
+    [self Test7];
 
+    if (self.weakView1 == nil) {
+           ADLog(@"viewDidLoad --- weakView1 被释放了");
+       }
 }
 
 - (void)Test7
 {
+      
+//   viewDidLoad --- weakView1 被释放了
+//    ADLog(@"Test7 --- weakView1 被释放了");
+//    两个都打印了，[[UIView alloc]init]执行完返回的指针被弱引用，在AutoreleasePool被释放了
 //    self.weakView1 = [[UIView alloc]init];
     
+    
+    
+//     viewDidLoad --- weakView1 被释放了
+//    [UIView new]返回指针被保存在临时变量 UIView *view中，所以本方法执行完之前不会被释放，超过作用于就被释放
+
     UIView *view = [UIView new];
+    
     self.weakView1 = view;
     
     if (self.weakView1 == nil) {
-        ADLog(@"weakView1 被释放了");
+        ADLog(@"Test7 --- weakView1 被释放了");
     }
 }
 - (void)Test6
@@ -97,7 +110,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     //weak-timer，不为nil
 //    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
 
-//    
+//
 //    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
 //        ADLog(@"it is log!");
 //    }];

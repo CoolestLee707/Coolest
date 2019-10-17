@@ -275,8 +275,7 @@ static char kDTActionHandlerLongPressGestureKey;
     // 根据关联的key，获取关联的值。
     UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, &kDTActionHandlerTapGestureKey);
     
-    if (!gesture)
-    {
+    if (!gesture) {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(__handleActionForTapGesture:)];
         [self addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, &kDTActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
@@ -292,12 +291,10 @@ static char kDTActionHandlerLongPressGestureKey;
 
 - (void)__handleActionForTapGesture:(UITapGestureRecognizer *)gesture
 {
-    if (gesture.state == UIGestureRecognizerStateRecognized)
-    {
+    if (gesture.state == UIGestureRecognizerStateRecognized) {
         void(^action)(void) = objc_getAssociatedObject(self, &kDTActionHandlerTapBlockKey);
         
-        if (action)
-        {
+        if (action) {
             action();
         }
     }
@@ -307,8 +304,7 @@ static char kDTActionHandlerLongPressGestureKey;
 {
     UILongPressGestureRecognizer *gesture = objc_getAssociatedObject(self, &kDTActionHandlerLongPressGestureKey);
     
-    if (!gesture)
-    {
+    if (!gesture) {
         gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(__handleActionForLongPressGesture:)];
         [self addGestureRecognizer:gesture];
         objc_setAssociatedObject(self, &kDTActionHandlerLongPressGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
@@ -319,8 +315,7 @@ static char kDTActionHandlerLongPressGestureKey;
 
 - (void)__handleActionForLongPressGesture:(UITapGestureRecognizer *)gesture
 {
-    if (gesture.state == UIGestureRecognizerStateBegan)
-    {
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         void(^action)(void) = objc_getAssociatedObject(self, &kDTActionHandlerLongPressBlockKey);
         
         if (action)

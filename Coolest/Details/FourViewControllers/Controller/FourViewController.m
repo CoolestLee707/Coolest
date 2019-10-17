@@ -22,6 +22,8 @@
 //mutableArray若用copy修饰会返回一个NSArray类型，若调用可变类型的添加、删除、修改方法时会因为找不到对应的方法而crash
 @property (nonatomic,strong)NSMutableArray *array;
 
+@property (nonatomic,copy) NSMutableString *muStr;
+
 @end
 
 @implementation FourViewController
@@ -36,6 +38,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+//    NSMutableString *nameString = [NSMutableString  stringWithFormat:@"Antony"];
+
+    // 用赋值NSMutableString给NSString赋值
+    self.muStr = [NSMutableString  stringWithFormat:@"Antony"];
+    
+//    ADLog(@"----- %@---%p",nameString,nameString);
+    ADLog(@"----- %@---%p",self.muStr,self.muStr);
+
+    
+//    崩溃-不可变不可appendString
+//    [self.muStr appendString:@".Wong"];
+    
+//    ADLog(@"+++++++ %@---%p",nameString,nameString);
+    ADLog(@"+++++++ %@---%p",self.muStr,self.muStr);
+
+
+    
     
     CGSize tempStringSize = [@"Valid from 2019-07-09 until until until 43" sizeWithFont:[UIFont systemFontOfSize:11] constrainedToSize:CGSizeMake(250-40-5, MAXFLOAT)];
     ADLog(@"----- %f",tempStringSize.height);

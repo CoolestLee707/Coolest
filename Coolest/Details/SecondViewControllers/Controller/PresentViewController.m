@@ -31,10 +31,11 @@
 //
 //    }];
     
-//    PresentOneViewController *vc = [[PresentOneViewController alloc]init];
-//    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//    [self presentViewController:vc animated:YES completion:nil];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    PresentOneViewController *vc = [[PresentOneViewController alloc]init];
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)dealloc

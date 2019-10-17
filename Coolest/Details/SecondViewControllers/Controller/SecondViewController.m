@@ -284,7 +284,7 @@ NSString *footerIdentifier = @"footer";
                 {
                     PresentViewController *vc = [[PresentViewController alloc]init];
                     BaseNavigationController *nav = [[BaseNavigationController alloc]initWithRootViewController:vc];
-                    
+                    nav.modalPresentationStyle = UIModalPresentationFullScreen;
                     [self.tabBarController presentViewController:nav animated:YES completion:^{
                         ADLog(@"跳转");
                     }];
