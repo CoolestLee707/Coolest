@@ -112,7 +112,51 @@
 
 //    [self test4];
 
-    [self test5];
+//    [self test5];
+    
+    
+//    [self test6];
+    
+//    [self test7];
+
+
+}
+- (void)test7 {
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(queue, ^{
+        [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(actionTime) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] run];//加上就执行定时器了
+
+    });
+}
+
+- (void)actionTime {
+    ADLog(@"--- %@",[NSDate date]);
+}
+- (void)test6 {
+
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+       
+        ADLog(@"1");
+        [self performSelector:@selector(test111) withObject:nil afterDelay:0];
+        [[NSRunLoop currentRunLoop] run];
+
+        ADLog(@"2");
+
+    });
+
+//  不加[[NSRunLoop currentRunLoop] run];  执行1和2，不打印3
+/// 其实就是在内部创建了一个NSTimer，然后会添加到当前线程的Runloop中。子线程RunLoop默认关闭
+    
+//    加上[[NSRunLoop currentRunLoop] run];后打印 1 3 2，必须是先执行performSelector延迟方法之后再执行run方法。因为run方法只是尝试想要开启当前线程中的runloop，但是如果该线程中并没有任何事件(source、timer、observer)的话，并不会成功的开启。
+
+    
+}
+
+- (void)test111 {
+    ADLog(@"3");
 
 }
 

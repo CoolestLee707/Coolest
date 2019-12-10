@@ -40,6 +40,8 @@ extern CFAbsoluteTime startTime;
     
     [self setTouchService:application Options:launchOptions];
     
+//    BOOL isPrisonBreak = [self isJailBreak];
+    
     return YES;
 }
 

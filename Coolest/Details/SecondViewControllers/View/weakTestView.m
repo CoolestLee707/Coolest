@@ -31,7 +31,8 @@
 - (void)tapClick
 {
     if (self.touchBlock) {
-        self.touchBlock();
+        self.touchBlock(@"1");
     }
+//    [self removeFromSuperview];//所有对其他对象的持有（强弱）都断掉
 }
 @end

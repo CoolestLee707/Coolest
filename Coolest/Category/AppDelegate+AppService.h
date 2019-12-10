@@ -35,4 +35,10 @@
  设置3D touch
  */
 - (void)setTouchService:(UIApplication *)application Options:(NSDictionary *)launchOptions;
+
+
+/// 判断是否越狱
+- (BOOL)isJailBreak;
+
+
 @end

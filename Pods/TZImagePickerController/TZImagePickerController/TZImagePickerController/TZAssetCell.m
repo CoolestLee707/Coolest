@@ -293,6 +293,7 @@
     if (_indexLabel == nil) {
         UILabel *indexLabel = [[UILabel alloc] init];
         indexLabel.font = [UIFont systemFontOfSize:14];
+        indexLabel.adjustsFontSizeToFitWidth = YES;
         indexLabel.textColor = [UIColor whiteColor];
         indexLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:indexLabel];
@@ -364,6 +365,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self.backgroundColor = [UIColor whiteColor];
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return self;
 }
@@ -434,6 +436,7 @@
 - (UIButton *)selectedCountButton {
     if (_selectedCountButton == nil) {
         UIButton *selectedCountButton = [[UIButton alloc] init];
+        selectedCountButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         selectedCountButton.layer.cornerRadius = 12;
         selectedCountButton.clipsToBounds = YES;
         selectedCountButton.backgroundColor = [UIColor redColor];

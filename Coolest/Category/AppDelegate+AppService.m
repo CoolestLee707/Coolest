@@ -138,4 +138,21 @@
     UITabBarController *tabBarVC = (UITabBarController *)self.window.rootViewController;
     tabBarVC.selectedIndex = 3;
 }
+
+- (BOOL)isJailBreak {
+
+    __block BOOL jailBreak = NO;
+    NSArray *array = @[@"/Applications/Cydia.app",@"/private/var/lib/apt",@"/usr/lib/system/libsystem_kernel.dylib",@"Library/MobileSubstrate/MobileSubstrate.dylib",@"/etc/apt"];
+    
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        BOOL fileExist = [[NSFileManager defaultManager] fileExistsAtPath:obj];
+        if ([obj isEqualToString:@"/usr/lib/system/libsystem_kernel.dylib"]) {
+            jailBreak |= !fileExist;
+        }else {
+         jailBreak |= fileExist;
+        }
+    }];
+    
+    return jailBreak;
+}
 @end

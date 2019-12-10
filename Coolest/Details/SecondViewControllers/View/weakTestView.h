@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface weakTestView : UIView
 
-@property (nonatomic,copy) void(^touchBlock)(void);
+@property (nonatomic,copy) void(^touchBlock)(NSString *str);
 
 - (instancetype)initWeakTestView;
 

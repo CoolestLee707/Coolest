@@ -16,6 +16,11 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 @interface WeakTestViewController ()
 {
    __weak UIViewController *controller;
+    
+    WeakManager *_manger;
+    
+//    NSString *_nameStr;
+    
 }
 
 @property (nonatomic,strong) weakTestView *weakView;
@@ -26,7 +31,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 @property (nonatomic,copy) NSString *name;
 
 
-
+//@property (nonatomic,copy) NSString *nameStr;
 /**
  weak 弱引用的变量初始化后用临时变量指向要不就会释放，除非timer用scheduledTimerWithTimeInterval初始化后就加到runloop中不会释放
  */
@@ -34,10 +39,19 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 @property (nonatomic,weak) UIView *weakView1;
 
+@property (nonatomic,copy) NSString *namestr1;
+@property (nonatomic,copy) NSString *namestr2;
+
+
+@property (nonatomic,strong) NSArray *array;
+
+
 @end
 
 @implementation WeakTestViewController
-
+{
+    NSString *_nameStr;
+}
 - (void)viewWillDisappear:(BOOL)animated
 {
 //    timer强弱都可以dealloc， 非block的timer要在这里invalidate
@@ -48,6 +62,11 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
     self.title = @"weak";
     
+//    _namestr1 = @"Cool";
+//    ADLog(@"_namestr1 - %p ---- %p --- %p",_namestr1,&_namestr1,@"Cool");
+//
+//    self.namestr2 = @"Hot";
+//    ADLog(@"self.namestr2 - %p ---- %p --- %p",self.namestr2,&_namestr2,@"Hot");
     
 //    kWeakSelf(WeakSelf);
 //self被WeakManager强引用，就不会delloc
@@ -65,13 +84,83 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 //    [self Test6];
     
-    [self Test7];
+//    [self Test7];
+//
+//    if (self.weakView1 == nil) {
+//           ADLog(@"viewDidLoad --- weakView1 被释放了");
+//       }
+    
+//     [self Test8];
+    
+//    [self Test9];
+    
+//    [self Test10];
+    
+    [self Test11];
 
-    if (self.weakView1 == nil) {
-           ADLog(@"viewDidLoad --- weakView1 被释放了");
-       }
+
 }
 
+- (void)Test11 {
+    
+    NSString* str1 = @"123";
+    ADLog(@"str1 = %p, str1 = %@",str1,str1);
+    NSString* str2 = @"123";
+    ADLog(@"str2 = %p, str2 = %@",str2,str2);
+
+    NSString* str3 = [[NSString alloc]initWithFormat:@"123"];
+    ADLog(@"str3 = %p, str3 = %@",str3,str3);
+    NSString* str4 = [[NSString alloc]initWithFormat:@"123"];
+    ADLog(@"str4 = %p, str4 = %@",str4,str4);
+
+    NSString* str5 = [[NSString alloc]initWithString:str3];
+    ADLog(@"str5 = %p, str5 = %@",str5,str5);
+    NSString* str6 = [[NSString alloc]initWithString:str3];
+    ADLog(@"str6 = %p,str6 = %@",str6,str6);
+    
+    
+    
+}
+- (void)Test10 {
+    
+    NSArray *array = @[@1, @2, @3, @4];
+    NSMutableArray *mutableArray = [NSMutableArray arrayWithArray:array];
+       
+    self.array = mutableArray;
+    [mutableArray removeAllObjects];;
+    ADLog(@"%@",self.array);
+
+//    @property (nonatomic,strong) NSArray *array; 空
+//    @property (nonatomic,copy) NSArray *array; 不空
+
+}
+- (void)Test9 {
+    NSString *str1;
+    NSString *str2 = nil;
+    NSString *str3 = @"";
+    ADLog(@"str1 -- %p---%p---%@",str1,&str1,str1);
+    ADLog(@"str2 -- %p---%p---%@",str2,&str2,str2);
+    ADLog(@"str3 -- %p---%p---%@",str3,&str3,str3);
+}
+- (void)Test8
+{
+    NSArray *arr = @[@"12321312313123123123123123131231232131232131221"];
+    NSMutableArray *arr1 = [arr mutableCopy];
+    [arr1 addObject:@"asdfsdfsfsfsfsfsfds"];
+    
+//    NSMutableArray *arr2 = [arr copy];
+//    [arr2 addObject:@"asd"];
+//    崩溃，copy浅拷贝，返回NSArray类型指针
+    NSString *str = arr.firstObject;
+    NSString *str1 = arr1.firstObject;
+
+    ADLog(@"arr---%p --%p-- %p ----%p--%@",arr,&arr,&str,str,str);
+    ADLog(@"arr1---%p --%p-- %p ----%p--%@",arr1,&arr1,&str1,str1,str);
+
+//    不完全深拷贝，里面的内容还是同一个，存储在0x101393b08
+//    arr---0x600002071890 --0x7ffeeeff8fc8-- 0x7ffeeeff8fb8 ----0x101393b08--12321312313123123123123123131231232131232131221
+//    arr1---0x600002ce8090 --0x7ffeeeff8fc0-- 0x7ffeeeff8fb0 ----0x101393b08--12321312313123123123123123131231232131232131221
+}
 - (void)Test7
 {
       
@@ -83,7 +172,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
     
 //     viewDidLoad --- weakView1 被释放了
-//    [UIView new]返回指针被保存在临时变量 UIView *view中，所以本方法执行完之前不会被释放，超过作用于就被释放
+//    [UIView new]返回指针被保存在临时变量 UIView *view中，所以本方法执行完之前不会被释放，超过作用域就被释放
 
     UIView *view = [UIView new];
     
@@ -196,19 +285,37 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 - (void)Test1
 {
-    self.weakView = [[weakTestView alloc]initWeakTestView];
-    
-    [self.view addSubview:self.weakView];
-    
     kWeakSelf(WeakSelf);
     
-    self.weakView.touchBlock = ^{
+    self.weakView = [[weakTestView alloc]initWeakTestView];
+//
+    [self.view addSubview:self.weakView];
+
+//    _manger = [[WeakManager alloc]init];
+//    _manger.testVc = WeakSelf;
+    
+//    weakTestView *view = [[weakTestView alloc]initWeakTestView];
+//    [self.view addSubview:view];  //self强持有view
+
+    
+//    局部变量
+//    addSubview  ->  self强持有view   不会被释放
+//    [self removeFromSuperview];//所有对其他对象的持有（强弱）都断掉
+
+    
+    self.weakView.touchBlock = ^(NSString * _Nonnull str) {
+   
 //        不加w__week:controller又被强引用不会释放走delloc
-                [[WeakManager shareInstance]openH5URLWithViewController:WeakSelf withURL:@"https://www.baidu.com"];
-        
+//                [[WeakManager shareInstance]openH5URLWithViewController:WeakSelf withURL:@"https://www.baidu.com"];
+ 
 //        [WeakSelf gotoWebview:WeakSelf Url:@"https://www.baidu.com"];
         
 //        [WeakSelf goggoo];
+        
+//        _nameStr = str;
+
+//        ADLog(@"_nameStr   ------    %@",_nameStr);
+        
     };
 }
 - (void)gotoWebview:(UIViewController *)vc Url:(NSString *)url

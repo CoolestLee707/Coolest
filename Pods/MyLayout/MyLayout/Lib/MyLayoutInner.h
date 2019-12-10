@@ -42,8 +42,11 @@
 @interface MyBaseLayout()
 
 
+@property(nonatomic,assign) BOOL isMyLayouting;
+
+
 //派生类重载这个函数进行布局
--(CGSize)calcLayoutRect:(CGSize)size isEstimate:(BOOL)isEstimate pHasSubLayout:(BOOL*)pHasSubLayout sizeClass:(MySizeClass)sizeClass sbs:(NSMutableArray*)sbs;
+-(CGSize)calcLayoutSize:(CGSize)size isEstimate:(BOOL)isEstimate pHasSubLayout:(BOOL*)pHasSubLayout sizeClass:(MySizeClass)sizeClass sbs:(NSMutableArray*)sbs;
 
 -(id)createSizeClassInstance;
 
@@ -51,32 +54,30 @@
 //判断margin是否是相对margin
 -(BOOL)myIsRelativePos:(CGFloat)margin;
 
--(MyGravity)myGetSubviewVertGravity:(UIView*)sbv sbvsc:(UIView*)sbvsc vertGravity:(MyGravity)vertGravity;
+-(MyGravity)myGetSubview:(MyViewSizeClass*)sbvsc vertGravity:(MyGravity)vertGravity;
 
 
--(void)myCalcVertGravity:(MyGravity)vert
-                     sbv:(UIView *)sbv
-                   sbvsc:(UIView*)sbvsc
-              paddingTop:(CGFloat)paddingTop
-           paddingBottom:(CGFloat)paddingBottom
-             baselinePos:(CGFloat)baselinePos
-                selfSize:(CGSize)selfSize
-                   pRect:(CGRect*)pRect;
+-(CGFloat)myCalcSubview:(MyViewSizeClass*)sbvsc
+            vertGravity:(MyGravity)vert
+             paddingTop:(CGFloat)paddingTop
+          paddingBottom:(CGFloat)paddingBottom
+            baselinePos:(CGFloat)baselinePos
+               selfSize:(CGSize)selfSize
+                  pRect:(CGRect*)pRect;
 
--(MyGravity)myGetSubviewHorzGravity:(UIView*)sbv sbvsc:(UIView*)sbvsc horzGravity:(MyGravity)horzGravity;
+-(MyGravity)myGetSubview:(MyViewSizeClass*)sbvsc horzGravity:(MyGravity)horzGravity;
 
 
--(void)myCalcHorzGravity:(MyGravity)horz
-                     sbv:(UIView *)sbv
-                   sbvsc:(UIView*)sbvsc
+-(CGFloat)myCalcSubview:(MyViewSizeClass*)sbvsc
+            horzGravity:(MyGravity)horz
           paddingLeading:(CGFloat)paddingLeading
          paddingTrailing:(CGFloat)paddingTrailing
                 selfSize:(CGSize)selfSize
                    pRect:(CGRect*)pRect;
 
--(void)myCalcSizeOfWrapContentSubview:(UIView*)sbv sbvsc:(UIView*)sbvsc sbvmyFrame:(MyFrame*)sbvmyFrame;
+-(CGFloat)mySubview:(MyViewSizeClass*)sbvsc wrapHeightSizeFits:(CGFloat)width;
 
--(CGFloat)myHeightFromFlexedHeightView:(UIView*)sbv sbvsc:(UIView*)sbvsc inWidth:(CGFloat)width;
+-(CGFloat)myGetBoundLimitMeasure:(MyLayoutSize*)boundDime sbv:(UIView*)sbv dimeType:(MyGravity)dimeType sbvSize:(CGSize)sbvSize selfLayoutSize:(CGSize)selfLayoutSize isUBound:(BOOL)isUBound;
 
 -(CGFloat)myValidMeasure:(MyLayoutSize*)dime sbv:(UIView*)sbv calcSize:(CGFloat)calcSize sbvSize:(CGSize)sbvSize selfLayoutSize:(CGSize)selfLayoutSize;
 
@@ -87,16 +88,7 @@
 -(NSMutableArray*)myGetLayoutSubviews;
 -(NSMutableArray*)myGetLayoutSubviewsFrom:(NSArray*)sbsFrom;
 
-//设置子视图的相对依赖的尺寸
--(void)mySetSubviewRelativeDimeSize:(MyLayoutSize*)dime selfSize:(CGSize)selfSize lsc:(MyBaseLayout*)lsc pRect:(CGRect*)pRect;
-
--(CGSize)myAdjustSizeWhenNoSubviews:(CGSize)size sbs:(NSArray*)sbs lsc:(MyBaseLayout*)lsc;
-
-- (void)myAdjustLayoutSelfSize:(CGSize *)pSelfSize lsc:(MyBaseLayout*)lsc;
-
--(void)myAdjustSubviewsRTLPos:(NSArray*)sbs selfWidth:(CGFloat)selfWidth;
-
--(void)myAdjustSubviewsLayoutTransform:(NSArray*)sbs lsc:(MyBaseLayout*)lsc selfWidth:(CGFloat)selfWidth selfHeight:(CGFloat)selfHeight;
+-(CGSize)myLayout:(MyLayoutViewSizeClass*)lsc adjustSelfSize:(CGSize)selfSize withSubviews:(NSArray*)sbs;
 
 -(MyGravity)myConvertLeftRightGravityToLeadingTrailing:(MyGravity)horzGravity;
 
@@ -108,21 +100,42 @@
 -(CGFloat)myLayoutLeadingPadding;
 -(CGFloat)myLayoutTrailingPadding;
 
--(void)myAdjustSubviewWrapContentSet:(UIView*)sbv isEstimate:(BOOL)isEstimate sbvmyFrame:(MyFrame*)sbvmyFrame sbvsc:(UIView*)sbvsc selfSize:(CGSize)selfSize sizeClass:(MySizeClass)sizeClass pHasSubLayout:(BOOL*)pHasSubLayout;
+-(void)myLayout:(MyLayoutViewSizeClass*)lsc adjustSizeSettingOfSubview:(MyViewSizeClass*)sbvsc isEstimate:(BOOL)isEstimate sbvmyFrame:(MyFrame*)sbvmyFrame selfSize:(CGSize)selfSize vertGravity:(MyGravity)vertGravity horzGravity:(MyGravity)horzGravity sizeClass:(MySizeClass)sizeClass pHasSubLayout:(BOOL*)pHasSubLayout;
 
 
--(void)myCalcSubViewRect:(UIView*)sbv
-                   sbvsc:(UIView*)sbvsc
-              sbvmyFrame:(MyFrame*)sbvmyFrame
-                     lsc:(MyBaseLayout*)lsc
-             vertGravity:(MyGravity)vertGravity
-             horzGravity:(MyGravity)horzGravity
-              inSelfSize:(CGSize)selfSize
-              paddingTop:(CGFloat)paddingTop
-          paddingLeading:(CGFloat)paddingLeading
-           paddingBottom:(CGFloat)paddingBottom
-         paddingTrailing:(CGFloat)paddingTrailing
-            pMaxWrapSize:(CGSize*)pMaxWrapSize;
+//根据子视图的宽度约束得到宽度值
+-(CGFloat)myLayout:(MyLayoutViewSizeClass*)lsc
+widthSizeValueOfSubview:(MyViewSizeClass *)sbvsc
+          selfSize:(CGSize)selfSize
+           sbvSize:(CGSize)sbvSize
+        paddingTop:(CGFloat)paddingTop
+    paddingLeading:(CGFloat)paddingLeading
+     paddingBottom:(CGFloat)paddingBottom
+   paddingTrailing:(CGFloat)paddingTrailing;
+
+
+//根据子视图的高度约束得到高度值
+-(CGFloat)myLayout:(MyLayoutViewSizeClass*)lsc
+heightSizeValueOfSubview:(MyViewSizeClass *)sbvsc
+          selfSize:(CGSize)selfSize
+           sbvSize:(CGSize)sbvSize
+        paddingTop:(CGFloat)paddingTop
+    paddingLeading:(CGFloat)paddingLeading
+     paddingBottom:(CGFloat)paddingBottom
+   paddingTrailing:(CGFloat)paddingTrailing;
+
+
+-(void)myLayout:(MyLayoutViewSizeClass*)lsc
+calcRectOfSubview:(MyViewSizeClass*)sbvsc
+     sbvmyFrame:(MyFrame*)sbvmyFrame
+    vertGravity:(MyGravity)vertGravity
+    horzGravity:(MyGravity)horzGravity
+     inSelfSize:(CGSize)selfSize
+     paddingTop:(CGFloat)paddingTop
+ paddingLeading:(CGFloat)paddingLeading
+  paddingBottom:(CGFloat)paddingBottom
+paddingTrailing:(CGFloat)paddingTrailing
+   pMaxWrapSize:(CGSize*)pMaxWrapSize;
 
 -(UIFont*)myGetSubviewFont:(UIView*)sbv;
 
@@ -130,6 +143,8 @@
 
 //给父布局视图机会来更改子布局视图的边界线的显示的rect
 -(void)myHookSublayout:(MyBaseLayout*)sublayout borderlineRect:(CGRect*)pRect;
+
+-(void)myCalcSubviewsWrapContentSize:(NSArray<UIView *>*)sbs isEstimate:(BOOL)isEstimate pHasSubLayout:(BOOL*)pHasSubLayout sizeClass:(MySizeClass)sizeClass withCustomSetting:(void (^)(MyViewSizeClass *sbvsc))customSetting;
 
 @end
 
@@ -169,7 +184,7 @@
 
 -(instancetype)myDefaultSizeClass;
 
--(instancetype)myBestSizeClass:(MySizeClass)sizeClass;
+-(instancetype)myBestSizeClass:(MySizeClass)sizeClass myFrame:(MyFrame*)myFrame;
 
 -(instancetype)myCurrentSizeClass;
 
@@ -195,5 +210,23 @@
 
 @property(nonatomic, readonly)  MyLayoutPos *baselinePosInner;
 
+@property(nonatomic, readonly) CGFloat myEstimatedWidth;
+@property(nonatomic, readonly) CGFloat myEstimatedHeight;
+
+@end
+
+//为了减少布局视图不必要的内存占用，这里将一些可选数据保存到这个类中来
+@interface MyBaseLayoutOptionalData:NSObject
+
+//特定场景处理的回调block
+@property(nonatomic,copy) void (^beginLayoutBlock)(void);
+@property(nonatomic,copy) void (^endLayoutBlock)(void);
+@property(nonatomic,copy) void (^rotationToDeviceOrientationBlock)(MyBaseLayout *layout, BOOL isFirst, BOOL isPortrait);
+@property(nonatomic, assign) int lastScreenOrientation; //为0为初始状态，为1为竖屏，为2为横屏。内部使用。
+
+//动画扩展
+@property(nonatomic, assign) NSTimeInterval aniDuration;
+@property(nonatomic, assign) UIViewAnimationOptions aniOptions;
+@property(nonatomic, copy) void (^aniCompletion)(BOOL finished);
 
 @end

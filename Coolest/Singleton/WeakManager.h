@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WeakManager : NSObject
 
+@property (nonatomic,strong)UIViewController *testVc;
+
+
 + (WeakManager *)shareInstance;
 
 - (void)openH5URLWithViewController:(UIViewController *)controller withURL:(NSString *)url;

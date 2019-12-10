@@ -29,25 +29,29 @@
     
     [self createUI1];
     
-    NSArray *array = @[@"1",@"2",@"4",@"6",@"3",@"5",@"9",@"7",];
+//    [self enumeratorMethod];
 
-//    18:21:19.36  3340
-    ADLog(@"enumerator -- 开始");
-    NSEnumerator *enumerator = [array objectEnumerator];
-    id object;
-    while ((object = [enumerator nextObject]) != nil) {
-        ADLog(@"%@",object);
-    }
-//    18:21:19.36  4265
-    ADLog(@"enumerator -- 结束");
-    
-//    18:21:19.36  4362
-    ADLog(@"for -- 开始");
-    for (int i=0; i<array.count; i++) {
-        ADLog(@"%@",array[i]);
-    }
-    ADLog(@"for -- 结束");
-//    18:21:19.36  6275
+}
+- (void)enumeratorMethod {
+        NSArray *array = @[@"1",@"2",@"4",@"6",@"3",@"5",@"9",@"7",];
+
+    //    18:21:19.36  3340
+        ADLog(@"enumerator -- 开始");
+        NSEnumerator *enumerator = [array objectEnumerator];
+        id object;
+        while ((object = [enumerator nextObject]) != nil) {
+            ADLog(@"%@",object);
+        }
+    //    18:21:19.36  4265
+        ADLog(@"enumerator -- 结束");
+        
+    //    18:21:19.36  4362
+        ADLog(@"for -- 开始");
+        for (int i=0; i<array.count; i++) {
+            ADLog(@"%@",array[i]);
+        }
+        ADLog(@"for -- 结束");
+    //    18:21:19.36  6275
 }
 
 - (void)createUI1
