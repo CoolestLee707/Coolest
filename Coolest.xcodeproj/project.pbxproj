@@ -31,6 +31,7 @@
 		BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC6D21EC6A97005FB62C /* PresentViewController.m */; };
 		BF4AAC7121EC707A005FB62C /* PresentOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */; };
 		BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4C45922111ABB80085E749 /* RunLoopObject1.m */; };
+		BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4E2062239F767D001FCAAA /* HitTestSubView.m */; };
 		BF54707D2230C81900458592 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF54707C2230C81900458592 /* BlockViewController.m */; };
 		BF59E187210035530004EC56 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF59E186210035530004EC56 /* AppDelegate.m */; };
 		BF59E18F210035550004EC56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF59E18E210035550004EC56 /* Assets.xcassets */; };
@@ -168,6 +169,8 @@
 		BF4AAC7021EC707A005FB62C /* PresentOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentOneViewController.m; sourceTree = "<group>"; };
 		BF4C45912111ABB80085E749 /* RunLoopObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopObject1.h; sourceTree = "<group>"; };
 		BF4C45922111ABB80085E749 /* RunLoopObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopObject1.m; sourceTree = "<group>"; };
+		BF4E2061239F767D001FCAAA /* HitTestSubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestSubView.h; sourceTree = "<group>"; };
+		BF4E2062239F767D001FCAAA /* HitTestSubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestSubView.m; sourceTree = "<group>"; };
 		BF54707B2230C81900458592 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
 		BF54707C2230C81900458592 /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
 		BF59E182210035530004EC56 /* Coolest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coolest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -726,6 +729,8 @@
 				BF59E210210067250004EC56 /* HeaderCollectionReusableView.m */,
 				BF6B08F9211D415E000C8693 /* HitTestBackView.h */,
 				BF6B08FA211D415E000C8693 /* HitTestBackView.m */,
+				BF4E2061239F767D001FCAAA /* HitTestSubView.h */,
+				BF4E2062239F767D001FCAAA /* HitTestSubView.m */,
 				BF6B6D3A214FA2820000B157 /* CoolDispalyView.h */,
 				BF6B6D3B214FA2820000B157 /* CoolDispalyView.m */,
 				BFB72E5A221BE0C3002F4743 /* asyncTestCell.h */,
@@ -1230,6 +1235,7 @@
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
+				BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
 				BFDC9DC022B7837500D78527 /* Son.m in Sources */,
 				BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */,

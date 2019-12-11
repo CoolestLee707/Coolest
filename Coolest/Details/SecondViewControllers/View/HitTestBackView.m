@@ -14,6 +14,7 @@
 
 
 #import "HitTestBackView.h"
+#import "HitTestSubView.h"
 
 @implementation HitTestBackView
 
@@ -29,22 +30,80 @@
  */
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
-    ADLog(@" point - %f-%f",point.x,point.y);
+    ADLog(@" +++++ point - %f-%f",point.x,point.y);
     
 //    UIView *view = [super hitTest:point withEvent:event];
 //    return view;
     
-    __block UIView *returnView = nil;
-    NSArray *subViews = self.subviews;
-    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIView *view = (UIView *)obj;
-        if ([view isKindOfClass:[UIButton class]] && CGRectContainsPoint(view.frame, point)) {
-            returnView = view;
-            *stop = YES;
-        }
-    }];
-    return returnView ? : [super hitTest:point withEvent:event];
+//    __block UIView *returnView = nil;
+//    NSArray *subViews = self.subviews;
+    
+//    找subview
+//    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        UIView *view = (UIView *)obj;
+//        if ([view isKindOfClass:[UIView class]] && CGRectContainsPoint(view.frame, point)) {
+//            returnView = view;
+//            *stop = YES;
+//        }
+//    }];
+   
+    
+    
+    
+//    寻找最合适的响应view
+//    --------------------------------------
+    //  找button
+    //最重要的是在同一坐标系判断
+    //根据优先级判断
+    //point当前坐标系的点位置
+//    --------------------------------------
+
+    UIView *returnView = nil;
+    returnView = [self selectBestResponsViewWithPoint:point superView:self];
+    return (returnView ? returnView : [super hitTest:point withEvent:event]);
+
 }
+
+//递归函数
+/// 选择最合适的响应的view
+/// @param point 当前view中相应的点
+/// @param superview 当前view
+- (UIView *)selectBestResponsViewWithPoint:(CGPoint)point superView:(UIView *)superview {
+    
+    __block UIView *returnView = nil;
+    NSArray *subViews = superview.subviews;
+
+    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        UIView *view = (UIView *)obj;
+        CGPoint viewPoint = [view convertPoint:point fromView:superview];
+        
+        if (CGRectContainsPoint(view.bounds, viewPoint)) {
+            
+            if (view.subviews.count == 0) {
+                 returnView = view;
+            }else {
+                returnView = [self selectBestResponsViewWithPoint:viewPoint superView:view];
+            }
+            *stop = YES;
+            
+        }else {
+            
+           if (view.subviews.count == 0) {
+                returnView = nil;
+           }else {
+               returnView = [self selectBestResponsViewWithPoint:viewPoint superView:view];
+           }
+        }
+        
+    }];
+    
+    if (returnView == nil && CGRectContainsPoint(superview.bounds, point)) {
+        returnView = superview;
+    }
+    return returnView;
+}
+
 - (void)dealloc
 {
     

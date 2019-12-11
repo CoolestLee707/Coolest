@@ -15,10 +15,12 @@
 
 #import "HitTestViewController.h"
 #import "HitTestBackView.h"
+#import "HitTestSubView.h"
 
 @interface HitTestViewController ()
 
 @property (nonatomic,strong)HitTestBackView *backImageView;
+@property (nonatomic,strong)HitTestSubView *backSubView;
 
 @end
 
@@ -56,29 +58,63 @@
 
 - (void)createUI1
 {
-    self.backImageView = [[HitTestBackView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight + 10, self.view.frame.size.width, 100)];
+    self.backImageView = [[HitTestBackView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight + 200, self.view.frame.size.width, 100)];
     self.backImageView.userInteractionEnabled = YES;//has set YES
     self.backImageView.backgroundColor = [UIColor grayColor];
     self.backImageView.clipsToBounds = NO;
+    UITapGestureRecognizer *backImageViewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backImageViewTapClick)];
+    [self.backImageView addGestureRecognizer:backImageViewTap];
+    
     [self.view addSubview:self.backImageView];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, self.backImageView.height-10, 100, 50)];
-    button.backgroundColor = [UIColor blueColor];
-    [button setTitle:@"Click Me" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(didClickedButton) forControlEvents:UIControlEventTouchUpInside];
-    [self.backImageView addSubview:button];
+    self.backSubView = [[HitTestSubView alloc] initWithFrame:CGRectMake(50, 50, Main_Screen_Width-100, 100)];
+    UITapGestureRecognizer *backSubViewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backSubViewTapClick)];
+    [self.backSubView addGestureRecognizer:backSubViewTap];
+
+    self.backSubView.backgroundColor = [UIColor yellowColor];
+    [self.backImageView addSubview:self.backSubView];
+
+//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 30, 100, 100)];
+//    button.backgroundColor = [UIColor blueColor];
+//    [button setTitle:@"Click Me" forState:UIControlStateNormal];
+//    [button addTarget:self action:@selector(didClickedButton) forControlEvents:UIControlEventTouchUpInside];
+//    [self.backSubView addSubview:button];
     
-    [button setExclusiveTouch:YES];
+    UIView *buttonView = [[UIView alloc] initWithFrame:CGRectMake(100, 30, 100, 100)];
+    buttonView.backgroundColor = [UIColor blueColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didClickedButton)];
+    [buttonView addGestureRecognizer:tap];
+    [self.backSubView addSubview:buttonView];
     
-    CGPoint redCenterInView = [self.backImageView convertPoint:CGPointMake(10, 10) toView:button];
-    ADLog(@"++++ %@",NSStringFromCGPoint(redCenterInView));
+    UIView *subButtonView = [[UIView alloc] initWithFrame:CGRectMake(20, 30, 60, 100)];
+    subButtonView.backgroundColor = [UIColor redColor];
+    UITapGestureRecognizer *subTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(subDidClickedButton)];
+    [subButtonView addGestureRecognizer:subTap];
+    [buttonView addSubview:subButtonView];
+    
+    
+//    [button setExclusiveTouch:YES];
+    
+    
+//    CGPoint redCenterInView = [self.backImageView convertPoint:CGPointMake(10, 10) toView:buttonView];
+//    ADLog(@"++++ %@",NSStringFromCGPoint(redCenterInView));
 }
 
-- (void)didClickedButton
-{
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Tips" message:@"Alert" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-//    [alertView show];
+- (void)backImageViewTapClick {
+    ADLog(@"1111111111灰色灰色灰色灰色灰色灰色灰色灰色灰色灰色");
 }
+- (void)backSubViewTapClick {
+    ADLog(@"2222222222黄色黄色黄色黄色黄色黄色黄色黄色黄色黄色");
+}
+
+- (void)didClickedButton {
+    ADLog(@"33333333333蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色");
+}
+
+- (void)subDidClickedButton {
+    ADLog(@"44444444444红色红色红色红色红色红色红色红色红色红色");
+}
+
 
 - (void)dealloc
 {
