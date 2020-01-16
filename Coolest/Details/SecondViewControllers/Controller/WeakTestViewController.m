@@ -96,8 +96,24 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    [self Test10];
     
-    [self Test11];
+//    [self Test11];
 
+    [self Test12];
+}
+
+- (void)Test12 {
+    
+    //指针指向的地址l存储的内容不可以变，但是指针可以指向别的地方
+    const NSString *str1 = @"非酒水，发多少，辅导教师";
+    //指针不能指向别的地方，指向的这个地方里面内容可以边
+//    NSString * const str1 = @"非酒水，发多少，辅导教师";
+
+    ADLog(@"%@ --- %p --- %p",str1,str1,&str1);
+    str1 = @"fdjs sdfj  dsjs  dsfj ds g";
+    ADLog(@"%@ --- %p --- %p",str1,str1,&str1);
+
+//    NSString *str2 = str1;
+//    ADLog(@"%@ --- %p --- %p",str2,str2,&str2);
 
 }
 

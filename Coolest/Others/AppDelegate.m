@@ -40,8 +40,15 @@ extern CFAbsoluteTime startTime;
     
     [self setTouchService:application Options:launchOptions];
     
-//    BOOL isPrisonBreak = [self isJailBreak];
+    BOOL isPrisonBreak = [self isJailBreak];
     
+    NSString *qqqq = @"没有越狱";
+    if (isPrisonBreak) {
+        qqqq = @"越狱了";
+    }
+
+    ADLog(@"%@",qqqq);
+
     return YES;
 }
 

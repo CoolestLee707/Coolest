@@ -94,6 +94,8 @@
 		BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBF7723224B1E3B00A3FE88 /* RACView.m */; };
 		BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBF7726224B29DC00A3FE88 /* RACLabel.m */; };
 		BFCDA0D921816B710020D49B /* CoolestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCDA0D821816B710020D49B /* CoolestCell.m */; };
+		BFD924E523B9A9D600DC84B9 /* HttpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD924E423B9A9D600DC84B9 /* HttpViewController.m */; };
+		BFD924E823B9A9EA00DC84B9 /* HttpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD924E723B9A9EA00DC84B9 /* HttpModel.m */; };
 		BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */; };
 		BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7722366CAE001B4F26 /* MVPViewController.m */; };
 		BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDA8B7A22366CCB001B4F26 /* MVPModel.m */; };
@@ -299,6 +301,10 @@
 		BFBF7726224B29DC00A3FE88 /* RACLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLabel.m; sourceTree = "<group>"; };
 		BFCDA0D721816B710020D49B /* CoolestCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolestCell.h; sourceTree = "<group>"; };
 		BFCDA0D821816B710020D49B /* CoolestCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolestCell.m; sourceTree = "<group>"; };
+		BFD924E323B9A9D600DC84B9 /* HttpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpViewController.h; sourceTree = "<group>"; };
+		BFD924E423B9A9D600DC84B9 /* HttpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpViewController.m; sourceTree = "<group>"; };
+		BFD924E623B9A9EA00DC84B9 /* HttpModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpModel.h; sourceTree = "<group>"; };
+		BFD924E723B9A9EA00DC84B9 /* HttpModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpModel.m; sourceTree = "<group>"; };
 		BFDA8B6E22363D7F001B4F26 /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
 		BFDA8B6F22363D7F001B4F26 /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
 		BFDA8B7622366CAE001B4F26 /* MVPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVPViewController.h; sourceTree = "<group>"; };
@@ -746,6 +752,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFD924DF23B9A9BB00DC84B9 /* Http */,
 				BF61BBF4230C025900D020F5 /* FactoryPattern */,
 				BFBF771B224B1CC500A3FE88 /* RAC */,
 				BFDA8B83223755A2001B4F26 /* MVVM */,
@@ -911,6 +918,42 @@
 				BFBF7723224B1E3B00A3FE88 /* RACView.m */,
 				BFBF7725224B29DC00A3FE88 /* RACLabel.h */,
 				BFBF7726224B29DC00A3FE88 /* RACLabel.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BFD924DF23B9A9BB00DC84B9 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				BFD924E023B9A9BB00DC84B9 /* Controller */,
+				BFD924E123B9A9BB00DC84B9 /* Model */,
+				BFD924E223B9A9BB00DC84B9 /* View */,
+			);
+			name = Http;
+			path = ../../../../../../Http;
+			sourceTree = "<group>";
+		};
+		BFD924E023B9A9BB00DC84B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFD924E323B9A9D600DC84B9 /* HttpViewController.h */,
+				BFD924E423B9A9D600DC84B9 /* HttpViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFD924E123B9A9BB00DC84B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFD924E623B9A9EA00DC84B9 /* HttpModel.h */,
+				BFD924E723B9A9EA00DC84B9 /* HttpModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFD924E223B9A9BB00DC84B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1280,6 +1323,7 @@
 				BF18288821AD16A800361219 /* MessageViewController.m in Sources */,
 				BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
+				BFD924E523B9A9D600DC84B9 /* HttpViewController.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
 				BF54707D2230C81900458592 /* BlockViewController.m in Sources */,
@@ -1296,6 +1340,7 @@
 				BF1F2A53229FEC5400ED248C /* weakTestView.m in Sources */,
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
+				BFD924E823B9A9EA00DC84B9 /* HttpModel.m in Sources */,
 				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,
 				BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,

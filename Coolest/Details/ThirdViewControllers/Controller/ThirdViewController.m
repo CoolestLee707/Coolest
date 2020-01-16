@@ -13,6 +13,7 @@
 #import "MVVM+RAC_ViewController.h"
 #import "RACViewController.h"
 #import "SimpleFactoryPatternViewController.h"
+#import "HttpViewController.h"
 
 #import "ImageEditViewController.h"
 
@@ -49,7 +50,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -129,7 +130,7 @@
         }
         case 6 :
         {
-            SimpleFactoryPatternViewController* vc = [[SimpleFactoryPatternViewController alloc]init];
+            HttpViewController* vc = [[HttpViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
