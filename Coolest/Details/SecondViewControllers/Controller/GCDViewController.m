@@ -112,7 +112,7 @@
 
 //    [self test4];
 
-//    [self test5];
+    [self test5];
     
     
 //    [self test6];

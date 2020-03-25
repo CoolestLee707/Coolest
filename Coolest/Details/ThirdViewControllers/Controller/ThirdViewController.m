@@ -13,7 +13,7 @@
 #import "MVVM+RAC_ViewController.h"
 #import "RACViewController.h"
 #import "SimpleFactoryPatternViewController.h"
-#import "HttpViewController.h"
+//#import "HttpViewController.h"
 
 #import "ImageEditViewController.h"
 
@@ -130,8 +130,8 @@
         }
         case 6 :
         {
-            HttpViewController* vc = [[HttpViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
+//            HttpViewController* vc = [[HttpViewController alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         case 7 :
