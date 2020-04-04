@@ -22,6 +22,7 @@ pod 'FMDB'
 pod 'Texture'
 pod 'ReactiveObjC'
 pod 'ZXingObjC'
-
+pod 'Aspects'
+pod 'YYText'
 end
 

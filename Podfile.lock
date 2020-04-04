@@ -1,30 +1,31 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.0):
+    - AFNetworking/NSURLSession (= 4.0.0)
+    - AFNetworking/Reachability (= 4.0.0)
+    - AFNetworking/Security (= 4.0.0)
+    - AFNetworking/Serialization (= 4.0.0)
+    - AFNetworking/UIKit (= 4.0.0)
+  - AFNetworking/NSURLSession (4.0.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.0)
+  - AFNetworking/Security (4.0.0)
+  - AFNetworking/Serialization (4.0.0)
+  - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
-  - IQKeyboardManager (6.5.4)
+  - IQKeyboardManager (6.5.5)
   - Masonry (1.1.0)
-  - MBProgressHUD (1.1.0)
+  - MBProgressHUD (1.2.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.3.1)
-  - MyLayout (1.9.0)
+  - MyLayout (1.9.1)
   - PINCache (3.0.1-beta.6):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.6)
     - PINCache/Core (= 3.0.1-beta.6)
@@ -43,9 +44,9 @@ PODS:
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
-  - SDWebImage (5.4.0):
-    - SDWebImage/Core (= 5.4.0)
-  - SDWebImage/Core (5.4.0)
+  - SDWebImage (5.6.1):
+    - SDWebImage/Core (= 5.6.1)
+  - SDWebImage/Core (5.6.1)
   - Texture (2.8.1):
     - Texture/AssetsLibrary (= 2.8.1)
     - Texture/Core (= 2.8.1)
@@ -66,14 +67,16 @@ PODS:
     - Texture/Core
   - Texture/Video (2.8.1):
     - Texture/Core
-  - TZImagePickerController (3.2.9)
+  - TZImagePickerController (3.3.1)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
   - ZXingObjC (3.6.5):
     - ZXingObjC/All (= 3.6.5)
   - ZXingObjC/All (3.6.5)
 
 DEPENDENCIES:
   - AFNetworking
+  - Aspects
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
   - FMDB
@@ -89,11 +92,13 @@ DEPENDENCIES:
   - Texture
   - TZImagePickerController
   - YYModel
+  - YYText
   - ZXingObjC
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - Aspects
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
     - FMDB
@@ -112,30 +117,33 @@ SPEC REPOS:
     - Texture
     - TZImagePickerController
     - YYModel
+    - YYText
     - ZXingObjC
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
-  IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
-  MyLayout: 6a17ff3a67287af6a9d7bfa302fd275cacbf7236
+  MyLayout: 6e44860ef5a857cf50178c68e01099c0926cd7c7
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
-  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
   Texture: 8ecf6984065a1e54f06bf97b349ecca28582acd7
-  TZImagePickerController: 1f92968aa0e98a06b9e2eccca8560acc19254257
+  TZImagePickerController: 99f03b64145a8c92c55b9b1b931410967d9be4cb
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 934fe04098d9d1cafc7f1f5d1b13e5d3434437f2
+PODFILE CHECKSUM: 559052f7ca55c9364e346e73f6fe21a5aad5d654
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1
