@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.0)
   - AFNetworking/UIKit (4.0.0):
     - AFNetworking/NSURLSession
+  - AMapFoundation (1.6.3)
+  - AMapSearch (7.3.0):
+    - AMapFoundation (~> 1.6.3)
   - Aspects (1.4.1)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
@@ -76,6 +79,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - AMapSearch
   - Aspects
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
@@ -98,6 +102,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - AMapFoundation
+    - AMapSearch
     - Aspects
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
@@ -122,6 +128,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: d9fdf484a3c723ec3c558a41cc5754c7e845ee77
+  AMapFoundation: 9ed923193b357ebb30a073e9fe255d3c24054d5a
+  AMapSearch: a048bcca3bf0b8083345070e1f193f814bd8dc01
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
@@ -144,6 +152,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 559052f7ca55c9364e346e73f6fe21a5aad5d654
+PODFILE CHECKSUM: 8efa452157769a8a49cc065cef9da93073d07aab
 
 COCOAPODS: 1.9.1

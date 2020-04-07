@@ -24,5 +24,6 @@ pod 'ReactiveObjC'
 pod 'ZXingObjC'
 pod 'Aspects'
 pod 'YYText'
+pod 'AMapSearch'
 end
 
