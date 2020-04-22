@@ -8,7 +8,6 @@
 
 #import "FirstViewController.h"
 #import "RunLoopObject1.h"
-#import "NSString+Hash.h"
 #import "person.h"
 #import "Son.h"
 #import "HomeCell.h"

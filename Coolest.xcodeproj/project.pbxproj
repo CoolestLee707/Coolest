@@ -67,7 +67,6 @@
 		BF61BC00230C03E500D020F5 /* SimpleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BBFF230C03E500D020F5 /* SimpleFactory.m */; };
 		BF61BC03230C040200D020F5 /* ProductA.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BC02230C040200D020F5 /* ProductA.m */; };
 		BF61BC06230C040B00D020F5 /* ProductB.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61BC05230C040B00D020F5 /* ProductB.m */; };
-		BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F121194243000C8693 /* NSString+Hash.m */; };
 		BF6B08F521194925000C8693 /* FingerprintPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */; };
 		BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08F7211D3E5E000C8693 /* HitTestViewController.m */; };
 		BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6B08FA211D415E000C8693 /* HitTestBackView.m */; };
@@ -246,8 +245,6 @@
 		BF61BC04230C040B00D020F5 /* ProductB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductB.h; sourceTree = "<group>"; };
 		BF61BC05230C040B00D020F5 /* ProductB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductB.m; sourceTree = "<group>"; };
 		BF61BC07230C062300D020F5 /* SimpleProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleProtocol.h; sourceTree = "<group>"; };
-		BF6B08F021194243000C8693 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
-		BF6B08F121194243000C8693 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		BF6B08F321194925000C8693 /* FingerprintPasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintPasswordViewController.h; sourceTree = "<group>"; };
 		BF6B08F421194925000C8693 /* FingerprintPasswordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintPasswordViewController.m; sourceTree = "<group>"; };
 		BF6B08F6211D3E5E000C8693 /* HitTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestViewController.h; sourceTree = "<group>"; };
@@ -537,8 +534,6 @@
 				BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */,
 				BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */,
 				BF59E1CB21003AF70004EC56 /* NSString+StringTool.m */,
-				BF6B08F021194243000C8693 /* NSString+Hash.h */,
-				BF6B08F121194243000C8693 /* NSString+Hash.m */,
 				BF59E1CD21003B240004EC56 /* UIAlertView+Block.h */,
 				BF59E1CE21003B240004EC56 /* UIAlertView+Block.m */,
 				BF59E1D021003B580004EC56 /* UIView+Utils.h */,
@@ -1249,7 +1244,6 @@
 				BF875BDD226070B80060B5DB /* HomeCell.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
-				BF6B08F221194243000C8693 /* NSString+Hash.m in Sources */,
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
