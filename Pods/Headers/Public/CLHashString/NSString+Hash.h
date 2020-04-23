@@ -1,0 +1,1 @@
+../../../CLHashString/CLHashString/Classes/NSString+Hash.h

@@ -1,0 +1,22 @@
+{
+  "name": "CLHashString",
+  "version": "0.1.0",
+  "summary": "Commonly used hashing methods (test)",
+  "description": "detail",
+  "homepage": "https://github.com/CoolestLee707/CLHashString.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "lichuanmin": "Chuanmin.Li-DAJ@YumChina.com"
+  },
+  "source": {
+    "git": "https://github.com/CoolestLee707/CLHashString.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CLHashString/Classes/**/*"
+}

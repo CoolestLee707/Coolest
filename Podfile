@@ -26,5 +26,7 @@ pod 'Aspects'
 pod 'YYText'
 pod 'AMapSearch'
 
+pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
+
 end
 
