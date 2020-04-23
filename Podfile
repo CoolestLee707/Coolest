@@ -26,7 +26,5 @@ pod 'Aspects'
 pod 'YYText'
 pod 'AMapSearch'
 
-#pod 'CLHashString',:path =>'./LocalLib/CLHashString'
-
 end
 
