@@ -1,9 +1,9 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 
 inhibit_all_warnings!
 
 target 'Coolest' do
-source ‘https://github.com/CocoaPods/Specs.git’
+source 'https://github.com/CocoaPods/Specs.git'
 
 pod 'AFNetworking'
 pod 'MJExtension'
@@ -26,7 +26,7 @@ pod 'Aspects'
 pod 'YYText'
 pod 'AMapSearch'
 
-pod 'CLHashString',:path =>'./LocalLib/CLHashString'
+#pod 'CLHashString',:path =>'./LocalLib/CLHashString'
 
 end
 
