@@ -25,6 +25,7 @@ pod 'ZXingObjC'
 pod 'Aspects'
 pod 'YYText'
 pod 'AMapSearch'
+pod 'BlockHook'
 
 pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
 
