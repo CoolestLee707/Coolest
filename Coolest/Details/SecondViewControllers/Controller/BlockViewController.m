@@ -51,17 +51,14 @@
 //
 //    ADLog(@"globalBlock - %@",globalBlock);
     
-    self.ob1 = [[objc1 alloc]init];
-    self.ob2 = [[objc2 alloc]init];
     
-    self.ob1.ob2 = self.ob2;
+//    [self test11];
     
-    [self.ob1 run];
-    [self.ob2 run2];
-
-    [self.ob1 run12];
-
-    [self.ob1.ob2 run2];
+//    block 当做参数
+    [self testBlockParameter:^NSString *(NSString *str1, NSString *str2) {
+        NSString *str3 = [NSString stringWithFormat:@"%@-%@",str1,str2];
+        return str3;
+    }];
     
     
 }
@@ -177,4 +174,31 @@
 }
 
 
+/// block 当做参数，两个传入参数，一个返回参数
+- (void)testBlockParameter:(NSString *(^)(NSString *str1,NSString *str2))complete {
+
+//    NSString *strq = !complete?nil:complete(@"111",@"222");
+    
+    if (complete) {
+        NSString *str = complete(@"1",@"2");
+        ADLog(@"str---%@",str);
+    }
+    
+}
+
+
+- (void)test11
+{
+    self.ob1 = [[objc1 alloc]init];
+    self.ob2 = [[objc2 alloc]init];
+    
+    self.ob1.ob2 = self.ob2;
+    
+    [self.ob1 run];
+    [self.ob2 run2];
+
+    [self.ob1 run12];
+
+    [self.ob1.ob2 run2];
+}
 @end
