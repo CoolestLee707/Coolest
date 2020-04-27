@@ -33,7 +33,12 @@
     self.resultImageView = [[UIImageView alloc]init];
     [self.view addSubview:self.resultImageView];
     
-    self.resultImageView.image = [UIImage imageNamed:@"tabbar_icon4_selected"];
+//    UIImage *img =[UIImage imageNamed:@"CLBtn.bundle/vpay_card.png"];
+    UIImage *img =[UIImage imageNamed:@"testBundle.bundle/icon_weixin.png"];
+
+    
+    
+    self.resultImageView.image = img;
     
     self.resultImageView.transform = CGAffineTransformMakeRotation(M_PI_2);
 
