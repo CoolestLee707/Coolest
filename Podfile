@@ -28,7 +28,6 @@ pod 'AMapSearch'
 pod 'BlockHook'
 pod 'Aspects'
 pod "MBCircularProgressBar"
-pod 'PromiseKit'
 
 pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
 
