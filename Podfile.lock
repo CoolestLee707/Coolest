@@ -27,6 +27,7 @@ PODS:
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (6.5.5)
   - Masonry (1.1.0)
+  - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.2.1)
   - MJRefresh (3.4.1)
@@ -46,6 +47,15 @@ PODS:
   - PINRemoteImage/PINCache (3.0.0-beta.13):
     - PINCache (= 3.0.1-beta.6)
     - PINRemoteImage/Core
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - ReactiveObjC (3.1.1)
   - SDCycleScrollView (1.80):
     - SDWebImage (>= 5.0.0)
@@ -90,10 +100,12 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManager
   - Masonry
+  - MBCircularProgressBar
   - MBProgressHUD
   - MJExtension
   - MJRefresh
   - MyLayout
+  - PromiseKit
   - ReactiveObjC
   - SDCycleScrollView (~> 1.75)
   - SDWebImage
@@ -115,6 +127,7 @@ SPEC REPOS:
     - FMDB
     - IQKeyboardManager
     - Masonry
+    - MBCircularProgressBar
     - MBProgressHUD
     - MJExtension
     - MJRefresh
@@ -122,6 +135,7 @@ SPEC REPOS:
     - PINCache
     - PINOperation
     - PINRemoteImage
+    - PromiseKit
     - ReactiveObjC
     - SDCycleScrollView
     - SDWebImage
@@ -152,6 +166,7 @@ SPEC CHECKSUMS:
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
@@ -159,6 +174,7 @@ SPEC CHECKSUMS:
   PINCache: d195fdba255283f7e9900a55e3cced377f431f9b
   PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
   PINRemoteImage: d6d51c5d2adda55f1ce30c96e850b6c4ebd2856a
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
   SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
@@ -168,6 +184,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 085aeac982d1e3898dfb2f5934ebd30999e704fe
+PODFILE CHECKSUM: 3bf9cd3ae4c25a4e77ddf8ba1ecf9dca5222d7d7
 
 COCOAPODS: 1.9.1
