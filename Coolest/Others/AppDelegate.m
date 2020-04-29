@@ -40,6 +40,9 @@ extern CFAbsoluteTime startTime;
     
     [self setTouchService:application Options:launchOptions];
     
+//    本地推送
+    [self registerAPN];
+    
     BOOL isPrisonBreak = [self isJailBreak];
     
     NSString *qqqq = @"没有越狱";

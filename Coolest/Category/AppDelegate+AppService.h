@@ -41,4 +41,6 @@
 - (BOOL)isJailBreak;
 
 
+- (void)registerAPN;
+
 @end
