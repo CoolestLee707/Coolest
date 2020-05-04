@@ -32,7 +32,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return 70;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -43,9 +43,13 @@
         cell = [[MVVM_RAC_Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     
+    kWeakSelf(weakSelf);
     [self.viewModel configCell:cell CellIndexPath:indexPath];
     cell.tapBlock = ^(NSString * _Nonnull tapString) {
         ADLog(@"tapString - - %@",tapString);
+        
+        MVVM_RAC_Model *model = weakSelf.viewModel.dataArray[indexPath.row];
+        weakSelf.viewModel.contentKey = model.name;
     };
     
     return cell;

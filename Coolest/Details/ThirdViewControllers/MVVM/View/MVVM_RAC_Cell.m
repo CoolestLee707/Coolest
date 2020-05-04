@@ -17,7 +17,7 @@
         
         self.backgroundColor = TabbarColor;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleGray;
         
         [self setUI];
     }
@@ -28,12 +28,14 @@
 - (void)setUI
 {
     _nameLabel = [[UILabel alloc]init];
+    _nameLabel.backgroundColor = [UIColor yellowColor];
     _nameLabel.textColor = [UIColor blackColor];
     _nameLabel.font = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:_nameLabel];
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.mas_equalTo(20);
-        make.right.bottom.mas_equalTo(-20);
+        make.left.top.mas_equalTo(10);
+        make.bottom.mas_equalTo(-10);
+        make.right.mas_equalTo(-220);
     }];
     
     _nameLabel.userInteractionEnabled = YES;
