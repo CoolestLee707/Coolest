@@ -52,7 +52,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12",@"13",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -151,6 +151,11 @@
         case 9:
         {
             [self addLocalNotice];
+            break;
+        }
+        case 10:
+        {
+            [self sortedArrayUsingComparator];
             break;
         }
         default:
@@ -254,4 +259,34 @@
     }
 }
 
+- (void)sortedArrayUsingComparator {
+    
+    NSArray *numberArray = @[@4,@5,@2,@6,@3,@7,@8];
+    
+    ADLog(@"numberArray - %@",numberArray);
+
+     
+    NSArray *array = [numberArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        
+//        我们对元素进行升序排序，比较integerValue
+        NSNumber *number1 = obj1;
+        NSNumber *number2 = obj2;
+        if ([number1 integerValue] > [number2 integerValue]){
+            return NSOrderedDescending;
+        }else if([number1 integerValue] < [number2 integerValue]) {
+            return NSOrderedAscending;
+        }else{
+            return NSOrderedSame;
+        }
+        
+        // 数组逆转
+//        return NSOrderedDescending;
+//
+//        // 数组不变
+//        return NSOrderedAscending;
+        
+    }];
+    
+    ADLog(@"array - %@",array);
+}
 @end
