@@ -125,6 +125,7 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolest.entitlements; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
 		BF14136921AFC76F002E5FAB /* msgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgSendViewController.h; sourceTree = "<group>"; };
@@ -458,6 +459,7 @@
 		BF59E184210035530004EC56 /* Coolest */ = {
 			isa = PBXGroup;
 			children = (
+				3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */,
 				BF90076E2294F8520051DD7B /* Global */,
 				BF59E1C02100382D0004EC56 /* Manager */,
 				BF59E1BF2100381A0004EC56 /* Libs */,
@@ -1491,11 +1493,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BITCODE_GENERATION_MODE = bitcode;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 68UMB23XTF;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
@@ -1518,11 +1523,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BITCODE_GENERATION_MODE = bitcode;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = PHSYCV4RUY;
+				DEVELOPMENT_TEAM = 68UMB23XTF;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";

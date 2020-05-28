@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)sendMessageClass:(NSString *)msg;
 
+- (void)run;
+
 @end
 
 NS_ASSUME_NONNULL_END

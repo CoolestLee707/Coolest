@@ -158,6 +158,7 @@
             [self sortedArrayUsingComparator];
             break;
         }
+            
         default:
             break;
     }

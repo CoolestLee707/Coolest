@@ -29,6 +29,9 @@
     
     //类方法
     [msgPerson sendMessageClass:@"类方法"];
+    
+    msgPerson *person = [msgPerson alloc];
+    [person run];
 }
 
 /*

@@ -12,6 +12,11 @@
 
 @implementation msgPerson
 
+- (void)run
+{
+    ADLog(@"running------");
+}
+
 #pragma mark -- 第一阶段：动态方法解析
 
 //当类调用一个没有实现的 对象方法 就会到这里
