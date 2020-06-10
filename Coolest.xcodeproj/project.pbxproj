@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
+		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
+		3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2692490DF1600045F2D /* Inherit_Son.m */; };
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
 		BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136A21AFC76F002E5FAB /* msgSendViewController.m */; };
@@ -125,6 +128,12 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		3F68E2622490DD7D00045F2D /* InheritViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InheritViewController.h; sourceTree = "<group>"; };
+		3F68E2632490DD7D00045F2D /* InheritViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InheritViewController.m; sourceTree = "<group>"; };
+		3F68E2652490DEE400045F2D /* Inherit_Father.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Father.h; sourceTree = "<group>"; };
+		3F68E2662490DEE400045F2D /* Inherit_Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Father.m; sourceTree = "<group>"; };
+		3F68E2682490DF1600045F2D /* Inherit_Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Son.h; sourceTree = "<group>"; };
+		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
 		3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolest.entitlements; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
@@ -351,6 +360,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F68E2612490DD3800045F2D /* inherit */ = {
+			isa = PBXGroup;
+			children = (
+				3F68E2622490DD7D00045F2D /* InheritViewController.h */,
+				3F68E2632490DD7D00045F2D /* InheritViewController.m */,
+				3F68E2652490DEE400045F2D /* Inherit_Father.h */,
+				3F68E2662490DEE400045F2D /* Inherit_Father.m */,
+				3F68E2682490DF1600045F2D /* Inherit_Son.h */,
+				3F68E2692490DF1600045F2D /* Inherit_Son.m */,
+			);
+			path = inherit;
+			sourceTree = "<group>";
+		};
 		787CCAB28AF396DEFF448519 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +771,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F68E2612490DD3800045F2D /* inherit */,
 				BF61BBF4230C025900D020F5 /* FactoryPattern */,
 				BFBF771B224B1CC500A3FE88 /* RAC */,
 				BFDA8B83223755A2001B4F26 /* MVVM */,
@@ -1259,11 +1282,13 @@
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
 				BF61BBFD230C02E100D020F5 /* SimpleFactoryPatternViewController.m in Sources */,
+				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
+				3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */,
 				BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */,
@@ -1307,6 +1332,7 @@
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
 				BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */,
 				BF61BC00230C03E500D020F5 /* SimpleFactory.m in Sources */,
+				3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */,
 				BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
