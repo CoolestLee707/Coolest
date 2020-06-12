@@ -28,4 +28,18 @@
     ADLog(@"run----%@",testInheritString);
 }
 
+- (void)delay:(void(^)(NSString *result))complete
+{
+    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+
+       dispatch_async(queue, ^{
+           sleep(5);
+          if (complete) {
+               complete(@"ok");
+           }
+       });
+}
+- (void)dealloc {
+    ADLog(@"father over");
+}
 @end

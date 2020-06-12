@@ -162,6 +162,9 @@
         case 11:
         {
             InheritViewController* vc = [[InheritViewController alloc]init];
+//            vc.callBack = ^(NSString * _Nonnull result) {
+//                ADLog(@"---- %@",result);
+//            };
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

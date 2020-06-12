@@ -134,6 +134,7 @@
 		3F68E2662490DEE400045F2D /* Inherit_Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Father.m; sourceTree = "<group>"; };
 		3F68E2682490DF1600045F2D /* Inherit_Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Son.h; sourceTree = "<group>"; };
 		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
+		3F808C3A2493741E002FCDF7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Others/main.cpp; sourceTree = "<group>"; };
 		3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolest.entitlements; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
@@ -481,6 +482,7 @@
 		BF59E184210035530004EC56 /* Coolest */ = {
 			isa = PBXGroup;
 			children = (
+				3F808C3A2493741E002FCDF7 /* main.cpp */,
 				3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */,
 				BF90076E2294F8520051DD7B /* Global */,
 				BF59E1C02100382D0004EC56 /* Manager */,

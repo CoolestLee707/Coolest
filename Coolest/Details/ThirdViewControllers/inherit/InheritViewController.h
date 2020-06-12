@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InheritViewController : BaseViewController
 
+@property(nonatomic,copy)void(^callBack)(NSString *result);
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -14,6 +14,7 @@
 int main(int argc, char * argv[]) {
 
 //    startTime = CFAbsoluteTimeGetCurrent();
+//    NSObject *obj = [NSObject new];
     
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));

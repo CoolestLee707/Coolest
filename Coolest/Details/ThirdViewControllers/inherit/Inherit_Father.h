@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)log;
 
+- (void)delay:(void(^)(NSString *result))complete;
+
 @end
 
 NS_ASSUME_NONNULL_END
