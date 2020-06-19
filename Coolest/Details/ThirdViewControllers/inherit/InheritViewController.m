@@ -9,6 +9,7 @@
 #import "InheritViewController.h"
 #import "Inherit_Father.h"
 #import "Inherit_Son.h"
+#import <objc/message.h>
 
 @interface InheritViewController ()
 
@@ -38,6 +39,10 @@
 //
 //    [self test4];
     
+    
+    [self testInherit];
+    
+
 }
 
 #pragma mark --- 1.weakself打破循环引用
@@ -218,7 +223,33 @@
             [son log];
         }];
         
-    //    继承父类所有属性和方法，copy
+    //    继承父类所有属性，copy
+    
+//    Class classone = object_getClass(father);
+//    Class classtwo = object_getClass([Inherit_Father class]);
+//    Class classthree = object_getClass(@"Inherit_Father");
+//
+//    ADLog(@"%d---%d---%d",class_isMetaClass(classone),class_isMetaClass(classtwo),class_isMetaClass(classthree));
+
+    
+    
+    Class fatherClassOne = [father class];
+//    Class fatherClassTwo = [Inherit_Father class];
+//    Class fatherClassThree = object_getClass(@"Inherit_Father");
+//    Class fatherClassFour = object_getClass(father);
+//
+//
+    Class fatherMetaClass = object_getClass(fatherClassOne);
+    
+//    (lldb) p/x (long)father ->isa
+//    (long) $0 = 0x000081a103750115
+//    (lldb) p/x (long)fatherClassOne
+//    (long) $1 = 0x0000000103750110
+//    (lldb)
+    
+    
+    ADLog(@"%p--%p--%p",father,fatherClassOne,fatherMetaClass);
+
 }
 
 

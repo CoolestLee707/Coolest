@@ -17,6 +17,7 @@
 
 #import "ImageEditViewController.h"
 #import "InheritViewController.h"
+#import "KVOViewController.h"
 
 #import <UserNotifications/UserNotifications.h>
 
@@ -53,7 +54,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13",@"14",@"15",@"16",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14",@"15",@"16",@"17",@"18"];
     
     [self createUI];
 }
@@ -168,6 +169,13 @@
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
+        case 12:
+        {
+            KVOViewController* vc = [[KVOViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+            
         default:
             break;
     }

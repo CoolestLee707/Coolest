@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
+		3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3069249C98C900E558E5 /* KVO_Person.m */; };
 		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
 		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
 		3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2692490DF1600045F2D /* Inherit_Son.m */; };
+		3FDC7E1624974B3900425369 /* UIViewController+Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */; };
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
 		BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136A21AFC76F002E5FAB /* msgSendViewController.m */; };
@@ -128,6 +131,10 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		3F3D3065249C97ED00E558E5 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		3F3D3066249C97ED00E558E5 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
+		3F3D3068249C98C900E558E5 /* KVO_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVO_Person.h; sourceTree = "<group>"; };
+		3F3D3069249C98C900E558E5 /* KVO_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVO_Person.m; sourceTree = "<group>"; };
 		3F68E2622490DD7D00045F2D /* InheritViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InheritViewController.h; sourceTree = "<group>"; };
 		3F68E2632490DD7D00045F2D /* InheritViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InheritViewController.m; sourceTree = "<group>"; };
 		3F68E2652490DEE400045F2D /* Inherit_Father.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Father.h; sourceTree = "<group>"; };
@@ -136,6 +143,8 @@
 		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
 		3F808C3A2493741E002FCDF7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Others/main.cpp; sourceTree = "<group>"; };
 		3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolest.entitlements; sourceTree = "<group>"; };
+		3FDC7E1424974B3900425369 /* UIViewController+Monitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Monitor.h"; sourceTree = "<group>"; };
+		3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Monitor.m"; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
 		BF14136921AFC76F002E5FAB /* msgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgSendViewController.h; sourceTree = "<group>"; };
@@ -361,6 +370,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3D3064249C97D100E558E5 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				3F3D3065249C97ED00E558E5 /* KVOViewController.h */,
+				3F3D3066249C97ED00E558E5 /* KVOViewController.m */,
+				3F3D3068249C98C900E558E5 /* KVO_Person.h */,
+				3F3D3069249C98C900E558E5 /* KVO_Person.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
 		3F68E2612490DD3800045F2D /* inherit */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,6 +582,8 @@
 				BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */,
 				BFDC0F232107320800185A31 /* UIViewController+Appear.h */,
 				BFDC0F242107320800185A31 /* UIViewController+Appear.m */,
+				3FDC7E1424974B3900425369 /* UIViewController+Monitor.h */,
+				3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */,
 				BF59E1D9210044320004EC56 /* UIScrollView+ContentInset.h */,
 				BF59E1DA210044320004EC56 /* UIScrollView+ContentInset.m */,
 				BF59E1CA21003AF70004EC56 /* NSString+StringTool.h */,
@@ -773,6 +795,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F3D3064249C97D100E558E5 /* KVO */,
 				3F68E2612490DD3800045F2D /* inherit */,
 				BF61BBF4230C025900D020F5 /* FactoryPattern */,
 				BFBF771B224B1CC500A3FE88 /* RAC */,
@@ -1257,6 +1280,7 @@
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
+				3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */,
 				BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */,
 				BF61BC06230C040B00D020F5 /* ProductB.m in Sources */,
 				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,
@@ -1277,6 +1301,7 @@
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
 				BF7B055C2284503F008EDCF8 /* objc2.m in Sources */,
 				BF875BDD226070B80060B5DB /* HomeCell.m in Sources */,
+				3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */,
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
@@ -1336,6 +1361,7 @@
 				BF61BC00230C03E500D020F5 /* SimpleFactory.m in Sources */,
 				3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */,
 				BFDA8B7022363D7F001B4F26 /* NSOperationViewController.m in Sources */,
+				3FDC7E1624974B3900425369 /* UIViewController+Monitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
