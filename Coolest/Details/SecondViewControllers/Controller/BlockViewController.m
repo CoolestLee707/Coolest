@@ -21,19 +21,44 @@
 @property (nonatomic,strong) objc1 *ob1;
 @property (nonatomic,strong) objc2 *ob2;
 
+
 @end
 
 @implementation BlockViewController
+
+void (^testBlock)(void);
+
+void test100()
+{
+    int age = 10;
+    testBlock = ^{
+        ADLog(@"testBlock ----- %d",age);
+    };
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"Block";
     
+    int age = 10;
+    
+    void (^testBlock1)(void) = ^{
+        
+        ADLog(@"testBlock ----- %d",age);
+    };
+    
+    ADLog(@"-- %@",[testBlock1 class]);
+    
+//    test100();
+//
+//    testBlock();
+    
+    
 //    [self createGlobalBlock];
 //
 //    [self createMallocBlock];
-
+//
 //    [self createStackBlock];
     
 //    [self testBlock];
@@ -55,10 +80,10 @@
 //    [self test11];
     
 //    block 当做参数
-    [self testBlockParameter:^NSString *(NSString *str1, NSString *str2) {
-        NSString *str3 = [NSString stringWithFormat:@"%@-%@",str1,str2];
-        return str3;
-    }];
+//    [self testBlockParameter:^NSString *(NSString *str1, NSString *str2) {
+//        NSString *str3 = [NSString stringWithFormat:@"%@-%@",str1,str2];
+//        return str3;
+//    }];
     
     
 }
@@ -67,10 +92,12 @@
     
 }
 //静态Block
+int age = 10;
 - (void)createGlobalBlock
 {
+//    static int age = 10;
     void (^globalBlock) (void) = ^{
-        ADLog(@"block");
+        ADLog(@"block-%d",age);
     };
     
     globalBlock();
