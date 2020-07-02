@@ -3,7 +3,7 @@ platform :ios, '10.0'
 inhibit_all_warnings!
 
 target 'Coolest' do
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 pod 'AFNetworking'
 pod 'MJExtension'
@@ -28,6 +28,7 @@ pod 'AMapSearch'
 pod 'BlockHook'
 pod 'Aspects'
 pod "MBCircularProgressBar"
+pod 'pop'
 
 pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
 

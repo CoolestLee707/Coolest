@@ -41,13 +41,20 @@ void test100()
 
     self.title = @"Block";
     
-    int age = 10;
+    __block int age = 10;
     
     void (^testBlock1)(void) = ^{
         
+        age = 20;
         ADLog(@"testBlock ----- %d",age);
     };
     
+    ADLog(@"testBlock ******** %d",age);
+
+    testBlock1();
+    
+    ADLog(@"testBlock ++++++ %d",age);
+
     ADLog(@"-- %@",[testBlock1 class]);
     
 //    test100();
