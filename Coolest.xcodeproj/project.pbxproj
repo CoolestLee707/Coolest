@@ -13,6 +13,9 @@
 		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
 		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
 		3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2692490DF1600045F2D /* Inherit_Son.m */; };
+		3F8B330624D0283100A684E2 /* LiveThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330524D0283100A684E2 /* LiveThreadViewController.m */; };
+		3F8B330924D0289000A684E2 /* CLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330824D0289000A684E2 /* CLThread.m */; };
+		3F8B330F24D0386700A684E2 /* CLPermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330E24D0386700A684E2 /* CLPermenantThread.m */; };
 		3FDC7E1624974B3900425369 /* UIViewController+Monitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */; };
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
@@ -142,6 +145,14 @@
 		3F68E2682490DF1600045F2D /* Inherit_Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Son.h; sourceTree = "<group>"; };
 		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
 		3F808C3A2493741E002FCDF7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Others/main.cpp; sourceTree = "<group>"; };
+		3F8B32FF24CE7E3400A684E2 /* methodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = methodViewController.h; sourceTree = "<group>"; };
+		3F8B330024CE7E3400A684E2 /* methodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = methodViewController.m; sourceTree = "<group>"; };
+		3F8B330424D0283100A684E2 /* LiveThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveThreadViewController.h; sourceTree = "<group>"; };
+		3F8B330524D0283100A684E2 /* LiveThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveThreadViewController.m; sourceTree = "<group>"; };
+		3F8B330724D0289000A684E2 /* CLThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLThread.h; sourceTree = "<group>"; };
+		3F8B330824D0289000A684E2 /* CLThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLThread.m; sourceTree = "<group>"; };
+		3F8B330D24D0386700A684E2 /* CLPermenantThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLPermenantThread.h; sourceTree = "<group>"; };
+		3F8B330E24D0386700A684E2 /* CLPermenantThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLPermenantThread.m; sourceTree = "<group>"; };
 		3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Coolest.entitlements; sourceTree = "<group>"; };
 		3FDC7E1424974B3900425369 /* UIViewController+Monitor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Monitor.h"; sourceTree = "<group>"; };
 		3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Monitor.m"; sourceTree = "<group>"; };
@@ -386,6 +397,8 @@
 			children = (
 				3F68E2622490DD7D00045F2D /* InheritViewController.h */,
 				3F68E2632490DD7D00045F2D /* InheritViewController.m */,
+				3F8B32FF24CE7E3400A684E2 /* methodViewController.h */,
+				3F8B330024CE7E3400A684E2 /* methodViewController.m */,
 				3F68E2652490DEE400045F2D /* Inherit_Father.h */,
 				3F68E2662490DEE400045F2D /* Inherit_Father.m */,
 				3F68E2682490DF1600045F2D /* Inherit_Son.h */,
@@ -738,6 +751,8 @@
 				BF6B6D38214FA1880000B157 /* CoreTextViewController.m */,
 				BF7479E5215B68CC00511A2A /* NSThreadViewController.h */,
 				BF7479E6215B68CC00511A2A /* NSThreadViewController.m */,
+				3F8B330424D0283100A684E2 /* LiveThreadViewController.h */,
+				3F8B330524D0283100A684E2 /* LiveThreadViewController.m */,
 				BF39AF4F215CAC1B00C05CEF /* GCDViewController.h */,
 				BF39AF50215CAC1B00C05CEF /* GCDViewController.m */,
 				BF18288621AD16A800361219 /* MessageViewController.h */,
@@ -765,6 +780,10 @@
 			children = (
 				BFB72E5D221BF7D5002F4743 /* AsyncDisplayModel.h */,
 				BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */,
+				3F8B330724D0289000A684E2 /* CLThread.h */,
+				3F8B330824D0289000A684E2 /* CLThread.m */,
+				3F8B330D24D0386700A684E2 /* CLPermenantThread.h */,
+				3F8B330E24D0386700A684E2 /* CLPermenantThread.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1288,6 +1307,7 @@
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
+				3F8B330924D0289000A684E2 /* CLThread.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
@@ -1319,6 +1339,7 @@
 				BFBF7724224B1E3B00A3FE88 /* RACView.m in Sources */,
 				BF14137121AFC836002E5FAB /* msgDog.m in Sources */,
 				BFDA8B7B22366CCB001B4F26 /* MVPModel.m in Sources */,
+				3F8B330F24D0386700A684E2 /* CLPermenantThread.m in Sources */,
 				BF1F2A4D229FE72100ED248C /* WeakManager.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
 				BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */,
@@ -1327,6 +1348,7 @@
 				BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */,
 				BF6B6D39214FA1880000B157 /* CoreTextViewController.m in Sources */,
 				BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */,
+				3F8B330624D0283100A684E2 /* LiveThreadViewController.m in Sources */,
 				BF90077E22952D900051DD7B /* Const.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,

@@ -21,6 +21,7 @@
 
 //mutableArray若用copy修饰会返回一个NSArray类型，若调用可变类型的添加、删除、修改方法时会因为找不到对应的方法而crash
 @property (nonatomic,strong)NSMutableArray *array;
+@property (nonatomic,copy)NSMutableArray *copyarray;
 
 @property (nonatomic,copy) NSMutableString *muStr;
 
@@ -57,14 +58,14 @@
 
     
     
-    CGSize tempStringSize = [@"Valid from 2019-07-09 until until until 43" sizeWithFont:[UIFont systemFontOfSize:11] constrainedToSize:CGSizeMake(250-40-5, MAXFLOAT)];
-    ADLog(@"----- %f",tempStringSize.height);
-    
-    NSString *rer =@"216731273|";
-
-    NSArray *movieCodeArr = [rer componentsSeparatedByString:@"|"];
-
-    ADLog(@"%@",movieCodeArr);
+//    CGSize tempStringSize = [@"Valid from 2019-07-09 until until until 43" sizeWithFont:[UIFont systemFontOfSize:11] constrainedToSize:CGSizeMake(250-40-5, MAXFLOAT)];
+//    ADLog(@"----- %f",tempStringSize.height);
+//
+//    NSString *rer =@"216731273|";
+//
+//    NSArray *movieCodeArr = [rer componentsSeparatedByString:@"|"];
+//
+//    ADLog(@"%@",movieCodeArr);
 //    [self fdT];
     
 //    UIView *v=[[UIView alloc]initWithFrame:CGRectMake(10, 100, 100, 100)];
@@ -81,7 +82,7 @@
 //    [self.view addSubview:v];
 //    
     
-//    [self test1];
+    [self test2];
 //    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    label.backgroundColor = [UIColor clearColor];
 //    label.textColor = [UIColor blackColor];
@@ -100,24 +101,24 @@
 
 //    ADLog(@"%@",positionsNumberArray);
     
-    UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
-    sc.backgroundColor = [UIColor orangeColor];
-    sc.contentSize = CGSizeMake(sc.width*3, sc.height);
-    
-    [self.view addSubview:sc];
-    
-    UIView *v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    v1.backgroundColor = [UIColor blueColor];
-    [sc addSubview:v1];
-    
-    
-    UIView *v2 = [[UIView alloc]initWithFrame:CGRectMake(sc.width+ 100, 100, 100, 100)];
-    v2.backgroundColor = [UIColor redColor];
-    [sc addSubview:v2];
-    
-    UIView *v3 = [[UIView alloc]initWithFrame:CGRectMake(sc.width*2+ 100, 100, 100, 100)];
-    v3.backgroundColor = [UIColor grayColor];
-    [sc addSubview:v3];
+//    UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
+//    sc.backgroundColor = [UIColor orangeColor];
+//    sc.contentSize = CGSizeMake(sc.width*3, sc.height);
+//
+//    [self.view addSubview:sc];
+//
+//    UIView *v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    v1.backgroundColor = [UIColor blueColor];
+//    [sc addSubview:v1];
+//
+//
+//    UIView *v2 = [[UIView alloc]initWithFrame:CGRectMake(sc.width+ 100, 100, 100, 100)];
+//    v2.backgroundColor = [UIColor redColor];
+//    [sc addSubview:v2];
+//
+//    UIView *v3 = [[UIView alloc]initWithFrame:CGRectMake(sc.width*2+ 100, 100, 100, 100)];
+//    v3.backgroundColor = [UIColor grayColor];
+//    [sc addSubview:v3];
     
     
     
@@ -126,11 +127,16 @@
 
 - (void)test2 {
     
-//    self.array = [NSMutableArray array];
-//    
-//    [self.array addObject:@"1"];
+    NSMutableArray *arr1 = [NSMutableArray arrayWithCapacity:0];
+    NSArray *arr2 = @[].copy;
     
-    [self.view addSubview:self.drawView];
+    self.array = arr1;
+    self.copyarray = arr1;
+    
+    [self.array addObject:@"0"];
+//    [self.copyarray addObject:@"a"];
+    ADLog(@"%@-%@",self.array,self.copyarray);
+//    ADLog(@"%@-%@",self.array.class,self.copyarray.class);
 
 }
 - (void)test1 {

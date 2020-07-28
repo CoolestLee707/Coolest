@@ -31,7 +31,7 @@ static char UIViewControllerTag;
         objc_setAssociatedObject(vc, &UIViewControllerLoadViewKey,uuidStr,OBJC_ASSOCIATION_COPY);
         objc_setAssociatedObject(vc, &UIViewControllerTag,@"0",OBJC_ASSOCIATION_COPY);
         
-        ADLog(@"start1 - %@",uuidStr);
+//        ADLog(@"start1 - %@",uuidStr);
 
     } error:nil];
     
@@ -46,7 +46,7 @@ static char UIViewControllerTag;
         
         if([vcTag isEqualToString:@"0"]){
             
-            ADLog(@"start2 - %@ -- %@",x23UUID,vc.title);
+//            ADLog(@"start2 - %@ -- %@",x23UUID,vc.title);
             objc_setAssociatedObject(vc, &UIViewControllerTag,VCTag,OBJC_ASSOCIATION_COPY);
 
         }
