@@ -98,7 +98,15 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    [self Test11];
 
-    [self Test12];
+//    [self Test12];
+    
+//    NSString *str = @"http://192.168.138.203:8099/Info.json";
+//
+//    NSURL *url = [[NSURL alloc] initWithString:str];
+//
+//    NSString* jsonstring=[[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
+//
+//    ADLog(@"%@",jsonstring);
 }
 
 - (void)Test12 {

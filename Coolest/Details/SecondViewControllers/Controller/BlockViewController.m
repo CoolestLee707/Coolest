@@ -54,6 +54,20 @@ void test100()
 //    [hj appendString:@"11111111111111"];
     testBlock1();
     
+    __block int age = 10;
+    
+    void (^testBlock1)(void) = ^{
+        
+        age = 20;
+        ADLog(@"testBlock ----- %d",age);
+    };
+    
+    ADLog(@"testBlock ******** %d",age);
+
+    testBlock1();
+    
+    ADLog(@"testBlock ++++++ %d",age);
+
     ADLog(@"-- %@",[testBlock1 class]);
     
 //    test100();

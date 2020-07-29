@@ -31,6 +31,7 @@
     
     self.name = @"000";
 
+    self.view.backgroundColor = [UIColor redColor];
 //    [self test1];
 //
 //    [self test2];
@@ -40,7 +41,7 @@
 //    [self test4];
     
     
-    [self testInherit];
+//    [self testInherit];
     
 
 }
