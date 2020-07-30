@@ -41,6 +41,19 @@ void test100()
 
     self.title = @"Block";
     
+//    int age = 10;
+    static NSString *abc = @"etqwetqiweyqwiubeqw";
+//    NSMutableString *hj = [@"12yiuuiyviyuvbkug" mutableCopy];
+    
+    void (^testBlock1)(void) = ^{
+        
+        ADLog(@"testBlock ----- %@",abc);
+    };
+    
+    abc = @"7837213712387120938712";
+//    [hj appendString:@"11111111111111"];
+    testBlock1();
+    
     __block int age = 10;
     
     void (^testBlock1)(void) = ^{

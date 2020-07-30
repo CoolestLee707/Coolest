@@ -42,11 +42,18 @@
          "v@:@"
          */
         
+//        sel 有了，没有方法实现IMP和types
+        
 //        添加C函数
 //        return class_addMethod(self, sel, (IMP)sendMessageOfC, "v@:@");
         
-//         添加OC方法
+//         添加OC方法--1，根据要添加的方法的sel找IMP
 //        return class_addMethod([self class], sel, class_getMethodImplementation(self, @selector(sendMessageOfOC:)), "v@:@");
+        
+//        添加OC方法--2，根据要添加的方法的sel找到Method，再根据Method找到IMP
+//        Method method = class_getInstanceMethod(self, @selector(sendMessageOfOC:));
+        
+//        return class_addMethod(self, sel, method_getImplementation(method), method_getTypeEncoding(method));
         
     }
     
@@ -60,7 +67,9 @@
 //    ADLog(@"%@",NSStringFromSelector(sel));
 ////    获取metaClass
 //    Class metaClass = objc_getMetaClass(class_getName(self));
-////    Class metaClass = objc_getMetaClass([NSStringFromClass(self) UTF8String]);
+//    Class metaClass = objc_getClass(self);
+
+//    Class metaClass = objc_getMetaClass([NSStringFromClass(self) UTF8String]);
 //
 //    if (sel == @selector(sendMessageClass:)) {
 //
@@ -116,7 +125,7 @@
 }
 
 #pragma mark  二、消息转发
-
+//签名返回为空不会forwardInvocation
 //1、方法签名--实例
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     
@@ -161,8 +170,15 @@
 
 
 //2、消息转发
+//NSInvocation封装了一个方法调用
+//
+//anInvocation.target   以前的方法调用者
+//anInvocation.selector 方法名
+//[anInvocation getArgument:NULL atIndex:0];    方法参数
+
 -(void)forwardInvocation:(NSInvocation *)anInvocation {
     
+   
 //    ADLog(@"forwardInvocation: %@",NSStringFromSelector([anInvocation selector]));
     
     SEL sel = [anInvocation selector];
@@ -171,6 +187,9 @@
         
         msgDog *dog = [msgDog new];
         
+//        anInvocation.target = dog;
+//        [anInvocation invoke];
+
         if ([dog respondsToSelector:sel]) {
             
             [anInvocation invokeWithTarget:dog];
