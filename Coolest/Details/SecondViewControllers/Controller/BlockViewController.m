@@ -56,7 +56,7 @@ void test100()
     
     __block int age = 10;
     
-    void (^testBlock1)(void) = ^{
+    void (^testBlock2)(void) = ^{
         
         age = 20;
         ADLog(@"testBlock ----- %d",age);
@@ -64,11 +64,11 @@ void test100()
     
     ADLog(@"testBlock ******** %d",age);
 
-    testBlock1();
+    testBlock2();
     
     ADLog(@"testBlock ++++++ %d",age);
 
-    ADLog(@"-- %@",[testBlock1 class]);
+    ADLog(@"-- %@",[testBlock2 class]);
     
 //    test100();
 //
