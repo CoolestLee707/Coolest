@@ -108,7 +108,7 @@ DEPENDENCIES:
   - ZXingObjC
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - AMapFoundation
     - AMapSearch
@@ -176,6 +176,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: d56396e19be8c5195005ee44b69e031a983a96ef
+PODFILE CHECKSUM: 1f1e1fe24aecc8c9a543b9a20d999bb7f98336e0
 
 COCOAPODS: 1.9.3

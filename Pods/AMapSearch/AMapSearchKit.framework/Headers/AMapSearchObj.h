@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, AMapWeatherType)
     AMapWeatherTypeForecast     ///< 预报
 };
 
-///云图搜索结果排序
+///企业地图搜索结果排序
 typedef NS_ENUM(NSInteger, AMapCloudSortType)
 {
     AMapCloudSortTypeDESC      = 0, ///< 降序
@@ -50,6 +50,15 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
     AMapTruckSizeTypeLight  = 2, ///< 轻型车
     AMapTruckSizeTypeMedium = 3, ///< 中型车
     AMapTruckSizeTypeHeavy  = 4, ///< 重型车
+};
+
+///规避道路类型
+typedef NS_ENUM(NSInteger, AMapDrivingRouteExcludeType)
+{
+    AMapDrivingRouteExcludeTypeNone       = 0, ///< 不规避
+    AMapDrivingRouteExcludeTypeToll       = 1, ///< 收费道路
+    AMapDrivingRouteExcludeTypeMotorway   = 2, ///< 高速路
+    AMapDrivingRouteExcludeTypeFerry      = 3, ///< 渡船
 };
 
 #pragma mark - AMapPOISearchBaseRequest
@@ -181,10 +190,12 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
 ///地址
 @property (nonatomic, copy) NSString *address;
 ///查询城市，可选值：cityname（中文或中文全拼）、citycode、adcode.
-@property (nonatomic, copy) NSString *city; 
+@property (nonatomic, copy) NSString *city;
+///指定查询国家，支持多个国家，用“|”分隔，可选值：国家代码ISO 3166 或 global，仅海外生效（since 7.4.0）
+@property (nonatomic, copy) NSString *country;
 @end
 
-///地理编码请求
+///地理编码返回
 @interface AMapGeocodeSearchResponse : AMapSearchObject
 ///返回数目
 @property (nonatomic, assign) NSInteger  count; 
@@ -205,6 +216,9 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
 @property (nonatomic, assign) NSInteger     radius;
 ///指定返回结果poi数组中的POI类型，在requireExtension=YES时生效。输入为typecode, 支持传入多个typecode, 多值时用“|”分割
 @property (nonatomic, copy) NSString *poitype;
+///distance 按距离返回,score 按权重返回，仅海外生效（since 7.4.0）
+@property (nonatomic, copy) NSString *mode;
+
 @end
 
 ///逆地理编码返回
@@ -361,6 +375,9 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
  2：插电混动车
  */
 @property (nonatomic, assign) NSInteger cartype;
+///规避道路类型,默认为AMapDrivingRouteExcludeTypeNone，仅海外生效
+@property (nonatomic, assign) AMapDrivingRouteExcludeType exclude;
+
 @end
 
 #pragma mark - AMapWalkingRouteSearchRequest
@@ -558,13 +575,13 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
 
 #pragma mark - AMapCloudSearchBaseRequest
 
-///云图搜索请求基类
+///企业地图搜索请求基类
 @interface AMapCloudSearchBaseRequest : AMapSearchObject
 ///要查询的表格ID, 必选
 @property (nonatomic, copy) NSString *tableID;
-///筛选条件数组, 可选, 对建立了排序筛选索引的字段进行筛选(系统默认为：_id，_name，_address，_updatetime，_createtime建立排序筛选索引).\n 说明：\n 1.支持对文本字段的精确匹配；支持对整数和小数字段的连续区间筛选;\n 2.示例:数组{"type:酒店", "star:[3,5]"}的含义,等同于SQL语句:WHERE type = "酒店" AND star BETWEEN 3 AND 5\n 注意: 所设置的过滤条件中不能含有&、#、%等URL的特殊符号。
+///筛选条件数组, 可选, 说明：\n 1.支持建立索引的字段根据多个条件筛选，多个条件用双&符号连接;\n 2.判断符合支持:>= 大于等于，<= 小于等于，>大于，<小于，= 精确匹配(text索引不可用);\n 3.示例规则：key1=value1&&key2=value2&&lastloctime>=1469817532，示例："name=王师傅|张师傅&&lastloctime>=1469817532
 @property (nonatomic, strong) NSArray<NSString *> *filter;
-///排序字段名, 可选.\n 说明：\n 1.支持按建立了排序筛选索引的整数或小数字段进行排序：sortFields = "字段名"；\n 2.系统预设的字段(忽略sortType)：_distance：坐标与中心点距离升序排序，仅在周边检索时有效；_weight：权重降序排序，当存在keywords时有效；\n 3.默认值：当keywords存在时：默认按预设字段_weight排序；当keywords不存在时，默认按预设字段_distance排序；按建立了排序筛选索引的整数或小数字段进行排序时，若不填升降序，则默认按升序排列；
+///排序字段名, 可选.\n 说明：\n 1.支持按建立了排序筛选索引的整数或小数字段进行排序：sortFields = "字段名"；\n 2.系统预设的字段(忽略sortType)：_distance：坐标与中心点距离升序排序，仅在周边检索时有效（若其它请求使用会异常返回）；_weight：权重降序排序，当存在keywords时有效；\n；
 @property (nonatomic, copy) NSString *sortFields;
 ///可选, 排序方式(默认升序)
 @property (nonatomic, assign) AMapCloudSortType sortType;
@@ -576,39 +593,39 @@ typedef NS_ENUM(NSInteger, AMapTruckSizeType)
 
 #pragma mark - AMapCloudPlaceAroundSearchRequest
 
-///云图周边搜请求
+///企业地图周边搜请求
 @interface AMapCloudPOIAroundSearchRequest : AMapCloudSearchBaseRequest
 ///必填，中心点坐标。
 @property (nonatomic, copy)   AMapGeoPoint *center;
-///可选，查询半径（默认值为3000），单位：米。详细信息请参考：http://lbs.amap.com/yuntu/reference/cloudsearch/#t2
+///可选，查询半径（默认值为3000），单位：米
 @property (nonatomic, assign) NSInteger     radius;
-///可选，搜索关键词。\n 说明：\n 1. 请先在云图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = “工商银行”，检索返回已建立文本索引列值中包含"工商"或者"银行"或者"工商银行"关键字的POI结果集。 \n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。 \n 4. 可赋值为空值，即 keywords = " " 表示空值； \n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据； \n 6. 一次请求最多返回2000条数据。\n 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
+///可选，搜索关键词。\n 说明：1. 只支持建立过文本索引的字段查询/n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如keywords=工商银行，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。/n 3.支持关键字多值模糊检索；如keywords=招商银行&&华夏银行&&工商银行，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集
 @property (nonatomic, copy) NSString *keywords;
 @end
 
-///云图polygon区域查询请求
+///企业地图polygon区域查询请求
 @interface AMapCloudPOIPolygonSearchRequest : AMapCloudSearchBaseRequest
 ///必填，多边形。
 @property (nonatomic, copy) AMapGeoPolygon *polygon;
-///可选，搜索关键词。\n 说明：\n 1. 请先在云图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = “工商银行”，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。\n 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
+///可选，搜索关键词。\n 说明：\n 1. 请先在企业地图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = “工商银行”，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。\n 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
 @property (nonatomic, copy) NSString *keywords;
 @end
 
-///云图ID查询请求
+///企业地图ID查询请求
 @interface AMapCloudPOIIDSearchRequest : AMapCloudSearchBaseRequest
 ///必填,POI的ID
 @property (nonatomic, assign) NSInteger uid; 
 @end
 
-///云图本地查询请求
+///企业地图本地查询请求
 @interface AMapCloudPOILocalSearchRequest : AMapCloudSearchBaseRequest
-///必填，搜索关键词。\n 说明：\n 1. 请先在云图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = "工商银行"，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
+///必填，搜索关键词。\n 说明：\n 1. 请先在企业地图数据管理台添加或删除文本索引字段，系统默认为 _name 和 _address 建立文本索引；\n 2.支持关键字模糊检索，即对建立【文本索引字段】对应列内容进行模糊检索；如 keywords = "工商银行"，检索返回已建立文本索引列值中包含“工商”或者“银行”或者“工商银行”关键字的POI结果集。\n 3. 支持关键字“或”精准检索，即对建立【文本索引字段】对应列内容进行多关键字检索；如 keywords = "招商银行|华夏银行|工商银行"，检索返回已建立索引列值中包含“招商银行”或者“华夏银行”或者“工商银行”的POI结果集，不会返回检索词切分后，如仅包含“招商”或者“银行”的POI集。\n 4. 可赋值为空值，即 keywords = " " 表示空值；\n 5. 若 city = "城市名"，keywords = " " 或者 keywords = "关键字"，返回对应城市的全部数据或对应关键字的数据；\n 6. 一次请求最多返回2000条数据。 注意: 所设置的keywords中不能含有&、#、%等URL的特殊符号。
 @property (nonatomic, copy) NSString *keywords;
 ///必填，城市名称\n 说明：\n 1. 支持全国/省/市/区县行政区划范围的检索；\n 2. city = "全国"，即对用户全表搜索；\n 3. 当city值设置非法或不正确时，按照 city = "全国"返回。
 @property (nonatomic, copy) NSString *city; 
 @end
 
-///云图搜索返回
+///企业地图搜索返回
 @interface AMapCloudPOISearchResponse : AMapSearchObject
 ///返回结果总数目
 @property (nonatomic, assign) NSInteger  count; 
