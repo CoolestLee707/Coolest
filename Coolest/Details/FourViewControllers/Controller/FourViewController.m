@@ -82,7 +82,7 @@
 //    [self.view addSubview:v];
 //    
     
-    [self test2];
+//    [self test2];
 //    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    label.backgroundColor = [UIColor clearColor];
 //    label.textColor = [UIColor blackColor];
@@ -95,36 +95,53 @@
     
 //    ADLog(@"%@",yearStr);
     
-    
 //    NSString *dsdsd = @"2323,ddfdfd";
 //    NSArray *positionsNumberArray = [@"1,2,3,4" componentsSeparatedByString:@","];
 
 //    ADLog(@"%@",positionsNumberArray);
     
-//    UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
-//    sc.backgroundColor = [UIColor orangeColor];
-//    sc.contentSize = CGSizeMake(sc.width*3, sc.height);
-//
-//    [self.view addSubview:sc];
-//
-//    UIView *v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-//    v1.backgroundColor = [UIColor blueColor];
-//    [sc addSubview:v1];
-//
-//
-//    UIView *v2 = [[UIView alloc]initWithFrame:CGRectMake(sc.width+ 100, 100, 100, 100)];
-//    v2.backgroundColor = [UIColor redColor];
-//    [sc addSubview:v2];
-//
-//    UIView *v3 = [[UIView alloc]initWithFrame:CGRectMake(sc.width*2+ 100, 100, 100, 100)];
-//    v3.backgroundColor = [UIColor grayColor];
-//    [sc addSubview:v3];
-    
-    
-    
-    
+   
+
+    [self testSc];
 }
 
+- (void)testSc {
+     UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
+        sc.backgroundColor = [UIColor orangeColor];
+    //    sc.contentSize = CGSizeMake(sc.width*2, sc.height);
+
+        [self.view addSubview:sc];
+
+        UIView *v1 = [[UIView alloc]init];
+        v1.backgroundColor = [UIColor blueColor];
+        [sc addSubview:v1];
+
+
+        UIView *v2 = [[UIView alloc]init];
+        v2.backgroundColor = [UIColor redColor];
+        [sc addSubview:v2];
+
+    //    UIView *v3 = [[UIView alloc]init];
+    //    v3.backgroundColor = [UIColor grayColor];
+    //    [sc addSubview:v3];
+        
+    //    [sc mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.left.right.bottom.equalTo(@0);
+    //    }];
+        
+        [v1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.width.height.mas_equalTo(sc);
+        }];
+        
+        [v2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.bottom.width.height.mas_equalTo(sc);
+            make.top.mas_equalTo(v1.mas_bottom);
+        }];
+        
+        ADLog(@"--------%f",sc.bounds.size.height);
+        ADLog(@"++++++++%f",sc.frame.size.height);
+        ADLog(@"++++++++%f",sc.contentSize.height);
+}
 - (void)test2 {
     
     NSMutableArray *arr1 = [NSMutableArray arrayWithCapacity:0];
