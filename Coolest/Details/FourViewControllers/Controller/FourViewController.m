@@ -15,6 +15,8 @@
 
 @interface FourViewController ()
 
+@property (nonatomic,strong)UIButton *animationButton;
+
 @property (nonatomic,copy)NSString *testStr;
 
 @property(nonatomic,strong)drawRectTestView *drawView;
@@ -39,6 +41,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    label.text = @"1214";
+    [view addSubview:label];
+    
+    ADLog(@"-------------superview ----- %@",label.superview);
     
 //    NSMutableString *nameString = [NSMutableString  stringWithFormat:@"Antony"];
 
@@ -102,9 +115,56 @@
     
    
 
-    [self testSc];
+//    [self testSc];
+    
+//    [self testAnimation];
 }
 
+- (void)testAnimation{
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(300, 100, 50, 50);
+    button.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:button];
+
+    [button addTarget:self action:@selector(blackButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    self.animationButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    self.animationButton.frame = CGRectMake(100, 100, 50, 50);
+    self.animationButton.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:self.animationButton];
+    
+    [self.animationButton addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)buttonClick {
+    ADLog(@"----点击了button");
+}
+
+- (void)blackButtonClick {
+    
+//    [UIView animateWithDuration:8.0 animations:^{
+//
+//        self.animationButton.frame = CGRectMake(100, 700, 60, 60);
+//
+//    } completion:^(BOOL finished) {
+//
+//    }];
+    
+    [UIView animateWithDuration:10 delay:0 options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.animationButton.frame = CGRectMake(100, 700, 60, 60);
+    } completion:^(BOOL finished) {
+        
+    }];
+
+    
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    ADLog(@"点击屏幕");
+}
 - (void)testSc {
      UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];
         sc.backgroundColor = [UIColor orangeColor];

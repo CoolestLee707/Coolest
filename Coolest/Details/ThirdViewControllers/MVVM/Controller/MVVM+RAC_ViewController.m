@@ -185,7 +185,7 @@
     
     
 //    rac_valuesAndChangesForKeyPath: 监听某个对象的属性变化(KVO)
-    //注意:keypath(<#...#>) 的使用, 可以避免在观察者里面使用字符串, @keypath(self, age) == @"age"
+    //注意:keypath(...) 的使用, 可以避免在观察者里面使用字符串, @keypath(self, age) == @"age"
 //    [self rac_valuesForKeyPath:keypath(self, age) observer:self];
     //移除观察者还需要使用OC的方法
     

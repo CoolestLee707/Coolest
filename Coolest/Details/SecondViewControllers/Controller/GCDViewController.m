@@ -112,15 +112,49 @@
 
 //    [self test4];
 
-    [self test5];
+//    [self test5];
     
     
 //    [self test6];
     
 //    [self test7];
-
+    
+    [self testNSNotificationCenter];
 
 }
+
+//不管你在哪个线程注册通知，发送通知在哪个线程，接受通知就会在哪个线程，即发送通知和接受通知在同一个线程，如果子线程操作UI，会打印一推日志，告诉我们应该主线程操作
+- (void)testNSNotificationCenter {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xxx) name:@"xxx" object:nil];
+        ADLog(@"子线程注册通知===%@",[NSThread currentThread]);
+    });
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xxx) name:@"xxx" object:nil];
+//    ADLog(@"主线程注册===%@",[NSThread currentThread]);
+    
+    UIButton *sendBtn=[[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
+      sendBtn.backgroundColor=[UIColor redColor];
+    [sendBtn setTitle:@"发送通知" forState:UIControlStateNormal];
+    [sendBtn addTarget:self action:@selector(sendNoti) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:sendBtn];
+}
+
+-(void)sendNoti {
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"xxx" object:nil];
+//    ADLog(@"发送通知主线线程===%@",[NSThread currentThread]);
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"xxx" object:nil];
+        ADLog(@"发送通知子线线程===%@",[NSThread currentThread]);
+    });
+}
+-(void)xxx {
+    ADLog(@"收到通知线程===%@",[NSThread currentThread]);
+}
+
+
 - (void)test7 {
     dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
     

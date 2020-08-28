@@ -27,6 +27,9 @@
 //    给对象添加监听age属性
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     [self.person addObserver:self forKeyPath:@"age" options:options context:@"上下文options"];
+    
+//    KVC方法调用KVO
+    [self.person addObserver:self forKeyPath:@"name" options:options context:@"上下文options"];
 
 //    po self.person.isa
 //    NSKVONotifying_KVO_Person
@@ -34,7 +37,11 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.person.age = 20;
+//    self.person.age = 20;
+//    for (int i=0; i<10; i++) {
+//        self.person.age = i;
+//    }
+    [self.person setValue:@"cool" forKey:@"name"];
 }
 
 //当监听对象的属性发生改变时就会调用

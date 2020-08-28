@@ -46,6 +46,10 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 @property (nonatomic,strong) NSArray *array;
 
 
+@property (nonatomic, strong) NSString *strongString;
+@property (nonatomic, weak)   NSString *weakString;
+
+
 @end
 
 @implementation WeakTestViewController
@@ -100,6 +104,8 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 //    [self Test12];
     
+    [self Test13];
+    
 //    NSString *str = @"http://192.168.138.203:8099/Info.json";
 //
 //    NSURL *url = [[NSURL alloc] initWithString:str];
@@ -109,6 +115,14 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    ADLog(@"%@",jsonstring);
 }
 
+- (void)Test13 {
+    
+    self.strongString =  [NSString stringWithFormat:@"%@",@"string1"];
+    self.weakString =  self.strongString;
+    self.strongString = nil;
+
+    ADLog(@"%@", self.weakString);
+}
 - (void)Test12 {
     
     //指针指向的地址l存储的内容不可以变，但是指针可以指向别的地方
@@ -260,12 +274,18 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     kWeakSelf(weakSelf);
     self.tblock = ^{
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            ADLog(@"%@",weakSelf.name);//null,数据丢失
-        });
+        weakSelf.name = @"22222";
+        ADLog(@"%@",weakSelf.name);
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            ADLog(@"%@",weakSelf.name);//null,数据丢失
+//        });
     };
     
     self.tblock();
+    
+    ADLog(@"self ---- %@",self.name);
+    ADLog(@"weakSelf --- %@",weakSelf.name);
+
 }
 
 - (void)Test3
@@ -360,7 +380,10 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    block的timer可以在这里invalidate
 //    [self.timer invalidate];
 
-    ADLog(@"___________");
+    ADLog(@"dealloc ___________");
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    ADLog(@"%@", self.weakString);
+}
 @end

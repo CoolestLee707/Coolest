@@ -26,6 +26,7 @@
 #import "ZXingObjCViewController.h"
 #import "WeakTestViewController.h"
 #import "LiveThreadViewController.h"
+#import "AspectsViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -103,7 +104,7 @@ NSString *footerIdentifier = @"footer";
     
 //    self.title = @"Second";
     self.fd_prefersNavigationBarHidden = YES;
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17-RunLoop-线程保活",@"18"],@[@"19",@"20"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],@[@"19",@"20"]];
     
     [self createUI];
     
@@ -350,7 +351,8 @@ NSString *footerIdentifier = @"footer";
                     break;
                 case 2:
                 {
-                   
+                    AspectsViewController *vc = [[AspectsViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                 default:
