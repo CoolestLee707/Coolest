@@ -8,10 +8,15 @@
 
 #import "AppDelegate.h"
 #import "PasswordInputWindow.h"
+#import "CLKeepAlive.h"
 
 @interface AppDelegate ()<UITraitEnvironment>
 
+
+@property (nonatomic,strong) CLLocationManager *appleLocationManager;
+
 @end
+
 
 @implementation AppDelegate
 
@@ -23,14 +28,15 @@ extern CFAbsoluteTime startTime;
     
 //    ADLog(@"+++ %f-%f",Main_Screen_Width,Main_Screen_Height);
     
-    [NSThread sleepForTimeInterval:0.2];
+    
+//    [NSThread sleepForTimeInterval:0.2];
     
         
-    NSString *selectLanguage = @"en";
+//    NSString *selectLanguage = @"en";
 
 //    NSString *selectLanguage = @"zh-Hans";
     
-    ADSetLocalLanguage(selectLanguage);
+//    ADSetLocalLanguage(selectLanguage);
     
     [self setAppWindows];
     
@@ -43,15 +49,19 @@ extern CFAbsoluteTime startTime;
 //    本地推送
     [self registerAPN];
     
-    BOOL isPrisonBreak = [self isJailBreak];
+//    BOOL isPrisonBreak = [self isJailBreak];
+//
+//    NSString *qqqq = @"没有越狱";
+//    if (isPrisonBreak) {
+//        qqqq = @"越狱了";
+//    }
+//
+//    ADLog(@"%@",qqqq);
     
-    NSString *qqqq = @"没有越狱";
-    if (isPrisonBreak) {
-        qqqq = @"越狱了";
-    }
+    
+//    [CLKeepAlive startLocation];
 
-    ADLog(@"%@",qqqq);
-
+    
     return YES;
 }
 
@@ -63,13 +73,16 @@ extern CFAbsoluteTime startTime;
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    ADLog(@"进入后台");
+        
 }
 
 
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+
 }
 
 

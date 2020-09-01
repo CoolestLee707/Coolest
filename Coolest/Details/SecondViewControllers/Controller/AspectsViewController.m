@@ -18,7 +18,10 @@
     [super viewDidLoad];
     
     self.title = @"Aspects";
- 
+    [NSURL initialize];
+
+//    NSURL *url = [NSURL URLWithString:@"www.baidu.com"];
+    
 }
 
 

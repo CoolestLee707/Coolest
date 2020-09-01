@@ -11,7 +11,8 @@
 #import "BaseTabBarViewController.h"
 #import "FDoneViewController.h"
 #import "FDtwoViewController.h"
-
+#import "CLTimer.h"
+#import "CLKeepAlive.h"
 
 @interface FourViewController ()
 
@@ -27,6 +28,9 @@
 
 @property (nonatomic,copy) NSMutableString *muStr;
 
+@property (nonatomic,assign) int count;
+
+@property (nonatomic,strong) UILabel *actLabel;
 @end
 
 @implementation FourViewController
@@ -47,26 +51,42 @@
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
     
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    label.text = @"1214";
-    [view addSubview:label];
+    self.count = 0.0;
     
-    ADLog(@"-------------superview ----- %@",label.superview);
+    self.actLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
+    self.actLabel.textColor = UIColor.redColor;
+    [view addSubview:self.actLabel];
+    
+    [CLTimer execTask:^{
+
+        self.count ++;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
+        });
+
+//        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",self.count] forKey:@"ACTIVE"];
+
+    } start:0 interval:1.0 repeats:YES async:YES];
+    
+    
+//    ADLog(@"-------------superview ----- %@",label.superview);
     
 //    NSMutableString *nameString = [NSMutableString  stringWithFormat:@"Antony"];
 
     // 用赋值NSMutableString给NSString赋值
-    self.muStr = [NSMutableString  stringWithFormat:@"Antony"];
+//    self.muStr = [NSMutableString  stringWithFormat:@"Antony"];
     
 //    ADLog(@"----- %@---%p",nameString,nameString);
-    ADLog(@"----- %@---%p",self.muStr,self.muStr);
+//    ADLog(@"----- %@---%p",self.muStr,self.muStr);
 
     
 //    崩溃-不可变不可appendString
 //    [self.muStr appendString:@".Wong"];
     
 //    ADLog(@"+++++++ %@---%p",nameString,nameString);
-    ADLog(@"+++++++ %@---%p",self.muStr,self.muStr);
+//    ADLog(@"+++++++ %@---%p",self.muStr,self.muStr);
 
 
     
@@ -164,6 +184,9 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     ADLog(@"点击屏幕");
+
+    [CLKeepAlive startLocation];
+
 }
 - (void)testSc {
      UIScrollView *sc = [[UIScrollView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight)];

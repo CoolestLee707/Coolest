@@ -31,10 +31,20 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>酷李斯特需要使用您的相机权限来获取头像</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>建议始终允许</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>建议始终允许</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>建议始终允许</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>访问您的相册</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>酷李斯特需要访问您的相册权限来获取头像</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

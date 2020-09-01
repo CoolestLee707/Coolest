@@ -13,10 +13,12 @@
 
 + (void)load {
     
+    ADLog(@"--NSURL---load");
+
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        [self swizzledClassSEL:@selector(URLWithString:) withSEL:@selector(CF_URLWithStr:)];
+//        [self swizzledClassSEL:@selector(URLWithString:) withSEL:@selector(CF_URLWithStr:)];
         
     });
 }
@@ -31,6 +33,10 @@
         ADLog(@"url为空");
     }
     return url;
+}
+
++ (void)initialize {
+    ADLog(@"--NSURL-----initialize");
 }
 
 @end

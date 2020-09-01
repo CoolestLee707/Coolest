@@ -82,7 +82,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 //    [self Test3];
 
-//    [self Test4];
+    [self Test4];
     
 //    [self Test5];
 
@@ -104,7 +104,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 //    [self Test12];
     
-    [self Test13];
+//    [self Test13];
     
 //    NSString *str = @"http://192.168.138.203:8099/Info.json";
 //
@@ -320,6 +320,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
             
             ADLog(@"%@",vc.name);
             vc = nil;
+//            ARC下，__block修饰对象会被强引用，无法避免循环引用，需要手动释放，MRC下不会增加其引用计数，避免循环引用
         });
       
     };
@@ -380,7 +381,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    block的timer可以在这里invalidate
 //    [self.timer invalidate];
 
-    ADLog(@"dealloc ___________");
+    ADLog(@"___________%s",__func__);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

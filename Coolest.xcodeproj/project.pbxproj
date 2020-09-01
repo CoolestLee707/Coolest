@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
-		3F2C39EF24E6612300C5CA00 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C39EE24E6612300C5CA00 /* CLTimer.m */; };
+		3F3C070C24FE46A400070631 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070924FE46A400070631 /* CLTimer.m */; };
+		3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070E24FE46DF00070631 /* CLKeepAlive.m */; };
 		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
 		3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3069249C98C900E558E5 /* KVO_Person.m */; };
+		3F66C7E724E8CDEB00AD8CE7 /* AspectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */; };
 		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
 		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
 		3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2692490DF1600045F2D /* Inherit_Son.m */; };
@@ -135,12 +137,16 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
-		3F2C39ED24E6612300C5CA00 /* CLTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLTimer.h; path = Coolest/Details/SecondViewControllers/Model/CLTimer.h; sourceTree = SOURCE_ROOT; };
-		3F2C39EE24E6612300C5CA00 /* CLTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CLTimer.m; path = Coolest/Details/SecondViewControllers/Model/CLTimer.m; sourceTree = SOURCE_ROOT; };
+		3F3C070724FE46A300070631 /* CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTimer.h; sourceTree = "<group>"; };
+		3F3C070924FE46A400070631 /* CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTimer.m; sourceTree = "<group>"; };
+		3F3C070D24FE46DF00070631 /* CLKeepAlive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeepAlive.h; sourceTree = "<group>"; };
+		3F3C070E24FE46DF00070631 /* CLKeepAlive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLKeepAlive.m; sourceTree = "<group>"; };
 		3F3D3065249C97ED00E558E5 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
 		3F3D3066249C97ED00E558E5 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		3F3D3068249C98C900E558E5 /* KVO_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVO_Person.h; sourceTree = "<group>"; };
 		3F3D3069249C98C900E558E5 /* KVO_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVO_Person.m; sourceTree = "<group>"; };
+		3F66C7E524E8CDEB00AD8CE7 /* AspectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectsViewController.h; sourceTree = "<group>"; };
+		3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectsViewController.m; sourceTree = "<group>"; };
 		3F68E2622490DD7D00045F2D /* InheritViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InheritViewController.h; sourceTree = "<group>"; };
 		3F68E2632490DD7D00045F2D /* InheritViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InheritViewController.m; sourceTree = "<group>"; };
 		3F68E2652490DEE400045F2D /* Inherit_Father.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Father.h; sourceTree = "<group>"; };
@@ -384,6 +390,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F3C06FB24FE3CA600070631 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				3F3C070724FE46A300070631 /* CLTimer.h */,
+				3F3C070924FE46A400070631 /* CLTimer.m */,
+				3F3C070D24FE46DF00070631 /* CLKeepAlive.h */,
+				3F3C070E24FE46DF00070631 /* CLKeepAlive.m */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
 		3F3D3064249C97D100E558E5 /* KVO */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,9 +537,9 @@
 			children = (
 				3F808C3A2493741E002FCDF7 /* main.cpp */,
 				3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */,
+				3F3C06FB24FE3CA600070631 /* Libs */,
 				BF90076E2294F8520051DD7B /* Global */,
 				BF59E1C02100382D0004EC56 /* Manager */,
-				BF59E1BF2100381A0004EC56 /* Libs */,
 				BF59E1BE210038110004EC56 /* UITools */,
 				BF59E1BD210038070004EC56 /* Singleton */,
 				BF59E1BC210037FE0004EC56 /* Base */,
@@ -662,15 +679,6 @@
 			path = UITools;
 			sourceTree = "<group>";
 		};
-		BF59E1BF2100381A0004EC56 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				3F2C39ED24E6612300C5CA00 /* CLTimer.h */,
-				3F2C39EE24E6612300C5CA00 /* CLTimer.m */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
 		BF59E1C02100382D0004EC56 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +784,8 @@
 				BF769ED222645C09004A3E9A /* ZXingObjCViewController.m */,
 				BF1F2A4E229FEB9300ED248C /* WeakTestViewController.h */,
 				BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */,
+				3F66C7E524E8CDEB00AD8CE7 /* AspectsViewController.h */,
+				3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1299,6 +1309,7 @@
 				BF18FCC822C0CC9800A772CD /* CouponsTestCell.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
+				3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
@@ -1337,6 +1348,7 @@
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
+				3F3C070C24FE46A400070631 /* CLTimer.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
@@ -1363,12 +1375,12 @@
 				BF18288821AD16A800361219 /* MessageViewController.m in Sources */,
 				BFB72E59221BA9D5002F4743 /* AsyncDisplayKitViewController.m in Sources */,
 				BF59E1ED210046940004EC56 /* AFNetworkingManager.m in Sources */,
+				3F66C7E724E8CDEB00AD8CE7 /* AspectsViewController.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
 				BF54707D2230C81900458592 /* BlockViewController.m in Sources */,
 				BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */,
 				BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */,
-				3F2C39EF24E6612300C5CA00 /* CLTimer.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				BF7B055922845035008EDCF8 /* objc1.m in Sources */,
@@ -1581,7 +1593,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 68UMB23XTF;
+				DEVELOPMENT_TEAM = F736NU49C9;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1592,7 +1604,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest;
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1611,7 +1623,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 68UMB23XTF;
+				DEVELOPMENT_TEAM = F736NU49C9;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1622,7 +1634,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest;
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
