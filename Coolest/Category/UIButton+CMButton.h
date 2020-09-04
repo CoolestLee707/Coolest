@@ -12,7 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (CMButton)
 
+@property (nonatomic,copy) NSString *nameId;
+
 - (void)addTargetSelected:(void(^)(UIButton *button))block;
+
 
 @end
 

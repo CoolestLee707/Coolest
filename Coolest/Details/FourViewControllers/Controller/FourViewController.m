@@ -126,12 +126,25 @@
 
 //    [self JDtest];
     
+    [self buttonBindSomething];
     
     
-
-
 }
 
+- (void)buttonBindSomething {
+
+    for (int i=0; i<8; i++) {
+       UIButton *testButton = [UIButton buttonWithType:UIButtonTypeSystem];
+       testButton.frame = CGRectMake(100, 100 + 50*i, 30, 30);
+       testButton.nameId = [NSString stringWithFormat:@"%d",i];
+       testButton.backgroundColor = UIColor.redColor;
+       [testButton addTarget:self action:@selector(testButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+       [self.view addSubview:testButton];
+   }
+}
+- (void)testButtonClick:(UIButton *)sender {
+    ADLog(@"按钮点击了-- ");
+}
 - (void)JDtest {
     
     
