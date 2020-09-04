@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
-		3F3C070C24FE46A400070631 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070924FE46A400070631 /* CLTimer.m */; };
+		3F13C4832500C8AC00133489 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F13C4812500C8AB00133489 /* CLTimer.m */; };
 		3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070E24FE46DF00070631 /* CLKeepAlive.m */; };
 		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
 		3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3069249C98C900E558E5 /* KVO_Person.m */; };
@@ -137,8 +137,8 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
-		3F3C070724FE46A300070631 /* CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTimer.h; sourceTree = "<group>"; };
-		3F3C070924FE46A400070631 /* CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTimer.m; sourceTree = "<group>"; };
+		3F13C4812500C8AB00133489 /* CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTimer.m; sourceTree = "<group>"; };
+		3F13C4822500C8AC00133489 /* CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTimer.h; sourceTree = "<group>"; };
 		3F3C070D24FE46DF00070631 /* CLKeepAlive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeepAlive.h; sourceTree = "<group>"; };
 		3F3C070E24FE46DF00070631 /* CLKeepAlive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLKeepAlive.m; sourceTree = "<group>"; };
 		3F3D3065249C97ED00E558E5 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 		3F68E2662490DEE400045F2D /* Inherit_Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Father.m; sourceTree = "<group>"; };
 		3F68E2682490DF1600045F2D /* Inherit_Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Son.h; sourceTree = "<group>"; };
 		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
-		3F808C3A2493741E002FCDF7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = Others/main.cpp; sourceTree = "<group>"; };
 		3F8B32FF24CE7E3400A684E2 /* methodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = methodViewController.h; sourceTree = "<group>"; };
 		3F8B330024CE7E3400A684E2 /* methodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = methodViewController.m; sourceTree = "<group>"; };
 		3F8B330424D0283100A684E2 /* LiveThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveThreadViewController.h; sourceTree = "<group>"; };
@@ -393,8 +392,8 @@
 		3F3C06FB24FE3CA600070631 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				3F3C070724FE46A300070631 /* CLTimer.h */,
-				3F3C070924FE46A400070631 /* CLTimer.m */,
+				3F13C4822500C8AC00133489 /* CLTimer.h */,
+				3F13C4812500C8AB00133489 /* CLTimer.m */,
 				3F3C070D24FE46DF00070631 /* CLKeepAlive.h */,
 				3F3C070E24FE46DF00070631 /* CLKeepAlive.m */,
 			);
@@ -535,7 +534,6 @@
 		BF59E184210035530004EC56 /* Coolest */ = {
 			isa = PBXGroup;
 			children = (
-				3F808C3A2493741E002FCDF7 /* main.cpp */,
 				3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */,
 				3F3C06FB24FE3CA600070631 /* Libs */,
 				BF90076E2294F8520051DD7B /* Global */,
@@ -1348,7 +1346,7 @@
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
-				3F3C070C24FE46A400070631 /* CLTimer.m in Sources */,
+				3F13C4832500C8AC00133489 /* CLTimer.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
@@ -1604,6 +1602,70 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"Aspects\"",
+					"-l\"BlockHook\"",
+					"-l\"CLHashString\"",
+					"-l\"DZNEmptyDataSet\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBCircularProgressBar\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"MyLayout\"",
+					"-l\"PINCache\"",
+					"-l\"PINOperation\"",
+					"-l\"PINRemoteImage\"",
+					"-l\"ReactiveObjC\"",
+					"-l\"SDWebImage\"",
+					"-l\"TZImagePickerController\"",
+					"-l\"Texture\"",
+					"-l\"YYModel\"",
+					"-l\"YYText\"",
+					"-l\"ZXingObjC\"",
+					"-l\"c++\"",
+					"-l\"ffi_bh\"",
+					"-l\"pop\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1633,6 +1695,70 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"Aspects\"",
+					"-l\"BlockHook\"",
+					"-l\"CLHashString\"",
+					"-l\"DZNEmptyDataSet\"",
+					"-l\"FDFullscreenPopGesture\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBCircularProgressBar\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"MyLayout\"",
+					"-l\"PINCache\"",
+					"-l\"PINOperation\"",
+					"-l\"PINRemoteImage\"",
+					"-l\"ReactiveObjC\"",
+					"-l\"SDWebImage\"",
+					"-l\"TZImagePickerController\"",
+					"-l\"Texture\"",
+					"-l\"YYModel\"",
+					"-l\"YYText\"",
+					"-l\"ZXingObjC\"",
+					"-l\"c++\"",
+					"-l\"ffi_bh\"",
+					"-l\"pop\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"AssetsLibrary\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MapKit\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-weak_framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";

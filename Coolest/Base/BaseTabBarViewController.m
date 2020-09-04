@@ -57,12 +57,12 @@
     
     NSArray * controllClass     = @[@"FirstViewController",@"SecondViewController",@"ThirdViewController",@"FourViewController"];
     self.delegate               = self;
-//    NSArray * itemTitles        = @[@"First",@"Second",@"Third",@"Four"];
-    NSArray * itemTitles        = @[ADLocalizedString(@"一"),ADLocalizedString(@"二"),ADLocalizedString(@"三"),ADLocalizedString(@"四")];
+    NSArray * itemTitles        = @[@"First",@"Second",@"Third",@"Four"];
+//    NSArray * itemTitles        = @[ADLocalizedString(@"一"),ADLocalizedString(@"二"),ADLocalizedString(@"三"),ADLocalizedString(@"四")];
 
-    NSMutableArray * controllers = [[NSMutableArray alloc]init];
+    NSMutableArray * controllers = [NSMutableArray arrayWithCapacity:0];
     
-    for (int i = 0; i < normalItems.count; i++)
+    for (int i = 0; i < itemTitles.count; i++)
     {
         UIViewController * homeview =[[NSClassFromString(controllClass[i]) alloc]init];
         BaseNavigationController * navigation =[[BaseNavigationController alloc]initWithRootViewController:homeview];

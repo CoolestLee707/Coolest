@@ -11,7 +11,7 @@
 #import "BaseTabBarViewController.h"
 #import "FDoneViewController.h"
 #import "FDtwoViewController.h"
-#import "CLTimer.h"
+//#import "CLTimer.h"
 #import "CLKeepAlive.h"
 
 @interface FourViewController ()
@@ -47,28 +47,11 @@
     [super viewDidLoad];
     
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view];
-    
-    self.count = 0.0;
-    
-    self.actLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
-    self.actLabel.textColor = UIColor.redColor;
-    [view addSubview:self.actLabel];
-    
-    [CLTimer execTask:^{
+//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    view.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:view];
+  
 
-        self.count ++;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
-        });
-
-//        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",self.count] forKey:@"ACTIVE"];
-
-    } start:0 interval:1.0 repeats:YES async:YES];
     
     
 //    ADLog(@"-------------superview ----- %@",label.superview);
@@ -138,8 +121,70 @@
 //    [self testSc];
     
 //    [self testAnimation];
+    
+    //    [self KeepAlive];
+
+//    [self JDtest];
+    
+    
+    
+
+
 }
 
+- (void)JDtest {
+    
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(25, 25, 50, 50);
+    button.backgroundColor = UIColor.blueColor;
+//    [button addTarget:self action:@selector(JDbuttonCliuck) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
+   
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    view.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(JDtapClick)];
+    tap.cancelsTouchesInView = YES;
+    
+    [view addSubview:button];
+    [view addGestureRecognizer:tap];
+
+    
+    UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewtapClick)];
+    viewTap.cancelsTouchesInView = YES;
+    [self.view addGestureRecognizer:viewTap];
+    
+    
+}
+
+- (void)viewtapClick {
+    ADLog(@"------%s",__func__);
+}
+- (void)JDbuttonCliuck {
+    ADLog(@"------%s",__func__);
+}
+- (void)JDtapClick {
+    ADLog(@"------%s",__func__);
+}
+- (void)KeepAlive {
+    
+    self.actLabel = [[UILabel alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
+    self.actLabel.textColor = UIColor.redColor;
+    [self.view addSubview:self.actLabel];
+    
+//    [CLTimer execTask:^{
+//
+//        self.count ++;
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            self.actLabel.text = [NSString stringWithFormat:@"%d",self.count];
+//        });
+//
+//    } start:0 interval:1.0 repeats:YES async:YES];
+    
+}
 - (void)testAnimation{
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -185,7 +230,7 @@
 {
     ADLog(@"点击屏幕");
 
-    [CLKeepAlive startLocation];
+//    [CLKeepAlive startLocation];
 
 }
 - (void)testSc {

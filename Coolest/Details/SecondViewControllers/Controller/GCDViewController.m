@@ -123,10 +123,24 @@
     
 //    [self test7];
     
-    [self testNSNotificationCenter];
+//    [self testNSNotificationCenter];
+    
+//    [self testGCDandRunLoop];
 
 }
 
+- (void)testGCDandRunLoop {
+    ADLog(@"0000");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        ADLog(@"1111");
+        [self performSelector:@selector(prinfLog) withObject:nil afterDelay:0];
+        ADLog(@"33333");
+    });
+    ADLog(@"4444");
+}
+- (void)prinfLog {
+    ADLog(@"2222");
+}
 //不管你在哪个线程注册通知，发送通知在哪个线程，接受通知就会在哪个线程，即发送通知和接受通知在同一个线程，如果子线程操作UI，会打印一推日志，告诉我们应该主线程操作
 - (void)testNSNotificationCenter {
 //
