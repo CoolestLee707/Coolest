@@ -126,7 +126,8 @@
 
 //    [self JDtest];
     
-    [self buttonBindSomething];
+//    [self buttonBindSomething];
+    
     
     
 }

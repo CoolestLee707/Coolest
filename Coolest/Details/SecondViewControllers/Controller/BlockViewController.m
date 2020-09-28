@@ -42,33 +42,34 @@ void test100()
     self.title = @"Block";
     
 //    int age = 10;
-    static NSString *abc = @"etqwetqiweyqwiubeqw";
+//    static NSString *abc = @"etqwetqiweyqwiubeqw";
 //    NSMutableString *hj = [@"12yiuuiyviyuvbkug" mutableCopy];
     
-    void (^testBlock1)(void) = ^{
-        
-        ADLog(@"testBlock ----- %@",abc);
-    };
-    
-    abc = @"7837213712387120938712";
+//    void (^testBlock1)(void) = ^{
+//
+//        ADLog(@"testBlock ----- %@",abc);
+//    };
+//
+//    abc = @"7837213712387120938712";
 //    [hj appendString:@"11111111111111"];
-    testBlock1();
     
-    __block int age = 10;
-    
-    void (^testBlock2)(void) = ^{
-        
-        age = 20;
-        ADLog(@"testBlock ----- %d",age);
-    };
-    
-    ADLog(@"testBlock ******** %d",age);
-
-    testBlock2();
-    
-    ADLog(@"testBlock ++++++ %d",age);
-
-    ADLog(@"-- %@",[testBlock2 class]);
+//    testBlock1();
+//
+//    __block int age = 10;
+//
+//    void (^testBlock2)(void) = ^{
+//
+//        age = 20;
+//        ADLog(@"testBlock ----- %d",age);
+//    };
+//
+//    ADLog(@"testBlock ******** %d",age);
+//
+//    testBlock2();
+//
+//    ADLog(@"testBlock ++++++ %d",age);
+//
+//    ADLog(@"-- %@",[testBlock2 class]);
     
 //    test100();
 //
@@ -105,7 +106,7 @@ void test100()
 //        return str3;
 //    }];
     
-    
+    [self test12];
 }
 - (void)dealloc
 {
@@ -247,5 +248,28 @@ int age = 10;
     [self.ob1 run12];
 
     [self.ob1.ob2 run2];
+}
+
+- (void)test12 {
+    
+    NSMutableArray * arr = @[@"1",@"2"].mutableCopy;
+    
+    ADLog(@"arr 1111111 %@ 11111111 %p",arr,arr);
+
+    void(^block12)(void) = ^ {
+        
+        ADLog(@"arr --- %@ --- %p",arr,arr);
+        [arr addObject:@"4"];
+        ADLog(@"arr +++ %@",arr);
+    };
+    
+    [arr addObject:@"3"];
+    ADLog(@"arr 3333333 %@ 33333333 %p",arr,arr);
+
+    arr = nil;
+    block12();
+    
+    ADLog(@"arr ==== %@ ===== %p",arr,arr);
+
 }
 @end

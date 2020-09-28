@@ -82,7 +82,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 //    [self Test3];
 
-    [self Test4];
+//    [self Test4];
     
 //    [self Test5];
 
@@ -113,8 +113,25 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    NSString* jsonstring=[[NSString alloc] initWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
 //
 //    ADLog(@"%@",jsonstring);
+    
+//    [self test14];
+    
+    
+    
+    
+
 }
 
+- (void)test14 {
+    NSMutableString *str = [NSMutableString stringWithFormat:@"123"];
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
+    [arr addObject:str];
+    
+    ADLog(@"%p--- %@ --- %p",str,arr,arr[0]);
+    
+    str = nil;
+    ADLog(@"%p--- %@ --- %p",str,arr,arr[0]);
+}
 - (void)Test13 {
     
     self.strongString =  [NSString stringWithFormat:@"%@",@"string1"];

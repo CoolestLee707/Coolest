@@ -18,6 +18,9 @@
 @property (nonatomic,assign)int ticketSurplusCount;
 
 @property (nonatomic,copy) NSString *targetString;
+
+@property (nonatomic,strong)NSTimer *timer;
+
 - (void)extendsion;
 @end
 
@@ -127,8 +130,44 @@
     
 //    [self testGCDandRunLoop];
 
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        ADLog(@" ---- %@",[NSThread currentThread]);
+//        [self performSelector:@selector(timerSend) withObject:nil afterDelay:0];
+//    });
+    
+//    int count = [self cacluAll:100];
+//    ADLog(@"--%d",count);
+    
+    
+    
+//    [self test10];
 }
 
+- (void)test10 {
+    
+    ADLog(@"0000");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+       ADLog(@"1111");
+       
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            ADLog(@"--- timer");
+        }];
+        [[NSRunLoop currentRunLoop]run];
+       ADLog(@"33333");
+    });
+    ADLog(@"4444");
+    
+}
+-(int)cacluAll:(int)number {
+    if (number==1) {
+        return 1;
+    }
+    return number + [self cacluAll:number-1];
+}
+
+- (void)timerSend {
+    ADLog(@"timer");
+}
 - (void)testGCDandRunLoop {
     ADLog(@"0000");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -482,6 +521,35 @@
     ADLog(@"semaphore---end,number = %d",number);
 }
 
+#pragma mark ---  semaphore 线程同步 -- 信号量---模拟队列组
+- (void)semaphoreAsyncAndSync {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);//设置信号量初始值
+       
+       dispatch_async(queue, ^{
+           // 追加任务1
+           ADLog(@"1---%@",[NSThread currentThread]);      // 打印当前线程
+           
+           
+           dispatch_semaphore_signal(semaphore);//任务完成，信号量+1
+       });
+       
+     dispatch_async(queue, ^{
+        // 追加任务2
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        ADLog(@"2---%@",[NSThread currentThread]);      // 打印当前线程
+        
+        
+        dispatch_semaphore_signal(semaphore);//任务完成，信号量+1
+    });
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//只有信号量>0时，才执行后面的代码，信号量-1；否则，处于等待状态。
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//只有信号量>0时，才执行后面的代码，信号量-1；否则，处于等待状态。
+
+    
+    ADLog(@"3---%@",[NSThread currentThread]);      // 打印当前线程
+
+}
 #pragma mark ---  队列组 dispatch_group_enter、dispatch_group_leave
 - (void)groupEnterAndLeave
 {
