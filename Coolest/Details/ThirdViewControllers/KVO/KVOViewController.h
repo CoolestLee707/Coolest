@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface KVOViewController : BaseViewController
 
+- (void)testRouter:(NSString *)name age:(NSString *)age;
+
 @end
 
 NS_ASSUME_NONNULL_END

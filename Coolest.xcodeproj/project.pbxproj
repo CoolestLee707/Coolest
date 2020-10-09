@@ -12,6 +12,7 @@
 		3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070E24FE46DF00070631 /* CLKeepAlive.m */; };
 		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
 		3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3069249C98C900E558E5 /* KVO_Person.m */; };
+		3F3E4E162521C97800748318 /* CLRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E4E152521C97800748318 /* CLRouter.m */; };
 		3F66C7E724E8CDEB00AD8CE7 /* AspectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */; };
 		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
 		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
@@ -146,6 +147,8 @@
 		3F3D3066249C97ED00E558E5 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		3F3D3068249C98C900E558E5 /* KVO_Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVO_Person.h; sourceTree = "<group>"; };
 		3F3D3069249C98C900E558E5 /* KVO_Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVO_Person.m; sourceTree = "<group>"; };
+		3F3E4E142521C97800748318 /* CLRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLRouter.h; sourceTree = "<group>"; };
+		3F3E4E152521C97800748318 /* CLRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLRouter.m; sourceTree = "<group>"; };
 		3F66C7E524E8CDEB00AD8CE7 /* AspectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AspectsViewController.h; sourceTree = "<group>"; };
 		3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AspectsViewController.m; sourceTree = "<group>"; };
 		3F68E2622490DD7D00045F2D /* InheritViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InheritViewController.h; sourceTree = "<group>"; };
@@ -414,6 +417,15 @@
 			path = KVO;
 			sourceTree = "<group>";
 		};
+		3F3E4E132521C95900748318 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E4E142521C97800748318 /* CLRouter.h */,
+				3F3E4E152521C97800748318 /* CLRouter.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		3F68E2612490DD3800045F2D /* inherit */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				3F91B6D4247BCDBB0086ED29 /* Coolest.entitlements */,
+				3F3E4E132521C95900748318 /* Router */,
 				3F3C06FB24FE3CA600070631 /* Libs */,
 				BF90076E2294F8520051DD7B /* Global */,
 				BF59E1C02100382D0004EC56 /* Manager */,
@@ -1327,6 +1340,7 @@
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				3F8B330924D0289000A684E2 /* CLThread.m in Sources */,
+				3F3E4E162521C97800748318 /* CLRouter.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,

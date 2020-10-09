@@ -17,6 +17,10 @@
 
 @implementation KVOViewController
 
+- (void)testRouter:(NSString *)name age:(NSString *)age
+{
+    ADLog(@"%s -- %@ -- %@",__func__, name,age);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"KVO";
