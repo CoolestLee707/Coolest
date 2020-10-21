@@ -28,7 +28,7 @@ static char CLNameKey;
 //        [self swizzledInstanceSEL:@selector(addTarget:action:forControlEvents:) withSEL:@selector(CL_AddTarget:action:forControlEvents:)];
 
         
-        [self swizzledInstanceSEL:selA withSEL:selB];
+//        [self swizzledInstanceSEL:selA withSEL:selB];
         
     });
 }

@@ -17,6 +17,8 @@
 		3F68E2642490DD7D00045F2D /* InheritViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2632490DD7D00045F2D /* InheritViewController.m */; };
 		3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2662490DEE400045F2D /* Inherit_Father.m */; };
 		3F68E26A2490DF1600045F2D /* Inherit_Son.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F68E2692490DF1600045F2D /* Inherit_Son.m */; };
+		3F709D4225402CBB00A59E06 /* CrashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F709D4125402CBB00A59E06 /* CrashViewController.m */; };
+		3F709D4825402D5300A59E06 /* CL_ExceptionHander.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F709D4725402D5300A59E06 /* CL_ExceptionHander.m */; };
 		3F8B330624D0283100A684E2 /* LiveThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330524D0283100A684E2 /* LiveThreadViewController.m */; };
 		3F8B330924D0289000A684E2 /* CLThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330824D0289000A684E2 /* CLThread.m */; };
 		3F8B330F24D0386700A684E2 /* CLPermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8B330E24D0386700A684E2 /* CLPermenantThread.m */; };
@@ -157,6 +159,10 @@
 		3F68E2662490DEE400045F2D /* Inherit_Father.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Father.m; sourceTree = "<group>"; };
 		3F68E2682490DF1600045F2D /* Inherit_Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_Son.h; sourceTree = "<group>"; };
 		3F68E2692490DF1600045F2D /* Inherit_Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_Son.m; sourceTree = "<group>"; };
+		3F709D4025402CBB00A59E06 /* CrashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashViewController.h; sourceTree = "<group>"; };
+		3F709D4125402CBB00A59E06 /* CrashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashViewController.m; sourceTree = "<group>"; };
+		3F709D4625402D5300A59E06 /* CL_ExceptionHander.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CL_ExceptionHander.h; sourceTree = "<group>"; };
+		3F709D4725402D5300A59E06 /* CL_ExceptionHander.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CL_ExceptionHander.m; sourceTree = "<group>"; };
 		3F8B32FF24CE7E3400A684E2 /* methodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = methodViewController.h; sourceTree = "<group>"; };
 		3F8B330024CE7E3400A684E2 /* methodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = methodViewController.m; sourceTree = "<group>"; };
 		3F8B330424D0283100A684E2 /* LiveThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveThreadViewController.h; sourceTree = "<group>"; };
@@ -800,6 +806,8 @@
 				BF1F2A4F229FEB9300ED248C /* WeakTestViewController.m */,
 				3F66C7E524E8CDEB00AD8CE7 /* AspectsViewController.h */,
 				3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */,
+				3F709D4025402CBB00A59E06 /* CrashViewController.h */,
+				3F709D4125402CBB00A59E06 /* CrashViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -813,6 +821,8 @@
 				3F8B330824D0289000A684E2 /* CLThread.m */,
 				3F8B330D24D0386700A684E2 /* CLPermenantThread.h */,
 				3F8B330E24D0386700A684E2 /* CLPermenantThread.m */,
+				3F709D4625402D5300A59E06 /* CL_ExceptionHander.h */,
+				3F709D4725402D5300A59E06 /* CL_ExceptionHander.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1361,7 +1371,9 @@
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
+				3F709D4225402CBB00A59E06 /* CrashViewController.m in Sources */,
 				BF61BBFD230C02E100D020F5 /* SimpleFactoryPatternViewController.m in Sources */,
+				3F709D4825402D5300A59E06 /* CL_ExceptionHander.m in Sources */,
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PasswordInputWindow.h"
 #import "CLKeepAlive.h"
+#import "CL_ExceptionHander.h"
 
 @interface AppDelegate ()<UITraitEnvironment>
 
@@ -60,6 +61,8 @@ extern CFAbsoluteTime startTime;
     
     
 //    [CLKeepAlive startLocation];
+
+    [CL_ExceptionHander setupExceptionHandler];
 
     
     return YES;

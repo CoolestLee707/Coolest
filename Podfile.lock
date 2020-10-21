@@ -23,29 +23,29 @@ PODS:
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
-  - MJExtension (3.2.2)
+  - MJExtension (3.2.3)
   - MJRefresh (3.5.0)
   - MyLayout (1.9.8)
-  - PINCache (3.0.1-beta.8):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.8)
-    - PINCache/Core (= 3.0.1-beta.8)
-  - PINCache/Arc-exception-safe (3.0.1-beta.8):
+  - PINCache (3.0.2):
+    - PINCache/Arc-exception-safe (= 3.0.2)
+    - PINCache/Core (= 3.0.2)
+  - PINCache/Arc-exception-safe (3.0.2):
     - PINCache/Core
-  - PINCache/Core (3.0.1-beta.8):
-    - PINOperation (~> 1.1.1)
-  - PINOperation (1.1.2)
-  - PINRemoteImage/Core (3.0.0):
+  - PINCache/Core (3.0.2):
+    - PINOperation (~> 1.2.0)
+  - PINOperation (1.2)
+  - PINRemoteImage/Core (3.0.1):
     - PINOperation
-  - PINRemoteImage/iOS (3.0.0):
+  - PINRemoteImage/iOS (3.0.1):
     - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0):
-    - PINCache (= 3.0.1-beta.8)
+  - PINRemoteImage/PINCache (3.0.1):
+    - PINCache (~> 3.0.1)
     - PINRemoteImage/Core
   - pop (1.0.12)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.9.0):
-    - SDWebImage/Core (= 5.9.0)
-  - SDWebImage/Core (5.9.0)
+  - SDWebImage (5.9.3):
+    - SDWebImage/Core (= 5.9.3)
+  - SDWebImage/Core (5.9.3)
   - Texture (3.0.0):
     - Texture/AssetsLibrary (= 3.0.0)
     - Texture/Core (= 3.0.0)
@@ -66,7 +66,7 @@ PODS:
     - Texture/Core
   - Texture/Video (3.0.0):
     - Texture/Core
-  - TZImagePickerController (3.4.2)
+  - TZImagePickerController (3.4.8)
   - YYModel (1.0.4)
   - YYText (1.0.7)
   - ZXingObjC (3.6.5):
@@ -87,6 +87,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MyLayout
+  - PINCache (from `https://github.com/pinterest/PINCache.git`, branch `master`)
   - pop
   - ReactiveObjC
   - SDWebImage
@@ -110,7 +111,6 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - MyLayout
-    - PINCache
     - PINOperation
     - PINRemoteImage
     - pop
@@ -125,11 +125,17 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CLHashString:
     :git: https://github.com/CoolestLee707/CLHashString.git
+  PINCache:
+    :branch: master
+    :git: https://github.com/pinterest/PINCache.git
 
 CHECKOUT OPTIONS:
   CLHashString:
     :commit: a0349794cb2e470ba92d0af6bca1bd9d4dd0af3e
     :git: https://github.com/CoolestLee707/CLHashString.git
+  PINCache:
+    :commit: a5b4851e3ad1350bf1ffc42808f24ce5e6b169e3
+    :git: https://github.com/pinterest/PINCache.git
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -142,21 +148,21 @@ SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJExtension: d9b9c74cbdeb724c1e9ecbb157b318276e62e876
+  MJExtension: a6fd35a527dafd7f3f1259017ee57551d58b3bb8
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MyLayout: 6ca47dbf27648aa011496094cfe1162217e3c912
-  PINCache: 534fd41d358d828dfdf227a0d327f3673a65e20b
-  PINOperation: 24b774353ca248fcf87d67b2d61eef42087c125a
-  PINRemoteImage: e2b89e19fb6e77ffc099f9d9f3b3fe1745e3f9f9
+  PINCache: bea7c404c360f6fe0f6ee783c5cd14e778fa2aab
+  PINOperation: 3a967a927e7867e61976c6cc23e5770416449fbc
+  PINRemoteImage: 3b7cedb118c2d357f87e9eabc7c81ba0202cb236
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
+  SDWebImage: a31ee8e90a97303529e03fb0c333eae0eacb88e9
   Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
-  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
+  TZImagePickerController: 6685e6d81b8fd5453e80ba369dd4ebd6e97276ee
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 1225fa68838337f16bdd737934b079b252e5c667
+PODFILE CHECKSUM: 724296cc37b5ed4e9885e31869478f81bb2d1c33
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.9.2
