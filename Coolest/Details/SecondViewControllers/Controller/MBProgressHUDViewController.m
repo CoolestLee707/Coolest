@@ -45,7 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     self.title = @"MBProgressHUD封装使用";
     
     self.dataArray = @[@"成功",@"失败",@"一条消息",@"等待",@"加载",@"带文字加载"];

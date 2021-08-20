@@ -8,7 +8,7 @@
 
 #import "TZPhotoPreviewCell.h"
 #import "TZAssetModel.h"
-#import "UIView+Layout.h"
+#import "UIView+TZLayout.h"
 #import "TZImageManager.h"
 #import "TZProgressView.h"
 #import "TZImageCropManager.h"
@@ -282,7 +282,13 @@
     
     UIImage *image = _imageView.image;
     if (image.size.height / image.size.width > self.tz_height / self.scrollView.tz_width) {
-        _imageContainerView.tz_height = floor(image.size.height / (image.size.width / self.scrollView.tz_width));
+        CGFloat width = image.size.width / image.size.height * self.scrollView.tz_height;
+        if (width < 1 || isnan(width)) width = self.tz_width;
+        width = floor(width);
+        
+        _imageContainerView.tz_width = width;
+        _imageContainerView.tz_height = self.tz_height;
+        _imageContainerView.tz_centerX = self.tz_width  / 2;
     } else {
         CGFloat height = image.size.height / image.size.width * self.scrollView.tz_width;
         if (height < 1 || isnan(height)) height = self.tz_height;
@@ -418,6 +424,7 @@
     [_playButton setImage:[UIImage tz_imageNamedFromMyBundle:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
     [_playButton setImage:[UIImage tz_imageNamedFromMyBundle:@"MMVideoPreviewPlayHL"] forState:UIControlStateHighlighted];
     [_playButton addTarget:self action:@selector(playButtonClick) forControlEvents:UIControlEventTouchUpInside];
+    _playButton.frame = CGRectMake(0, 64, self.tz_width, self.tz_height - 64 - 44);
     [self.contentView addSubview:_playButton];
     [self.contentView addSubview:_iCloudErrorIcon];
     [self.contentView addSubview:_iCloudErrorLabel];
@@ -475,7 +482,7 @@
     self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
     self.playerLayer.backgroundColor = [UIColor blackColor].CGColor;
     self.playerLayer.frame = self.bounds;
-    [self.layer addSublayer:self.playerLayer];
+    [self.contentView.layer addSublayer:self.playerLayer];
     [self configPlayButton];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pausePlayerAndShowNaviBar) name:AVPlayerItemDidPlayToEndTimeNotification object:self.player.currentItem];
 }
@@ -508,6 +515,7 @@
     CMTime currentTime = _player.currentItem.currentTime;
     CMTime durationTime = _player.currentItem.duration;
     if (_player.rate == 0.0f) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"TZ_VIDEO_PLAY_NOTIFICATION" object:_player];
         if (currentTime.value == durationTime.value) [_player.currentItem seekToTime:CMTimeMake(0, 1)];
         [_player play];
         [_playButton setImage:nil forState:UIControlStateNormal];

@@ -56,10 +56,100 @@
 
 
 #pragma mark ---- TZImagePickerControllerDelegate
-- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto
-{
-    ADLog(@"代理选择图片-- %@ \n assets--%@\n isSelectOriginalPhoto--%d",photos,assets,isSelectOriginalPhoto);
+- (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
     
+    __block NSMutableArray *imagesArray = [NSMutableArray arrayWithCapacity:photos.count];
+    
+    if ([[TZImageManager manager] isVideo:assets[0]]) {
+        //视频
+        for (int i = 0; i < assets.count; i ++) {
+            PHAsset *asset = assets[i];
+            UIImage *image = photos[i];
+            
+            [[TZImageManager manager] getVideoOutputPathWithAsset:asset presetName:AVAssetExportPresetMediumQuality success:^(NSString *outputPath) {
+                NSLog(@"视频导出到本地完成,沙盒路径为:%@",outputPath);
+                
+                // 时间戳，精度到毫秒
+                double currentTime =  [[NSDate date] timeIntervalSince1970]*1000;
+                NSString *strTime = [NSString stringWithFormat:@"%.0f",currentTime];
+                // 随机数
+                int randomValue = arc4random() % 1000;
+                NSString *imageName = [NSString stringWithFormat:@"%@_%d.png",strTime,randomValue];
+                NSString *videoName = [NSString stringWithFormat:@"%@_%d.mp4",strTime,randomValue];
+
+                NSString *imageFilePath = [self getImagePath:image imageName:[NSString stringWithFormat:@"/%@",imageName]];
+                
+                
+                NSData *imgData = UIImageJPEGRepresentation(image, 1.0f);
+                NSUInteger imageSize = [imgData length];
+                
+                NSDictionary *dic = @{@"imageName":imageName,
+                                      @"imagePath":imageFilePath,
+                                      @"imageSize":@(imageSize),
+                                      @"videoName":videoName,
+                                      @"videoPath":outputPath,
+                                      @"index":@(i),
+                };
+                
+                [imagesArray addObject:dic];
+               
+                if (imagesArray.count == assets.count) {
+                    
+                    //排序
+                    NSArray *sortArray = [imagesArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+                        NSDictionary *dic1 = obj1;
+                        NSDictionary *dic2 = obj2;
+                        if ([dic1[@"index"] floatValue] > [dic2[@"index"] floatValue]) {
+                            return NSOrderedDescending;//降序
+                        }else if ([dic1[@"index"] floatValue] < [dic2[@"index"] floatValue]){
+                            return NSOrderedAscending;//升序
+                        }else {
+                            return NSOrderedSame;//相等
+                        }
+                    }];
+                    
+                    NSDictionary *result = @{
+                        @"code" : @0,
+                        @"message" : @"",
+                        @"videos" : sortArray,
+                    };
+              
+                }
+               
+            } failure:^(NSString *errorMessage, NSError *error) {
+                NSLog(@"视频导出失败:%@,error:%@",errorMessage, error);
+            }];
+        }
+        
+    }else {
+        //图片
+        for (UIImage *image in photos) {
+            
+            // 时间戳，精度到毫秒
+            double currentTime =  [[NSDate date] timeIntervalSince1970]*1000;
+            NSString *strTime = [NSString stringWithFormat:@"%.0f",currentTime];
+            // 随机数
+            int randomValue = arc4random() % 1000;
+            NSString *imageName = [NSString stringWithFormat:@"%@_%d.png",strTime,randomValue];
+            
+            NSString *filePath = [self getImagePath:image imageName:[NSString stringWithFormat:@"/%@",imageName]];
+
+            
+            NSData *imgData = UIImageJPEGRepresentation(image, 1.0f);
+            NSUInteger size = [imgData length];
+            
+            NSDictionary *dic = @{@"imageName":imageName,@"path":filePath,@"size":@(size)};
+
+            [imagesArray addObject:dic];
+        }
+            
+        NSDictionary *result = @{
+            @"code" : @0,
+            @"message" : @"",
+            @"images" : imagesArray,
+        };
+ 
+    }
 }
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos
 {
@@ -85,14 +175,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark ---- 照片获取本地路径转换
+- (NSString *)getImagePath:(UIImage *)Image imageName:(NSString *)imagePath {
+    NSString *filePath = nil;
+    NSData *data = nil;
+    data = UIImageJPEGRepresentation(Image, 1.0f);
+    //图片保存的路径
+    //这里将图片放在沙盒的caches文件夹中
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    
+    NSString *cachesImagesPath = [NSString stringWithFormat:@"%@/images",cachesPath];
+    //文件管理器
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //把刚刚图片转换的data对象拷贝至沙盒中
+    [fileManager createDirectoryAtPath:cachesImagesPath withIntermediateDirectories:YES attributes:nil error:nil];
+    [fileManager createFileAtPath:[cachesImagesPath stringByAppendingString:imagePath] contents:data attributes:nil];
+    
+    //得到选择后沙盒中图片的完整路径
+    filePath = [[NSString alloc] initWithFormat:@"%@%@", cachesImagesPath, imagePath];
+    return filePath;
 }
-*/
-
 @end

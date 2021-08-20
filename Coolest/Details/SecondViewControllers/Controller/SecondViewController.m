@@ -28,6 +28,7 @@
 #import "LiveThreadViewController.h"
 #import "AspectsViewController.h"
 #import "CrashViewController.h"
+#import "FileViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -105,7 +106,7 @@ NSString *footerIdentifier = @"footer";
     
 //    self.title = @"Second";
     self.fd_prefersNavigationBarHidden = YES;
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],@[@"19-crashhander",@"20",@"21"]];
+    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],@[@"19-crashhander",@"20-文件",@"21"]];
     
     [self createUI];
     
@@ -194,6 +195,7 @@ NSString *footerIdentifier = @"footer";
             case 1:
             {
                 MBProgressHUDViewController* vc = [[MBProgressHUDViewController alloc]init];
+                vc.fd_interactivePopDisabled = YES;
                 [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
@@ -373,6 +375,9 @@ NSString *footerIdentifier = @"footer";
                     break;
                 case 1:
                 {
+                    FileViewController *vc = [[FileViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                
                 }
                     break;
                 case 2:

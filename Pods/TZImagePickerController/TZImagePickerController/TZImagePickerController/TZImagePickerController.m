@@ -4,7 +4,7 @@
 //
 //  Created by 谭真 on 15/12/24.
 //  Copyright © 2015年 谭真. All rights reserved.
-//  version 3.4.8 - 2020.10.17
+//  version 3.6.4 - 2021.08.02
 //  更多信息，请前往项目的github地址：https://github.com/banchichen/TZImagePickerController
 
 #import "TZImagePickerController.h"
@@ -12,8 +12,9 @@
 #import "TZPhotoPreviewController.h"
 #import "TZAssetModel.h"
 #import "TZAssetCell.h"
-#import "UIView+Layout.h"
+#import "UIView+TZLayout.h"
 #import "TZImageManager.h"
+#import "TZVideoCropController.h"
 
 @interface TZImagePickerController () {
     NSTimer *_timer;
@@ -74,6 +75,7 @@
 - (void)setNaviBgColor:(UIColor *)naviBgColor {
     _naviBgColor = naviBgColor;
     self.navigationBar.barTintColor = naviBgColor;
+    [self configNavigationBarAppearance];
 }
 
 - (void)setNaviTitleColor:(UIColor *)naviTitleColor {
@@ -95,6 +97,22 @@
         textAttrs[NSFontAttributeName] = self.naviTitleFont;
     }
     self.navigationBar.titleTextAttributes = textAttrs;
+    [self configNavigationBarAppearance];
+}
+
+- (void)configNavigationBarAppearance {
+    if (@available(iOS 13.0, *)) {
+        UINavigationBarAppearance *barAppearance = [[UINavigationBarAppearance alloc] init];
+        if (self.navigationBar.isTranslucent) {
+            UIColor *barTintColor = self.navigationBar.barTintColor;
+            barAppearance.backgroundColor = [barTintColor colorWithAlphaComponent:0.85];
+        } else {
+            barAppearance.backgroundColor = self.navigationBar.barTintColor;
+        }
+        barAppearance.titleTextAttributes = self.navigationBar.titleTextAttributes;
+        self.navigationBar.standardAppearance = barAppearance;
+        self.navigationBar.scrollEdgeAppearance = barAppearance;
+    }
 }
 
 - (void)setBarItemTextFont:(UIFont *)barItemTextFont {
@@ -187,10 +205,7 @@
             _tipLabel.textColor = [UIColor blackColor];
             _tipLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
-            NSDictionary *infoDict = [TZCommonTools tz_getInfoDictionary];
-            NSString *appName = [infoDict valueForKey:@"CFBundleDisplayName"];
-            if (!appName) appName = [infoDict valueForKey:@"CFBundleName"];
-            if (!appName) appName = [infoDict valueForKey:@"CFBundleExecutable"];
+            NSString *appName = [TZCommonTools tz_getAppName];
             NSString *tipText = [NSString stringWithFormat:[NSBundle tz_localizedStringForKey:@"Allow %@ to access your album in \"Settings -> Privacy -> Photos\""],appName];
             _tipLabel.text = tipText;
             [self.view addSubview:_tipLabel];
@@ -268,7 +283,7 @@
 
 - (void)configDefaultSetting {
     self.autoSelectCurrentWhenDone = YES;
-    self.timeout = 15;
+    self.timeout = 30;
     self.photoWidth = 828.0;
     self.photoPreviewMaxWidth = 600;
     self.naviTitleColor = [UIColor whiteColor];
@@ -282,6 +297,8 @@
     self.statusBarStyle = UIStatusBarStyleLightContent;
     self.cannotSelectLayerColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
     self.allowCameraLocation = YES;
+    self.presetName = AVAssetExportPresetMediumQuality;
+    self.maxCropVideoDuration = 30;
     
     self.iconThemeColor = [UIColor colorWithRed:31 / 255.0 green:185 / 255.0 blue:34 / 255.0 alpha:1.0];
     [self configDefaultBtnTitle];
@@ -352,6 +369,7 @@
     self.fullImageBtnTitleStr = [NSBundle tz_localizedStringForKey:@"Full image"];
     self.settingBtnTitleStr = [NSBundle tz_localizedStringForKey:@"Setting"];
     self.processHintStr = [NSBundle tz_localizedStringForKey:@"Processing..."];
+    self.editBtnTitleStr = [NSBundle tz_localizedStringForKey:@"Edit"];
 }
 
 - (void)setShowSelectedIndex:(BOOL)showSelectedIndex {
@@ -404,7 +422,7 @@
         TZPhotoPickerController *photoPickerVc = [[TZPhotoPickerController alloc] init];
         photoPickerVc.isFirstAppear = YES;
         photoPickerVc.columnNumber = self.columnNumber;
-        [[TZImageManager manager] getCameraRollAlbum:self.allowPickingVideo allowPickingImage:self.allowPickingImage needFetchAssets:NO completion:^(TZAlbumModel *model) {
+        [[TZImageManager manager] getCameraRollAlbumWithFetchAssets:NO completion:^(TZAlbumModel *model) {
             photoPickerVc.model = model;
             [self pushViewController:photoPickerVc animated:YES];
             self->_didPushPhotoPickerVc = YES;
@@ -417,11 +435,6 @@
     [alertController addAction:[UIAlertAction actionWithTitle:[NSBundle tz_localizedStringForKey:@"OK"] style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
     return alertController;
-}
-
-- (void)hideAlertView:(UIAlertController *)alertView {
-    [alertView dismissViewControllerAnimated:YES completion:nil];
-    alertView = nil;
 }
 
 - (void)showProgressHUD {
@@ -529,8 +542,8 @@
     _timeout = timeout;
     if (timeout < 5) {
         _timeout = 5;
-    } else if (_timeout > 60) {
-        _timeout = 60;
+    } else if (_timeout > 600) {
+        _timeout = 600;
     }
 }
 
@@ -713,6 +726,13 @@
     }
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    if ([self.topViewController isKindOfClass:TZVideoPlayerController.class] && self.topViewController.presentedViewController) {
+        return UIInterfaceOrientationMaskPortrait;
+    }
+    return UIInterfaceOrientationMaskAll;
+}
+
 @end
 
 
@@ -762,14 +782,13 @@
         return;
     }
 
+    TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
     if (self.isFirstAppear) {
-        TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
         [imagePickerVc showProgressHUD];
     }
 
-    TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [[TZImageManager manager] getAllAlbums:imagePickerVc.allowPickingVideo allowPickingImage:imagePickerVc.allowPickingImage needFetchAssets:!self.isFirstAppear completion:^(NSArray<TZAlbumModel *> *models) {
+        [[TZImageManager manager] getAllAlbumsWithFetchAssets:!self.isFirstAppear completion:^(NSArray<TZAlbumModel *> *models) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self->_albumArr = [NSMutableArray arrayWithArray:models];
                 for (TZAlbumModel *albumModel in self->_albumArr) {
@@ -952,6 +971,20 @@
         infoDict = [NSDictionary dictionaryWithContentsOfFile:path];
     }
     return infoDict ? infoDict : @{};
+}
+
++ (NSString *)tz_getAppName {
+    NSDictionary *infoDict = [self tz_getInfoDictionary];
+    NSString *appName = [infoDict valueForKey:@"CFBundleDisplayName"];
+    if (!appName) appName = [infoDict valueForKey:@"CFBundleName"];
+    if (!appName) appName = [infoDict valueForKey:@"CFBundleExecutable"];
+    if (!appName) {
+        infoDict = [NSBundle mainBundle].infoDictionary;
+        appName = [infoDict valueForKey:@"CFBundleDisplayName"];
+        if (!appName) appName = [infoDict valueForKey:@"CFBundleName"];
+        if (!appName) appName = [infoDict valueForKey:@"CFBundleExecutable"];
+    }
+    return appName;
 }
 
 + (BOOL)tz_isRightToLeftLayout {

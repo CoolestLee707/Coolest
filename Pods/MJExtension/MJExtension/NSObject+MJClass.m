@@ -130,8 +130,9 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
 }
 
 #pragma mark - block和方法处理:存储block的返回值
-+ (void)mj_setupBlockReturnValue:(id (^)(void))block key:(const char *)key
-{
++ (void)mj_setupBlockReturnValue:(id (^)(void))block key:(const char *)key {
+    MJExtensionSemaphoreCreate
+    MJ_LOCK(mje_signalSemaphore);
     if (block) {
         objc_setAssociatedObject(self, key, block(), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     } else {
@@ -139,39 +140,35 @@ static const char MJIgnoredCodingPropertyNamesKey = '\0';
     }
     
     // 清空数据
-    MJExtensionSemaphoreCreate
-    MJExtensionSemaphoreWait
     [[self mj_classDictForKey:key] removeAllObjects];
-    MJExtensionSemaphoreSignal
+    MJ_UNLOCK(mje_signalSemaphore);
 }
 
-+ (NSMutableArray *)mj_totalObjectsWithSelector:(SEL)selector key:(const char *)key {
++ (NSMutableArray *)mj_totalObjectsWithSelector:(SEL)selector key:(const char *)key
+{
     MJExtensionSemaphoreCreate
-    MJExtensionSemaphoreWait
+    MJ_LOCK(mje_signalSemaphore);
     NSMutableArray *array = [self mj_classDictForKey:key][NSStringFromClass(self)];
     if (array == nil) {
         // 创建、存储
         [self mj_classDictForKey:key][NSStringFromClass(self)] = array = [NSMutableArray array];
-        NSMutableSet *classMethodSets = NSMutableSet.set;
-        [self mj_enumerateAllClasses:^(__unsafe_unretained Class c, BOOL *stop) {
-            Method method = class_getClassMethod(c, selector);
-            NSNumber *methodAddress = @((int64_t)(void *)method);
-            if (method && ![classMethodSets containsObject:methodAddress]) {
+        
+        if ([self respondsToSelector:selector]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                NSArray *subArray = [c performSelector:selector];
+            NSArray *subArray = [self performSelector:selector];
 #pragma clang diagnostic pop
-                if (subArray) {
-                    [array addObjectsFromArray:subArray];
-                }
-                [classMethodSets addObject:methodAddress];
+            if (subArray) {
+                [array addObjectsFromArray:subArray];
             }
+        }
+        
+        [self mj_enumerateAllClasses:^(__unsafe_unretained Class c, BOOL *stop) {
             NSArray *subArray = objc_getAssociatedObject(c, key);
             [array addObjectsFromArray:subArray];
         }];
     }
-    MJExtensionSemaphoreSignal
+    MJ_UNLOCK(mje_signalSemaphore);
     return array;
 }
-
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED0C426CBA72800EEC483 /* FileViewController.m */; };
+		1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */; };
 		3F13C4832500C8AC00133489 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F13C4812500C8AB00133489 /* CLTimer.m */; };
 		3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070E24FE46DF00070631 /* CLKeepAlive.m */; };
 		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
@@ -141,6 +143,10 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		1ACED0C326CBA72800EEC483 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		1ACED0C426CBA72800EEC483 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
+		1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coolest-Bridging-Header.h"; sourceTree = "<group>"; };
+		1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFile.swift; sourceTree = "<group>"; };
 		3F13C4812500C8AB00133489 /* CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTimer.m; sourceTree = "<group>"; };
 		3F13C4822500C8AC00133489 /* CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTimer.h; sourceTree = "<group>"; };
 		3F3C070D24FE46DF00070631 /* CLKeepAlive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeepAlive.h; sourceTree = "<group>"; };
@@ -808,6 +814,10 @@
 				3F66C7E624E8CDEB00AD8CE7 /* AspectsViewController.m */,
 				3F709D4025402CBB00A59E06 /* CrashViewController.h */,
 				3F709D4125402CBB00A59E06 /* CrashViewController.m */,
+				1ACED0C326CBA72800EEC483 /* FileViewController.h */,
+				1ACED0C426CBA72800EEC483 /* FileViewController.m */,
+				1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */,
+				1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1218,6 +1228,7 @@
 				TargetAttributes = {
 					BF59E181210035530004EC56 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1250;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1337,6 +1348,7 @@
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
+				1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
@@ -1368,6 +1380,7 @@
 				BF59E21A2100681D0004EC56 /* DZNEmptyDataSetViewController.m in Sources */,
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
+				1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
@@ -1618,12 +1631,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BITCODE_GENERATION_MODE = bitcode;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = F736NU49C9;
+				DEVELOPMENT_TEAM = YT32YJ99QZ;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1698,9 +1712,12 @@
 					"-weak_framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest001.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Details/SecondViewControllers/Controller/Coolest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1712,12 +1729,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				BITCODE_GENERATION_MODE = bitcode;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = F736NU49C9;
+				DEVELOPMENT_TEAM = YT32YJ99QZ;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1792,9 +1810,11 @@
 					"-weak_framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest.com;
+				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest001.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Details/SecondViewControllers/Controller/Coolest-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1802,6 +1822,7 @@
 		BF59E1B2210035550004EC56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
@@ -1821,6 +1842,7 @@
 		BF59E1B3210035550004EC56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
@@ -1840,6 +1862,7 @@
 		BF59E1B5210035550004EC56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
 				INFOPLIST_FILE = CoolestUITests/Info.plist;
@@ -1858,6 +1881,7 @@
 		BF59E1B6210035550004EC56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PHSYCV4RUY;
 				INFOPLIST_FILE = CoolestUITests/Info.plist;
