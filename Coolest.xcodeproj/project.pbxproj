@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
+		1A444AFC26D37D2100448BB9 /* e70d9058d8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */; };
 		1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED0C426CBA72800EEC483 /* FileViewController.m */; };
 		1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */; };
+		1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED38426D33B7000EEC483 /* WebViewPDFViewController.m */; };
 		3F13C4832500C8AC00133489 /* CLTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F13C4812500C8AB00133489 /* CLTimer.m */; };
 		3F3C070F24FE46DF00070631 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3C070E24FE46DF00070631 /* CLKeepAlive.m */; };
 		3F3D3067249C97ED00E558E5 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3D3066249C97ED00E558E5 /* KVOViewController.m */; };
@@ -143,10 +145,13 @@
 
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
+		1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = e70d9058d8.pdf; sourceTree = "<group>"; };
 		1ACED0C326CBA72800EEC483 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1ACED0C426CBA72800EEC483 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coolest-Bridging-Header.h"; sourceTree = "<group>"; };
 		1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftFile.swift; sourceTree = "<group>"; };
+		1ACED38326D33B7000EEC483 /* WebViewPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewPDFViewController.h; sourceTree = "<group>"; };
+		1ACED38426D33B7000EEC483 /* WebViewPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewPDFViewController.m; sourceTree = "<group>"; };
 		3F13C4812500C8AB00133489 /* CLTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTimer.m; sourceTree = "<group>"; };
 		3F13C4822500C8AC00133489 /* CLTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTimer.h; sourceTree = "<group>"; };
 		3F3C070D24FE46DF00070631 /* CLKeepAlive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLKeepAlive.h; sourceTree = "<group>"; };
@@ -611,6 +616,7 @@
 		BF59E1B8210037CC0004EC56 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */,
 				3FEC10422456B4370003B2AD /* testBundle.bundle */,
 				3FEC103C2456B0600003B2AD /* CLBtn.bundle */,
 				BF59E18E210035550004EC56 /* Assets.xcassets */,
@@ -816,6 +822,8 @@
 				3F709D4125402CBB00A59E06 /* CrashViewController.m */,
 				1ACED0C326CBA72800EEC483 /* FileViewController.h */,
 				1ACED0C426CBA72800EEC483 /* FileViewController.m */,
+				1ACED38326D33B7000EEC483 /* WebViewPDFViewController.h */,
+				1ACED38426D33B7000EEC483 /* WebViewPDFViewController.m */,
 				1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */,
 				1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */,
 			);
@@ -1271,6 +1279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A444AFC26D37D2100448BB9 /* e70d9058d8.pdf in Resources */,
 				BF59E192210035550004EC56 /* LaunchScreen.storyboard in Resources */,
 				BF18FCC922C0CC9800A772CD /* CouponsTestCell.xib in Resources */,
 				BF9007772294FAEF0051DD7B /* Localizable.strings in Resources */,
@@ -1389,6 +1398,7 @@
 				3F709D4825402D5300A59E06 /* CL_ExceptionHander.m in Sources */,
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
+				1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				3F13C4832500C8AC00133489 /* CLTimer.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,

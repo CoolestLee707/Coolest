@@ -8,15 +8,18 @@
 
 #import "FileViewController.h"
 #import "AFNetworking/AFNetworking.h"
-#import <WebKit/WebKit.h>
+#import "WebViewPDFViewController.h"
 
-NSString *imagePath = @"/var/mobile/Containers/Data/Application/562A743A-CDB9-466D-93F1-09C56F7B1B31/Library/Caches/images/1629189346034_392.png";
+NSString *filePath = @"https://wos4.58cdn.com.cn/nOUKjIhGfnpt/contract/e70d9058d8.pdf";
 
-@interface FileViewController ()<UIDocumentInteractionControllerDelegate> {
+@interface FileViewController () {
     NSURLSessionDownloadTask *_downloadTask;
 }
-@property (strong, nonatomic) WKWebView *wkWebView;
 @property (strong, nonatomic) NSString *downfilePath;
+@property (strong, nonatomic) UIButton *downLoadButton;
+@property (strong, nonatomic) UIButton *watchButton;
+@property (strong, nonatomic) UIButton *deleteButton;
+
 @end
 
 @implementation FileViewController
@@ -24,53 +27,99 @@ NSString *imagePath = @"/var/mobile/Containers/Data/Application/562A743A-CDB9-46
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-    button.frame = CGRectMake(0, 0, 44, 44);
-    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
-    // 让按钮内部的所有内容左对齐
-    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    // 修改导航栏左边的item
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-
+    [self setUpUI];
+    
     [self setDownFile];
     
-    [self setupWebview];
 }
 
-- (void)setupWebview
-{
-    WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc]init];
-    config.selectionGranularity = WKSelectionGranularityDynamic;
-    config.allowsInlineMediaPlayback = YES;
-    [config.preferences setValue:@YES forKey:@"allowFileAccessFromFileURLs"];
+- (void)setUpUI {
     
-    WKPreferences *preferences = [WKPreferences new];
-    //是否支持JavaScript
-    preferences.javaScriptEnabled = YES;
-    //不通过用户交互，是否可以打开窗口
-    preferences.javaScriptCanOpenWindowsAutomatically = YES;
-    config.preferences = preferences;
+    self.downLoadButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.downLoadButton.frame = CGRectMake(Main_Screen_Width/2 - 100, kNavigationBarHeight + 50, 200, 80);
+    [self.view addSubview:self.downLoadButton];
+    self.downLoadButton.backgroundColor = [UIColor yellowColor];
+    [self.downLoadButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [self.downLoadButton addTarget:self action:@selector(downLoadButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    WKWebView *webview = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height-kNavigationBarHeight) configuration:config];
-    [self.view addSubview:webview];
+    self.watchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.watchButton.frame = CGRectMake(Main_Screen_Width/2 - 100, kNavigationBarHeight + 150, 200, 80);
+    [self.watchButton setTitle:@"查看" forState:UIControlStateNormal];
+    self.watchButton.backgroundColor = [UIColor yellowColor];
+    [self.watchButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+    [self.watchButton addTarget:self action:@selector(watchButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
-    self.wkWebView = webview;
+    self.deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.deleteButton.frame = CGRectMake(Main_Screen_Width/2 - 100, kNavigationBarHeight + 250, 200, 80);
+    [self.deleteButton setTitle:@"删除" forState:UIControlStateNormal];
+    self.deleteButton.backgroundColor = [UIColor yellowColor];
+    [self.deleteButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [self.deleteButton addTarget:self action:@selector(deleteButtonClick) forControlEvents:UIControlEventTouchUpInside];
     
     
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com"]];
-//    [self.wkWebView loadRequest:request];
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachesDownLoadPath = [NSString stringWithFormat:@"%@/downLoadFiles/e70d9058d8.pdf",cachesPath];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:cachesDownLoadPath]) {
+        
+        [self.downLoadButton setTitle:@"下载完成" forState:UIControlStateNormal];
+        [self.view addSubview:self.watchButton];
+        [self.view addSubview:self.deleteButton];
+
+    } else {
+        [self.downLoadButton setTitle:@"下载" forState:UIControlStateNormal];
+    }
+    
 }
 
+- (void)deleteButtonClick {
+    
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachesDownLoadPath = [NSString stringWithFormat:@"%@/downLoadFiles",cachesPath];
+    NSString *newfilePath = [NSString stringWithFormat:@"%@/e70d9058d8.pdf",cachesDownLoadPath];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    BOOL fileExists=[[NSFileManager defaultManager] fileExistsAtPath:newfilePath];
 
-- (void)buttonClick {
-    [_downloadTask resume];
+    if (!fileExists) {
+        return;
+    }else {
+        BOOL fileDele= [fileManager removeItemAtPath:newfilePath error:nil];
+        if (fileDele) {
+            [self showSuccess:@"删除成功"];
+            [self.downLoadButton setTitle:@"下载" forState:UIControlStateNormal];
+            [self.watchButton removeFromSuperview];
+            [self.deleteButton removeFromSuperview];
+
+        }else {
+            [self showError:@"删除失败"];
+        }
+    }
+    
+}
+- (void)downLoadButtonClick {
+    
+    if ([self.downLoadButton.titleLabel.text isEqualToString:@"下载"]) {
+        [self setDownFile];
+        [_downloadTask resume];
+    }
+}
+
+- (void)watchButtonClick {
+   
+    NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *cachesDownLoadPath = [NSString stringWithFormat:@"%@/downLoadFiles",cachesPath];
+    NSString *newfilePath = [NSString stringWithFormat:@"%@/e70d9058d8.pdf",cachesDownLoadPath];
+    
+    WebViewPDFViewController *vc = [[WebViewPDFViewController alloc]init];
+    vc.filePath = newfilePath;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 - (void)setDownFile {
     
-//    NSURL *URL = [NSURL URLWithString:@"https://img1.baidu.com/it/u=1825851994,4163570429&fm=253&fmt=auto&app=120&f=JPEG?w=934&h=500"];
-    
-    NSURL *URL = [NSURL URLWithString:@"https://wos4.58cdn.com.cn/nOUKjIhGfnpt/contract/e70d9058d8.pdf"];
+    NSURL *URL = [NSURL URLWithString:filePath];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -84,7 +133,7 @@ NSString *imagePath = @"/var/mobile/Containers/Data/Application/562A743A-CDB9-46
         ADLog(@"%f",1.0 * downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
     
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            [self.downLoadButton setTitle:[NSString stringWithFormat:@"下载中  %0.2f %%",100.00* downloadProgress.completedUnitCount / downloadProgress.totalUnitCount] forState:UIControlStateNormal];
         });
           
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
@@ -109,80 +158,16 @@ NSString *imagePath = @"/var/mobile/Containers/Data/Application/562A743A-CDB9-46
         ADLog(@"self.downfilePath ---- %@",self.downfilePath);
         return [NSURL fileURLWithPath:path];
         
-//        NSString *cachesPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];
-//        NSString *cachesDownLoadPath = [NSString stringWithFormat:@"%@/downLoadFiles",cachesPath];
-//        NSString *path = [cachesDownLoadPath stringByAppendingPathComponent:response.suggestedFilename];
-//        return [NSURL fileURLWithPath:path];
-
-        
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
         
         //设置下载完成操作
         // filePath就是你下载文件的位置，你可以解压，也可以直接拿来使用
         
         ADLog(@"filePath - %@",filePath);
-    
-//        读取加载沙盒文件
-        NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-        NSString *cachesDownLoadPath = [NSString stringWithFormat:@"%@/downLoadFiles",cachesPath];
-        NSString *newfilePath = [NSString stringWithFormat:@"file://%@/e70d9058d8.pdf",cachesDownLoadPath];
-        NSURL *newUrl = [NSURL URLWithString:newfilePath];
-        ADLog(@"newUrl - %@",newUrl);
-
-        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:newUrl]];
-   
-//        这个可以  file:///var/mobile/Containers/Data/Application/6C239EFB-5FED-4556-8CAA-F585A74FAC2E/Library/Caches/downLoadFiles/e70d9058d8.pdf
-//        [self.wkWebView loadRequest:[NSURLRequest requestWithURL:filePath]];
-        
+        [self.downLoadButton setTitle:@"下载完成" forState:UIControlStateNormal];
+        [self.view addSubview:self.watchButton];
+        [self.view addSubview:self.deleteButton];
     }];
-    
-    
-}
-
-
-- (void)shareFile {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-       NSString *documentPath = [paths firstObject];
-       NSString *cachePath = nil;
-       NSFileManager *manager = [NSFileManager defaultManager] ;
-       if (![manager fileExistsAtPath:documentPath]) {
-           NSLog(@"没有文件");
-
-       }else {
-           NSEnumerator *childFilesEnumerator = [[manager subpathsAtPath:documentPath] objectEnumerator];
-           NSString *fileName = nil;
-           while ((fileName = [childFilesEnumerator nextObject]) != nil ){
-               NSString* fileAbsolutePath = [documentPath stringByAppendingPathComponent:fileName];
-               BOOL isDirectory = NO;
-               NSLog(@"filePath %@", fileName);
-               cachePath = [NSString stringWithFormat:@"%@/%@",documentPath, fileName];
-               if ([manager fileExistsAtPath:fileAbsolutePath isDirectory:&isDirectory]){
-                   NSDictionary *dic =  [manager attributesOfItemAtPath:fileAbsolutePath error:nil] ;
-                   NSLog(@"%@", dic);
-               }
-               break;
-           }
-       }
-       
-       
-       UIDocumentInteractionController *documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:imagePath]];
-       documentController.delegate = self;
-       documentController.name = @"喝喝";
-       [documentController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
-}
--(void)documentInteractionController:(UIDocumentInteractionController *)controller  willBeginSendingToApplication:(NSString *)application{
-    
-    
 }
  
- 
--(void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application{
-    
-}
- 
- 
--(void)documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller{
-    
-}
-    
 @end
