@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
 		1A444AFC26D37D2100448BB9 /* e70d9058d8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */; };
+		1A444AFF26D6374C00448BB9 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A444AFE26D6374C00448BB9 /* LocationViewController.m */; };
 		1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED0C426CBA72800EEC483 /* FileViewController.m */; };
 		1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */; };
 		1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED38426D33B7000EEC483 /* WebViewPDFViewController.m */; };
@@ -146,6 +147,8 @@
 /* Begin PBXFileReference section */
 		13CD76BEC82AB6D4A1D0E5B7 /* Pods-Coolest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.release.xcconfig"; sourceTree = "<group>"; };
 		1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = e70d9058d8.pdf; sourceTree = "<group>"; };
+		1A444AFD26D6374C00448BB9 /* LocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		1A444AFE26D6374C00448BB9 /* LocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		1ACED0C326CBA72800EEC483 /* FileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		1ACED0C426CBA72800EEC483 /* FileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coolest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -824,6 +827,8 @@
 				1ACED0C426CBA72800EEC483 /* FileViewController.m */,
 				1ACED38326D33B7000EEC483 /* WebViewPDFViewController.h */,
 				1ACED38426D33B7000EEC483 /* WebViewPDFViewController.m */,
+				1A444AFD26D6374C00448BB9 /* LocationViewController.h */,
+				1A444AFE26D6374C00448BB9 /* LocationViewController.m */,
 				1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */,
 				1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */,
 			);
@@ -1430,6 +1435,7 @@
 				3F66C7E724E8CDEB00AD8CE7 /* AspectsViewController.m in Sources */,
 				BF6B08F8211D3E5E000C8693 /* HitTestViewController.m in Sources */,
 				BF59E1E1210044C80004EC56 /* BaseNavigationController.m in Sources */,
+				1A444AFF26D6374C00448BB9 /* LocationViewController.m in Sources */,
 				BF54707D2230C81900458592 /* BlockViewController.m in Sources */,
 				3FEA17F62503CC68007D102F /* AppCodeTest.m in Sources */,
 				BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */,
@@ -1646,6 +1652,7 @@
 				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COMPILER_INDEX_STORE_ENABLE = Default;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YT32YJ99QZ;
 				ENABLE_BITCODE = NO;
@@ -1657,6 +1664,59 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Aspects\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/BlockHook\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/CLHashString\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/DZNEmptyDataSet\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBCircularProgressBar\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MyLayout\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINCache\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINOperation\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINRemoteImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/TZImagePickerController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Texture\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYText\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/ZXingObjC\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1744,6 +1804,7 @@
 				CODE_SIGN_ENTITLEMENTS = Coolest/Coolest.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				COMPILER_INDEX_STORE_ENABLE = Default;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = YT32YJ99QZ;
 				ENABLE_BITCODE = NO;
@@ -1755,6 +1816,59 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Aspects\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/BlockHook\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/CLHashString\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/DZNEmptyDataSet\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/FDFullscreenPopGesture\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/IQKeyboardManager\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBCircularProgressBar\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MBProgressHUD\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJExtension\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MJRefresh\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/MyLayout\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINCache\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINOperation\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PINRemoteImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/TZImagePickerController\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Texture\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/YYText\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/ZXingObjC\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

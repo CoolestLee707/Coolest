@@ -29,6 +29,7 @@
 #import "AspectsViewController.h"
 #import "CrashViewController.h"
 #import "FileViewController.h"
+#import "LocationViewController.h"
 
 #import "BaseNavigationController.h"
 
@@ -106,8 +107,19 @@ NSString *footerIdentifier = @"footer";
     
 //    self.title = @"Second";
     self.fd_prefersNavigationBarHidden = YES;
-    self.dataArray = @[@[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],@[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],@[@"7-CoreText",@"8-NSThread",@"9-GCD"],@[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],@[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],@[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],@[@"19-crashhander",@"20-文件",@"21"]];
-    
+    self.dataArray = @[
+    @[@"1-WKWebView",@"2-MBProgressHUD",@"3-DZNEmptyDataSetViewController"],
+    @[@"4-TZImagePickerController",@"5-指纹密码",@"6-HitTest"],
+    @[@"7-CoreText",@"8-NSThread",@"9-GCD"],
+    @[@"10-短信",@"11-Present",@"12-AsyncDisplayKit"],
+    @[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],
+    @[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],
+    @[@"19-crashhander",@"20-文件",@"21-定位信息"],
+    @[@"22-",@"23",@"24"],
+    @[@"25-",@"26",@"27"],
+    @[@"28-",@"29",@"30"],
+    ];
+
     [self createUI];
     
 }
@@ -382,6 +394,8 @@ NSString *footerIdentifier = @"footer";
                     break;
                 case 2:
                 {
+                    LocationViewController *vc = [LocationViewController new];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                 default:

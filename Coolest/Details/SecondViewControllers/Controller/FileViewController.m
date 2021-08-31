@@ -27,6 +27,8 @@ NSString *filePath = @"https://wos4.58cdn.com.cn/nOUKjIhGfnpt/contract/e70d9058d
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"文件下载";
+    
     [self setUpUI];
     
     [self setDownFile];
