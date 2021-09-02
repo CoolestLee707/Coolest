@@ -6,7 +6,7 @@
   Copyright © 2019 CoolestLee707. All rights reserved.
 */
 
-CFBundleDisplayName="Coolest";
+CFBundleDisplayName="航母";
 
 NSCameraUsageDescription = "酷李斯特需要使用您的相机权限来获取头像";
 

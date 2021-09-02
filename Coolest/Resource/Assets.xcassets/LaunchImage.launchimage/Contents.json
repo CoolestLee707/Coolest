@@ -2,63 +2,66 @@
   "images" : [
     {
       "extent" : "full-screen",
-      "idiom" : "iphone",
-      "subtype" : "2688h",
       "filename" : "6.5.png",
+      "idiom" : "iphone",
       "minimum-system-version" : "12.0",
       "orientation" : "portrait",
-      "scale" : "3x"
+      "scale" : "3x",
+      "subtype" : "2688h"
     },
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
+      "filename" : "6.5-3.png",
+      "idiom" : "iphone",
       "minimum-system-version" : "12.0",
-      "subtype" : "1792h",
-      "scale" : "2x"
+      "orientation" : "portrait",
+      "scale" : "2x",
+      "subtype" : "1792h"
     },
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
+      "filename" : "6.5-1.png",
+      "idiom" : "iphone",
       "minimum-system-version" : "11.0",
-      "subtype" : "2436h",
-      "scale" : "3x"
+      "orientation" : "portrait",
+      "scale" : "3x",
+      "subtype" : "2436h"
     },
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
+      "filename" : "6.5-2.png",
+      "idiom" : "iphone",
       "minimum-system-version" : "8.0",
-      "subtype" : "736h",
-      "scale" : "3x"
+      "orientation" : "portrait",
+      "scale" : "3x",
+      "subtype" : "736h"
     },
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
+      "idiom" : "iphone",
       "minimum-system-version" : "8.0",
-      "subtype" : "667h",
+      "orientation" : "portrait",
+      "scale" : "2x",
+      "subtype" : "667h"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
+      "minimum-system-version" : "7.0",
+      "orientation" : "portrait",
       "scale" : "2x"
     },
     {
-      "orientation" : "portrait",
-      "idiom" : "iphone",
       "extent" : "full-screen",
-      "minimum-system-version" : "7.0",
-      "scale" : "2x"
-    },
-    {
-      "orientation" : "portrait",
       "idiom" : "iphone",
-      "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "subtype" : "retina4",
-      "scale" : "2x"
+      "orientation" : "portrait",
+      "scale" : "2x",
+      "subtype" : "retina4"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

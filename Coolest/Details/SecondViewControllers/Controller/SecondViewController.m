@@ -30,7 +30,7 @@
 #import "CrashViewController.h"
 #import "FileViewController.h"
 #import "LocationViewController.h"
-
+#import "FishHookViewController.h"
 #import "BaseNavigationController.h"
 
 #define shareWidth  (Main_Screen_Width/3);
@@ -115,7 +115,7 @@ NSString *footerIdentifier = @"footer";
     @[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],
     @[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],
     @[@"19-crashhander",@"20-文件",@"21-定位信息"],
-    @[@"22-",@"23",@"24"],
+    @[@"22-fishhook",@"23",@"24"],
     @[@"25-",@"26",@"27"],
     @[@"28-",@"29",@"30"],
     ];
@@ -396,6 +396,32 @@ NSString *footerIdentifier = @"footer";
                 {
                     LocationViewController *vc = [LocationViewController new];
                     [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+            break;
+            
+        case 7:
+        {
+            switch (indexPath.row) {
+                case 0:
+                {
+                    FishHookViewController *vc = [[FishHookViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                case 1:
+                {
+                    
+                
+                }
+                    break;
+                case 2:
+                {
+                   
                 }
                     break;
                 default:

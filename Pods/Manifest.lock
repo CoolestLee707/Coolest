@@ -19,6 +19,7 @@ PODS:
   - CLHashString (0.1.0)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
+  - fishhook (0.2)
   - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
@@ -80,6 +81,7 @@ DEPENDENCIES:
   - CLHashString (from `https://github.com/CoolestLee707/CLHashString.git`)
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
+  - fishhook
   - IQKeyboardManager
   - Masonry
   - MBCircularProgressBar
@@ -104,6 +106,7 @@ SPEC REPOS:
     - BlockHook
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
+    - fishhook
     - IQKeyboardManager
     - Masonry
     - MBCircularProgressBar
@@ -144,6 +147,7 @@ SPEC CHECKSUMS:
   CLHashString: 6033175b64d28c8037cafbb21589b9922b45b59b
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
@@ -163,6 +167,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 724296cc37b5ed4e9885e31869478f81bb2d1c33
+PODFILE CHECKSUM: 402dc07bf11f138099d3544f0f5227777c9f49dc
 
 COCOAPODS: 1.10.0

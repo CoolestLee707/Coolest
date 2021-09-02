@@ -6,7 +6,7 @@
   Copyright © 2019 CoolestLee707. All rights reserved.
 */
 
-CFBundleDisplayName="Coolest";
+CFBundleDisplayName="航母";
 
 NSCameraUsageDescription = "Coolest needs to use your camera to take a photo as your profile image.";
 
