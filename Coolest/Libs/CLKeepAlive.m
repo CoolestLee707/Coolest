@@ -57,6 +57,7 @@ dispatch_source_t _CLKeepAlivebadgeTimer;
 //    self.appleLocationManager.delegate = self;
 //    [self.appleLocationManager requestAlwaysAuthorization];
     
+//    可以用封装的常驻线程来做位置采集
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
 
     dispatch_async(queue, ^{
@@ -64,7 +65,7 @@ dispatch_source_t _CLKeepAlivebadgeTimer;
         _CLKeepAlivebadgeTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
         dispatch_source_set_timer(_CLKeepAlivebadgeTimer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 1 * NSEC_PER_SEC);
         dispatch_source_set_event_handler(_CLKeepAlivebadgeTimer, ^{
-            
+            ADLog(@"currentThread----%@",[NSThread currentThread]);
             [cllocationManager startUpdatingLocation];
             
         });
@@ -79,13 +80,13 @@ dispatch_source_t _CLKeepAlivebadgeTimer;
 /** 位置更新后，会调用此函数 */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
     [cllocationManager stopUpdatingLocation];
-    NSLog(@"success");
+    NSLog(@"success--%@",[NSThread currentThread]);
 }
 
 /** 定位失败后，会调用此函数 */
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     [cllocationManager stopUpdatingLocation];
-    NSLog(@"error");
+    NSLog(@"error--%@",[NSThread currentThread]);
 }
 
 @end
@@ -124,7 +125,7 @@ dispatch_source_t _CLKeepAlivebadgeTimer;
 }
 
 - (void)startBgTask{
-    
+//    这里可以加一个timer有个时间间隔去请求task
     UIApplication *application = [UIApplication sharedApplication];
     __block  UIBackgroundTaskIdentifier bgTask;
     bgTask = [application beginBackgroundTaskWithExpirationHandler:^{

@@ -19,9 +19,9 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
-        [self swizzledInstanceSEL:@selector(viewWillAppear:) withSEL:@selector(swizzledViewWillAppear:)];
+//        [self swizzledInstanceSEL:@selector(viewWillAppear:) withSEL:@selector(swizzledViewWillAppear:)];
         
-        [self swizzledInstanceSEL:@selector(viewWillDisappear:) withSEL:@selector(swizzledViewWillDisappear:)];
+//        [self swizzledInstanceSEL:@selector(viewWillDisappear:) withSEL:@selector(swizzledViewWillDisappear:)];
         
     });
 }
@@ -34,7 +34,7 @@
 
 - (void)swizzledViewWillDisappear:(BOOL)animated
 {
-//    ADLog(@"页面即将消失%@",[self class]);
+    ADLog(@"页面即将消失%@",[self class]);
 
     [self swizzledViewWillDisappear:animated];
 }

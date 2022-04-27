@@ -6,6 +6,8 @@
 //  Copyright © 2020 CoolestLee707. All rights reserved.
 //
 
+//后台获取定位
+
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

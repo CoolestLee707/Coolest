@@ -28,9 +28,7 @@ pod 'BlockHook'
 pod 'Aspects'
 pod "MBCircularProgressBar"
 pod 'pop'
-pod 'fishhook'
 pod 'PINCache', :git => 'https://github.com/pinterest/PINCache.git', :branch => 'master'
-
 
 pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
 

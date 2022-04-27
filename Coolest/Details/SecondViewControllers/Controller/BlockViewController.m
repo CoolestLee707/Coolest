@@ -8,9 +8,10 @@
 
 #import "BlockViewController.h"
 #import "PersonBlock.h"
-
+#import "CMPerson.h"
 #import "objc1.h"
 #import "objc2.h"
+
 
 @interface BlockViewController ()
 
@@ -21,25 +22,41 @@
 @property (nonatomic,strong) objc1 *ob1;
 @property (nonatomic,strong) objc2 *ob2;
 
+@property (nonatomic,weak) CMPerson *weakPerson;
 
 @end
 
 @implementation BlockViewController
 
+int(^CMBlock101) (int);
+
+
 void (^testBlock)(void);
 
-void test100()
-{
+typedef void(^CMBlock) (void);
+
+// block作为函数返回值时,在ARC环境下，编译器会根据情况自动将栈上的block复制到堆上
+CMBlock test101 () {
+    int a = 10;
+    return ^{
+        ADLog("a = %d",a);
+    };
+}
+void test100() {
     int age = 10;
     testBlock = ^{
         ADLog(@"testBlock ----- %d",age);
     };
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     self.title = @"Block";
+    
+    
+//    ADLog("-- %@",[ test101() class]);
     
 //    int age = 10;
 //    static NSString *abc = @"etqwetqiweyqwiubeqw";
@@ -106,7 +123,67 @@ void test100()
 //        return str3;
 //    }];
     
-    [self test12];
+//    [self test12];
+    
+//    [self test14];
+    
+//    [self weakTest1];
+    
+//    [self weakTest2];
+
+    
+}
+
+- (void)weakTest2 {
+    
+    self.weakPerson = [[CMPerson alloc] init];
+    self.weakPerson.age = @"111";
+    ADLog(@"%@",self.weakPerson.age);
+    
+    __block int a = 11;
+    testBlock = ^{
+        self.weakPerson.age = @"222";
+        a = 22;
+        ADLog(@"--- %@ --- %d",self.weakPerson.age,a);
+
+    };
+    a = 33;
+    self.weakPerson.age = @"333";
+    ADLog(@"--- %@ --- %d",self.weakPerson.age,a);
+
+    testBlock();
+}
+
+- (void)weakTest1 {
+    
+    __weak CMPerson *cmPerson = [[CMPerson alloc] init];
+    cmPerson.age = @"111";
+    ADLog(@"%@",cmPerson.age);
+    
+    __block int a = 11;
+    testBlock = ^{
+        cmPerson.age = @"222";
+        a = 22;
+        ADLog(@"--- %@ --- %d",cmPerson.age,a);
+
+    };
+    a = 33;
+    cmPerson.age = @"333";
+    ADLog(@"--- %@ --- %d",cmPerson.age,a);
+
+    testBlock();
+}
+- (void)test14 {
+    
+    __block int a = 10;
+    CMBlock101 = ^int(int number) {
+        return a*number;
+    };
+    a = 20;
+    [self test14Method];
+}
+- (void)test14Method {
+    ADLog(@"%d",CMBlock101(3));
 }
 - (void)dealloc
 {
@@ -123,7 +200,8 @@ int age = 10;
     
     globalBlock();
     
-    ADLog(@"globalBlock - %@",globalBlock);
+    ADLog(@"globalBlock - %@ - %@",[globalBlock class],^{
+    });
 }
 
 //堆Block

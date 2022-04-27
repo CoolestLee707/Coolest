@@ -210,12 +210,12 @@
     self.vm = [[MVVM_RAC_ViewModel alloc]initWithSuccess:^{
         
         ADLog(@"返回成功");
-        [self showSuccess:@"成功"];
+        [WeakSelf showSuccess:@"成功"];
         [WeakSelf.tableView reloadData];
         
     } Faile:^{
         ADLog(@"返回失败");
-        [self showSuccess:@"失败"];
+        [WeakSelf showSuccess:@"失败"];
     }];
     
     [self reload];
@@ -257,4 +257,7 @@
     [self.vm getData];
 }
 
+-(void)dealloc {
+    ADLog(@"%s",__func__);
+}
 @end

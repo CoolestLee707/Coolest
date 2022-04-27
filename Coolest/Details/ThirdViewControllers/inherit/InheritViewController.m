@@ -31,7 +31,7 @@
     
     self.name = @"000";
 
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 //    [self test1];
 //
 //    [self test2];
@@ -41,9 +41,8 @@
 //    [self test4];
     
     
-//    [self testInherit];
+    [self testInherit];
     
-
 }
 
 #pragma mark --- 1.weakself打破循环引用
@@ -184,9 +183,8 @@
 
 - (void)testInherit
 {
-    Inherit_Father *father = [Inherit_Father new];
+        Inherit_Father *father = [Inherit_Father new];
         Inherit_Son *son = [Inherit_Son new];
-
         
         UIButton *bt1 = [UIButton buttonWithType:UIButtonTypeSystem];
         bt1.frame = CGRectMake(100, 100, 50, 50);
@@ -195,8 +193,7 @@
         [bt1 addTargetSelected:^(UIButton * _Nonnull button) {
             [father eat];
         }];
-        
-        
+
         
         UIButton *bt2 = [UIButton buttonWithType:UIButtonTypeSystem];
         bt2.frame = CGRectMake(200, 100, 50, 50);

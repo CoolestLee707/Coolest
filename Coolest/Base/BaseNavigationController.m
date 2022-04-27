@@ -16,20 +16,18 @@
 
 + (void)initialize
 {
-    UINavigationBar *bar = [UINavigationBar appearance];
+//    UINavigationBar *bar = [UINavigationBar appearance];
     
     //设置全局title颜色
     
-    NSMutableDictionary *titleAttributes = [NSMutableDictionary dictionary];
-    
-    titleAttributes[NSForegroundColorAttributeName] = BaseBlueColor;
+//    NSMutableDictionary *titleAttributes = [NSMutableDictionary dictionary];
+//    titleAttributes[NSForegroundColorAttributeName] = BaseBlueColor;
     
     //    titleAttributes[NSFontAttributeName] = [UIFont fontWithName:@"Heiti SC" size:18];
     
-    bar.titleTextAttributes = titleAttributes;
-    
-    [bar setBarTintColor:NavBackColor];
-    
+//    bar.titleTextAttributes = titleAttributes;
+//
+//    [bar setBarTintColor:NavBackColor];
 }
 
 -(UIStatusBarStyle) preferredStatusBarStyle{
@@ -43,16 +41,16 @@
     //去掉底部线条
     if (@available(iOS 12.0, *)) {
         //iOS 12-设置底部线条颜色
-        [self.navigationBar setShadowImage: [CommonMethods createImageWithColor:NavBackColor]];
+//        [self.navigationBar setShadowImage: [CommonMethods createImageWithColor:NavBackColor]];
     }else {
         //iOS 12以下隐藏
-        UIImageView *navBarHairlineImageView;
-        navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationBar];
-        navBarHairlineImageView.hidden = YES;
+//        UIImageView *navBarHairlineImageView;
+//        navBarHairlineImageView = [self findHairlineImageViewUnder:self.navigationBar];
+//        navBarHairlineImageView.hidden = YES;
     }
 
     //    设置阴影
-    [self dropShadowWithOffset:CGSizeMake(1, 1) radius:3 color:[UIColor grayColor] opacity:0.5];
+//    [self dropShadowWithOffset:CGSizeMake(1, 1) radius:3 color:[UIColor grayColor] opacity:0.5];
 }
 
 - (UIImageView *)findHairlineImageViewUnder:(UIView *)view {

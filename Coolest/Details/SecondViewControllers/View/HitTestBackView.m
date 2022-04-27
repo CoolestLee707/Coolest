@@ -39,18 +39,19 @@
 //    UIView *view = [super hitTest:point withEvent:event];
 //    return view;
     
-//    __block UIView *returnView = nil;
-//    NSArray *subViews = self.subviews;
+    /*
+    __block UIView *returnView = nil;
+    NSArray *subViews = self.subviews;
     
 //    找subview
-//    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        UIView *view = (UIView *)obj;
-//        if ([view isKindOfClass:[UIView class]] && CGRectContainsPoint(view.frame, point)) {
-//            returnView = view;
-//            *stop = YES;
-//        }
-//    }];
-   
+    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        UIView *view = (UIView *)obj;
+        if ([view isKindOfClass:[UIView class]] && CGRectContainsPoint(view.frame, point)) {
+            returnView = view;
+            *stop = YES;
+        }
+    }];
+   */
     
     
     
@@ -68,16 +69,44 @@
 
 }
 
-//递归函数
+//递归函数：自己实现查找步骤,不使用pointInside:withEvent:方法，自己通过坐标转换判断是否要响应，可以处理子视图超出父视图部分也能响应,使用系统的pointInside:withEvent:会把超出部分返回NO,不响应了
 /// 选择最合适的响应的view
 /// @param point 当前view中相应的点
 /// @param superview 当前view
 - (UIView *)selectBestResponsViewWithPoint:(CGPoint)point superView:(UIView *)superview {
     
-    __block UIView *returnView = nil;
+
+//    -----------
+    /*
     NSArray *subViews = superview.subviews;
 
-    [subViews enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    UIView *returnView = nil;
+    if (CGRectContainsPoint(superview.bounds, point)) {
+        returnView = superview;
+    }
+    
+    if (subViews.count == 0) {
+        return superview;
+    }
+    for (long i=subViews.count-1; i>=0; i--) {
+        UIView *view = (UIView *)subViews[i];
+        CGPoint viewPoint = [view convertPoint:point fromView:superview];
+        
+        if (CGRectContainsPoint(view.bounds, viewPoint)) {
+            
+            returnView = [self selectBestResponsViewWithPoint:viewPoint superView:view];
+            break;
+        }
+    }
+    
+    return returnView;
+    */
+//    -----------
+    
+    //倒序遍历-NSEnumerationReverse
+     __block UIView *returnView = nil;
+     NSArray *subViews = superview.subviews;
+    [subViews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         UIView *view = (UIView *)obj;
         CGPoint viewPoint = [view convertPoint:point fromView:superview];
@@ -101,12 +130,17 @@
         }
         
     }];
-    
+   
     if (returnView == nil && CGRectContainsPoint(superview.bounds, point)) {
         returnView = superview;
     }
     return returnView;
+   
 }
+
+//- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+//    return YES;
+//}
 
 - (void)dealloc
 {

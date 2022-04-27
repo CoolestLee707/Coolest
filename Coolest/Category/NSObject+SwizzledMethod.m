@@ -7,6 +7,7 @@
 //
 
 #import "NSObject+SwizzledMethod.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (SwizzledMethod)
 

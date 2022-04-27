@@ -17,6 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTargetSelected:(void(^)(UIButton *button))block;
 
 
+// 链式设置属性
+- (UIButton *(^)(NSString * normalTitle))normalTitle;
+- (UIButton *(^)(NSString * selectedTitle))selectedTitle;
+- (UIButton *(^)(UIColor *normalTitleColor))normalTitleColor;
+- (UIButton *(^)(UIColor *selectedTitleColor))selectedTitleColor;
+- (UIButton *(^)(NSString *normalImageName))normalImageName;
+- (UIButton *(^)(NSString *selectedImageName))selectedImageName;
+- (UIButton *(^)(CGFloat fontSize))fontSize;
+
 @end
 
 NS_ASSUME_NONNULL_END

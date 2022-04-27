@@ -8,10 +8,17 @@
 
 #import "msgSendViewController.h"
 #import "msgPerson.h"
+#import "msgDog.h"
+#import "msgCat.h"
+#import "msgKit.h"
 
 @interface msgSendViewController ()
 
 @property (nonatomic,copy) NSString *name;
+@property (nonatomic,strong) msgPerson *person;
+@property (nonatomic,strong) msgDog *dog;
+@property (nonatomic,strong) msgCat *cat;
+@property (nonatomic,strong) msgKit *kit;
 
 @end
 
@@ -28,10 +35,19 @@
 //    [[msgPerson new] sendMessageInstance:@"Hello World"];
     
     //类方法
-    [msgPerson sendMessageClass:@"类方法"];
+//    [msgPerson sendMessageClass:@"类方法"];
     
-    msgPerson *person = [msgPerson alloc];
-    [person run];
+//    msgPerson *person = [msgPerson alloc];
+//    [person run];
+    
+//    synthesize
+//    self.cat = [msgCat new];
+//    self.cat.name = @"kit";
+    
+    self.kit = [msgKit new];
+    
+    self.dog = [msgDog new];
+    [self.dog eat];
 }
 
 /*
@@ -44,4 +60,28 @@
 }
 */
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+//    self.person = [msgPerson new];
+//    [self.person sendMessageInstance:@"Hello World"];
+//
+//    ADLog(@"%@",self.cat.name);
+//
+//
+//    self.cat.name = [NSString stringWithFormat:@"%@ - ",self.cat.name];
+    
+//    [self.kit run];
+    
+    NSDictionary *jsonDic = @{
+        @"personName" : @"000",
+        @"kitName" : @"111",
+    };
+    self.person = [msgPerson new];
+    [self.person setValuesForKeysWithDictionary:jsonDic];
+    
+//    self.kit = [msgKit new];
+//    [self.kit setValuesForKeysWithDictionary:jsonDic];
+    
+    
+}
 @end

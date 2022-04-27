@@ -26,6 +26,7 @@
     if (!cell) {
         cell = [[CoolestCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
         cell.backgroundColor = TabbarColor;
+        cell.textLabel.textColor = UIColor.blackColor;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }

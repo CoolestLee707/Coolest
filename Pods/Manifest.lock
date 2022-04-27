@@ -19,13 +19,12 @@ PODS:
   - CLHashString (0.1.0)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
-  - fishhook (0.2)
-  - IQKeyboardManager (6.5.6)
+  - IQKeyboardManager (6.5.9)
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
-  - MJExtension (3.3.0)
-  - MJRefresh (3.7.2)
+  - MJExtension (3.4.1)
+  - MJRefresh (3.7.5)
   - MyLayout (1.9.8)
   - PINCache (3.0.3):
     - PINCache/Arc-exception-safe (= 3.0.3)
@@ -44,30 +43,30 @@ PODS:
     - PINRemoteImage/Core
   - pop (1.0.12)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
-  - Texture (3.0.0):
-    - Texture/AssetsLibrary (= 3.0.0)
-    - Texture/Core (= 3.0.0)
-    - Texture/MapKit (= 3.0.0)
-    - Texture/Photos (= 3.0.0)
-    - Texture/PINRemoteImage (= 3.0.0)
-    - Texture/Video (= 3.0.0)
-  - Texture/AssetsLibrary (3.0.0):
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+  - Texture (3.1.0):
+    - Texture/AssetsLibrary (= 3.1.0)
+    - Texture/Core (= 3.1.0)
+    - Texture/MapKit (= 3.1.0)
+    - Texture/Photos (= 3.1.0)
+    - Texture/PINRemoteImage (= 3.1.0)
+    - Texture/Video (= 3.1.0)
+  - Texture/AssetsLibrary (3.1.0):
     - Texture/Core
-  - Texture/Core (3.0.0)
-  - Texture/MapKit (3.0.0):
+  - Texture/Core (3.1.0)
+  - Texture/MapKit (3.1.0):
     - Texture/Core
-  - Texture/Photos (3.0.0):
+  - Texture/Photos (3.1.0):
     - Texture/Core
-  - Texture/PINRemoteImage (3.0.0):
+  - Texture/PINRemoteImage (3.1.0):
     - PINRemoteImage/iOS (~> 3.0.0)
     - PINRemoteImage/PINCache
     - Texture/Core
-  - Texture/Video (3.0.0):
+  - Texture/Video (3.1.0):
     - Texture/Core
-  - TZImagePickerController (3.6.4)
+  - TZImagePickerController (3.8.0)
   - YYModel (1.0.4)
   - YYText (1.0.7)
   - ZXingObjC (3.6.5):
@@ -81,7 +80,6 @@ DEPENDENCIES:
   - CLHashString (from `https://github.com/CoolestLee707/CLHashString.git`)
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
-  - fishhook
   - IQKeyboardManager
   - Masonry
   - MBCircularProgressBar
@@ -106,7 +104,6 @@ SPEC REPOS:
     - BlockHook
     - DZNEmptyDataSet
     - FDFullscreenPopGesture
-    - fishhook
     - IQKeyboardManager
     - Masonry
     - MBCircularProgressBar
@@ -137,7 +134,7 @@ CHECKOUT OPTIONS:
     :commit: a0349794cb2e470ba92d0af6bca1bd9d4dd0af3e
     :git: https://github.com/CoolestLee707/CLHashString.git
   PINCache:
-    :commit: b129a79cbdf7644ac5be426b3aa0ce526b46f5ba
+    :commit: 9ca06045b5aff12ee8c0ef5880aa8469c4896144
     :git: https://github.com/pinterest/PINCache.git
 
 SPEC CHECKSUMS:
@@ -147,26 +144,25 @@ SPEC CHECKSUMS:
   CLHashString: 6033175b64d28c8037cafbb21589b9922b45b59b
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
-  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJExtension: 01704cca2b60a214c10761b6491eab74069d68a9
-  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MyLayout: 6ca47dbf27648aa011496094cfe1162217e3c912
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PINRemoteImage: f1295b29f8c5e640e25335a1b2bd9d805171bd01
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  Texture: 2f109e937850d94d1d07232041c9c7313ccddb81
-  TZImagePickerController: 1cc39ec0454d6e94d0397418953164d7aa631719
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  Texture: 2e8ab2519452515f7f5a520f5a8f7e0a413abfa3
+  TZImagePickerController: f236fbc54a7e5359ae620d45c2fcac5ab9486284
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 402dc07bf11f138099d3544f0f5227777c9f49dc
+PODFILE CHECKSUM: 801e4c379662f3bbd0436318120840eff2e65888
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3

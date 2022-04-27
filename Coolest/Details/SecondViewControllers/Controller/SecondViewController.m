@@ -32,6 +32,8 @@
 #import "LocationViewController.h"
 #import "FishHookViewController.h"
 #import "BaseNavigationController.h"
+#import "SafeViewController.h"
+#import "FrameAndBoundsViewController.h"
 
 #define shareWidth  (Main_Screen_Width/3);
 
@@ -115,7 +117,7 @@ NSString *footerIdentifier = @"footer";
     @[@"13-Block",@"14-NSOperation",@"15-ZXingObjC"],
     @[@"16-weakTest",@"17-RunLoop-线程保活",@"18-Aspects"],
     @[@"19-crashhander",@"20-文件",@"21-定位信息"],
-    @[@"22-fishhook",@"23",@"24"],
+    @[@"22-fishhook",@"23-基本防护",@"24-FrameAndBounds"],
     @[@"25-",@"26",@"27"],
     @[@"28-",@"29",@"30"],
     ];
@@ -415,13 +417,15 @@ NSString *footerIdentifier = @"footer";
                     break;
                 case 1:
                 {
-                    
-                
+                    SafeViewController *vc = [[SafeViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
+                
                     break;
                 case 2:
                 {
-                   
+                    FrameAndBoundsViewController *vc = [[FrameAndBoundsViewController alloc]init];
+                    [self.navigationController pushViewController:vc animated:YES];
                 }
                     break;
                 default:

@@ -26,11 +26,21 @@
 
 @implementation HitTestViewController
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    ADLog(@"点击屏幕");
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
     
-    [self createUI1];
+//    [self createUI1];
     
+    
+//    [self createUI2];
+    
+    
+//    [self createUI3];
+
 //    [self enumeratorMethod];
 
 }
@@ -76,6 +86,7 @@
 
 //    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 30, 100, 100)];
 //    button.backgroundColor = [UIColor blueColor];
+//    button.nameId = @"histTest79";
 //    [button setTitle:@"Click Me" forState:UIControlStateNormal];
 //    [button addTarget:self action:@selector(didClickedButton) forControlEvents:UIControlEventTouchUpInside];
 //    [self.backSubView addSubview:button];
@@ -85,54 +96,108 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didClickedButton)];
     [buttonView addGestureRecognizer:tap];
     [self.backSubView addSubview:buttonView];
-    
+
     UIView *subButtonView = [[UIView alloc] initWithFrame:CGRectMake(20, 30, 60, 100)];
     subButtonView.backgroundColor = [UIColor redColor];
     UITapGestureRecognizer *subTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(subDidClickedButton)];
     [subButtonView addGestureRecognizer:subTap];
     [buttonView addSubview:subButtonView];
     
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 530, 100, 100)];
+    button.backgroundColor = [UIColor purpleColor];
+    button.nameId = @"histTest79";
+    [button setTitle:@"Click Me" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    UITapGestureRecognizer *buttonTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(buttonTap)];
+    [button addGestureRecognizer:buttonTap];
     
-//    [button setExclusiveTouch:YES];
+//  当手势的cancelsTouchesInView 是 NO时，button事件才会被调用,默认为YES。表示当手势识别器成功识别了手势之后，会通知Application取消响应链对事件的响应，并不再传递事件给hit-test view。
+    buttonTap.cancelsTouchesInView = NO;
     
+//    UITapGestureRecognizer *buttonTap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(buttonTap1)];
+//    [button addGestureRecognizer:buttonTap1];
+    
+//setExclusiveTouch  是UIView的一个属性，默认为NO（不互斥），设置UIView 接收手势的互斥性为YES，防止多个响应区域被“同时”点击，“同时”响应的问题。可以通过  [[UIView appearance] setExclusiveTouch:YES]; UIImageView ，UILabel等，都可以添加手势，响应方式和UIButton 相同。全局设置响应区域的点击手势的互斥，是有效的。但使用此方法时，在iOS 8.0~iOS8.2（目前仅在该版本下发现问题）下会引起崩溃。
+    [button setExclusiveTouch:YES];
     
 //    CGPoint redCenterInView = [self.backImageView convertPoint:CGPointMake(10, 10) toView:buttonView];
 //    ADLog(@"++++ %@",NSStringFromCGPoint(redCenterInView));
 }
 
 - (void)backImageViewTapClick {
-    ADLog(@"1111111111灰色灰色灰色灰色灰色灰色灰色灰色灰色灰色");
+    ADLog(@"灰灰灰灰灰灰灰灰灰灰灰");
 }
 - (void)backSubViewTapClick {
-    ADLog(@"2222222222黄色黄色黄色黄色黄色黄色黄色黄色黄色黄色");
+    ADLog(@"黄黄黄黄黄黄黄黄黄黄黄");
 }
 
 - (void)didClickedButton {
-    ADLog(@"33333333333蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色蓝色");
+    ADLog(@"蓝蓝蓝蓝蓝蓝蓝蓝蓝蓝蓝");
 }
 
 - (void)subDidClickedButton {
-    ADLog(@"44444444444红色红色红色红色红色红色红色红色红色红色");
+    ADLog(@"红红红红红红红红红红红");
+}
+
+- (void)buttonClick {
+    ADLog(@"%s",__func__);
+}
+- (void)buttonTap {
+    ADLog(@"%s",__func__);
+}
+- (void)buttonTap1 {
+    ADLog(@"%s",__func__);
 }
 
 
-- (void)dealloc
-{
+- (void)createUI2 {
     
+    HitTestBackView *backSubView = [[HitTestBackView alloc] initWithFrame:CGRectMake(0, 230, 300, 100)];
+    backSubView.backgroundColor = [UIColor grayColor];
+    backSubView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backImageViewTapClick)];
+    [backSubView addGestureRecognizer:tap];
+    [self.view addSubview:backSubView];
+    
+    HitTestBackView *buttonView1 = [[HitTestBackView alloc] initWithFrame:CGRectMake(-50, 0, 150, 100)];
+    buttonView1.backgroundColor = [UIColor yellowColor];
+    buttonView1.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(backSubViewTapClick)];
+    [buttonView1 addGestureRecognizer:tap1];
+    [backSubView addSubview:buttonView1];
+    
+    HitTestBackView *buttonView2 = [[HitTestBackView alloc] initWithFrame:CGRectMake(200, -50, 100, 150)];
+    buttonView2.backgroundColor = [UIColor blueColor];
+    buttonView2.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didClickedButton)];
+    [buttonView2 addGestureRecognizer:tap2];
+    [backSubView addSubview:buttonView2];
+    
+    
+    HitTestBackView *buttonView3 = [[HitTestBackView alloc] initWithFrame:CGRectMake(50, 30, 200, 100)];
+    buttonView3.backgroundColor = [UIColor redColor];
+    buttonView3.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(subDidClickedButton)];
+    [buttonView3 addGestureRecognizer:tap3];
+    [backSubView addSubview:buttonView3];
+    
+}
+
+- (void)createUI3 {
+    HitTestSubView *circleView = [[HitTestSubView alloc] initWithFrame:CGRectMake(50, 230, 100, 100)];
+    circleView.backgroundColor = [UIColor redColor];
+    circleView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(subDidClickedButton)];
+    [circleView addGestureRecognizer:tap];
+    [self.view addSubview:circleView];
+}
+- (void)dealloc {
+    ADLog(@"%s",__func__);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

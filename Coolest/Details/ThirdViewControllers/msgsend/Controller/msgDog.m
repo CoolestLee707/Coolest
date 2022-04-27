@@ -10,15 +10,25 @@
 
 @implementation msgDog
 
-- (void)sendMessageInstance:(NSString *)msg{
-    NSLog(@"--- %@ = %@",[self class],msg);
+// Instance
+//- (void)sendMessageInstance:(NSString *)msg{
+//    ADLog(@"--- sendMessageInstance %@ = %@",[self class],msg);
+//}
+
+//+ (void)sendMessageInstance:(NSString *)msg{
+//    ADLog(@"+++ sendMessageInstance %@ = %@",[self class],msg);
+//}
+
+// Class
+- (void)sendMessageClass:(NSString *)msg{
+    ADLog(@"--- sendMessageClass %@ = %@",[self class],msg);
 }
 
 + (void)sendMessageClass:(NSString *)msg{
-    NSLog(@"+++ %@ = %@",[self class],msg);
+    ADLog(@"+++ sendMessageClass %@ = %@",[self class],msg);
 }
 
-- (void)sendMessageClass:(NSString *)msg{
-    NSLog(@"--- %@ = %@",[self class],msg);
+- (void)eat {
+    ADLog(@"%s",__func__);
 }
 @end

@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
-//CFAbsoluteTime startTime;
+CFAbsoluteTime startTime;
 
 int main(int argc, char * argv[]) {
 
-//    startTime = CFAbsoluteTimeGetCurrent();
+//    获取保存当前时间
+    startTime = CFAbsoluteTimeGetCurrent();
 //    NSObject *obj = [NSObject new];
     
     @autoreleasepool {

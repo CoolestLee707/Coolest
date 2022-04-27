@@ -11,7 +11,7 @@
 #import "CLKeepAlive.h"
 #import "CL_ExceptionHander.h"
 
-@interface AppDelegate ()<UITraitEnvironment>
+@interface AppDelegate ()
 
 
 @property (nonatomic,strong) CLLocationManager *appleLocationManager;
@@ -25,10 +25,8 @@ extern CFAbsoluteTime startTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    main函数执行后时间
-//    ADLog(@"Labched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
-    
-//    ADLog(@"+++ %f-%f",Main_Screen_Width,Main_Screen_Height);
-    
+    ADLog(@"Lanched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
+        
     
 //    [NSThread sleepForTimeInterval:0.2];
     
@@ -45,10 +43,10 @@ extern CFAbsoluteTime startTime;
     
     [self systemConfigration];
     
-    [self setTouchService:application Options:launchOptions];
+//    [self setTouchService:application Options:launchOptions];
     
 //    本地推送
-    [self registerAPN];
+//    [self registerAPN];
     
 //    BOOL isPrisonBreak = [self isJailBreak];
 //
@@ -64,7 +62,8 @@ extern CFAbsoluteTime startTime;
 
     [CL_ExceptionHander setupExceptionHandler];
 
-    
+    NSMutableDictionary *options = [NSMutableDictionary dictionaryWithDictionary:launchOptions];
+    ADLog(@"options - %@",options);
     return YES;
 }
 

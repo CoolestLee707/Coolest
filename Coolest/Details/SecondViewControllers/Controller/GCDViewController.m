@@ -21,20 +21,36 @@
 
 @property (nonatomic,strong)NSTimer *timer;
 
-- (void)extendsion;
+@property (nonatomic,copy,readwrite) NSString *name;
+
+- (void)printlog;
 @end
 
 @implementation GCDViewController
 
-- (void)extendsion {
+- (void)printlog {
     ADLog(@"--extendsion");
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    ADLog(@"%s",__func__);
+
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    ADLog(@"%s",__func__);
+    [super viewWillDisappear:animated];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self extendsion];
+//    [self printlog];
     self.title = @"GCD";
-
 //    NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:@"1",@"2",@"3", nil];
 //
 //    self.array = tempArr;
@@ -103,6 +119,9 @@
 //    semaphore 线程同步 -- 信号量
 //    [self semaphoreSync];
     
+//    semaphore 线程同步 -- 信号量-最大并发数量
+//    [self semaphoreAsyncAndSync_MaxThreadNumber];
+    
 //    非线程安全
 //    [self initTicketStatusNotSave];
     
@@ -138,22 +157,65 @@
 //    int count = [self cacluAll:100];
 //    ADLog(@"--%d",count);
     
-    
-    
 //    [self test10];
+    
+//    [self test11];
+    
+    [self test12];
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
+- (void)test12 {
+    
+    ADLog(@"11");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self printlog];
+    });
+    ADLog(@"22");
+}
+- (void)test11 {
+    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(printlog) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop]addTimer:self.timer forMode:NSRunLoopCommonModes];
+}
+#pragma mark --- GCD - Timer
 - (void)test10 {
     
     ADLog(@"0000");
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        ADLog(@"1111");
-       
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        // 卡死
+        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
             ADLog(@"--- timer");
         }];
-        [[NSRunLoop currentRunLoop]run];
-       ADLog(@"33333");
+        [[NSRunLoop currentRunLoop] run];
+       
+        /*
+               self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
+                   ADLog(@"--- timer");
+               }];
+               
+               [self performSelector:@selector(extendsion) withObject:nil afterDelay:.0];
+
+               [[NSRunLoop currentRunLoop] run];
+               */
+               
+               /*
+               //此种方式创建的timer没有添加至runloop中
+               self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(extendsion) userInfo:nil repeats:YES];
+              
+               [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+               [[NSRunLoop currentRunLoop] run];
+                
+            */
+        
+       ADLog(@"33333"); // self.timer repeats=YES不执行,repeats=NO执行。。；performSelector-执行
     });
     ADLog(@"4444");
     
@@ -182,14 +244,14 @@
 }
 //不管你在哪个线程注册通知，发送通知在哪个线程，接受通知就会在哪个线程，即发送通知和接受通知在同一个线程，如果子线程操作UI，会打印一推日志，告诉我们应该主线程操作
 - (void)testNSNotificationCenter {
-//
+
 //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xxx) name:@"xxx" object:nil];
 //        ADLog(@"子线程注册通知===%@",[NSThread currentThread]);
 //    });
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xxx) name:@"xxx" object:nil];
-//    ADLog(@"主线程注册===%@",[NSThread currentThread]);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(xxx) name:@"xxx" object:nil];
+    ADLog(@"主线程注册===%@",[NSThread currentThread]);
     
     UIButton *sendBtn=[[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 50)];
       sendBtn.backgroundColor=[UIColor redColor];
@@ -213,10 +275,10 @@
 //    [[NSNotificationCenter defaultCenter] postNotificationName:@"xxx" object:nil];
 //    ADLog(@"发送通知主线线程===%@",[NSThread currentThread]);
     
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        [[NSNotificationCenter defaultCenter] postNotificationName:@"xxx" object:nil];
-//        ADLog(@"发送通知子线线程===%@",[NSThread currentThread]);
-//    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"xxx" object:nil];
+        ADLog(@"发送通知子线线程===%@",[NSThread currentThread]);
+    });
 }
 -(void)xxx {
     ADLog(@"收到通知线程===%@",[NSThread currentThread]);
@@ -361,18 +423,24 @@
 
 - (void)test5 {
     
-    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
-    for (int i=0; i<100; i++) {
+//    dispatch_queue_t queue = dispatch_queue_create("CoolestLee707.Coolest", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    for (int i=0; i<1000; i++) {
         dispatch_async(queue, ^{
             
             self.targetString = [NSString stringWithFormat:@"%d",i];
+//            self.targetString = [NSString stringWithFormat:@"abcdefghijk"];
+
+//            崩溃，对象调用setter方法 旧值多次release
+//            self.targetString = [NSString stringWithFormat:@"dsaljkdhaskldhaskdhaskldhakljdhasjdhaskjldhasjkld"];
+
         });
     }
     
 //    把任务添加到并发队列中，全部添加完以后打印的时候不确定哪个任务完成修改了targetString的值
-    ADLog(@"---1----- %@",self.targetString);
-    ADLog(@"---2----- %@",self.targetString);
-    ADLog(@"---3----- %@",self.targetString);
+//    ADLog(@"---1----- %@",self.targetString);
+//    ADLog(@"---2----- %@",self.targetString);
+//    ADLog(@"---3----- %@",self.targetString);
 
 }
 - (void)testCommunication {
@@ -550,6 +618,25 @@
     ADLog(@"3---%@",[NSThread currentThread]);      // 打印当前线程
 
 }
+#pragma mark ---  semaphore 线程同步 -- 信号量- 用来控制线程并发访问的最大数量
+- (void)semaphoreAsyncAndSync_MaxThreadNumber {
+
+    ADLog(@"-begin----semaphoreAsyncAndSync_other");
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(3);//设置信号量初始值
+    
+    for (int i=0; i<100; i++) {
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);//只有信号量>0时，才执行后面的代码，信号量-1；否则，处于等待状态。
+        dispatch_async(queue, ^{
+            // 追加任务1
+            ADLog(@"%d------%@",i,[NSThread currentThread]);   // 打印当前线程
+            dispatch_semaphore_signal(semaphore);       //任务完成，信号量+1
+        });
+    }
+    ADLog(@"-end----semaphoreAsyncAndSync_other");
+
+}
 #pragma mark ---  队列组 dispatch_group_enter、dispatch_group_leave
 - (void)groupEnterAndLeave
 {
@@ -687,6 +774,7 @@
     });
 }
 #pragma mark ---  栅栏方法 dispatch_barrier_async
+//dispatch_barrier_async函数会等待前边追加到并发队列中的任务全部执行完毕之后，再将指定的任务追加到该异步队列中。然后在dispatch_barrier_async函数追加的任务执行完毕之后，异步队列才恢复为一般动作，接着追加任务到该异步队列并开始执行
 - (void)barrier {
     
 //    仅对自己创建的并发队列有效
@@ -975,4 +1063,8 @@
 }
 
 
+- (void)dealloc {
+    ADLog(@"%s",__func__);
+
+}
 @end

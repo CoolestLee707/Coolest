@@ -22,6 +22,16 @@
     if (!IOS11_OR_LATER) {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    
+    NSMutableDictionary *titleAttributes = [NSMutableDictionary dictionary];
+    titleAttributes[NSForegroundColorAttributeName] = BaseBlueColor;
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *barApp = [UINavigationBarAppearance new];
+        barApp.backgroundColor = NavBackColor;
+        barApp.titleTextAttributes = titleAttributes;
+        self.navigationController.navigationBar.scrollEdgeAppearance = barApp;
+        self.navigationController.navigationBar.standardAppearance = barApp;
+    }
 }
 
 /**

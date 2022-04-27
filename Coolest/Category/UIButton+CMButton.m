@@ -26,12 +26,13 @@ static char CLNameKey;
 
         
 //        [self swizzledInstanceSEL:@selector(addTarget:action:forControlEvents:) withSEL:@selector(CL_AddTarget:action:forControlEvents:)];
-
-        
+//
+//        
 //        [self swizzledInstanceSEL:selA withSEL:selB];
         
     });
 }
+// 绑定一个block实现
 - (void)addTargetSelected:(void(^)(UIButton *button))block {
     objc_setAssociatedObject(self, &CMActionTouchUpInsidesBlockKey, block, OBJC_ASSOCIATION_COPY);
     
@@ -46,7 +47,7 @@ static char CLNameKey;
     }
 }
 
-
+//绑定一个nameId
 - (void)setNameId:(NSString *)nameId {
     objc_setAssociatedObject(self, &CLNameKey, nameId, OBJC_ASSOCIATION_COPY);
 }
@@ -74,5 +75,57 @@ static char CLNameKey;
 
     [self mySendAction:action to:target forEvent:event];
 
+}
+
+// 链式设置属性
+- (UIButton * _Nonnull (^)(NSString * _Nonnull normalTitle))normalTitle{
+    return ^id (NSString * normalTitle) {
+        [self setTitle:normalTitle forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(NSString * _Nonnull selectedTitle))selectedTitle{
+    return ^id (NSString * selectedTitle){
+        [self setTitle:selectedTitle forState:UIControlStateSelected];
+        return self;
+    };
+    
+}
+
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))normalTitleColor {
+    return ^id (UIColor * normalColor){
+        [self setTitleColor:normalColor forState:UIControlStateNormal];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(UIColor * _Nonnull))selectedTitleColor{
+    return ^id (UIColor * selectedTitleColor){
+        [self setTitleColor:selectedTitleColor forState:UIControlStateSelected];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))normalImageName{
+    return ^id (NSString * normalImageName) {
+        [self setImage:[UIImage imageNamed:normalImageName] forState:UIControlStateNormal];
+        return self;
+    };
+    
+}
+
+- (UIButton * _Nonnull (^)(NSString * _Nonnull))selectedImageName{
+    return ^id (NSString * selectedImageName){
+        [self setImage:[UIImage imageNamed:selectedImageName] forState:UIControlStateSelected];
+        return self;
+    };
+}
+
+- (UIButton * _Nonnull (^)(CGFloat))fontSize{
+    return ^id (CGFloat fontSize){
+        [self.titleLabel setFont:[UIFont systemFontOfSize:fontSize]];
+        return self;
+    };
 }
 @end

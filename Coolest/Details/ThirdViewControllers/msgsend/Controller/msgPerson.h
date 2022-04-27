@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface msgPerson : NSObject
 
+@property (nonatomic,copy) NSString * personName;
+
+
 - (void)sendMessageInstance:(NSString *)msg;
 
 + (void)sendMessageClass:(NSString *)msg;

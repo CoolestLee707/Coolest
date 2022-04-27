@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "msgProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface msgDog : NSObject
+@interface msgDog : NSObject <msgProtocol>
 
 @end
 

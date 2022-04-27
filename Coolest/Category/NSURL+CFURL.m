@@ -13,7 +13,7 @@
 
 + (void)load {
     
-    ADLog(@"--NSURL---load");
+//    ADLog(@"--NSURL---load");
 
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -36,7 +36,7 @@
 }
 
 + (void)initialize {
-    ADLog(@"--NSURL-----initialize");
+//    ADLog(@"--NSURL-----initialize");
 }
 
 @end

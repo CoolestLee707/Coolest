@@ -9,19 +9,23 @@
 #import "msgPerson.h"
 #import <objc/runtime.h>
 #import "msgDog.h"
+#import "msgCat.h"
 
 @implementation msgPerson
 
 - (void)run
 {
-    ADLog(@"running------");
+    ADLog(@"running------person");
+
 }
 
 #pragma mark -- 第一阶段：动态方法解析
 
 //当类调用一个没有实现的 对象方法 就会到这里
 + (BOOL)resolveInstanceMethod:(SEL)sel {
-    
+//    ADLog(@"%@",NSStringFromSelector(_cmd));
+//    ADLog(@"%s",__func__);
+
 //    NSString *methodName = NSStringFromSelector(sel);
 //    ADLog(@"methodName - %@",methodName);
 //    if ([methodName isEqualToString:@"sendMessageInstance:"]) {
@@ -90,16 +94,22 @@
 //实例
 - (id)forwardingTargetForSelector:(SEL)aSelector
 {
-//    NSString *methodName = NSStringFromSelector(aSelector);
-//    ADLog(@"methodName - %@",methodName);
-//
-//    if ([methodName isEqualToString:@"sendMessageInstance:"]) {
-//
+    NSString *methodName = NSStringFromSelector(aSelector);
+    ADLog(@"methodName - %@",methodName);
+
+    if ([methodName isEqualToString:@"sendMessageInstance:"]) {
+
 //        msgDog *dog = [msgDog new];
 //        if ([dog respondsToSelector:aSelector]) {
 //            return dog;
 //        }
-//    }
+        
+//        也可在此转发类方法
+        if ([[msgDog class] respondsToSelector:aSelector]) {
+            return [msgDog class];
+        }
+        
+    }
     return [super forwardingTargetForSelector:aSelector];
 }
 
@@ -115,9 +125,9 @@
 //        if ([dog respondsToSelector:aSelector]) {
 //            return dog;
 //        }
+//
         
-        
-//         也可在此转发实例方法
+//         也可在此转发类方法
 //        return [msgDog class];
     }
     
@@ -129,7 +139,7 @@
 //1、方法签名--实例
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     
-//    ADLog(@"method signature for selector: %@",NSStringFromSelector(aSelector));
+    ADLog(@"method signature for selector: %@",NSStringFromSelector(aSelector));
 
     if (aSelector == @selector(sendMessageInstance:)) {
         
@@ -176,24 +186,31 @@
 //anInvocation.selector 方法名
 //[anInvocation getArgument:NULL atIndex:0];    方法参数
 
--(void)forwardInvocation:(NSInvocation *)anInvocation {
+- (void)forwardInvocation:(NSInvocation *)anInvocation {
     
    
-//    ADLog(@"forwardInvocation: %@",NSStringFromSelector([anInvocation selector]));
+    ADLog(@"forwardInvocation: %@",NSStringFromSelector([anInvocation selector]));
     
     SEL sel = [anInvocation selector];
     
     if (sel == @selector(sendMessageInstance:)) {
         
-        msgDog *dog = [msgDog new];
+        msgCat *cat = [msgCat new];
         
 //        anInvocation.target = dog;
 //        [anInvocation invoke];
 
-        if ([dog respondsToSelector:sel]) {
+        if ([cat respondsToSelector:sel]) {
             
-            [anInvocation invokeWithTarget:dog];
+            [anInvocation invokeWithTarget:cat];
         }
+        
+//        也可在此调用类方法
+//        if ([[msgCat class] respondsToSelector:sel]) {
+//
+//            [anInvocation invokeWithTarget:[msgCat class]];
+//        }
+//
     }else {
         [super forwardInvocation:anInvocation];
     }
@@ -202,18 +219,27 @@
 
 + (void)forwardInvocation:(NSInvocation *)anInvocation {
     
+    ADLog(@"forwardInvocation: %@",NSStringFromSelector([anInvocation selector]));
 
-    if ([msgDog instancesRespondToSelector:anInvocation.selector]) {
+    SEL sel = [anInvocation selector];
+    
+    if (sel == @selector(sendMessageClass:)) {
         
-//        也可以调用实例方法，对应实例的签名和未知错误--（注意！！！）
-
-//        msgDog *dog = [msgDog new];
-//        [anInvocation invokeWithTarget:dog];
+        msgCat *cat = [msgCat new];
+        if ([msgCat instancesRespondToSelector:anInvocation.selector]) {
+            // 也可以调用实例方法，
+            [anInvocation invokeWithTarget:cat];
+        }
         
-        [anInvocation invokeWithTarget:[msgDog class]];
+//        if ([msgCat respondsToSelector:anInvocation.selector]) {
+//
+//            [anInvocation invokeWithTarget:[msgCat class]];
+//        }
+        
     }else {
         [super forwardInvocation:anInvocation];
     }
+
 }
 - (void)doesNotRecognizeSelector:(SEL)aSelector {
     
@@ -246,6 +272,11 @@ void classEatOfC(id self,SEL sel) {
 
 - (void)sendMessageOfOCNoParameter {
     ADLog(@"动态添加的方法-不带参数-OC");
+}
+
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    ADLog(@"forUndefinedKey - %s",__func__);
 }
 
 @end

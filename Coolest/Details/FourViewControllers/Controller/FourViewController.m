@@ -11,7 +11,7 @@
 #import "BaseTabBarViewController.h"
 #import "FDoneViewController.h"
 #import "FDtwoViewController.h"
-//#import "CLTimer.h"
+//#import "CLTaskTimer.h"
 #import "CLKeepAlive.h"
 
 @interface FourViewController ()
@@ -46,6 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
     
 //    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    view.backgroundColor = [UIColor redColor];
@@ -152,22 +153,23 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(25, 25, 50, 50);
     button.backgroundColor = UIColor.blueColor;
-//    [button addTarget:self action:@selector(JDbuttonCliuck) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(JDbuttonCliuck) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:button];
    
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(JDtapClick)];
-    tap.cancelsTouchesInView = YES;
+//    默认为YES。表示当手势识别器成功识别了手势之后，会通知Application取消响应链对事件的响应，并不再传递事件给hit-test view。
+    tap.cancelsTouchesInView = NO; // JDbuttonCliuck 和 JDtapClick 都执行
     
     [view addSubview:button];
     [view addGestureRecognizer:tap];
 
-    
-    UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewtapClick)];
-    viewTap.cancelsTouchesInView = YES;
-    [self.view addGestureRecognizer:viewTap];
+//
+//    UITapGestureRecognizer *viewTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(viewtapClick)];
+//    viewTap.cancelsTouchesInView = NO;
+//    [self.view addGestureRecognizer:viewTap];
     
     
 }
@@ -188,7 +190,7 @@
     self.actLabel.textColor = UIColor.redColor;
     [self.view addSubview:self.actLabel];
     
-//    [CLTimer execTask:^{
+//    [CLTaskTimer execTask:^{
 //
 //        self.count ++;
 //        dispatch_async(dispatch_get_main_queue(), ^{
@@ -243,6 +245,8 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     ADLog(@"点击屏幕");
+    NSArray *arr= @[@1,@2];
+    ADLog(@"%@",arr[3]);
 
 //    [CLKeepAlive startLocation];
 

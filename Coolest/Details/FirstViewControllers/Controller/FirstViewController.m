@@ -10,9 +10,9 @@
 #import "RunLoopObject1.h"
 #import "person.h"
 #import "Son.h"
-#import "HomeCell.h"
 #import <Messages/Messages.h>
 #import "NSObject+SwizzledMethod.h"
+#import "CLPermenantThread.h"
 
 @interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -27,8 +27,7 @@
 @property (nonatomic,strong) UITableView *mainTableView;
 @property (nonatomic,copy) NSArray *dataArray;
 
-@property (nonatomic, strong) NSString *strongString;
-@property (nonatomic, copy) NSString *copyedString;
+@property (strong, nonatomic) CLPermenantThread *CLPThread;
 
 @end
 
@@ -73,14 +72,8 @@ static IMP __origin_method_imp = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSInteger aa = [self selectMaxNumberBig:168 Small:63];
-    ADLog(@"+++-----%zd",aa);
-    
-    person *p = [[person alloc]init];
-//    Son *s = [[Son alloc]init];
-    
-    [p eat];
-//    [s eat];
+//    NSInteger aa = [self selectMaxNumberBig:168 Small:63];
+//    ADLog(@"+++-----%zd",aa);
     
     self.title = @"First";
     count1 = 0;
@@ -93,69 +86,53 @@ static IMP __origin_method_imp = nil;
 //    ((void(*)(id, SEL))objc_msgSend)(self, @selector(createUI));
 
     
-    id obj = [[NSObject alloc]init];
+//    id obj = [[NSObject alloc]init];
     
-    ADLog("retain count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));
-    
-    
-//    NSString *strtr = @"1212dshdhasjk sajhdkjas d sajkdh  dsajkhd kl h dsalh dakshd ";
-//    self.copyedString = strtr;
-//
-//    ADLog(@"---%@",self.copyedString);
-//
-//    strtr = @"好吃健康证 块点饭啥看法 多少了开发的顺口溜发的啥开了房的时空裂缝手离开发电量将的史莱克";
-//    ADLog(@"+++%@",self.copyedString);
-    
+//    ADLog("retain count = %ld\n",CFGetRetainCount((__bridge CFTypeRef)(obj)));
     
 }
-+ (void)load
-{
-    [self swizzledInstanceSEL:@selector(createUI) withSEL:@selector(swizeCreateUI)];
++ (void)load {
     
-//    Method orm = class_getInstanceMethod([self class], @selector(createUI));
-//
-//    __origin_method_imp = method_setImplementation(orm, class_getMethodImplementation(self, @selector(swizeCreateUI)));
+//    方法交换
+//    [self swizzledInstanceSEL:@selector(createUI) withSEL:@selector(swizeCreateUI)];
     
+//    方法指针
+    Method orm = class_getInstanceMethod([self class], @selector(createUI));
+    __origin_method_imp = method_setImplementation(orm, class_getMethodImplementation(self, @selector(swizeCreateUI)));
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
+//    objc_msgSend 调用方法
 //    ((void(*)(id, SEL))objc_msgSend)(self, @selector(createUI));
-//    ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
+    
+//    方法指针直接调用，第一个参数receiver，第二个SEL
+//    __origin_method_imp 指向createUI的方法实现
+    ((void(*)(id, SEL))__origin_method_imp)(self, @selector(swizeCreateUI));
 
 }
-- (void)createUI
-{
+- (void)createUI {
 //    assert([NSStringFromSelector(_cmd) isEqualToString:@"createUI"]);
     
+    UIBarButtonItem *editItem = [[UIBarButtonItem alloc]initWithTitle:@"恢复" style:UIBarButtonItemStyleDone target:self action:@selector(oldData)];
+
+    editItem.tintColor = [UIColor greenColor];
+    self.navigationItem.rightBarButtonItem = editItem;
+    
     [self.view addSubview:self.mainTableView];
-//    ADLog(@"_____________****  %@",NSStringFromSelector(_cmd));
-    count1++;
-//    ADLog(@"++++++++++ = %ld",count1);
-
-    if (count1 < 5) {
-        ADLog(@"++++++++++ = %ld",count1);
-        [self createUI];
-
-//         ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
-    }
+    [self.view layoutIfNeeded];
     
-    
+    self.CLPThread = [[CLPermenantThread alloc] init];
 
 }
 
-
+- (void)oldData {
+    self.dataArray = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"天津",@"苏州",@"成都",@"武汉",@"杭州",@"南京",@"长沙",@"郑州",@"西安",@"沈阳",@"合肥",@"青岛",@"大连",@"石家庄",@"太原",@"南昌",@"邢台"];
+    [self.mainTableView reloadData];
+}
 - (void)swizeCreateUI
 {
-    count2 ++;
-    ADLog(@"-------- = %ld",count2);
-    
-    [[FirstViewController class] load];
-    [self createUI];
+//    [self swizeCreateUI];
 //    ((void(*)(id, SEL))objc_msgSend)(self, @selector(swizeCreateUI));
-
-    
-//    ((void(*)(id, SEL))__origin_method_imp)(self, _cmd);
-
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -175,15 +152,18 @@ static IMP __origin_method_imp = nil;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    HomeCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeCellId];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.nameLabel.text = [NSString stringWithFormat:@"%ld--%@",(long)indexPath.row,self.dataArray[indexPath.row]];
+    static NSString *cellId = @"HomeCellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.backgroundColor = TabbarColor;
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = UIColor.blackColor;
+    }
+   
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld--%@",(long)indexPath.row,self.dataArray[indexPath.row]];
     
-    kWeakSelf(WeakSelf);
-
-    cell.clickBlock = ^(NSString * _Nonnull selectCity) {
-        ADLog(@"%@",selectCity);
-    };
     return cell;
 }
 
@@ -196,12 +176,54 @@ static IMP __origin_method_imp = nil;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+//    [self changeData];
+    [self changeDataInDedaultMode];
+
+}
+#pragma mark 滑动过程中不想改变数据，可以把事件包装成一个port(定时器就行)，添加到defaultmode下
+- (void)changeData {
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+        
+        NSMutableArray *arr = @[].mutableCopy;
+        for (int i=0; i<self.dataArray.count; i++) {
+            [arr addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+        self.dataArray = [arr copy];
+        sleep(5);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.mainTableView reloadData];
+        });
+    });
+}
+- (void)changeDataInDedaultMode {
+ 
+    [self.CLPThread executeTask:^{
+        NSLog(@"执行任务 - %@", [NSThread currentThread]);
+        
+        NSMutableArray *arr = @[].mutableCopy;
+        for (int i=0; i<self.dataArray.count; i++) {
+            [arr addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+        self.dataArray = [arr copy];
+        
+        sleep(3);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self reloadNewData];
+        });
+       
+    }];
+}
+- (void)reloadNewData {
+    NSLog(@"reloadNewData - %@", [NSThread currentThread]);
+    
+    [self performSelector:@selector(reloadNewData11) withObject:nil afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
     
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)reloadNewData11 {
+    NSLog(@"reloadNewData11 - %@", [NSThread currentThread]);
+    [self.mainTableView reloadData];
 }
-
 @end

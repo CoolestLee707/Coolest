@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface GCDViewController : BaseViewController
-
+@property (nonatomic,copy,readonly) NSString *name;
 @end
 
 NS_ASSUME_NONNULL_END
