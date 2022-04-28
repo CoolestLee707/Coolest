@@ -8,8 +8,9 @@
 //命名不规范，同事两行泪
 
 #import <UIKit/UIKit.h>
+#import "WBCubeHeader.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : WBAppDelegate <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

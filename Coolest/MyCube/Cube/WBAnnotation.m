@@ -18,6 +18,7 @@
 #import "WBModuleManager.h"
 
 NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_header *mhp);
+//传入文件的mach_header以及一个虚拟内存地址 intptr_t。
 static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) {
     NSArray *mods = WBReadConfiguration(CubeModSectName, mhp);
     NSArray *services = WBReadConfiguration(RouterSerSectName, mhp);
@@ -58,6 +59,7 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
 }
 __attribute__((constructor))
 void initProphet() {
+//_dyld_register_func_for_add_image：这个函数是用来注册回调，当dyld链接符号时，调用此回调函数。在dyld加载镜像时，会执行注册过的回调函数
     _dyld_register_func_for_add_image(dyld_callback);
 }
 
@@ -65,18 +67,22 @@ NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_hea
     NSMutableArray *configs = [NSMutableArray array];
     unsigned long size = 0;
 #ifndef __LP64__
+    // 读取存贮的服务的section地址
     uintptr_t *memory = (uintptr_t*)getsectiondata(mhp, SEG_DATA, sectionName, &size);
 #else
     const struct mach_header_64 *mhp64 = (const struct mach_header_64 *)mhp;
+    // 读取存贮的服务的section地址
     uintptr_t *memory = (uintptr_t*)getsectiondata(mhp64, SEG_DATA, sectionName, &size);
 #endif
+   
     
+//     遍历改section获取服务的protocol以及class
     unsigned long counter = size/sizeof(void*);
     for(int idx = 0; idx < counter; ++idx){
         char *string = (char*)memory[idx];
         NSString *str = [NSString stringWithUTF8String:string];
         if(!str)continue;
-        
+
         if(str) [configs addObject:str];
     }
     

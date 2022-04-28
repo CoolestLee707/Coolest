@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "PasswordInputWindow.h"
 #import "CLKeepAlive.h"
 #import "CL_ExceptionHander.h"
 
@@ -62,15 +61,18 @@ extern CFAbsoluteTime startTime;
 
     [CL_ExceptionHander setupExceptionHandler];
 
-    NSMutableDictionary *options = [NSMutableDictionary dictionaryWithDictionary:launchOptions];
-    ADLog(@"options - %@",options);
+//    NSMutableDictionary *options = [NSMutableDictionary dictionaryWithDictionary:launchOptions];
+//    ADLog(@"options - %@",options);
+    
+    [[WBModuleManager shareInstance] triggerEvent:kModInstallEvent];
+    [[WBModuleManager shareInstance] triggerEvent:kModInitEvent];
+    
     return YES;
 }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
-//    [[PasswordInputWindow shareInstance]show];
+    [super applicationWillResignActive:application];
 }
 
 

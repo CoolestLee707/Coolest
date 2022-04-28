@@ -78,7 +78,7 @@
 
 - (void)completeClick {
     
-    if([self.passWordTextField.text isEqualToString:@"11111"]) {
+    if([self.passWordTextField.text isEqualToString:@"1"]) {
         [self.passWordTextField resignFirstResponder];
         [self resignKeyWindow];
         self.hidden = YES;

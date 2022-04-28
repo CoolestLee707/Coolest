@@ -203,27 +203,26 @@ static IMP __origin_method_imp = nil;
         NSLog(@"执行任务 - %@", [NSThread currentThread]);
         
         NSMutableArray *arr = @[].mutableCopy;
-        for (int i=0; i<self.dataArray.count; i++) {
+        for (int i=0; i<self.dataArray.count-1; i++) {
             [arr addObject:[NSString stringWithFormat:@"%d",i]];
         }
-        self.dataArray = [arr copy];
-        
         sleep(3);
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self reloadNewData];
+            [self reloadNewData:[arr copy]];
         });
        
     }];
 }
-- (void)reloadNewData {
+- (void)reloadNewData:(NSArray *)newDatas {
     NSLog(@"reloadNewData - %@", [NSThread currentThread]);
     
-    [self performSelector:@selector(reloadNewData11) withObject:nil afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
+    [self performSelector:@selector(reloadNewData11:) withObject:newDatas afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
     
 }
-- (void)reloadNewData11 {
+- (void)reloadNewData11:(NSArray *)newDatas {
     NSLog(@"reloadNewData11 - %@", [NSThread currentThread]);
+    self.dataArray = newDatas;
     [self.mainTableView reloadData];
 }
 @end
