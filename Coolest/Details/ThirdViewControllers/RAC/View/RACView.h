@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RACView : UIView
 
-//@property (nonatomic,strong)RACSubject *racSingnal;
+@property (nonatomic,strong)RACSubject *racSingnal;
 
 //- (void)btnClcik:(UIButton *)btn;
 

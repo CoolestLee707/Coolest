@@ -41,7 +41,7 @@
 #ifdef DEBUG
     [[WBTimeProfiler sharedTimeProfiler] saveTimeProfileDataIntoFile:@"WBTimeProfiler"];
 #endif
-    [[WBTimeProfiler sharedTimeProfiler]printOutTimeProfileResult];
+    [[WBTimeProfiler sharedTimeProfiler] printOutTimeProfileResult];
     //return [super application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }

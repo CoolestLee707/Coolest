@@ -21,9 +21,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor yellowColor];
-//        [self setSubviews];
+        [self setSubviews];
         
-        [self setTextField];
+//        [self setTextField];
 
     }
     return self;
@@ -44,13 +44,13 @@
     [self addSubview:self.button];
     [self.button addTarget:self action:@selector(btnClcik:) forControlEvents:UIControlEventTouchUpInside];
     
-//    self.racSingnal = [RACSubject subject];
+    self.racSingnal = [RACSubject subject];
     
 }
 
 - (void)btnClcik:(UIButton *)btn
 {
-//    [self.racSingnal sendNext:@"来了老弟"];
+    [self.racSingnal sendNext:@"来了老弟"];
     self.frame = CGRectMake(10, 50, 500, 600);
 
 }

@@ -36,11 +36,16 @@
 ///App被挂起
 - (void)modWillResignActiveEvent:(WBContext *)context {
     ADLog(@"%s",__func__);
-    [[PasswordInputWindow shareInstance]show];
+//    [[PasswordInputWindow shareInstance]show];
 }
 ///App被挂起后复原
 - (void)modDidBecomeActiveEvent:(WBContext *)context {
     ADLog(@"%s",__func__);
+}
+
+///App进入后台
+- (void)modDidEnterBackgroundEvent:(WBContext *)context {
+    [[PasswordInputWindow shareInstance]show];
 }
 
 @end

@@ -21,6 +21,7 @@
 #import "RunLoopViewController.h"
 #import "CLRouter.h"
 #import "DrawRectViewController.h"
+#import "HookViewController.h"
 
 #import <UserNotifications/UserNotifications.h>
 
@@ -57,7 +58,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17",@"18"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17-hook",@"18"];
     
     [self createUI];
 }
@@ -193,6 +194,12 @@
         case 15:
         {
             DrawRectViewController* vc = [[DrawRectViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 16:
+        {
+            HookViewController* vc = [[HookViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

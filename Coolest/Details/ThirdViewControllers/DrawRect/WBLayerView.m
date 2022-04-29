@@ -64,7 +64,7 @@
     UIColor * textColor = [UIColor orangeColor];
     ///异步绘制:切换至子线程
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        UIImage * getImg = [self displayString:textC textColor:textColor textFont:textFont curSize:size curScale:scale];
+        UIImage * getImg = [self displayString:self.content.length > 0 ? self.content : textC textColor:textColor textFont:textFont curSize:size curScale:scale];
         ///子线程完成工作, 切换到主线程展示
         dispatch_async(dispatch_get_main_queue(), ^{
             self.layer.contents = (__bridge id)getImg.CGImage;

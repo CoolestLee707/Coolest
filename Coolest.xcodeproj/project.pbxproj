@@ -52,6 +52,10 @@
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
 		4A80C844281A2C2D00AEA974 /* testModule1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C843281A2C2D00AEA974 /* testModule1.m */; };
 		4A80C847281A352600AEA974 /* testModule2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C846281A352600AEA974 /* testModule2.m */; };
+		4A80C84B281B867500AEA974 /* HookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C84A281B867500AEA974 /* HookViewController.m */; };
+		4A80C84E281B86F000AEA974 /* HookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C84D281B86F000AEA974 /* HookObject.m */; };
+		4A80C851281B874900AEA974 /* HookObject+swize1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C850281B874900AEA974 /* HookObject+swize1.m */; };
+		4A80C854281B88AA00AEA974 /* HookObject+swize2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C853281B88AA00AEA974 /* HookObject+swize2.m */; };
 		BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136A21AFC76F002E5FAB /* msgSendViewController.m */; };
 		BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136D21AFC829002E5FAB /* msgPerson.m */; };
 		BF14137121AFC836002E5FAB /* msgDog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14137021AFC836002E5FAB /* msgDog.m */; };
@@ -256,6 +260,14 @@
 		4A80C843281A2C2D00AEA974 /* testModule1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testModule1.m; sourceTree = "<group>"; };
 		4A80C845281A352600AEA974 /* testModule2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testModule2.h; sourceTree = "<group>"; };
 		4A80C846281A352600AEA974 /* testModule2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testModule2.m; sourceTree = "<group>"; };
+		4A80C849281B867500AEA974 /* HookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookViewController.h; sourceTree = "<group>"; };
+		4A80C84A281B867500AEA974 /* HookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookViewController.m; sourceTree = "<group>"; };
+		4A80C84C281B86F000AEA974 /* HookObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HookObject.h; sourceTree = "<group>"; };
+		4A80C84D281B86F000AEA974 /* HookObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HookObject.m; sourceTree = "<group>"; };
+		4A80C84F281B874900AEA974 /* HookObject+swize1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HookObject+swize1.h"; sourceTree = "<group>"; };
+		4A80C850281B874900AEA974 /* HookObject+swize1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookObject+swize1.m"; sourceTree = "<group>"; };
+		4A80C852281B88AA00AEA974 /* HookObject+swize2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HookObject+swize2.h"; sourceTree = "<group>"; };
+		4A80C853281B88AA00AEA974 /* HookObject+swize2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookObject+swize2.m"; sourceTree = "<group>"; };
 		BF14136921AFC76F002E5FAB /* msgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgSendViewController.h; sourceTree = "<group>"; };
 		BF14136A21AFC76F002E5FAB /* msgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgSendViewController.m; sourceTree = "<group>"; };
 		BF14136C21AFC829002E5FAB /* msgPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgPerson.h; sourceTree = "<group>"; };
@@ -591,12 +603,43 @@
 		4A80C841281A2BF200AEA974 /* TestModules */ = {
 			isa = PBXGroup;
 			children = (
+				4A80C855281C1F8000AEA974 /* TestModule1 */,
+				4A80C856281C1F9800AEA974 /* TestModule2 */,
+			);
+			path = TestModules;
+			sourceTree = "<group>";
+		};
+		4A80C848281B865D00AEA974 /* Hook */ = {
+			isa = PBXGroup;
+			children = (
+				4A80C849281B867500AEA974 /* HookViewController.h */,
+				4A80C84A281B867500AEA974 /* HookViewController.m */,
+				4A80C84C281B86F000AEA974 /* HookObject.h */,
+				4A80C84D281B86F000AEA974 /* HookObject.m */,
+				4A80C84F281B874900AEA974 /* HookObject+swize1.h */,
+				4A80C850281B874900AEA974 /* HookObject+swize1.m */,
+				4A80C852281B88AA00AEA974 /* HookObject+swize2.h */,
+				4A80C853281B88AA00AEA974 /* HookObject+swize2.m */,
+			);
+			path = Hook;
+			sourceTree = "<group>";
+		};
+		4A80C855281C1F8000AEA974 /* TestModule1 */ = {
+			isa = PBXGroup;
+			children = (
 				4A80C842281A2C2D00AEA974 /* testModule1.h */,
 				4A80C843281A2C2D00AEA974 /* testModule1.m */,
+			);
+			path = TestModule1;
+			sourceTree = "<group>";
+		};
+		4A80C856281C1F9800AEA974 /* TestModule2 */ = {
+			isa = PBXGroup;
+			children = (
 				4A80C845281A352600AEA974 /* testModule2.h */,
 				4A80C846281A352600AEA974 /* testModule2.m */,
 			);
-			path = TestModules;
+			path = TestModule2;
 			sourceTree = "<group>";
 		};
 		787CCAB28AF396DEFF448519 /* Pods */ = {
@@ -1023,6 +1066,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A80C848281B865D00AEA974 /* Hook */,
 				4A5197C0281677A400561E41 /* DrawRect */,
 				4A519661280D074700561E41 /* RunLoop */,
 				3F3D3064249C97D100E558E5 /* KVO */,
@@ -1501,7 +1545,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A5197D62817E2F600561E41 /* fishhook.c in Sources */,
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
+				4A80C851281B874900AEA974 /* HookObject+swize1.m in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				4A5196EB2813A27600561E41 /* WBRouter+WBExtension.m in Sources */,
@@ -1521,7 +1567,6 @@
 				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,
 				4A5197BF2814381E00561E41 /* FrameAndBoundsViewController.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
-				4A5197D62817E2F600561E41 /* fishhook.c in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */,
@@ -1538,6 +1583,7 @@
 				BF59E1D521003BA30004EC56 /* NSURL+CFURL.m in Sources */,
 				BF59E214210067850004EC56 /* WKWebviewViewController.m in Sources */,
 				BF59E21D2100686B0004EC56 /* TZImagePickerViewController.m in Sources */,
+				4A80C854281B88AA00AEA974 /* HookObject+swize2.m in Sources */,
 				BF61BC03230C040200D020F5 /* ProductA.m in Sources */,
 				BF59E1C621003A6C0004EC56 /* AppDelegate+ViewController.m in Sources */,
 				BF7B055C2284503F008EDCF8 /* objc2.m in Sources */,
@@ -1557,6 +1603,7 @@
 				4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */,
 				4A5197D92817E37700561E41 /* CLKeepAlive.m in Sources */,
 				4A5196EC2813A27600561E41 /* WBServiceManager.m in Sources */,
+				4A80C84B281B867500AEA974 /* HookViewController.m in Sources */,
 				4A5197C3281677B900561E41 /* DrawRectViewController.m in Sources */,
 				1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
@@ -1615,6 +1662,7 @@
 				BF59E217210067D90004EC56 /* MBProgressHUDViewController.m in Sources */,
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
 				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,
+				4A80C84E281B86F000AEA974 /* HookObject.m in Sources */,
 				BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,

@@ -53,7 +53,7 @@
         
         [self.dataArray removeAllObjects];
         
-        [NSThread sleepForTimeInterval:3];
+        [NSThread sleepForTimeInterval:2];
 
         NSArray *arr = @[@"-11111",@"-22222",@"-33333",@"-44444",@"-55555",@"-66666",@"-77777",@"-88888",@"-99999",@"-00000",@"-----"];
         

@@ -33,6 +33,8 @@
 
     }];
     self.layerView.backgroundColor = [UIColor yellowColor];
+    
+    self.layerView.content = @"这是传入的展示内容";
     [self.layerView setNeedsDisplay];
 
 }

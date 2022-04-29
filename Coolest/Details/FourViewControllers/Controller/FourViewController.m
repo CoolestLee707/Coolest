@@ -31,6 +31,12 @@
 @property (nonatomic,assign) int count;
 
 @property (nonatomic,strong) UILabel *actLabel;
+
+@property (nonatomic,strong) UIView *view11;
+@property (nonatomic,strong) UIView *view21;
+@property (nonatomic,strong) UIView *view22;
+@property (nonatomic,strong) UIView *view31;
+@property (nonatomic,strong) UIView *view32;
 @end
 
 @implementation FourViewController
@@ -129,8 +135,52 @@
     
 //    [self buttonBindSomething];
     
+//    [self findParentView];
     
+}
+
+- (void)findParentView {
+    self.view11 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+    self.view11.backgroundColor = UIColor.redColor;
+    [self.view addSubview:self.view11];
     
+    self.view21 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    self.view21.backgroundColor = UIColor.blueColor;
+    [self.view11 addSubview:self.view21];
+    
+    self.view32 = [[UIView alloc]initWithFrame:CGRectMake(30, 30,50, 50)];
+    self.view32.backgroundColor = UIColor.yellowColor;
+    [self.view21 addSubview:self.view32];
+    
+    self.view22 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    self.view22.backgroundColor = UIColor.blackColor;
+    [self.view11 addSubview:self.view22];
+    
+    self.view31 = [[UIView alloc]initWithFrame:CGRectMake(10, 10, 80, 60)];
+    self.view31.backgroundColor = UIColor.greenColor;
+    [self.view22 addSubview:self.view31];
+    
+    UIView *returnView = [self findMinParent:self.view32 And:self.view22];
+    ADLog(@"%@",returnView);
+}
+
+- (UIView *)findMinParent:(UIView *)view1 And:(UIView *)view2 {
+    
+    UIView *vP1 = [view1 superview];
+    while (vP1) {
+        
+        UIView *vP2 = [view2 superview];
+
+        while (vP2) {
+            if (vP1 == vP2) {
+                return vP1;
+            }
+            vP2 = [vP2 superview];
+        }
+        
+       vP1 = [vP1 superview];
+    }
+    return nil;
 }
 
 - (void)buttonBindSomething {
@@ -245,8 +295,8 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     ADLog(@"点击屏幕");
-    NSArray *arr= @[@1,@2];
-    ADLog(@"%@",arr[3]);
+//    NSArray *arr= @[@1,@2];
+//    ADLog(@"%@",arr[3]);
 
 //    [CLKeepAlive startLocation];
 

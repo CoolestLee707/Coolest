@@ -221,7 +221,7 @@
     [self reload];
     
     [self.view addSubview:self.tableView];
-    _editItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(reload)];
+    _editItem = [[UIBarButtonItem alloc]initWithTitle:@"刷新" style:UIBarButtonItemStyleDone target:self action:@selector(reloadWithContentKey)];
 
     _editItem.tintColor = [UIColor greenColor];
     self.navigationItem.rightBarButtonItem = _editItem;
@@ -250,11 +250,16 @@
     return _tableView;
 }
 
-- (void)reload
-{
+- (void)reload {
     [self showLoading];
     
     [self.vm getData];
+}
+
+- (void)reloadWithContentKey {
+    [self showLoading];
+    
+    self.vm.contentKey = @"11";
 }
 
 -(void)dealloc {
