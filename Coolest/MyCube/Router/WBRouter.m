@@ -173,7 +173,7 @@ typedef NS_ENUM(NSUInteger, WBRouterViewControlerEnterMode) {
         // 通过协议调用
         case WBUseModeCallService: {
             Protocol *protocol = NSProtocolFromString(host);
-            selectorStr = [NSString stringWithFormat:@"%@:", selectorStr];
+            selectorStr = [NSString stringWithFormat:@"action_%@:", selectorStr];
             SEL selector = NSSelectorFromString(selectorStr);
             obj = [[WBServiceManager sharedManager] createService:protocol];
             
@@ -450,7 +450,7 @@ typedef NS_ENUM(NSUInteger, WBRouterViewControlerEnterMode) {
     } else if ([enterModePattern isEqualToString:WBURLFragmentViewControlerEnterModeModal]) {
         return WBRouterViewControlerEnterModeModal;
     }
-    return WBRouterViewControlerEnterModePush;
+    return WBRouterViewControlerEnterModeUnknown;
 }
 
 + (NSDictionary<NSString *, id> *)solveURLParams:(NSDictionary<NSString *, id> *)URLParams
