@@ -56,6 +56,13 @@
 		4A80C84E281B86F000AEA974 /* HookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C84D281B86F000AEA974 /* HookObject.m */; };
 		4A80C851281B874900AEA974 /* HookObject+swize1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C850281B874900AEA974 /* HookObject+swize1.m */; };
 		4A80C854281B88AA00AEA974 /* HookObject+swize2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C853281B88AA00AEA974 /* HookObject+swize2.m */; };
+		4A80C85A281D207D00AEA974 /* ArithmeticViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C859281D207D00AEA974 /* ArithmeticViewController.m */; };
+		4A80C85D281D56C700AEA974 /* Service_testModule1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C85C281D56C700AEA974 /* Service_testModule1.m */; };
+		4A80C861281D594C00AEA974 /* CubeRouterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C860281D594C00AEA974 /* CubeRouterViewController.m */; };
+		4A80C869281E227800AEA974 /* Service_testModule3.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C868281E227700AEA974 /* Service_testModule3.m */; };
+		4A80C86C281E60D600AEA974 /* SwiftProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */; };
+		4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86D281E61E200AEA974 /* Swift_demo.swift */; };
+		4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */; };
 		BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136A21AFC76F002E5FAB /* msgSendViewController.m */; };
 		BF14136E21AFC829002E5FAB /* msgPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14136D21AFC829002E5FAB /* msgPerson.m */; };
 		BF14137121AFC836002E5FAB /* msgDog.m in Sources */ = {isa = PBXBuildFile; fileRef = BF14137021AFC836002E5FAB /* msgDog.m */; };
@@ -268,6 +275,18 @@
 		4A80C850281B874900AEA974 /* HookObject+swize1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookObject+swize1.m"; sourceTree = "<group>"; };
 		4A80C852281B88AA00AEA974 /* HookObject+swize2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HookObject+swize2.h"; sourceTree = "<group>"; };
 		4A80C853281B88AA00AEA974 /* HookObject+swize2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HookObject+swize2.m"; sourceTree = "<group>"; };
+		4A80C858281D207D00AEA974 /* ArithmeticViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArithmeticViewController.h; sourceTree = "<group>"; };
+		4A80C859281D207D00AEA974 /* ArithmeticViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArithmeticViewController.m; sourceTree = "<group>"; };
+		4A80C85B281D56C700AEA974 /* Service_testModule1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service_testModule1.h; sourceTree = "<group>"; };
+		4A80C85C281D56C700AEA974 /* Service_testModule1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service_testModule1.m; sourceTree = "<group>"; };
+		4A80C85F281D594B00AEA974 /* CubeRouterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CubeRouterViewController.h; sourceTree = "<group>"; };
+		4A80C860281D594C00AEA974 /* CubeRouterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CubeRouterViewController.m; sourceTree = "<group>"; };
+		4A80C867281E227700AEA974 /* Service_testModule3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service_testModule3.h; sourceTree = "<group>"; };
+		4A80C868281E227700AEA974 /* Service_testModule3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service_testModule3.m; sourceTree = "<group>"; };
+		4A80C86A281E231D00AEA974 /* testModule3Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testModule3Protocol.h; sourceTree = "<group>"; };
+		4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocol.swift; sourceTree = "<group>"; };
+		4A80C86D281E61E200AEA974 /* Swift_demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_demo.swift; sourceTree = "<group>"; };
+		4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service_testModule12.swift; sourceTree = "<group>"; };
 		BF14136921AFC76F002E5FAB /* msgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgSendViewController.h; sourceTree = "<group>"; };
 		BF14136A21AFC76F002E5FAB /* msgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgSendViewController.m; sourceTree = "<group>"; };
 		BF14136C21AFC829002E5FAB /* msgPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgPerson.h; sourceTree = "<group>"; };
@@ -605,6 +624,7 @@
 			children = (
 				4A80C855281C1F8000AEA974 /* TestModule1 */,
 				4A80C856281C1F9800AEA974 /* TestModule2 */,
+				4A80C866281E1FB400AEA974 /* TestModule3 */,
 			);
 			path = TestModules;
 			sourceTree = "<group>";
@@ -629,6 +649,9 @@
 			children = (
 				4A80C842281A2C2D00AEA974 /* testModule1.h */,
 				4A80C843281A2C2D00AEA974 /* testModule1.m */,
+				4A80C85B281D56C700AEA974 /* Service_testModule1.h */,
+				4A80C85C281D56C700AEA974 /* Service_testModule1.m */,
+				4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */,
 			);
 			path = TestModule1;
 			sourceTree = "<group>";
@@ -640,6 +663,36 @@
 				4A80C846281A352600AEA974 /* testModule2.m */,
 			);
 			path = TestModule2;
+			sourceTree = "<group>";
+		};
+		4A80C857281D206700AEA974 /* Arithmetic */ = {
+			isa = PBXGroup;
+			children = (
+				4A80C858281D207D00AEA974 /* ArithmeticViewController.h */,
+				4A80C859281D207D00AEA974 /* ArithmeticViewController.m */,
+			);
+			path = Arithmetic;
+			sourceTree = "<group>";
+		};
+		4A80C85E281D58FF00AEA974 /* Cube+Router */ = {
+			isa = PBXGroup;
+			children = (
+				4A80C85F281D594B00AEA974 /* CubeRouterViewController.h */,
+				4A80C860281D594C00AEA974 /* CubeRouterViewController.m */,
+			);
+			path = "Cube+Router";
+			sourceTree = "<group>";
+		};
+		4A80C866281E1FB400AEA974 /* TestModule3 */ = {
+			isa = PBXGroup;
+			children = (
+				4A80C86A281E231D00AEA974 /* testModule3Protocol.h */,
+				4A80C867281E227700AEA974 /* Service_testModule3.h */,
+				4A80C868281E227700AEA974 /* Service_testModule3.m */,
+				4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */,
+				4A80C86D281E61E200AEA974 /* Swift_demo.swift */,
+			);
+			path = TestModule3;
 			sourceTree = "<group>";
 		};
 		787CCAB28AF396DEFF448519 /* Pods */ = {
@@ -1020,7 +1073,6 @@
 				4A5197BD2814381E00561E41 /* FrameAndBoundsViewController.h */,
 				4A5197BE2814381E00561E41 /* FrameAndBoundsViewController.m */,
 				1ACED37F26CE04EB00EEC483 /* SwiftFile.swift */,
-				1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1066,6 +1118,8 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A80C85E281D58FF00AEA974 /* Cube+Router */,
+				4A80C857281D206700AEA974 /* Arithmetic */,
 				4A80C848281B865D00AEA974 /* Hook */,
 				4A5197C0281677A400561E41 /* DrawRect */,
 				4A519661280D074700561E41 /* RunLoop */,
@@ -1196,6 +1250,7 @@
 		BF90076E2294F8520051DD7B /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				1ACED37E26CE04EA00EEC483 /* Coolest-Bridging-Header.h */,
 				BF9007732294F9BD0051DD7B /* InfoPlist.strings */,
 				BF9007792294FAEF0051DD7B /* Localizable.strings */,
 				BF90077B22952CF80051DD7B /* GlobalLanguage.h */,
@@ -1548,9 +1603,11 @@
 				4A5197D62817E2F600561E41 /* fishhook.c in Sources */,
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
 				4A80C851281B874900AEA974 /* HookObject+swize1.m in Sources */,
+				4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				4A5196EB2813A27600561E41 /* WBRouter+WBExtension.m in Sources */,
+				4A80C861281D594C00AEA974 /* CubeRouterViewController.m in Sources */,
 				4A5197BC281434A000561E41 /* SafeViewController.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
 				1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */,
@@ -1606,6 +1663,7 @@
 				4A80C84B281B867500AEA974 /* HookViewController.m in Sources */,
 				4A5197C3281677B900561E41 /* DrawRectViewController.m in Sources */,
 				1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */,
+				4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
@@ -1649,6 +1707,7 @@
 				3FEA17F62503CC68007D102F /* AppCodeTest.m in Sources */,
 				BFDA8B8B22375C72001B4F26 /* MVPService.m in Sources */,
 				BF39AF51215CAC1B00C05CEF /* GCDViewController.m in Sources */,
+				4A80C869281E227800AEA974 /* Service_testModule3.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				BF7B055922845035008EDCF8 /* objc1.m in Sources */,
@@ -1663,8 +1722,11 @@
 				BF7479E7215B68CC00511A2A /* NSThreadViewController.m in Sources */,
 				BFB72E5F221BF7D5002F4743 /* AsyncDisplayModel.m in Sources */,
 				4A80C84E281B86F000AEA974 /* HookObject.m in Sources */,
+				4A80C86C281E60D600AEA974 /* SwiftProtocol.swift in Sources */,
 				BF6B08FB211D415E000C8693 /* HitTestBackView.m in Sources */,
+				4A80C85A281D207D00AEA974 /* ArithmeticViewController.m in Sources */,
 				BF59E1DB210044320004EC56 /* UIScrollView+ContentInset.m in Sources */,
+				4A80C85D281D56C700AEA974 /* Service_testModule1.m in Sources */,
 				BF59E195210035550004EC56 /* main.m in Sources */,
 				BF59E187210035530004EC56 /* AppDelegate.m in Sources */,
 				BF2D87092238EA9000A51E33 /* MVVM_RAC_Model.m in Sources */,
@@ -1994,7 +2056,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest001.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Details/SecondViewControllers/Controller/Coolest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Global/Coolest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2143,7 +2205,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = CoolestLee707.Coolest001.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Details/SecondViewControllers/Controller/Coolest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Coolest/Global/Coolest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

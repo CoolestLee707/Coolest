@@ -10,8 +10,9 @@
 #import "WBCubeHeader.h"
 
 @CubeEvents(testModule1)
+@RouterServiceMap(Coolest, testModule12)
 
-@interface testModule1 ()<WBModuleProtocol>
+@interface testModule1 () <WBModuleProtocol>
 
 @end
 

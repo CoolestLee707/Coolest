@@ -24,6 +24,7 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
     NSArray *services = WBReadConfiguration(RouterSerSectName, mhp);
     NSArray<NSString *> *protocolService = WBReadConfiguration(ProtocolSerSectName,mhp);
     NSArray<NSString *> *swiftProtocolService = WBReadConfiguration(ProtocolSwiftSerSectName, mhp);
+    // 注册模块，处理优先级、方法回调等
     for (NSString *modName in mods) {
         Class cls;
         if (modName) {
@@ -34,12 +35,13 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
             }
         }
     }
-    
+    // Swift模块Service注册
     for (NSString *service in services) {
         if (service) {
             [WBRouter registerSwiftServiceMap:service];
         }
     }
+    // 注册协议
     NSMutableArray * allProArray = [[NSMutableArray alloc]initWithArray:protocolService];
     [allProArray addObjectsFromArray:swiftProtocolService];
     for (NSString * protocols in allProArray) {
@@ -63,6 +65,7 @@ void initProphet() {
     _dyld_register_func_for_add_image(dyld_callback);
 }
 
+// 读取数据
 NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_header *mhp) {
     NSMutableArray *configs = [NSMutableArray array];
     unsigned long size = 0;

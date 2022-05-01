@@ -32,6 +32,7 @@
 - (void)show {
     
     self.passWordTextField.text = @"";
+    [self.passWordTextField becomeFirstResponder];
     [self makeKeyAndVisible];
     self.hidden = NO;
 }
@@ -57,6 +58,7 @@
         textfield.backgroundColor = [UIColor yellowColor];
         textfield.textColor = BaseBlueColor;
         textfield.secureTextEntry = YES;
+        textfield.keyboardType = UIKeyboardTypePhonePad;
         textfield.borderStyle = UITextBorderStyleLine;
         [vc.view addSubview:textfield];
         self.passWordTextField = textfield;
@@ -90,7 +92,7 @@
 - (void)showError {
     [self.passWordTextField resignFirstResponder];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"密码错误" message:@"正确密码11111" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"密码错误" message:@"正确密码1" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:cancel];
     
