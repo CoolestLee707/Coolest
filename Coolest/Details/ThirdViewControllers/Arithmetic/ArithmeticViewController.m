@@ -29,15 +29,53 @@
 //    [self findParentView];
     
 //    有序数组合并
-    NSArray *arr1 = @[@1,@3,@5,@6];
-    NSArray *arr2 = @[@2,@4,@5,@7];
+//    NSArray *arr1 = @[@1,@3,@5,@6];
+//    NSArray *arr2 = @[@2,@4,@5,@7];
     
 //    NSArray *result = [self mergeArrayRecursive:arr1 And:arr2];
-    NSArray *result = [self mergeArrayWhile:arr1 And:arr2];
+//    NSArray *result = [self mergeArrayWhile:arr1 And:arr2];
+//    ADLog(@"%@",result);
     
-    ADLog(@"%@",result);
+//    hash查找字符串中只出现一次的字符
+//    NSString *str = @"ujklfjsdlfjslfsp";
+//    ADLog(@"%@",[self selectOnlyOnceString:str]);
+    
+//    冒泡排序
+//    NSMutableArray *sortArray = @[@2,@1,@8,@7,@20,@3,@13,@18,@30,@20,@27,@9,@7].mutableCopy;
+//    [self sort1:sortArray];
+    
+//    求一个无序数组的中位数
+    int list[10] = {12,3,10,8,6,7,11,13,9,6};
+    int midResult = findMedian(list,10);
+    printf("midResult %d",midResult);
+    
 }
-
+#pragma mark -- hash查找字符串中只出现一次的字符
+- (NSString *)selectOnlyOnceString:(NSString *)str {
+    int i = 0;
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    
+    while (i < str.length) {
+        NSString *s = [str substringWithRange:NSMakeRange(i++, 1)];
+        NSNumber *count = [dic objectForKey:s];
+        if (count) {
+            count = @(count.intValue + 1);
+            [dic setValue:count forKey:s];
+        }else {
+            [dic setValue:@1 forKey:s];
+        }
+    }
+    
+    i = 0;
+    while (i < str.length) {
+        NSString *s = [str substringWithRange:NSMakeRange(i++, 1)];
+        NSNumber *count = [dic objectForKey:s];
+        if (count.intValue == 1) {
+            return s;
+        }
+    }
+    return nil;
+}
 #pragma mark -- 有序数组合并 - 递归
 - (NSArray *)mergeArrayRecursive:(NSArray *)array1 And:(NSArray *)array2 {
     
@@ -95,7 +133,7 @@
     return result.copy;
 }
 
-#pragma mark -- 寻找两个视图最近的父视图
+#pragma mark -- 寻找两个视图的父视图
 - (void)findParentView {
     self.view11 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
     self.view11.backgroundColor = UIColor.redColor;
@@ -117,10 +155,16 @@
     self.view31.backgroundColor = UIColor.greenColor;
     [self.view22 addSubview:self.view31];
     
-    UIView *returnView = [self findMinParent:self.view32 And:self.view22];
-    ADLog(@"%@",returnView);
+//    寻找两个视图最近的父视图
+    UIView *returnView = [self findMinParent:self.view32 And:self.view31];
+    ADLog(@"findAllParents - %@",returnView);
+    
+//    寻找两个视图最近的父视图
+    NSArray *allViews = [self findAllParents:self.view32 And:self.view31];
+    ADLog(@"allViews - %@",allViews);
 }
 
+//寻找两个视图最近的父视图
 - (UIView *)findMinParent:(UIView *)view1 And:(UIView *)view2 {
     
     UIView *vP1 = [view1 superview];
@@ -140,5 +184,112 @@
     return nil;
 }
 
+//寻找两个视图所有的父视图
+- (NSArray *)findAllParents:(UIView *)view1 And:(UIView *)view2 {
+    NSMutableArray *array1 = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *array2 = [NSMutableArray arrayWithCapacity:0];
+    NSMutableArray *resultArray = [NSMutableArray arrayWithCapacity:0];
 
+    UIView *tempView1 = view1.superview;
+    while (tempView1) {
+        [array1 addObject:tempView1];
+        tempView1 = tempView1.superview;
+    }
+    
+    UIView *tempView2 = view2.superview;
+    while (tempView2) {
+        [array2 addObject:tempView2];
+        tempView2 = tempView2.superview;
+    }
+    
+    for (int i=0; i<MIN(array1.count, array2.count); i++) {
+        
+        UIView *viewA = array1[array1.count-i-1];
+        UIView *viewB = array2[array2.count-i-1];
+        if (viewA == viewB) {
+            [resultArray addObject:viewA];
+        }else {
+            break;
+        }
+    }
+    return resultArray.copy;
+}
+
+//冒泡排序
+- (void)sort1:(NSMutableArray *)numbers {
+    
+    for (int i=0; i<numbers.count-1; i++) {
+        for (int j=0; j<numbers.count-1-i; j++) {
+            NSNumber *a = numbers[j];
+            NSNumber *b = numbers[j+1];
+            if (a.intValue > b.intValue) {
+                numbers[j] = b;
+                numbers[j+1] = a;
+            }
+        }
+    }
+    ADLog(@"%@",numbers);
+}
+
+//求一个无序数组的中位数
+int findMedian(int a[], int aLen) {
+    int low = 0;
+    int high = aLen - 1;
+    
+    int mid = (aLen - 1) / 2;
+    int div = PartSort(a, low, high);
+    
+    while (div != mid)
+    {
+        if (mid < div)
+        {
+            //左半区间找
+            div = PartSort(a, low, div - 1);
+        }
+        else
+        {
+            //右半区间找
+            div = PartSort(a, div + 1, high);
+        }
+    }
+    //找到了
+    return a[mid];
+}
+
+int PartSort(int a[], int start, int end) {
+    int low = start;
+    int high = end;
+    
+    //选取关键字
+    int key = a[end];
+    
+    while (low < high)
+    {
+        //左边找比key大的值
+        while (low < high && a[low] <= key)
+        {
+            ++low;
+        }
+        
+        //右边找比key小的值
+        while (low < high && a[high] >= key)
+        {
+            --high;
+        }
+        
+        if (low < high)
+        {
+            //找到之后交换左右的值
+            int temp = a[low];
+            a[low] = a[high];
+            a[high] = temp;
+        }
+    }
+    
+    int temp = a[high];
+    a[high] = a[end];
+    a[end] = temp;
+    
+    return low;
+}
 @end
