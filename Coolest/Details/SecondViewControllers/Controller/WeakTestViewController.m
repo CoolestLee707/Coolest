@@ -74,7 +74,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    kWeakSelf(WeakSelf);
 //self被WeakManager强引用，就不会delloc
-//    [[WeakManager shareInstance]openH5URLWithViewController:self withURL:@"https://www.baidu.com"];
+    [[WeakManager shareInstance]openH5URLWithViewController:self withURL:@"https://www.baidu.com"];
 
 //    [self Test1];
     

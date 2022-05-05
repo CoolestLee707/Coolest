@@ -48,14 +48,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-   
-    
+    self.view.backgroundColor = UIColor.cyanColor;
+       
 //    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    view.backgroundColor = [UIColor redColor];
 //    [self.view addSubview:view];
   
-
-    
     
 //    ADLog(@"-------------superview ----- %@",label.superview);
     
@@ -132,6 +130,7 @@
 //    [self buttonBindSomething];
         
 }
+
 
 
 - (void)buttonBindSomething {

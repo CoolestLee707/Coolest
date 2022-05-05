@@ -1935,6 +1935,8 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "/Users/lichuanmin/Desktop/Link Map/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2084,6 +2086,8 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Coolest/Define/Coolest.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Coolest/Others/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_GENERATE_MAP_FILE = YES;
+				LD_MAP_FILE_PATH = "/Users/lichuanmin/Desktop/Link Map/$(PRODUCT_NAME)-LinkMap-$(CURRENT_VARIANT)-$(CURRENT_ARCH).txt";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

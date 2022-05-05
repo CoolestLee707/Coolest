@@ -45,11 +45,47 @@
 //    [self sort1:sortArray];
     
 //    求一个无序数组的中位数
-    int list[10] = {12,3,10,8,6,7,11,13,9,6};
-    int midResult = findMedian(list,10);
-    printf("midResult %d",midResult);
+//    int list[10] = {12,3,10,8,6,7,11,13,9,6};
+//    int midResult = findMedian(list,10);
+//    printf("midResult %d",midResult);
     
+    
+//    快速排序
+    int list[10] = {12,3,10,8,6,7,11,13,9,6};
+    sortQuickly(list,0,9);
+    
+    for (int i=0; i<10; i++) {
+        printf("%d ", list[i]);
+    }
 }
+
+#pragma mark --- 快速排序 小->大
+void sortQuickly(int a[],int left,int right) {
+    if (left >= right) {
+        return;
+    }
+    int i = left;
+    int j = right;
+    int key = a[left];
+    
+    while (i < j) {
+//        从末尾开始找一个比key小的数换位置，小的放前面
+        while (i < j && key <= a[j]) {
+            j--;
+        }
+        a[i] = a[j];
+//        从开头开始找一个比key大的数，放到刚找到的小的数位置
+        while (i < j && key >= a[i]) {
+            i++;
+        }
+        a[j] = a[i];
+    }
+//    中间数key放到中间位置
+    a[i] = key;
+    sortQuickly(a, left, i-1);
+    sortQuickly(a, i+1, right);
+}
+
 #pragma mark -- hash查找字符串中只出现一次的字符
 - (NSString *)selectOnlyOnceString:(NSString *)str {
     int i = 0;

@@ -11,7 +11,7 @@
 
 @RouterProtocolService(testModule3Protocol,Service_testModule3)
 
-//Coolest:桥接文件
+//Coolest:模块
 @RouterSwiftProtocolService(Coolest,SwiftProtocol,Swift_demo)
 
 NS_ASSUME_NONNULL_BEGIN

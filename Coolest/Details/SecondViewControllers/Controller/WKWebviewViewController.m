@@ -84,7 +84,7 @@
 }
 
 #pragma mark - KVO回馈
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"estimatedProgress"]) {
         self.progressLayer.opacity = 1;
         if ([change[@"new"] floatValue] <[change[@"old"] floatValue]) {
@@ -105,31 +105,31 @@
 
 #pragma mark - WKNavigationDelegate
 /* 页面开始加载 */
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     
     [self showLoading];
 }
 /* 开始返回内容 */
-- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
     
 }
 /* 页面加载完成 */
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self hideHUD];
 }
 /* 页面加载失败 */
-- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
     [self hideHUD];
 }
 /* 在发送请求之前，决定是否跳转 */
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     //允许跳转
     decisionHandler(WKNavigationActionPolicyAllow);
     //不允许跳转
     //decisionHandler(WKNavigationActionPolicyCancel);
 }
 /* 在收到响应后，决定是否跳转 */
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
     
     NSLog(@"%@",navigationResponse.response.URL.absoluteString);
     //允许跳转
@@ -139,8 +139,7 @@
 }
 
 #pragma mark - ***** dealloc 记得取消监听
-- (void)dealloc
-{
+- (void)dealloc {
     [self.wkWebView removeObserver:self forKeyPath:@"title"];
     [self.wkWebView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
@@ -150,14 +149,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

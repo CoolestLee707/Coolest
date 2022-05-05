@@ -35,6 +35,7 @@
 //    KVC方法调用KVO
     [self.person addObserver:self forKeyPath:@"name" options:options context:@"上下文options"];
 
+
 //    po self.person.isa
 //    NSKVONotifying_KVO_Person
     
@@ -56,7 +57,9 @@
 
 //移除监听
 - (void)dealloc {
+    ADLog(@"%s",__func__);
     [self.person removeObserver:self forKeyPath:@"age"];
+    [self.person removeObserver:self forKeyPath:@"name"];
 }
 @end
 
