@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "UITabBar+badge.h"
 
 @interface BaseViewController ()
 
@@ -129,6 +130,12 @@
 {
     
 }
+
+//显示小红点
+-(void)newMessageWarning:(int)index msgCount:(int)count {
+    [self.tabBarController.tabBar showBadgeOnItemIndex:index msgCount:count];
+}
+
 
 - (void)dealloc {
     ADLog(@"%s",__func__);

@@ -18,7 +18,25 @@
 @end
 
 @implementation CubeRouterViewController
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *barApp = [UINavigationBarAppearance new];
+        barApp.backgroundColor = UIColor.yellowColor;
+        self.navigationController.navigationBar.scrollEdgeAppearance = barApp;
+        self.navigationController.navigationBar.standardAppearance = barApp;
+    }
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *barApp = [UINavigationBarAppearance new];
+        barApp.backgroundColor = NavBackColor;
+        self.navigationController.navigationBar.scrollEdgeAppearance = barApp;
+        self.navigationController.navigationBar.standardAppearance = barApp;
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"testRouter";

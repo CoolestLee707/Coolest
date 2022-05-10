@@ -61,4 +61,6 @@
 
 - (void)createBackButton;
 
+-(void)newMessageWarning:(int)index msgCount:(int)count;
+
 @end

@@ -10,6 +10,7 @@
 #import "WBCubeHeader.h"
 
 @CubeEvents(testModule1)
+//swift 方法调用需要模块名称，提前注册、保存全局HashMap
 @RouterServiceMap(Coolest, testModule12)
 
 @interface testModule1 () <WBModuleProtocol>

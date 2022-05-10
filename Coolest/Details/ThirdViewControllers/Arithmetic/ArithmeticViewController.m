@@ -51,12 +51,41 @@
     
     
 //    快速排序
-    int list[10] = {12,3,10,8,6,7,11,13,9,6};
-    sortQuickly(list,0,9);
+//    int list[10] = {12,3,10,8,6,7,11,13,9,6};
+//    sortQuickly(list,0,9);
+//
+//    for (int i=0; i<10; i++) {
+//        printf("%d ", list[i]);
+//    }
     
-    for (int i=0; i<10; i++) {
-        printf("%d ", list[i]);
+    NSArray *arr = @[@"0",@"1",@"3",@"2",@"2",@"2",@"2",@"2"];
+    int value = [self selectMostNumber:arr];
+    ADLog(@"value - %d",value);
+}
+// 寻找出现次数一半以上的
+- (int)selectMostNumber:(NSArray *)array {
+    int returnNumber = 0;
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    
+    for (int i = 0; i<array.count; i++) {
+        NSString *number = array[i];
+        NSString *value = dic[number];
+
+        if (!value) {
+            dic[number] = @"1";
+        }else {
+            int newValue = value.intValue + 1;
+            dic[number] = [NSString stringWithFormat:@"%d",newValue];
+        }
     }
+    for (int i = 0; i<dic.allKeys.count; i++) {
+        NSString *number = dic.allKeys[i];
+        NSString *value = dic[number];
+        if (value.intValue > array.count/2) {
+            return number.intValue;
+        }
+    }
+    return returnNumber;
 }
 
 #pragma mark --- 快速排序 小->大
@@ -299,22 +328,19 @@ int PartSort(int a[], int start, int end) {
     //选取关键字
     int key = a[end];
     
-    while (low < high)
-    {
+    while (low < high) {
+        
         //左边找比key大的值
-        while (low < high && a[low] <= key)
-        {
+        while (low < high && a[low] <= key) {
             ++low;
         }
         
         //右边找比key小的值
-        while (low < high && a[high] >= key)
-        {
+        while (low < high && a[high] >= key) {
             --high;
         }
         
-        if (low < high)
-        {
+        if (low < high) {
             //找到之后交换左右的值
             int temp = a[low];
             a[low] = a[high];
@@ -328,4 +354,8 @@ int PartSort(int a[], int start, int end) {
     
     return low;
 }
+
+
+
+
 @end

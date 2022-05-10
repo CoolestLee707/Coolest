@@ -157,11 +157,11 @@
 //    int count = [self cacluAll:100];
 //    ADLog(@"--%d",count);
     
-//    [self test10];
+    [self test10];
     
 //    [self test11];
     
-    [self test12];
+//    [self test12];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

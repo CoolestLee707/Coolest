@@ -24,6 +24,10 @@
 #define ProtocolSwiftSerSectName  "ProSwiftService"
 #endif
 
+#ifndef LiChuaminMod
+#define LiChuaminMod  "LiChuamin"
+#endif
+
 
 #define CubeDATA(sectname) __attribute((used, section("__DATA,"#sectname" ")))
 #define ServiceDATA(servicename) __attribute((used, section("__DATA,"#servicename" ")))
@@ -53,6 +57,20 @@ class WBCube; char * k##servicename##_ser CubeDATA(ProtocolService) = "{ \""#ser
  */
 #define RouterSwiftProtocolService(mod,servicename,impl) \
 class WBCube; char * k##servicename##_ser CubeDATA(ProSwiftService) = "{ \""#mod"."#servicename"\" : \""#mod"."#impl"\"}";
+
+
+/**
+ 测试命令写入
+ used是告诉编译器不用优化掉此函数，即使没有地方使用
+ */
+#define testWriteDATA(authername) __attribute((used, section("__DATA,"#authername" ")))
+
+#define ModTestDATA(age,address,number) \
+class WBCube; char * k##servicename##_ser testWriteDATA(LiChuamin) = "{ \""#age"."#age"\" : \""#address"_"#number"\"}";
+
 @interface WBAnnotation : NSObject
 
 @end
+
+
+//attribute是编译属性，我们可以通过 __attribute__((section("name")))编译属性将数据写到可执行文件中，然后在使用的时候，从可执行文件中读取出来。

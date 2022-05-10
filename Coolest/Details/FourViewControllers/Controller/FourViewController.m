@@ -245,6 +245,9 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     ADLog(@"点击屏幕");
+    
+    [self newMessageWarning:3 msgCount:5];
+
 //    NSArray *arr= @[@1,@2];
 //    ADLog(@"%@",arr[3]);
 
