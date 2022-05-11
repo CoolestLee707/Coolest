@@ -16,9 +16,9 @@
 
 @implementation PasswordInputWindow
 
+static id shareInstance = nil;
+
 + (instancetype)shareInstance {
-    
-    static id shareInstance = nil;
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -28,6 +28,15 @@
     
     return shareInstance;
 }
+//2、重写allocWithZone方法，在调用alloc和allocWithZone方法产生的实例可能不是同一个实例，单例未真正实现
+//+(instancetype)allocWithZone:(struct _NSZone *)zone {
+//
+//    static dispatch_once_t onceToken;
+//       dispatch_once(&onceToken, ^{
+//           shareInstance = [super allocWithZone:zone];
+//       });
+//       return shareInstance;
+//}
 
 - (void)show {
     
