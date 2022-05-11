@@ -19,7 +19,7 @@ PODS:
   - CLHashString (0.1.0)
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
-  - IQKeyboardManager (6.5.9)
+  - IQKeyboardManager (6.5.10)
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
@@ -66,7 +66,7 @@ PODS:
     - Texture/Core
   - Texture/Video (3.1.0):
     - Texture/Core
-  - TZImagePickerController (3.8.0)
+  - TZImagePickerController (3.8.1)
   - YYModel (1.0.4)
   - YYText (1.0.7)
   - ZXingObjC (3.6.5):
@@ -144,7 +144,7 @@ SPEC CHECKSUMS:
   CLHashString: 6033175b64d28c8037cafbb21589b9922b45b59b
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -158,11 +158,11 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   Texture: 2e8ab2519452515f7f5a520f5a8f7e0a413abfa3
-  TZImagePickerController: f236fbc54a7e5359ae620d45c2fcac5ab9486284
+  TZImagePickerController: 943511626019431372cf908f24c114521e484f0e
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 801e4c379662f3bbd0436318120840eff2e65888
+PODFILE CHECKSUM: a998ea02519a6dbe5237c2101d41037899bf850d
 
 COCOAPODS: 1.11.3

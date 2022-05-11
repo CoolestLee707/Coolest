@@ -1,0 +1,6 @@
+framework module CLHashString {
+  umbrella header "CLHashString-umbrella.h"
+
+  export *
+  module * { export * }
+}

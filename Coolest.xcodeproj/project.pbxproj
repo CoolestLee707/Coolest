@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D4421720B31DEBAD90F3946F /* libPods-Coolest.a */; };
 		1A444AFC26D37D2100448BB9 /* e70d9058d8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1A444AFB26D37D2100448BB9 /* e70d9058d8.pdf */; };
 		1A444AFF26D6374C00448BB9 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A444AFE26D6374C00448BB9 /* LocationViewController.m */; };
 		1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ACED0C426CBA72800EEC483 /* FileViewController.m */; };
@@ -155,6 +154,7 @@
 		BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */; };
 		BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC0F242107320800185A31 /* UIViewController+Appear.m */; };
 		BFDC9DC022B7837500D78527 /* Son.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDC9DBF22B7837500D78527 /* Son.m */; };
+		E91A2795490ABB63370D710E /* libPods-Coolest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEC8B1910564716ADD00BD3 /* libPods-Coolest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +293,7 @@
 		4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+badge.m"; sourceTree = "<group>"; };
 		4AF8E9F12827BC1700D41876 /* LCMTestMachO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMTestMachO.h; sourceTree = "<group>"; };
 		4AF8E9F22827BC1700D41876 /* LCMTestMachO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCMTestMachO.m; sourceTree = "<group>"; };
+		9DEC8B1910564716ADD00BD3 /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF14136921AFC76F002E5FAB /* msgSendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgSendViewController.h; sourceTree = "<group>"; };
 		BF14136A21AFC76F002E5FAB /* msgSendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgSendViewController.m; sourceTree = "<group>"; };
 		BF14136C21AFC829002E5FAB /* msgPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgPerson.h; sourceTree = "<group>"; };
@@ -480,7 +481,6 @@
 		BFDC9DBE22B7837500D78527 /* Son.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Son.h; sourceTree = "<group>"; };
 		BFDC9DBF22B7837500D78527 /* Son.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Son.m; sourceTree = "<group>"; };
 		BFE105C221D9B6E90036709A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		D4421720B31DEBAD90F3946F /* libPods-Coolest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Coolest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7433ABF642DFC29171A8E66 /* Pods-Coolest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coolest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Coolest/Pods-Coolest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -489,7 +489,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				046CF918C96900592D2CDE48 /* libPods-Coolest.a in Frameworks */,
+				E91A2795490ABB63370D710E /* libPods-Coolest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,7 +1431,7 @@
 		CE6BCBB5A8D358AFB755B862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D4421720B31DEBAD90F3946F /* libPods-Coolest.a */,
+				9DEC8B1910564716ADD00BD3 /* libPods-Coolest.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1447,7 +1447,7 @@
 				BF59E17E210035530004EC56 /* Sources */,
 				BF59E17F210035530004EC56 /* Frameworks */,
 				BF59E180210035530004EC56 /* Resources */,
-				ED39EE609F718738BFCB1129 /* [CP] Copy Pods Resources */,
+				0D7A70FBA39EAA0C25769A99 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1576,6 +1576,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0D7A70FBA39EAA0C25769A99 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E3CA29A62A3CF11CC480A870 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1592,23 +1609,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED39EE609F718738BFCB1129 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Coolest/Pods-Coolest-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
