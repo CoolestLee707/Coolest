@@ -11,6 +11,7 @@
 #import "CMPerson.h"
 #import "objc1.h"
 #import "objc2.h"
+#import "BlockTestObject.h"
 
 
 @interface BlockViewController ()
@@ -23,6 +24,10 @@
 @property (nonatomic,strong) objc2 *ob2;
 
 @property (nonatomic,weak) CMPerson *weakPerson;
+
+// masonry 不会循环引用
+@property(nonatomic,strong)BlockTestObject *obj1;
+@property(nonatomic,copy)NSString *BlockTestName;
 
 @end
 
@@ -55,6 +60,9 @@ void test100() {
 
     self.title = @"Block";
     
+    
+//    masonry
+    [self testMasonry];
     
 //    ADLog("-- %@",[ test101() class]);
     
@@ -134,6 +142,20 @@ void test100() {
     
 }
 
+- (void)testMasonry {
+    self.name = @"Jock";
+    self.obj1 = [BlockTestObject new];
+    
+//    不会循环引用，都会的dealloc
+//    [self.obj1 testMethod:^{
+//        ADLog(@"self.name - %@",self.name);
+//    }];
+
+//    会循环引用，都不会的dealloc
+    [self.obj1 testMethodSave:^{
+        ADLog(@"self.name - %@",self.name);
+    }];
+}
 - (void)weakTest2 {
     
     self.weakPerson = [[CMPerson alloc] init];
