@@ -270,6 +270,7 @@ typedef NS_ENUM(NSUInteger, WBRouterViewControlerEnterMode) {
     NSString *modName = [WBRouter.sharedInstance.serviceMap valueForKey:targetName];
     NSString *targetClsStr = nil;
     // Swift
+//    在swift中使用时，需要传入对应项目的target名称
     if (modName) {
         targetClsStr = [NSString stringWithFormat:@"%@.Service_%@", modName, targetName];
     }

@@ -62,7 +62,7 @@
     int value = [self selectMostNumber:arr];
     ADLog(@"value - %d",value);
 }
-// 寻找出现次数一半以上的
+#pragma mark - 寻找出现次数一半以上的
 - (int)selectMostNumber:(NSArray *)array {
     int returnNumber = 0;
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
@@ -229,7 +229,7 @@ void sortQuickly(int a[],int left,int right) {
     ADLog(@"allViews - %@",allViews);
 }
 
-//寻找两个视图最近的父视图
+#pragma mark -  寻找两个视图最近的父视图
 - (UIView *)findMinParent:(UIView *)view1 And:(UIView *)view2 {
     
     UIView *vP1 = [view1 superview];
@@ -249,7 +249,7 @@ void sortQuickly(int a[],int left,int right) {
     return nil;
 }
 
-//寻找两个视图所有的父视图
+#pragma mark  寻找两个视图所有的父视图
 - (NSArray *)findAllParents:(UIView *)view1 And:(UIView *)view2 {
     NSMutableArray *array1 = [NSMutableArray arrayWithCapacity:0];
     NSMutableArray *array2 = [NSMutableArray arrayWithCapacity:0];
@@ -280,7 +280,7 @@ void sortQuickly(int a[],int left,int right) {
     return resultArray.copy;
 }
 
-//冒泡排序
+#pragma mark   冒泡排序
 - (void)sort1:(NSMutableArray *)numbers {
     
     for (int i=0; i<numbers.count-1; i++) {
@@ -296,7 +296,7 @@ void sortQuickly(int a[],int left,int right) {
     ADLog(@"%@",numbers);
 }
 
-//求一个无序数组的中位数
+#pragma mark  求一个无序数组的中位数
 int findMedian(int a[], int aLen) {
     int low = 0;
     int high = aLen - 1;

@@ -29,8 +29,8 @@
 #endif
 
 
-#define CubeDATA(sectname) __attribute((used, section("__DATA,"#sectname" ")))
-#define ServiceDATA(servicename) __attribute((used, section("__DATA,"#servicename" ")))
+#define CubeDATA(sectname) __attribute__((used, section("__DATA,"#sectname" ")))
+#define ServiceDATA(servicename) __attribute__((used, section("__DATA,"#servicename" ")))
 
 /**
  模块注册宏（同步触发模块的init事件）
@@ -63,7 +63,7 @@ class WBCube; char * k##servicename##_ser CubeDATA(ProSwiftService) = "{ \""#mod
  测试命令写入
  used是告诉编译器不用优化掉此函数，即使没有地方使用
  */
-#define testWriteDATA(authername) __attribute((used, section("__DATA,"#authername" ")))
+#define testWriteDATA(authername) __attribute__((used, section("__DATA,"#authername" ")))
 
 #define ModTestDATA(age,address,number) \
 class WBCube; char * k##servicename##_ser testWriteDATA(LiChuamin) = "{ \""#age"."#age"\" : \""#address"_"#number"\"}";
@@ -73,4 +73,4 @@ class WBCube; char * k##servicename##_ser testWriteDATA(LiChuamin) = "{ \""#age"
 @end
 
 
-//attribute是编译属性，我们可以通过 __attribute__((section("name")))编译属性将数据写到可执行文件中，然后在使用的时候，从可执行文件中读取出来。
+//__attribute__是编译属性，我们可以通过 __attribute__((section("name")))编译属性将数据写到可执行文件中，然后在使用的时候，从可执行文件中读取出来。

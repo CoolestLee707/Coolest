@@ -25,7 +25,7 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
     NSArray<NSString *> *protocolService = WBReadConfiguration(ProtocolSerSectName,mhp);
     NSArray<NSString *> *swiftProtocolService = WBReadConfiguration(ProtocolSwiftSerSectName, mhp);
     
-//    NSArray *lcmMods = WBReadConfiguration(LiChuaminMod, mhp);
+    NSArray *lcmMods = WBReadConfiguration(LiChuaminMod, mhp);
     
     // 注册模块，处理优先级、方法回调等
     for (NSString *modName in mods) {

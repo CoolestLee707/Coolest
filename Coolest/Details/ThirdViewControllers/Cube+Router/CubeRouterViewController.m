@@ -37,10 +37,19 @@
         self.navigationController.navigationBar.standardAppearance = barApp;
     }
 }
+
+
+static void stringCleanUp(__strong NSString **string) {
+    NSLog(@"%@",*string);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"testRouter";
     
+//    在作用域结束时执行 stringCleanUp
+    __strong NSString *string __attribute__((cleanup(stringCleanUp))) = @"lcmm";
+
     kWeakSelf(weakSelf);
 
     NSArray *urlButtonnArr = @[@"URL（Target-Action）OC",
@@ -97,8 +106,8 @@
             [weakSelf btn3Click:weakBtn3];
         }];
     }
+    
 }
-
 
 
 #pragma mark - 通过路由地址调用
