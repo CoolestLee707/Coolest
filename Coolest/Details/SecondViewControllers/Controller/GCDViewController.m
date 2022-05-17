@@ -190,25 +190,28 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
        ADLog(@"1111");
-        // 卡死
-        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            ADLog(@"--- timer");
-        }];
-        [[NSRunLoop currentRunLoop] run];
-       
-        /*
-               self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
-                   ADLog(@"--- timer");
-               }];
-               
-               [self performSelector:@selector(extendsion) withObject:nil afterDelay:.0];
+        // [[NSRunLoop currentRunLoop] run] + timer + self  会无法dealloc，没有RunLoop：在queue执行完block后，queue会释放block（赋值nil）；RunLoop跑起来就不会释放self
+//        ADLog(@"--- name %@",weakSelf.name);
 
-               [[NSRunLoop currentRunLoop] run];
-               */
+//        weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//            ADLog(@"--- timer");
+//        }];
+//        [[NSRunLoop currentRunLoop] run];
+       
+        
+//        repeats=YES，一直执行这个Timer任务,repeats=NO执行后面的,YES(weakSelf),NO（都可以）
+            weakSelf.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+                ADLog(@"--- timer");
+            }];
+               
+//            [self performSelector:@selector(printlog) withObject:nil afterDelay:.0];
+
+            [[NSRunLoop currentRunLoop] run];
+               
                
                /*
                //此种方式创建的timer没有添加至runloop中
-               self.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(extendsion) userInfo:nil repeats:YES];
+                weakSelf.timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:@selector(printlog) userInfo:nil repeats:YES];
               
                [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
                [[NSRunLoop currentRunLoop] run];

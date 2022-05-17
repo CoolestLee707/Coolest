@@ -20,6 +20,13 @@
     [super viewDidLoad];
     self.title = @"RunLoopViewController";
     
+//    [self test1];
+    
+    [self aboutRunloop];
+    
+}
+
+- (void)test1 {
     __weak __typeof(self) weakSelf = self;
 //    self.timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
 //        [weakSelf printlog];
@@ -51,8 +58,29 @@
 //        [[NSRunLoop currentRunLoop] run];
 
     });
-    
 }
+- (void)aboutRunloop {
+    [self performSelector:@selector(printlog1) withObject:nil afterDelay:5];
+    NSLog(@"0");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    NSLog(@"1");
+        
+//     [[NSRunLoop currentRunLoop] run]; //在这启动runloop不会成功，因为没有source事件（打印：1->3）
+        
+    [self performSelector:@selector(test) withObject:nil afterDelay:5];
+        
+//      [[NSRunLoop currentRunLoop] run];
+     //在这启动runloop会成功，因为有了timer事件,runloop启动之后立马执行timer事件，timer事件执行完才会执行后续的事件所以先打印2在打印3（打印：1->2->3）
+    
+    NSLog(@"3");
+    [[NSRunLoop currentRunLoop] run];
+        //在这启动runloop会成功，因为有了timer事件（打印：1->3->2）
+    });
+}
+- (void)test {
+    NSLog(@"2");
+}
+
 - (void)printlog {
     ADLog(@"%s----%@---%@",__func__,[NSThread currentThread],[NSRunLoop currentRunLoop]);
 }

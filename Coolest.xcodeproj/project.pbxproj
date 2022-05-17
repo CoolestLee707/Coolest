@@ -62,6 +62,8 @@
 		4A80C86C281E60D600AEA974 /* SwiftProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */; };
 		4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86D281E61E200AEA974 /* Swift_demo.swift */; };
 		4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */; };
+		4AB63BE92832892D00736AA9 /* AssociatedObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */; };
+		4AB63BEC2832894100736AA9 /* AssociatedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BEB2832894100736AA9 /* AssociatedPerson.m */; };
 		4AF8E9EE28276BAD00D41876 /* UITabBar+badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */; };
 		4AF8E9F32827BC1700D41876 /* LCMTestMachO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8E9F22827BC1700D41876 /* LCMTestMachO.m */; };
 		4AF8E9FD282B99D000D41876 /* BlockTestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8E9FB282B99CF00D41876 /* BlockTestObject.m */; };
@@ -290,6 +292,10 @@
 		4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocol.swift; sourceTree = "<group>"; };
 		4A80C86D281E61E200AEA974 /* Swift_demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_demo.swift; sourceTree = "<group>"; };
 		4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service_testModule12.swift; sourceTree = "<group>"; };
+		4AB63BE72832892C00736AA9 /* AssociatedObjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedObjectViewController.h; sourceTree = "<group>"; };
+		4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedObjectViewController.m; sourceTree = "<group>"; };
+		4AB63BEA2832894100736AA9 /* AssociatedPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedPerson.h; sourceTree = "<group>"; };
+		4AB63BEB2832894100736AA9 /* AssociatedPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedPerson.m; sourceTree = "<group>"; };
 		4AF8E9EC28276BAD00D41876 /* UITabBar+badge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBar+badge.h"; sourceTree = "<group>"; };
 		4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+badge.m"; sourceTree = "<group>"; };
 		4AF8E9F12827BC1700D41876 /* LCMTestMachO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCMTestMachO.h; sourceTree = "<group>"; };
@@ -703,6 +709,17 @@
 				4A80C86D281E61E200AEA974 /* Swift_demo.swift */,
 			);
 			path = TestModule3;
+			sourceTree = "<group>";
+		};
+		4AB63BE62832890800736AA9 /* AssociatedObject */ = {
+			isa = PBXGroup;
+			children = (
+				4AB63BE72832892C00736AA9 /* AssociatedObjectViewController.h */,
+				4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */,
+				4AB63BEA2832894100736AA9 /* AssociatedPerson.h */,
+				4AB63BEB2832894100736AA9 /* AssociatedPerson.m */,
+			);
+			path = AssociatedObject;
 			sourceTree = "<group>";
 		};
 		4AF8E9F02827BBE400D41876 /* TestModule */ = {
@@ -1148,6 +1165,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4AB63BE62832890800736AA9 /* AssociatedObject */,
 				4AF8E9F4282B8F2500D41876 /* Block */,
 				4A80C85E281D58FF00AEA974 /* Cube+Router */,
 				4A80C857281D206700AEA974 /* Arithmetic */,
@@ -1633,6 +1651,7 @@
 			files = (
 				4A5197D62817E2F600561E41 /* fishhook.c in Sources */,
 				BF59E203210050E50004EC56 /* SecondViewController.m in Sources */,
+				4AB63BEC2832894100736AA9 /* AssociatedPerson.m in Sources */,
 				4A80C851281B874900AEA974 /* HookObject+swize1.m in Sources */,
 				4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */,
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
@@ -1647,6 +1666,7 @@
 				4A5197DC2817E39700561E41 /* CLPermenantThread.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				4A5196E72813A27600561E41 /* WBAppDelegate.m in Sources */,
+				4AB63BE92832892D00736AA9 /* AssociatedObjectViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				4A5197D02817E21200561E41 /* CL_ExceptionHander.m in Sources */,
 				3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */,

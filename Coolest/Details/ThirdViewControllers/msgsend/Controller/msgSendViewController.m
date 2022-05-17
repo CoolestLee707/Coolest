@@ -15,6 +15,7 @@
 @interface msgSendViewController ()
 
 @property (nonatomic,copy) NSString *name;
+@property (atomic,copy) NSString *atomicName;
 @property (nonatomic,strong) msgPerson *person;
 @property (nonatomic,strong) msgDog *dog;
 @property (nonatomic,strong) msgCat *cat;
@@ -44,21 +45,24 @@
 //    self.cat = [msgCat new];
 //    self.cat.name = @"kit";
     
-    self.kit = [msgKit new];
+//    self.kit = [msgKit new];
+//
+//    self.dog = [msgDog new];
+//    [self.dog eat];
     
-    self.dog = [msgDog new];
-    [self.dog eat];
+   
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)testAtomic {
+    
+//    nonatomic 多线程setter，一个对象对次release崩溃，对NSArray容器使用时无法保证线程安全
+    for (int i=0; i<1000; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            self.atomicName = [NSString stringWithFormat:@"hdaskh jkdhasjkdhakdh kajshdkljsahd ksal %d",i];
+        });
+    }
+    ADLog(@"self.name - %@",self.atomicName);
 }
-*/
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {

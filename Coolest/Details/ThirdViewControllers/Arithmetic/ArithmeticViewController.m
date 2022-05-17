@@ -58,9 +58,12 @@
 //        printf("%d ", list[i]);
 //    }
     
-    NSArray *arr = @[@"0",@"1",@"3",@"2",@"2",@"2",@"2",@"2"];
-    int value = [self selectMostNumber:arr];
-    ADLog(@"value - %d",value);
+//    NSArray *arr = @[@"0",@"1",@"3",@"2",@"2",@"2",@"2",@"2"];
+//    int value = [self selectMostNumber:arr];
+//    ADLog(@"value - %d",value);
+        
+    NSMutableArray *sortArray = @[@"8.0.21",@"0.0.21",@"0.0.20",@"3.0.2",@"5.1.2",@"4.0.2",@"1.12.2",@"3.0.20",@"4.0",@"10.0.2.4"].mutableCopy;
+    [self sortStringArray:sortArray];
 }
 #pragma mark - 寻找出现次数一半以上的
 - (int)selectMostNumber:(NSArray *)array {
@@ -290,6 +293,42 @@ void sortQuickly(int a[],int left,int right) {
             if (a.intValue > b.intValue) {
                 numbers[j] = b;
                 numbers[j+1] = a;
+            }
+        }
+    }
+    ADLog(@"%@",numbers);
+}
+
+#pragma mark   冒泡排序 - 不同长度字符串版本号排序
+- (void)sortStringArray:(NSMutableArray *)numbers {
+    
+    for (int i=0; i<numbers.count-1; i++) {
+        for (int j=0; j<numbers.count-1-i; j++) {
+            NSString *a = numbers[j];
+            NSString *b = numbers[j+1];
+            NSArray *arrA = [a componentsSeparatedByString:@"."];
+            NSArray *arrB = [b componentsSeparatedByString:@"."];
+
+            for (int k = 0; k<MAX(arrA.count, arrB.count); k++) {
+                NSString *aSubStr = @"0";
+                NSString *bSubStr = @"0";
+                
+                if (k < arrA.count) {
+                    aSubStr = arrA[k];
+                }
+                if (k < arrB.count) {
+                    bSubStr = arrB[k];
+                }
+                
+                if (aSubStr.intValue > bSubStr.intValue) {
+                    numbers[j] = b;
+                    numbers[j+1] = a;
+                    break;
+                }else if (aSubStr.intValue == bSubStr.intValue){
+                    continue;
+                }else {
+                    break;
+                }
             }
         }
     }

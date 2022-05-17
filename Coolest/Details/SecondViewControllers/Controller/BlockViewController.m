@@ -62,7 +62,7 @@ void test100() {
     
     
 //    masonry
-    [self testMasonry];
+//    [self testMasonry];
     
 //    ADLog("-- %@",[ test101() class]);
     
@@ -139,7 +139,29 @@ void test100() {
     
 //    [self weakTest2];
 
-    
+    [self aboutBlock];
+}
+
+- (void)aboutBlock {
+    // 基本数据类型捕获的是值，所以修改不能影响外部的变量
+    // 指针类型捕获的是指针，可以修改指针指向的值，但是不能修改指针
+    // 以上两种类型，如果想修改外部变量（基本类型、指针类型）都需要使用__block修饰
+    __block int a = 10;
+    __block NSString *name = [NSString stringWithFormat:@"123abc"];
+    __block NSMutableString *name1 = [NSMutableString stringWithFormat:@"123abc"];
+    __block NSMutableArray *arr = [NSMutableArray arrayWithObjects:@"3",@"4", nil];
+    CMPerson *obj = [[CMPerson alloc]init];
+    obj.age = @"1";
+    void (^block)(NSDictionary *result) = ^(NSDictionary *result) {
+        a = 20;
+        name = [NSString stringWithFormat:@"123abcqqq"];
+        name1 = [NSMutableString stringWithFormat:@"123abcwww"];
+        [arr addObject:@"5"];
+        arr = [NSMutableArray arrayWithObjects:@"8",@"9", nil];
+        NSLog(@"block arr == %@",arr);
+        obj.age = @"123"; //不是修改obj，使用obj
+    };
+    block(@{@"key": @"123"});
 }
 
 - (void)testMasonry {
