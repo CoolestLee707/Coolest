@@ -14,13 +14,27 @@ static BOOL dismissed;
 
 +(void)setupExceptionHandler {
     
+//    NSSetUncaughtExceptionHandler接收的参数是一个函数指针，该函数需要我们实现。当程序发生异常崩溃时，该函数会得到调用，所以我们对于异常的处理都是写在这个函数里。但是他无法处理内存访问错误、重复释放等错误，因为这些错误发送的SIGNAL。所以需要处理这些SIGNAL，所以我们还要设置处理SIGNAL的函数。
     NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
+
 }
 
+void UncaughtException(NSException *exception) {
+    
+    NSUncaughtExceptionHandler * g_previousUncaughtExceptionHandler = NSGetUncaughtExceptionHandler();
+    
+    if (g_previousUncaughtExceptionHandler != NULL) {
+        g_previousUncaughtExceptionHandler(exception);
+    }
+}
 
 void UncaughtExceptionHandler(NSException *exception) {
+    
+//    异常的堆栈信息
     NSArray *stackSymbolsArr = [exception callStackSymbols];
+//    出现异常的原因
     NSString *reason = [exception reason];
+//    异常名称
     NSString *name = [exception name];
     NSDictionary *userInfo =@{@"00":@"11"};
     

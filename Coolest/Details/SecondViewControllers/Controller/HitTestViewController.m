@@ -32,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
+    [self testButtonAddGesture];
     
 //    [self createUI1];
     
@@ -43,6 +44,20 @@
 
 //    [self enumeratorMethod];
 
+}
+
+- (void)testButtonAddGesture {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    button.backgroundColor = UIColor.redColor;
+    [self.view addSubview:button];
+    [button addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"点击button");
+    }];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(buttonTap)];
+//    button上添加手势，默认不会响应button的点击，当手势的cancelsTouchesInView是NO时，button事件才会被调用，默认为YES。表示当手势识别器成功识别了手势之后，会通知Application取消响应链对事件的响应，并不再传递事件给hit-test view。
+    tap.cancelsTouchesInView = NO;
+    [button addGestureRecognizer:tap];
 }
 - (void)enumeratorMethod {
         NSArray *array = @[@"1",@"2",@"4",@"6",@"3",@"5",@"9",@"7",];

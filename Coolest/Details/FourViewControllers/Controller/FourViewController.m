@@ -246,12 +246,19 @@
 {
     ADLog(@"点击屏幕");
     
-    [self newMessageWarning:3 msgCount:5];
-
-//    NSArray *arr= @[@1,@2];
-//    ADLog(@"%@",arr[3]);
-
+    @try {
+        NSArray *arr= @[@1,@2];
+        ADLog(@"%@",arr[3]);
+    } @catch (NSException *exception) {
+        ADLog(@"catch");
+    } @finally {
+        ADLog(@"finally");
+    }
+//    @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"--- NSRangeException"] userInfo:nil];
+    
 //    [CLKeepAlive startLocation];
+    
+//    [self newMessageWarning:3 msgCount:5];
 
 }
 - (void)testSc {

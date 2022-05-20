@@ -11,6 +11,7 @@
 #import <objc/runtime.h>
 
 static char key;
+static char keyBlock;
 
 @interface AssociatedObjectViewController ()
 
@@ -34,10 +35,14 @@ static char key;
     
     __weak typeof(person) weakPerson = person;
     AssociatedPerson *(^block) (void) = ^AssociatedPerson *(void) {
+//        __weak typeof(weakPerson) StrongPerson = weakPerson;
         return weakPerson;
     };
-
-    objc_setAssociatedObject(self, &key, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    
+//   循环引用
+//    objc_setAssociatedObject(self, &key, person, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//  不会循环引用
+    objc_setAssociatedObject(self, &keyBlock, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -47,8 +52,8 @@ static char key;
 //    AssociatedPerson *person =objc_getAssociatedObject(self, &key);
 //    ADLog(@"%@   -  %@",person.name,person.vc);
 
-    AssociatedPerson *(^block)(void) =objc_getAssociatedObject(self, &key);
-    AssociatedPerson *p = block();
+    AssociatedPerson *(^block)(void) =objc_getAssociatedObject(self, &keyBlock);
+    AssociatedPerson *p = block?block():nil;
     ADLog(@"%@   -  %@",p.name,p.vc);
     
 //    objc_removeAssociatedObjects(self);

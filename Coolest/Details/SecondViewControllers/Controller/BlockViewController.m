@@ -149,6 +149,7 @@ void test100() {
     __block int a = 10;
     __block NSString *name = [NSString stringWithFormat:@"123abc"];
     __block NSMutableString *name1 = [NSMutableString stringWithFormat:@"123abc"];
+    NSMutableString *name2 = [NSMutableString stringWithFormat:@"qqqq"];
     __block NSMutableArray *arr = [NSMutableArray arrayWithObjects:@"3",@"4", nil];
     CMPerson *obj = [[CMPerson alloc]init];
     obj.age = @"1";
@@ -156,6 +157,7 @@ void test100() {
         a = 20;
         name = [NSString stringWithFormat:@"123abcqqq"];
         name1 = [NSMutableString stringWithFormat:@"123abcwww"];
+        name2.string = @"wwwww";//没有__block:使用可以，修改不可以
         [arr addObject:@"5"];
         arr = [NSMutableArray arrayWithObjects:@"8",@"9", nil];
         NSLog(@"block arr == %@",arr);
