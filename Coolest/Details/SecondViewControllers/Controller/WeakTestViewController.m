@@ -9,12 +9,12 @@
 #import "WeakTestViewController.h"
 #import "weakTestView.h"
 #import "WKWebviewViewController.h"
+#import "CMPerson.h"
 
 typedef void(^testBlock)(void);
 typedef void(^secondBlock)(WeakTestViewController *vc);
 
-@interface WeakTestViewController ()
-{
+@interface WeakTestViewController () {
    __weak UIViewController *controller;
     
     WeakManager *_manger;
@@ -66,6 +66,21 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
     self.title = @"weak";
     
+//    weakSelf和self是同一片内存空间，是映射关系，staticSelf持有的实际上是self，而staticSelf是一个全局的静态变量，所以self无法释放,用在block时会把weakSelf copy到堆中，堆中的weakSelf弱引用self
+    
+//    po self
+//    <WeakTestViewController: 0x7f9b19158cc0>
+//
+//    (lldb) po weakSelf
+//    <WeakTestViewController: 0x7f9b19158cc0>
+    
+    self.name = [NSString stringWithFormat:@"%d",arc4random()%10];
+    static UIViewController *staticSelf_;
+    __weak typeof(self) weakSelf = self;
+    staticSelf_ = weakSelf;
+ 
+    
+
 //    _namestr1 = @"Cool";
 //    ADLog(@"_namestr1 - %p ---- %p --- %p",_namestr1,&_namestr1,@"Cool");
 //
@@ -74,7 +89,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
     
 //    kWeakSelf(WeakSelf);
 //self被WeakManager强引用，就不会delloc
-    [[WeakManager shareInstance]openH5URLWithViewController:self withURL:@"https://www.baidu.com"];
+//    [[WeakManager shareInstance]openH5URLWithViewController:self withURL:@"https://www.baidu.com"];
 
 //    [self Test1];
     
@@ -397,6 +412,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 {
 //    block的timer可以在这里invalidate
 //    [self.timer invalidate];
+    ADLog(@"self.name %@",self.name);
 
     ADLog(@"___________%s",__func__);
 }
@@ -404,4 +420,6 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     ADLog(@"%@", self.weakString);
 }
+
+
 @end

@@ -9,8 +9,7 @@
 #import "WeakManager.h"
 #import "WKWebviewViewController.h"
 
-@interface WeakManager ()
-{
+@interface WeakManager () {
    __weak UIViewController *wtController;
 }
 @end

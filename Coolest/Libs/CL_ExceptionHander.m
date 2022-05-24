@@ -19,15 +19,6 @@ static BOOL dismissed;
 
 }
 
-void UncaughtException(NSException *exception) {
-    
-    NSUncaughtExceptionHandler * g_previousUncaughtExceptionHandler = NSGetUncaughtExceptionHandler();
-    
-    if (g_previousUncaughtExceptionHandler != NULL) {
-        g_previousUncaughtExceptionHandler(exception);
-    }
-}
-
 void UncaughtExceptionHandler(NSException *exception) {
     
 //    异常的堆栈信息

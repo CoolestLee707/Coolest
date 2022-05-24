@@ -26,7 +26,7 @@
     self.title = @"算法";
     
 //    寻找两个视图最近的父视图
-//    [self findParentView];
+    [self findParentView];
     
 //    有序数组合并
 //    NSArray *arr1 = @[@1,@3,@5,@6];
@@ -61,9 +61,11 @@
 //    NSArray *arr = @[@"0",@"1",@"3",@"2",@"2",@"2",@"2",@"2"];
 //    int value = [self selectMostNumber:arr];
 //    ADLog(@"value - %d",value);
+    
         
-    NSMutableArray *sortArray = @[@"8.0.21",@"0.0.21",@"0.0.20",@"3.0.2",@"5.1.2",@"4.0.2",@"1.12.2",@"3.0.20",@"4.0",@"10.0.2.4"].mutableCopy;
-    [self sortStringArray:sortArray];
+//    NSMutableArray *sortArray = @[@"8.0.21",@"0.0.21",@"0.0.20",@"3.0.2",@"5.1.2",@"4.0.2",@"1.12.2",@"3.0.20",@"4.0",@"10.0.2.4"].mutableCopy;
+//    [self sortStringArray:sortArray];
+    
 }
 #pragma mark - 寻找出现次数一半以上的
 - (int)selectMostNumber:(NSArray *)array {
@@ -230,6 +232,10 @@ void sortQuickly(int a[],int left,int right) {
 //    寻找两个视图最近的父视图
     NSArray *allViews = [self findAllParents:self.view32 And:self.view31];
     ADLog(@"allViews - %@",allViews);
+    
+    NSMutableArray *allSuperViews = [self recusiveSuperView:self.view31];
+    ADLog(@"allSuperViews - %@",allSuperViews);
+
 }
 
 #pragma mark -  寻找两个视图最近的父视图
@@ -281,6 +287,17 @@ void sortQuickly(int a[],int left,int right) {
         }
     }
     return resultArray.copy;
+}
+
+#pragma mark   递归查找所有父视图
+- (NSMutableArray *)recusiveSuperView:(UIView *)subView {
+    
+    NSMutableArray *arr = @[].mutableCopy;
+    if (subView) {
+        [arr addObject:subView];
+        [arr addObjectsFromArray:[self recusiveSuperView:subView.superview]];
+    }
+    return arr;
 }
 
 #pragma mark   冒泡排序
@@ -343,15 +360,14 @@ int findMedian(int a[], int aLen) {
     int mid = (aLen - 1) / 2;
     int div = PartSort(a, low, high);
     
-    while (div != mid)
-    {
-        if (mid < div)
-        {
+    while (div != mid) {
+        
+        if (mid < div) {
             //左半区间找
             div = PartSort(a, low, div - 1);
         }
-        else
-        {
+        
+        else {
             //右半区间找
             div = PartSort(a, div + 1, high);
         }

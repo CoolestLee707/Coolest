@@ -21,6 +21,7 @@ NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_hea
 //传入文件的mach_header以及一个虚拟内存地址 intptr_t。
 //如果你通过函数_dyld_register_func_for_add_image注册了一个映像被加载时的回调函数时，那么每当后续一个新的映像被加载但未初始化前就会调用注册的回调函数，回调函数的两个入参分别表示加载的映像的头结构和对应的Slide值。如果在调用_dyld_register_func_for_add_image时系统已经加载了某些映像，则会分别对这些加载完毕的每个映像调用注册的回调函数。
 
+// 注册初始化模块，可以采用懒加载方式注册，减少启动耗时
 static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) {
     NSArray *mods = WBReadConfiguration(CubeModSectName, mhp);
     NSArray *services = WBReadConfiguration(RouterSerSectName, mhp);
