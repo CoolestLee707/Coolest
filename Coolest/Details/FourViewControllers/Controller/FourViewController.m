@@ -13,6 +13,7 @@
 #import "FDtwoViewController.h"
 //#import "CLTaskTimer.h"
 #import "CLKeepAlive.h"
+#import "objc1.h"
 
 @interface FourViewController ()
 
@@ -32,6 +33,10 @@
 
 @property (nonatomic,strong) UILabel *actLabel;
 
+@property (nonatomic,assign) objc1 *objc1;
+
+@property (strong, nonatomic) NSLock *nsLock;
+@property (strong, nonatomic) NSRecursiveLock *recursiveLock;
 
 @end
 
@@ -45,10 +50,35 @@
     return _drawView;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+//    [self.objc1 run];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = UIColor.cyanColor;
+    
+    [self testNSLock];
+    
+//    [self testAssign];
+    
+
+//    NSArray *arr = @[[NSObject new], [NSObject new], [NSObject new]];
+//    NSMutableArray *arr1 = [NSMutableArray array];
+//    for (int i=0; i<3; i++) {
+//        NSObject *obj = [NSObject new];
+//        [arr1 addObject:obj];
+//    }
+//    ADLog(@"%p - %p -%p",arr[0],arr[1],arr[2]);
+//
+//    ADLog(@"%p - %p -%p",arr1[0],arr1[1],arr1[2]);
+    
+
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        ADLog(@"currentThread%@",[NSThread currentThread]);
+//        self.view.backgroundColor = UIColor.cyanColor;
+//    });
+    
        
 //    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    view.backgroundColor = [UIColor redColor];
@@ -131,7 +161,42 @@
         
 }
 
+- (void)testNSLock {
+    
+//    打印000
+    self.nsLock = [NSLock new];
+    self.recursiveLock = [NSRecursiveLock new];
+    
+//    000  在同一个线程上两次调用lock方法将永久锁定线程
+//    [self.nsLock lock];
+//    ADLog(@"000");
+//        [self.nsLock lock];
+//        ADLog(@"111");
+//        [self.nsLock unlock];
+//    ADLog(@"222");
+//    [self.nsLock unlock];
+//    ADLog(@"333");    
+    
+    // 000 111 222 333
+    [self.recursiveLock lock];
+    ADLog(@"000");
+        [self.recursiveLock lock];
+        ADLog(@"111");
+        [self.recursiveLock unlock];
+    ADLog(@"222");
+    [self.recursiveLock unlock];
+    ADLog(@"333");
+}
 
+- (void)testAssign {
+    // crash ,object will be released after assignment，当对象释放后（因为不存在强引用，离开作用域对象内存可能被回收），指针的地址还是存在的，也就是说指针并没有被置为nil,下次再访问该对象就会造成野指针异常
+//    self.objc1 = [[objc1 alloc]init];
+//    [self.objc1 run]; // 野指针异常
+    
+    objc1 *Tobjc1 = [[objc1 alloc]init];
+    self.objc1 = Tobjc1;
+    [self.objc1 run];
+}
 
 - (void)buttonBindSomething {
 
