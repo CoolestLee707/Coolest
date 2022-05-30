@@ -10,7 +10,17 @@ import Foundation
 
 class Service_testModule12: NSObject {
 
+//    _ 表示函数调用时可以忽略参数名称
+    func aaaaa(_ str:String?) -> Void {
+        print(str ?? "aaa")
+    }
+    func bbbbb(str:String?) -> Void {
+        print(str ?? "bbb")
+    }
     @objc func action_testSwiftMethod(_ parameters: [AnyHashable: Any]?) -> Dictionary<String, Any> {
+        
+        aaaaa("1111")
+        bbbbb(str: "2222")
         
         if let params = parameters {
             let queryTypeDict = params["info"] as? NSDictionary

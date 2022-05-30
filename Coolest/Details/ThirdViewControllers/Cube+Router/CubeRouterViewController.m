@@ -229,6 +229,9 @@ static void stringCleanUp(__strong NSString **string) {
         {
             id<SwiftProtocol> p2 = [WBRouter createService:@protocol(SwiftProtocol)];
             [p2 action_someOneTest:params];
+            [p2 action_someOneOCTest:^(NSDictionary * _Nonnull) {
+                ADLog(@"action_someOneOCTest");
+            }];
         }
             break;
         default:

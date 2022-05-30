@@ -25,7 +25,7 @@
 #import "ArithmeticViewController.h"
 #import "CubeRouterViewController.h"
 #import "AssociatedObjectViewController.h"
-
+#import "HitTestDemoViewController.h"
 #import <UserNotifications/UserNotifications.h>
 
 @interface ThirdViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -61,7 +61,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17-hook",@"18-Arithmetic算法",@"19-CubeRouter",@"20 AssociatedObjectViewController"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17-hook",@"18-Arithmetic算法",@"19-CubeRouter",@"20 AssociatedObjectViewController",@"21-HitTestDemo"];
     
     [self createUI];
 }
@@ -221,6 +221,12 @@
         case 19:
         {
             AssociatedObjectViewController* vc = [[AssociatedObjectViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 20:
+        {
+            HitTestDemoViewController *vc = [[HitTestDemoViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

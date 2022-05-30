@@ -76,7 +76,7 @@
 //    [self syncSerial];
     
 //    异步执行 + 串行队列
-//    [self asyncSerial];
+    [self asyncSerial];
     
 //    同步执行 + 主队列
 //    [self syncMain];
@@ -157,7 +157,7 @@
 //    int count = [self cacluAll:100];
 //    ADLog(@"--%d",count);
     
-    [self test10];
+//    [self test10];
     
 //    [self test11];
     

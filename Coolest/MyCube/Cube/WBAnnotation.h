@@ -66,7 +66,7 @@ class WBCube; char * k##servicename##_ser CubeDATA(ProSwiftService) = "{ \""#mod
 #define testWriteDATA(authername) __attribute__((used, section("__DATA,"#authername" ")))
 
 #define ModTestDATA(age,address,number) \
-class WBCube; char * k##servicename##_ser testWriteDATA(LiChuamin) = "{ \""#age"."#age"\" : \""#address"_"#number"\"}";
+class WBCube; char * k##age##_ser testWriteDATA(LiChuamin) = "{ \""#age"."#age"\" : \""#address"_"#number"\"}";
 
 @interface WBAnnotation : NSObject
 

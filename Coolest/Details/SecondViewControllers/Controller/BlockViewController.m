@@ -29,6 +29,9 @@
 @property(nonatomic,strong)BlockTestObject *obj1;
 @property(nonatomic,copy)NSString *BlockTestName;
 
+@property(nonatomic,copy) void(^cmBlock)(void);
+@property(nonatomic,copy) void(^cmBlock1)(void);
+
 @end
 
 @implementation BlockViewController
@@ -60,7 +63,9 @@ void test100() {
 
     self.title = @"Block";
     
-    
+//    [self testWeakStrongSelf];
+
+
 //    masonry
 //    [self testMasonry];
     
@@ -72,8 +77,9 @@ void test100() {
     
 //    void (^testBlock1)(void) = ^{
 //
-//        ADLog(@"testBlock ----- %@",abc);
+//        ADLog(@"testBlock ----- %@",self);
 //    };
+//    testBlock1();
 //
 //    abc = @"7837213712387120938712";
 //    [hj appendString:@"11111111111111"];
@@ -139,9 +145,49 @@ void test100() {
     
 //    [self weakTest2];
 
-    [self aboutBlock];
+//    [self aboutBlock];
 }
 
+// 定义block就会处理内部引用计数关系
+- (void)testWeakStrongSelf {
+    
+    __weak typeof(self)WeakSelf = self;
+    
+    self.cmBlock = ^{
+        __strong typeof(WeakSelf)StrongSelf = WeakSelf;//栈上临时变量StrongSelf->self
+        sleep(3);
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            ADLog(@"%@",StrongSelf.title);
+//        });
+        
+        ADLog(@"%@",StrongSelf.title);
+        
+        // 0
+        StrongSelf.cmBlock1 = ^{
+            ADLog(@"StrongSelf - %@",WeakSelf.title); // dealloc
+        };
+        
+        // 1
+//        WeakSelf.cmBlock1 = ^{
+//            ADLog(@"StrongSelf - %@",StrongSelf.title); // do not dealloc, __strong 捕获self
+//        };
+        
+        // 2
+//        WeakSelf.cmBlock1 = ^{
+//            ADLog(@"WeakSelf - %@",WeakSelf.title); // dealloc
+//        };
+        
+        // 3
+//        __weak typeof(StrongSelf)WeakWeakSelf = StrongSelf;
+//        WeakSelf.cmBlock1 = ^{
+//            ADLog(@"WeakWeakSelf - %@",WeakWeakSelf.title); // dealloc
+//        };
+        WeakSelf.cmBlock1();
+    };
+    
+    self.cmBlock();
+    
+}
 - (void)aboutBlock {
     // 基本数据类型捕获的是值，所以修改不能影响外部的变量
     // 指针类型捕获的是指针，可以修改指针指向的值，但是不能修改指针

@@ -46,6 +46,9 @@
 		4A5197D62817E2F600561E41 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 4A5197D42817E2F600561E41 /* fishhook.c */; };
 		4A5197D92817E37700561E41 /* CLKeepAlive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5197D82817E37700561E41 /* CLKeepAlive.m */; };
 		4A5197DC2817E39700561E41 /* CLPermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5197DB2817E39700561E41 /* CLPermenantThread.m */; };
+		4A544AA92840E0A5004CBDEC /* HitTestDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AA82840E0A5004CBDEC /* HitTestDemoViewController.m */; };
+		4A544AAC2840E0C0004CBDEC /* HitTestDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */; };
+		4A544AAF2840E7D6004CBDEC /* HitTestDemoSubView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -260,6 +263,12 @@
 		4A5197D82817E37700561E41 /* CLKeepAlive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLKeepAlive.m; sourceTree = "<group>"; };
 		4A5197DA2817E39700561E41 /* CLPermenantThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLPermenantThread.h; sourceTree = "<group>"; };
 		4A5197DB2817E39700561E41 /* CLPermenantThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLPermenantThread.m; sourceTree = "<group>"; };
+		4A544AA72840E0A5004CBDEC /* HitTestDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestDemoViewController.h; sourceTree = "<group>"; };
+		4A544AA82840E0A5004CBDEC /* HitTestDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestDemoViewController.m; sourceTree = "<group>"; };
+		4A544AAA2840E0C0004CBDEC /* HitTestDemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestDemoView.h; sourceTree = "<group>"; };
+		4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestDemoView.m; sourceTree = "<group>"; };
+		4A544AAD2840E7D6004CBDEC /* HitTestDemoSubView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestDemoSubView1.h; sourceTree = "<group>"; };
+		4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestDemoSubView1.m; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -632,6 +641,19 @@
 				4A5197C52816788C00561E41 /* WBLayerView.m */,
 			);
 			path = DrawRect;
+			sourceTree = "<group>";
+		};
+		4A544AA62840E054004CBDEC /* HitTest */ = {
+			isa = PBXGroup;
+			children = (
+				4A544AA72840E0A5004CBDEC /* HitTestDemoViewController.h */,
+				4A544AA82840E0A5004CBDEC /* HitTestDemoViewController.m */,
+				4A544AAA2840E0C0004CBDEC /* HitTestDemoView.h */,
+				4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */,
+				4A544AAD2840E7D6004CBDEC /* HitTestDemoSubView1.h */,
+				4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */,
+			);
+			path = HitTest;
 			sourceTree = "<group>";
 		};
 		4A80C841281A2BF200AEA974 /* TestModules */ = {
@@ -1165,6 +1187,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A544AA62840E054004CBDEC /* HitTest */,
 				4AB63BE62832890800736AA9 /* AssociatedObject */,
 				4AF8E9F4282B8F2500D41876 /* Block */,
 				4A80C85E281D58FF00AEA974 /* Cube+Router */,
@@ -1705,6 +1728,7 @@
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
 				4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */,
 				3F709D4225402CBB00A59E06 /* CrashViewController.m in Sources */,
+				4A544AAF2840E7D6004CBDEC /* HitTestDemoSubView1.m in Sources */,
 				BF61BBFD230C02E100D020F5 /* SimpleFactoryPatternViewController.m in Sources */,
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
@@ -1716,6 +1740,7 @@
 				1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */,
 				4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
+				4A544AAC2840E0C0004CBDEC /* HitTestDemoView.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,
 				BF15B58B21B51C7A00006432 /* UIButton+CMButton.m in Sources */,
 				BF59E1E7210045E70004EC56 /* PasswordInputWindow.m in Sources */,
@@ -1737,6 +1762,7 @@
 				4A5196E82813A27600561E41 /* WBContext.m in Sources */,
 				BFDA8B7822366CAE001B4F26 /* MVPViewController.m in Sources */,
 				3F8B330624D0283100A684E2 /* LiveThreadViewController.m in Sources */,
+				4A544AA92840E0A5004CBDEC /* HitTestDemoViewController.m in Sources */,
 				BF90077E22952D900051DD7B /* Const.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				4AF8E9F32827BC1700D41876 /* LCMTestMachO.m in Sources */,

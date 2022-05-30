@@ -32,9 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
  
-    [self testButtonAddGesture];
+//    [self testButtonAddGesture];
     
-//    [self createUI1];
+    [self createUI1];
     
     
 //    [self createUI2];

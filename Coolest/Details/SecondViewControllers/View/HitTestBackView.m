@@ -32,6 +32,7 @@
  @param event 系统保证调用此方法的事件。如果从事件处理代码外部调用此方法，则可以指定nil
  @return 视图对象是当前视图和包含点的最远的后代
  */
+
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 {
     ADLog(@" +++++ point - %f-%f",point.x,point.y);

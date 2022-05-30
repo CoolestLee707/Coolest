@@ -15,7 +15,9 @@
 
 @implementation MessageViewController
 
-
++ (void)load {
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -7,6 +7,7 @@
 //
 
 #import "AspectsViewController.h"
+#import "Aspects.h"
 
 @interface AspectsViewController ()
 
@@ -24,6 +25,14 @@ init里不要出现创建view的代码，也不要调用self.view，在init里�
 在init方法里面，设置背景颜色，会生效吗 会生效
 */
 
++ (void)load {
+    [[self class] aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo){
+        ADLog(@"-----aspect_hookSelector");
+        [aspectInfo.originalInvocation invoke];
+        
+    } error:nil];
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -32,7 +41,9 @@ init里不要出现创建view的代码，也不要调用self.view，在init里�
     }
     return self;
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+    ADLog(@"-----viewWillAppear");
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -41,6 +52,8 @@ init里不要出现创建view的代码，也不要调用self.view，在init里�
 
     self.name = @"cool";
 //    NSURL *url = [NSURL URLWithString:@"www.baidu.com"];
+  
+  
     
 }
 
