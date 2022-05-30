@@ -49,6 +49,9 @@
 		4A544AA92840E0A5004CBDEC /* HitTestDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AA82840E0A5004CBDEC /* HitTestDemoViewController.m */; };
 		4A544AAC2840E0C0004CBDEC /* HitTestDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */; };
 		4A544AAF2840E7D6004CBDEC /* HitTestDemoSubView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */; };
+		4A544C632844FA93004CBDEC /* NSProxyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C622844FA93004CBDEC /* NSProxyViewController.m */; };
+		4A544C662844FABA004CBDEC /* MyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C652844FABA004CBDEC /* MyProxy.m */; };
+		4A544C692845024A004CBDEC /* SonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C682845024A004CBDEC /* SonProxy.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -269,6 +272,12 @@
 		4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestDemoView.m; sourceTree = "<group>"; };
 		4A544AAD2840E7D6004CBDEC /* HitTestDemoSubView1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestDemoSubView1.h; sourceTree = "<group>"; };
 		4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestDemoSubView1.m; sourceTree = "<group>"; };
+		4A544C612844FA93004CBDEC /* NSProxyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSProxyViewController.h; sourceTree = "<group>"; };
+		4A544C622844FA93004CBDEC /* NSProxyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSProxyViewController.m; sourceTree = "<group>"; };
+		4A544C642844FABA004CBDEC /* MyProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyProxy.h; sourceTree = "<group>"; };
+		4A544C652844FABA004CBDEC /* MyProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyProxy.m; sourceTree = "<group>"; };
+		4A544C672845024A004CBDEC /* SonProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonProxy.h; sourceTree = "<group>"; };
+		4A544C682845024A004CBDEC /* SonProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonProxy.m; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -654,6 +663,19 @@
 				4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */,
 			);
 			path = HitTest;
+			sourceTree = "<group>";
+		};
+		4A544C5E2844FA44004CBDEC /* NSProxy */ = {
+			isa = PBXGroup;
+			children = (
+				4A544C612844FA93004CBDEC /* NSProxyViewController.h */,
+				4A544C622844FA93004CBDEC /* NSProxyViewController.m */,
+				4A544C642844FABA004CBDEC /* MyProxy.h */,
+				4A544C652844FABA004CBDEC /* MyProxy.m */,
+				4A544C672845024A004CBDEC /* SonProxy.h */,
+				4A544C682845024A004CBDEC /* SonProxy.m */,
+			);
+			path = NSProxy;
 			sourceTree = "<group>";
 		};
 		4A80C841281A2BF200AEA974 /* TestModules */ = {
@@ -1187,6 +1209,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A544C5E2844FA44004CBDEC /* NSProxy */,
 				4A544AA62840E054004CBDEC /* HitTest */,
 				4AB63BE62832890800736AA9 /* AssociatedObject */,
 				4AF8E9F4282B8F2500D41876 /* Block */,
@@ -1688,6 +1711,7 @@
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				4A5197DC2817E39700561E41 /* CLPermenantThread.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
+				4A544C662844FABA004CBDEC /* MyProxy.m in Sources */,
 				4A5196E72813A27600561E41 /* WBAppDelegate.m in Sources */,
 				4AB63BE92832892D00736AA9 /* AssociatedObjectViewController.m in Sources */,
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
@@ -1752,6 +1776,7 @@
 				4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */,
 				BF1F2A4D229FE72100ED248C /* WeakManager.m in Sources */,
 				BF59E206210050F50004EC56 /* ThirdViewController.m in Sources */,
+				4A544C692845024A004CBDEC /* SonProxy.m in Sources */,
 				4A80C844281A2C2D00AEA974 /* testModule1.m in Sources */,
 				4A5197C62816788C00561E41 /* WBLayerView.m in Sources */,
 				BFB72E5C221BE0C3002F4743 /* asyncTestCell.m in Sources */,
@@ -1788,6 +1813,7 @@
 				4A80C869281E227800AEA974 /* Service_testModule3.m in Sources */,
 				BF4C45932111ABB80085E749 /* RunLoopObject1.m in Sources */,
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
+				4A544C632844FA93004CBDEC /* NSProxyViewController.m in Sources */,
 				BF7B055922845035008EDCF8 /* objc1.m in Sources */,
 				1AFE4BCB26DF52F300BD3048 /* FishHookViewController.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
