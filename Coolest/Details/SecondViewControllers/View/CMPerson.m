@@ -10,6 +10,10 @@
 
 @implementation CMPerson
 
+- (void)eat {
+    ADLog(@"CMPerson-----eat");
+}
+
 - (void)dealloc {
     ADLog(@"%s",__func__);
 }

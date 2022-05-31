@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,copy)NSString *age;
 
+- (void)eat;
 @end
 
 NS_ASSUME_NONNULL_END

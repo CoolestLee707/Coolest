@@ -8,10 +8,11 @@
 
 #import "AspectsViewController.h"
 #import "Aspects.h"
-
+#import "CMPerson.h"
 @interface AspectsViewController ()
 
 @property(nonatomic,copy)NSString *name;
+@property(nonatomic,strong)CMPerson *person;
 
 @end
 
@@ -27,9 +28,9 @@ init里不要出现创建view的代码，也不要调用self.view，在init里�
 
 + (void)load {
     [[self class] aspect_hookSelector:@selector(viewWillAppear:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo){
-        ADLog(@"-----aspect_hookSelector");
+        ADLog(@"-aspect - viewWillAppear");
         [aspectInfo.originalInvocation invoke];
-        
+
     } error:nil];
 }
 
@@ -42,21 +43,35 @@ init里不要出现创建view的代码，也不要调用self.view，在init里�
     return self;
 }
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     ADLog(@"-----viewWillAppear");
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Aspects";
-    [NSURL initialize];
 
     self.name = @"cool";
-//    NSURL *url = [NSURL URLWithString:@"www.baidu.com"];
-  
-  
+    self.person = [CMPerson new];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    button.backgroundColor = UIColor.yellowColor;
+    kWeakSelf(weakSelf);
+    [button addTargetSelected:^(UIButton * _Nonnull button) {
+        
+        [weakSelf.person aspect_hookSelector:@selector(eat) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> aspectInfo){
+            
+            ADLog(@"new--eat");
+        } error:nil];
+        
+    }];
+    [self.view addSubview:button];
+  
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.person eat];
+}
 - (void)dealloc {
     
     ADLog(@"-- %@",self.name);
