@@ -9,10 +9,15 @@
 #import "HitTestDemoViewController.h"
 #import "HitTestDemoView.h"
 #import "HitTestDemoSubView1.h"
+#import "HitTestButton.h"
+#import "UIButton+TestButtonC.h"
+
 @interface HitTestDemoViewController ()
 
 @property(nonatomic,strong)HitTestDemoView *demoView;
 @property(nonatomic,strong)HitTestDemoSubView1 *subView1;
+@property(nonatomic,strong) HitTestButton *hitButton;
+@property(nonatomic,strong) UIButton *buttonC;
 
 @end
 
@@ -37,6 +42,24 @@
     UITapGestureRecognizer *tap111 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCLick111)];
     [self.subView1 addGestureRecognizer:tap111];
     
+    // 扩大点击区域
+    self.hitButton = [HitTestButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:self.hitButton];
+    self.hitButton.frame = CGRectMake(100, 300, 100, 100);
+    self.hitButton.backgroundColor = UIColor.blueColor;
+    [self.hitButton addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"self.hitButton--Click");
+    }];
+    
+    self.buttonC = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:self.buttonC];
+    self.buttonC.frame = CGRectMake(100, 500, 100, 100);
+    self.buttonC.backgroundColor = UIColor.greenColor;
+//    [self.buttonC setEnlargeEdgeWithTop:20 right:30 bottom:40 left:50];
+    [self.buttonC setEnLargeEdge:10];
+    [self.buttonC addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"self.buttonC--Click");
+    }];
     
 }
 

@@ -52,6 +52,8 @@
 		4A544C632844FA93004CBDEC /* NSProxyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C622844FA93004CBDEC /* NSProxyViewController.m */; };
 		4A544C662844FABA004CBDEC /* MyProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C652844FABA004CBDEC /* MyProxy.m */; };
 		4A544C692845024A004CBDEC /* SonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C682845024A004CBDEC /* SonProxy.m */; };
+		4A544C6C2847B4AA004CBDEC /* HitTestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C6B2847B4A9004CBDEC /* HitTestButton.m */; };
+		4A544C6F2847BC39004CBDEC /* UIButton+TestButtonC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C6E2847BC39004CBDEC /* UIButton+TestButtonC.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -278,6 +280,10 @@
 		4A544C652844FABA004CBDEC /* MyProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyProxy.m; sourceTree = "<group>"; };
 		4A544C672845024A004CBDEC /* SonProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonProxy.h; sourceTree = "<group>"; };
 		4A544C682845024A004CBDEC /* SonProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonProxy.m; sourceTree = "<group>"; };
+		4A544C6A2847B4A9004CBDEC /* HitTestButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestButton.h; sourceTree = "<group>"; };
+		4A544C6B2847B4A9004CBDEC /* HitTestButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestButton.m; sourceTree = "<group>"; };
+		4A544C6D2847BC39004CBDEC /* UIButton+TestButtonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+TestButtonC.h"; sourceTree = "<group>"; };
+		4A544C6E2847BC39004CBDEC /* UIButton+TestButtonC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TestButtonC.m"; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -661,6 +667,10 @@
 				4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */,
 				4A544AAD2840E7D6004CBDEC /* HitTestDemoSubView1.h */,
 				4A544AAE2840E7D6004CBDEC /* HitTestDemoSubView1.m */,
+				4A544C6A2847B4A9004CBDEC /* HitTestButton.h */,
+				4A544C6B2847B4A9004CBDEC /* HitTestButton.m */,
+				4A544C6D2847BC39004CBDEC /* UIButton+TestButtonC.h */,
+				4A544C6E2847BC39004CBDEC /* UIButton+TestButtonC.m */,
 			);
 			path = HitTest;
 			sourceTree = "<group>";
@@ -1724,6 +1734,7 @@
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
+				4A544C6C2847B4AA004CBDEC /* HitTestButton.m in Sources */,
 				4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */,
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				3F8B330924D0289000A684E2 /* CLThread.m in Sources */,
@@ -1791,6 +1802,7 @@
 				BF90077E22952D900051DD7B /* Const.m in Sources */,
 				BFDC0F252107320800185A31 /* UIViewController+Appear.m in Sources */,
 				4AF8E9F32827BC1700D41876 /* LCMTestMachO.m in Sources */,
+				4A544C6F2847BC39004CBDEC /* UIButton+TestButtonC.m in Sources */,
 				BF59E20E210066BE0004EC56 /* ShareCollectionViewCell.m in Sources */,
 				BF59E1CF21003B240004EC56 /* UIAlertView+Block.m in Sources */,
 				BF18287F21A7FF4C00361219 /* ImageEditViewController.m in Sources */,
