@@ -146,6 +146,61 @@ void test100() {
 //    [self weakTest2];
 
 //    [self aboutBlock];
+    
+    
+    [self blockDemo3];
+    
+    
+  
+    
+}
+
+- (void)blockDemo3{
+    
+//    1 - <__NSStackBlock__: 0x7ff7b2bf4950> - <__NSStackBlock__: 0x7ff7b2bf4950>  ---8
+    int a = 8;
+    void(^__weak weakBlock)(void) = nil; // __weak 不会copy操作，变成MallcBLock
+    void(^__weak weakBlock1)(void) = nil;
+    
+    __weak CMPerson *weakPerson = nil;
+
+    {
+        // 栈区
+        void(^__weak strongBlock)(void) = ^{
+            NSLog(@"---%d", a);
+        };
+        weakBlock = strongBlock;
+        
+        void(^strongBlock1)(void) = ^{
+            NSLog(@"+--%d", a);
+        };
+        weakBlock1 = strongBlock1;
+
+//        1 - <__NSStackBlock__: 0x7ff7b2ace948> - <__NSStackBlock__: 0x7ff7b2ace948>
+        NSLog(@"1 - %@ - %@",weakBlock,strongBlock);
+        
+//        2 - <__NSMallocBlock__: 0x600003c0b210> - <__NSMallocBlock__: 0x600003c0b210>
+        NSLog(@"2 - %@ - %@",weakBlock1,strongBlock1);
+        
+        CMPerson *person = [CMPerson new];
+        weakPerson = person;
+    }
+    
+    [weakPerson eat];
+    weakBlock();
+    
+    if(weakBlock1) {
+        weakBlock1();// weakBlock1 = null
+    }
+    
+//    weakBlock是一个栈区的Block但是初始化为nil，一开始是空。
+//    然后下面的{}是一个代码块，这个主要影响部分代码的作用域。
+//    strongBlock是栈区的Block，初始化正常。
+//    然后weakBlock = strongBlock;把weakBlock指向了strongBlock指针指向的的内存。
+//    所以后面打印weakBlock和strongBlock他们的地址是一样的0x7ff7b2bf4950。
+//    然后出作用域，调用weakBlock()，因为还有指针weakBlock指向0x7ff7b2bf4950，但是它是个弱引用，strongBlock出了整个函数才会被释放，所以后面weakBlock()还可以调用代码块，调用的时候代码块没有被释放。
+    
+//    把strongBlock前边的__weak去掉：那么运行就会崩溃了。原因就是，堆空间，出了第一个花括号的作用域，strongBlock就被释放掉了，而weakBlock是弱持有，不是强持有，所以就调用不到块了。花括号去掉就没问题了
 }
 
 // 定义block就会处理内部引用计数关系
@@ -191,7 +246,7 @@ void test100() {
 - (void)aboutBlock {
     // 基本数据类型捕获的是值，所以修改不能影响外部的变量
     // 指针类型捕获的是指针，可以修改指针指向的值，但是不能修改指针
-    // 以上两种类型，如果想修改外部变量（基本类型、指针类型）都需要使用__block修饰
+    // 以上两种类型，如果想在block中修改外部变量（基本类型、指针类型）都需要使用__block修饰
     __block int a = 10;
     __block NSString *name = [NSString stringWithFormat:@"123abc"];
     __block NSMutableString *name1 = [NSMutableString stringWithFormat:@"123abc"];
@@ -199,8 +254,10 @@ void test100() {
     __block NSMutableArray *arr = [NSMutableArray arrayWithObjects:@"3",@"4", nil];
     CMPerson *obj = [[CMPerson alloc]init];
     obj.age = @"1";
+    
     void (^block)(NSDictionary *result) = ^(NSDictionary *result) {
-        a = 20;
+        a = 30;
+        ADLog(@"%d",a);
         name = [NSString stringWithFormat:@"123abcqqq"];
         name1 = [NSMutableString stringWithFormat:@"123abcwww"];
         name2.string = @"wwwww";//没有__block:使用可以，修改不可以
@@ -208,7 +265,9 @@ void test100() {
         arr = [NSMutableArray arrayWithObjects:@"8",@"9", nil];
         NSLog(@"block arr == %@",arr);
         obj.age = @"123"; //不是修改obj，使用obj
+        
     };
+    a = 20;
     block(@{@"key": @"123"});
 }
 
@@ -229,6 +288,7 @@ void test100() {
 - (void)weakTest2 {
     
     self.weakPerson = [[CMPerson alloc] init];
+//    self.weakPerson = nil
     self.weakPerson.age = @"111";
     ADLog(@"%@",self.weakPerson.age);
     
@@ -249,6 +309,7 @@ void test100() {
 - (void)weakTest1 {
     
     __weak CMPerson *cmPerson = [[CMPerson alloc] init];
+//    self.weakPerson = nil
     cmPerson.age = @"111";
     ADLog(@"%@",cmPerson.age);
     
@@ -275,7 +336,7 @@ void test100() {
     [self test14Method];
 }
 - (void)test14Method {
-    ADLog(@"%d",CMBlock101(3));
+    ADLog(@"%d",CMBlock101(3));// 60
 }
 - (void)dealloc
 {
@@ -337,13 +398,14 @@ int age = 10;
 - (void)createStackBlock
 {
     int a = 0;
-//    void (^stackBlock) (void) = ^{
-//    };
-//    stackBlock();
-    
-    NSLog(@"stackBlock - %@",^{
+    void (__weak ^stackBlock) (void) = ^{
         ADLog(@"%d",a);
-    });
+    };
+//    stackBlock();
+    ADLog(@"stackBlock - %@",stackBlock);
+//    NSLog(@"stackBlock - %@",^{
+//        ADLog(@"%d",a);
+//    });
 }
 
 
