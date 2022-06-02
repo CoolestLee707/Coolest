@@ -7,7 +7,6 @@
 //
 
 #import "ArithmeticViewController.h"
-
 @interface ArithmeticViewController ()
 
 @property (nonatomic,strong) UIView *view11;
@@ -24,9 +23,10 @@
     [super viewDidLoad];
     
     self.title = @"算法";
+  
     
 //    寻找两个视图最近的父视图
-    [self findParentView];
+//    [self findParentView];
     
 //    有序数组合并
 //    NSArray *arr1 = @[@1,@3,@5,@6];

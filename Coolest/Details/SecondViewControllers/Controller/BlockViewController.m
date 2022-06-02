@@ -148,11 +148,9 @@ void test100() {
 //    [self aboutBlock];
     
     
-    [self blockDemo3];
+//    [self blockDemo3];
     
-    
-  
-    
+   
 }
 
 - (void)blockDemo3{

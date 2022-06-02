@@ -11,7 +11,7 @@ import Foundation
 class Service_testModule12: NSObject {
 
 //    _ 表示函数调用时可以忽略参数名称
-    func aaaaa(_ str:String?) -> Void {
+    @objc func aaaaa(_ str:String?) -> Void {
         print(str ?? "aaa")
     }
     func bbbbb(str:String?) -> Void {

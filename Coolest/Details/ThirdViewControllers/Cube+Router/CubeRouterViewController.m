@@ -11,7 +11,7 @@
 #import "WBRouter.h"
 
 #import "testModule3Protocol.h"
-#import "Coolest-Swift.h"
+#import "Coolest-Swift.h" // 混编
 
 @interface CubeRouterViewController ()
 
@@ -106,6 +106,20 @@ static void stringCleanUp(__strong NSString **string) {
             [weakSelf btn3Click:weakBtn3];
         }];
     }
+    
+    UIButton *functionButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:functionButton];
+    functionButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    functionButton.frame = CGRectMake(10, 520, Main_Screen_Width-20, 50);
+    functionButton.backgroundColor = UIColor.blueColor;
+    [functionButton setTitle:@"OC调用Swift方法" forState:UIControlStateNormal];
+    [functionButton setTitleColor:UIColor.yellowColor forState:UIControlStateNormal];
+    [functionButton addTargetSelected:^(UIButton * _Nonnull button) {
+        Service_testModule12 *swiftObject = [Service_testModule12 new];
+        [swiftObject aaaaa:@"oc->swift"];
+    }];
+    
+ 
     
 }
 

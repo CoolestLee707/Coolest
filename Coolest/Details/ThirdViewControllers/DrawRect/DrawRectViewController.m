@@ -9,6 +9,9 @@
 #import "DrawRectViewController.h"
 #import "WBLayerView.h"
 #import <Masonry/Masonry.h>
+#import <objc/runtime.h>
+#import <malloc/malloc.h>
+
 //https://www.jianshu.com/p/9a9e986f9571
 @interface DrawRectViewController ()
 @property (nonatomic,strong)WBLayerView * layerView;
@@ -39,5 +42,14 @@
 
 }
 
+- (void)testViewAndLayerSize {
+    UIView *v1 = [[UIView alloc] init];
+    CALayer *c1 = [[CALayer alloc] init];
+       
+    ADLog(@"v1对象实际需要的内存大小: %zd", class_getInstanceSize([v1 class]));
+    ADLog(@"v1对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(v1)));
+    ADLog(@"c1对象实际需要的内存大小: %zd", class_getInstanceSize([c1 class]));
+    ADLog(@"c1对象实际分配的内存大小: %zd", malloc_size((__bridge const void *)(c1)));
+}
 
 @end

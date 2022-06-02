@@ -76,7 +76,7 @@
 //    [self syncSerial];
     
 //    异步执行 + 串行队列
-    [self asyncSerial];
+//    [self asyncSerial];
     
 //    同步执行 + 主队列
 //    [self syncMain];
@@ -86,7 +86,7 @@
 //    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
     
 //    异步执行 + 主队列
-//    [self asyncMain];
+    [self asyncMain];
     
 //    线程间通信
 //    [self communication];
@@ -851,7 +851,7 @@
         });
     });
 }
-#pragma mark --- 异步执行 + 主队列，特点：只在主线程中执行任务，执行完一个任务，再执行下一个任务
+#pragma mark --- 异步执行 + 主队列，特点：只在主线程中执行任务，执行完一个任务，再执行下一个任务，虽然异步执行具备开启线程的能力，但因为是主队列，所以所有任务都在主线程中
 - (void)asyncMain {
     ADLog(@"currentThread---%@",[NSThread currentThread]);
     ADLog(@"asyncMain---begin");
