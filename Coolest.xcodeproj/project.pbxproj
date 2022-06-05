@@ -54,6 +54,7 @@
 		4A544C692845024A004CBDEC /* SonProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C682845024A004CBDEC /* SonProxy.m */; };
 		4A544C6C2847B4AA004CBDEC /* HitTestButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C6B2847B4A9004CBDEC /* HitTestButton.m */; };
 		4A544C6F2847BC39004CBDEC /* UIButton+TestButtonC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C6E2847BC39004CBDEC /* UIButton+TestButtonC.m */; };
+		4A544C76284CB816004CBDEC /* UINavigationController+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C75284CB815004CBDEC /* UINavigationController+Dealloc.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -284,6 +285,8 @@
 		4A544C6B2847B4A9004CBDEC /* HitTestButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestButton.m; sourceTree = "<group>"; };
 		4A544C6D2847BC39004CBDEC /* UIButton+TestButtonC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+TestButtonC.h"; sourceTree = "<group>"; };
 		4A544C6E2847BC39004CBDEC /* UIButton+TestButtonC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TestButtonC.m"; sourceTree = "<group>"; };
+		4A544C74284CB815004CBDEC /* UINavigationController+Dealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+Dealloc.h"; sourceTree = "<group>"; };
+		4A544C75284CB815004CBDEC /* UINavigationController+Dealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+Dealloc.m"; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -988,6 +991,8 @@
 				BF59E1D7210043BF0004EC56 /* UIViewController+MBProgressHUD.m */,
 				BFDC0F232107320800185A31 /* UIViewController+Appear.h */,
 				BFDC0F242107320800185A31 /* UIViewController+Appear.m */,
+				4A544C74284CB815004CBDEC /* UINavigationController+Dealloc.h */,
+				4A544C75284CB815004CBDEC /* UINavigationController+Dealloc.m */,
 				3FDC7E1424974B3900425369 /* UIViewController+Monitor.h */,
 				3FDC7E1524974B3900425369 /* UIViewController+Monitor.m */,
 				BF59E1D9210044320004EC56 /* UIScrollView+ContentInset.h */,
@@ -1727,6 +1732,7 @@
 				BF9BB3CD219EAD1B0026BDD8 /* person.m in Sources */,
 				4A5197D02817E21200561E41 /* CL_ExceptionHander.m in Sources */,
 				3F3D306A249C98C900E558E5 /* KVO_Person.m in Sources */,
+				4A544C76284CB816004CBDEC /* UINavigationController+Dealloc.m in Sources */,
 				BFBF7727224B29DC00A3FE88 /* RACLabel.m in Sources */,
 				BF61BC06230C040B00D020F5 /* ProductB.m in Sources */,
 				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,

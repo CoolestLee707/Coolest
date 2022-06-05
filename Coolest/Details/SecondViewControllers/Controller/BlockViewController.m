@@ -150,6 +150,11 @@ void test100() {
     
 //    [self blockDemo3];
     
+//    self.cmBlock = ^{
+//        ADLog(@"%@",self.title);
+//    };
+//    self.cmBlock();
+    
    
 }
 

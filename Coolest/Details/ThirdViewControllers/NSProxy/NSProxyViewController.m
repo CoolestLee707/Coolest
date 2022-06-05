@@ -27,7 +27,6 @@
     SonProxy *sonProxy = [SonProxy proxyWithTarget:self];
     [sonProxy eat];
     [sonProxy run];
-
     ADLog(@"%d",[sonProxy isKindOfClass:[self class]]);
 }
 

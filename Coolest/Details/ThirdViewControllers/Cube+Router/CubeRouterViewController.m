@@ -106,7 +106,6 @@ static void stringCleanUp(__strong NSString **string) {
             [weakSelf btn3Click:weakBtn3];
         }];
     }
-    
     UIButton *functionButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:functionButton];
     functionButton.titleLabel.font = [UIFont systemFontOfSize:13];

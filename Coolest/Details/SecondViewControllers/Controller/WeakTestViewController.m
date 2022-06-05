@@ -48,9 +48,14 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 
 @property (nonatomic, strong) NSString *strongString;
 @property (nonatomic, weak)   NSString *weakString;
+@property (nonatomic, assign)   NSString *assignString;
 
+@property (nonatomic,weak) CMPerson *weakPerson;
+@property (nonatomic,assign) CMPerson *assignPerson;
 
 @end
+
+__weak id temp = nil;
 
 @implementation WeakTestViewController
 {
@@ -61,10 +66,37 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    timer强弱都可以dealloc， 非block的timer要在这里invalidate
     [self.timer invalidate];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    ADLog(@"viewWillAppear - temp - %@",temp); // 有值
+    ADLog(@"viewWillAppear - weakString - %@",self.weakString); // 有值
+    ADLog(@"viewWillAppear - assignString - %@",self.assignString); // 有值
+
+//    [self.weakPerson eat];
+//    [self.assignPerson eat]; // crash,EXC_BAD_ACCESS
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    ADLog(@"viewDidAppear - %@",temp); // null
+//    ADLog(@"viewDidAppear - weakString - %@",self.weakString); // null
+//    ADLog(@"viewDidAppear - assignString - %@",self.assignString); //crash，EXC_BAD_ACCESS
+    
+//    [self.weakPerson eat];
+//    [self.assignPerson eat]; // crash,EXC_BAD_ACCESS
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.title = @"weak";
+    
+    NSString *tempStr = [NSString stringWithFormat:@"12121fdsfergvcvdsfsfdsvcvsdfsd343434反倒是士大夫和数据库浪费计算机21"];
+    temp = tempStr;
+    self.weakString = tempStr;
+    self.assignString = tempStr;
+    
+    CMPerson *tempPerson = [[CMPerson alloc]init];
+    self.weakPerson = tempPerson;
+    self.assignPerson = temp;
     
 //    weakSelf和self是同一片内存空间，是映射关系，staticSelf持有的实际上是self，而staticSelf是一个全局的静态变量，所以self无法释放,用在block时会把weakSelf copy到堆中，堆中的weakSelf弱引用self
     
@@ -74,10 +106,10 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 //    (lldb) po weakSelf
 //    <WeakTestViewController: 0x7f9b19158cc0>
     
-    self.name = [NSString stringWithFormat:@"%d",arc4random()%10];
-    static UIViewController *staticSelf_;
-    __weak typeof(self) weakSelf = self;
-    staticSelf_ = weakSelf;
+//    self.name = [NSString stringWithFormat:@"%d",arc4random()%10];
+//    static UIViewController *staticSelf_;
+//    __weak typeof(self) weakSelf = self;
+//    staticSelf_ = weakSelf;
  
     
 
@@ -418,7 +450,10 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    ADLog(@"%@", self.weakString);
+    ADLog(@"touchesBegan - weakString - %@", self.weakString);
+    ADLog(@"touchesBegan - temp - %@",temp);
+    ADLog(@"touchesBegan - assignString - %@",self.assignString);
+
 }
 
 

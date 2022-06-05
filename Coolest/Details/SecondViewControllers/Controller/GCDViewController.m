@@ -86,7 +86,7 @@
 //    [NSThread detachNewThreadSelector:@selector(syncMain) toTarget:self withObject:nil];
     
 //    异步执行 + 主队列
-    [self asyncMain];
+//    [self asyncMain];
     
 //    线程间通信
 //    [self communication];
