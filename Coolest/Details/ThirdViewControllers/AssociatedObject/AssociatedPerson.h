@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,copy) NSString *name;
 @property (nonatomic,strong) UIViewController *vc;
 
+- (void)setAss:(UIViewController *)vc;
+- (void)removeAss:(UIViewController *)vc;
+
 @end
 
 NS_ASSUME_NONNULL_END

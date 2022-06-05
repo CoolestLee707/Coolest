@@ -7,8 +7,21 @@
 //
 
 #import "AssociatedPerson.h"
+#import <objc/runtime.h>
+
+static char PersonKey;
 
 @implementation AssociatedPerson
+
+- (void)setAss:(UIViewController *)vc {
+    
+    objc_setAssociatedObject(self, &PersonKey,vc,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (void)removeAss:(UIViewController *)vc {
+    
+    objc_removeAssociatedObjects(self);
+}
 
 - (void)dealloc {
     ADLog(@"%s",__func__);
