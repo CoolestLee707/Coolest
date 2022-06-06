@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HookObject : NSObject
 - (void)eat;
-
++ (void)classEat;
 @end
 
 NS_ASSUME_NONNULL_END

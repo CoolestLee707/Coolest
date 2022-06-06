@@ -21,7 +21,7 @@
         SEL selA = @selector(eat);
         SEL selB = @selector(eat2);
 
-        [self swizzledInstanceSEL:selA withSEL:selB];
+//        [self swizzledInstanceSEL:selA withSEL:selB];
         
     });
 }

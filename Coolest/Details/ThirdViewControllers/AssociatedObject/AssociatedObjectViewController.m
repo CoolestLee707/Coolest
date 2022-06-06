@@ -24,9 +24,11 @@ static char keyBlock;
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    AssociatedPerson *person = [AssociatedPerson new];
 //    [self test1];
     
-    [self test2];
+//    [self test2];
+    
 
 }
 
@@ -56,7 +58,7 @@ static char keyBlock;
      };
      
  //   循环引用
- //    objc_setAssociatedObject(self, &key, person, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//     objc_setAssociatedObject(self, &key, person, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
  //  不会循环引用
      objc_setAssociatedObject(self, &keyBlock, block, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
@@ -68,11 +70,11 @@ static char keyBlock;
 //    AssociatedPerson *person =objc_getAssociatedObject(self, &key);
 //    ADLog(@"%@   -  %@",person.name,person.vc);
 
-//    AssociatedPerson *(^block)(void) =objc_getAssociatedObject(self, &keyBlock);
-//    AssociatedPerson *p = block?block():nil;
-//    ADLog(@"%@   -  %@",p.name,p.vc);
+    AssociatedPerson *(^block)(void) =objc_getAssociatedObject(self, &keyBlock);
+    AssociatedPerson *p = block?block():nil;
+    ADLog(@"%@   -  %@",p.name,p.vc);
     
-//    objc_removeAssociatedObjects(self);
+    objc_removeAssociatedObjects(self);
     
     
 //    test 2

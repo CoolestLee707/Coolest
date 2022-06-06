@@ -155,6 +155,13 @@ void test100() {
 //    };
 //    self.cmBlock();
     
+    
+//    __block id weakSelf = self;
+//    self.cmBlock = ^{
+//        NSLog(@"%@", @[weakSelf]);
+//        weakSelf = nil;
+//    };
+//    self.cmBlock();
    
 }
 

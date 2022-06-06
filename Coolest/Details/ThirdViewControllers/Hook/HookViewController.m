@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.title = @"HOOK";
     
+    [HookObject classEat];
     HookObject *obj1 = [HookObject new];
     [obj1 eat];
     

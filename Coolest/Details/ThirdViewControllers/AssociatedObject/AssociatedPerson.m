@@ -13,6 +13,10 @@ static char PersonKey;
 
 @implementation AssociatedPerson
 
+- (instancetype)init {
+    ADLog(@"%s",__func__);
+    return self;
+}
 - (void)setAss:(UIViewController *)vc {
     
     objc_setAssociatedObject(self, &PersonKey,vc,OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -22,6 +26,7 @@ static char PersonKey;
     
     objc_removeAssociatedObjects(self);
 }
+
 
 - (void)dealloc {
     ADLog(@"%s",__func__);

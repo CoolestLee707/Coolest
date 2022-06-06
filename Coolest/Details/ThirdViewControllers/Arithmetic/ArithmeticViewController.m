@@ -14,6 +14,8 @@
 @property (nonatomic,strong) UIView *view22;
 @property (nonatomic,strong) UIView *view31;
 @property (nonatomic,strong) UIView *view32;
+@property (atomic,copy) NSString *atomicName;
+@property (nonatomic,copy) NSString *nonatomicName;
 
 @end
 
@@ -66,7 +68,25 @@
 //    NSMutableArray *sortArray = @[@"8.0.21",@"0.0.21",@"0.0.20",@"3.0.2",@"5.1.2",@"4.0.2",@"1.12.2",@"3.0.20",@"4.0",@"10.0.2.4"].mutableCopy;
 //    [self sortStringArray:sortArray];
     
+    
+   
 }
+
+#pragma mark - nonatomic、atomic、多线程
+- (void)testNonatomic {
+    for (int i=0; i<1000; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            self.nonatomicName = [NSString stringWithFormat:@"test 发顺丰水电费第三方胜多负少地方水电费水电费算法 nonatomic setter self.name - %d",i];
+            self.atomicName = [NSString stringWithFormat:@"test 发顺丰水电费第三方胜多负少地方水电费水电费算法 atomic setter self.name - %d",i];
+
+        });
+    }
+    ADLog(@"self.nonatomicName - %@",self.nonatomicName); // crash
+    ADLog(@"self.atomicName - %@",self.atomicName);
+
+}
+
+
 #pragma mark - 寻找出现次数一半以上的
 - (int)selectMostNumber:(NSArray *)array {
     int returnNumber = 0;
