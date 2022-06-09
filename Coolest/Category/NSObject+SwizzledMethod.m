@@ -55,4 +55,7 @@
     }
 }
 
+- (void)foo {
+    ADLog(@"foo");
+}
 @end

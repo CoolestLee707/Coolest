@@ -162,6 +162,11 @@
 //    [self test11];
     
 //    [self test12];
+    
+//    [self test13];
+    
+    
+   
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -169,6 +174,25 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+}
+
+- (void)test13 {
+    ADLog(@"0");
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    dispatch_sync(queue, ^{
+        ADLog(@"1");
+    });
+    
+    dispatch_async(queue, ^{
+        ADLog(@"2");
+    });
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        ADLog(@"3");
+    });
+    
+    ADLog(@"4");
 }
 
 - (void)test12 {

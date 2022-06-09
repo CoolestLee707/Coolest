@@ -7,6 +7,7 @@
 //
 
 #import "ArithmeticViewController.h"
+#import "NSObject+SwizzledMethod.h"
 @interface ArithmeticViewController ()
 
 @property (nonatomic,strong) UIView *view11;
@@ -21,7 +22,9 @@
 
 @implementation ArithmeticViewController
 
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     self.title = @"算法";
@@ -68,8 +71,26 @@
 //    NSMutableArray *sortArray = @[@"8.0.21",@"0.0.21",@"0.0.20",@"3.0.2",@"5.1.2",@"4.0.2",@"1.12.2",@"3.0.20",@"4.0",@"10.0.2.4"].mutableCopy;
 //    [self sortStringArray:sortArray];
     
-    
+//    [NSObject foo];
+//    [[NSObject new] foo];
    
+ 
+    [self testSort];
+  
+    
+}
+
+#pragma mark -- sortedArrayUsingComparator
+- (void)testSort {
+    NSMutableArray *array = [NSMutableArray arrayWithArray:@[@10,@1,@33,@22,@42,@32,@52,@25]];
+    NSArray *result = [array sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        
+        NSNumber *tNumber1 = (NSNumber *)obj1;
+        NSNumber *tNumber2 = (NSNumber *)obj2;
+        // < 降序，  > 升序
+        return [tNumber1 integerValue] > [tNumber2 integerValue];
+    }];
+     ADLog(@"%@",result.description);
 }
 
 #pragma mark - nonatomic、atomic、多线程

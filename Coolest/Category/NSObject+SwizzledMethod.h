@@ -28,4 +28,6 @@
  */
 + (void)swizzledClassSEL:(SEL)originalSEL withSEL:(SEL)swizzledSEL;
 
++ (void)foo;
+- (void)foo;
 @end
