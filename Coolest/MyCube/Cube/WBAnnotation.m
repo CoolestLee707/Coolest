@@ -71,11 +71,12 @@ static void dyld_callback(const struct mach_header *mhp, intptr_t vmaddr_slide) 
 }
 
 //如果函数被设定为constructor属性，则该函数会在main（）函数执行之前被自动的执行；若函数被设定为destructor属性，则该函数会在main（）函数执行之后或者exit（）被调用后被自动的执行
-__attribute__((constructor))
+//__attribute__((constructor))
 void initProphet() {
 //_dyld_register_func_for_add_image：这个函数是用来注册回调，当dyld链接符号时，调用此回调函数。在dyld加载镜像时，会执行注册过的回调函数
     _dyld_register_func_for_add_image(dyld_callback);
 }
+
 
 // 读取数据
 NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_header *mhp) {
@@ -106,4 +107,12 @@ NSArray<NSString *>* WBReadConfiguration(char *sectionName,const struct mach_hea
 
 @implementation WBAnnotation
 
+- (void)testInitProphet {
+    _dyld_register_func_for_add_image(dyld_callback);
+
+}
 @end
+
+
+//如果你通过函数_dyld_register_func_for_add_image注册了一个映像被加载时的回调函数时，那么每当后续一个新的映像被加载但未初始化前就会调用注册的回调函数，回调函数的两个入参分别表示加载的映像的头结构和对应的Slide值。如果在调用_dyld_register_func_for_add_image时系统已经加载了某些映像，则会分别对这些加载完毕的每个映像调用注册的回调函数。
+//如果你通过函数_dyld_register_func_for_remove_image注册了一个映像被卸载时的回调函数时，那么每当一个映像被卸载前都会调用注册的回调函数，回调函数的两个入参分别表示卸载的映像的头结构和对应的Slide值。

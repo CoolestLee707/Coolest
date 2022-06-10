@@ -53,8 +53,11 @@ NSString * const kModHomePageViewDidLoadEvent                       = @"modHomeP
 NSString * const kModTabbarItemClickEvent                           = @"modTabbarItemClickEvent:";
 
 @interface WBModuleManager ()
+// 所有模块
 @property(nonatomic, strong) NSMutableArray *modules;
+// 所有协议方法
 @property(nonatomic, strong) NSMutableSet *selectorByEvent;
+// [协议方法：[实现这个方法的所有module] ]
 @property(nonatomic, strong) NSMutableDictionary<NSString *, NSMutableArray<id<WBModuleProtocol>> *> *modulesByEvent;
 @end
 
@@ -179,6 +182,7 @@ NSString * const kModTabbarItemClickEvent                           = @"modTabba
     [self triggerEvent:event customParam:nil];
 }
 
+#pragma mark - 触发事件(携带自定义参数)
 - (void)triggerEvent:(NSString *)event customParam:(NSDictionary *)customParam {
     [self triggerModuleEvent:event withTarget:nil withCustomParam:customParam];
 }
@@ -198,6 +202,7 @@ NSString * const kModTabbarItemClickEvent                           = @"modTabba
     }
 }
 
+#pragma mark --- 安装模块
 - (void)triggerModuleInstallEventWithTarget:(id<WBModuleProtocol>)target withCustomParam:(NSDictionary *)customParam {
     //根据优先级排序
     [self.modules sortUsingComparator:^NSComparisonResult(id<WBModuleProtocol> module1, id<WBModuleProtocol> module2) {

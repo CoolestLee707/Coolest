@@ -13,6 +13,8 @@
 #import "testModule3Protocol.h"
 #import "Coolest-Swift.h" // 混编
 
+#import "WBAnnotation.h"
+
 @interface CubeRouterViewController ()
 
 @end
@@ -250,6 +252,13 @@ static void stringCleanUp(__strong NSString **string) {
         default:
             break;
     }
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    WBAnnotation *ann = [[WBAnnotation alloc]init];
+    [ann testInitProphet];
 }
 
 - (void)dealloc {

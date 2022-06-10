@@ -70,7 +70,14 @@ class WBCube; char * k##age##_ser testWriteDATA(LiChuamin) = "{ \""#age"."#age"\
 
 @interface WBAnnotation : NSObject
 
+/**
+ 测试读取，启动优化，可以延迟读取Mach—O
+ */
+- (void)testInitProphet;
+
 @end
 
 
 //__attribute__是编译属性，我们可以通过 __attribute__((section("name")))编译属性将数据写到可执行文件中，然后在使用的时候，从可执行文件中读取出来。
+
+//Clang 提供了很多的编译器函数，section()函数提供了二进制段的读写能力，它可以将一些编译期就可以确定的常量写入数据段
