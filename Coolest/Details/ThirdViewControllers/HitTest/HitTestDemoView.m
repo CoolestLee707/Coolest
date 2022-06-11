@@ -19,6 +19,9 @@
     ADLog(@"HitTestDemoView - pointInside");
     return [super pointInside:point withEvent:event];
 }
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    ADLog(@"touchesBegan - withEvent");
+}
 @end
 
 // hitTest: withEvent: 是UIView 里面的一个方法，该方法的作用 在于 : 在视图的层次结构中寻找一个最适合的 view 来响应触摸事件，该方法会被系统调用，调用的时候，如果返回为nil，即事件有可能被丢弃，否则返回最合适的view 来响应事件

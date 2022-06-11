@@ -58,7 +58,7 @@
     [super viewDidLoad];
     
     
-    [self testNSLock];
+//    [self testNSLock];
     
 //    [self testAssign];
     
@@ -158,9 +158,51 @@
 //    [self JDtest];
     
 //    [self buttonBindSomething];
+    
+//    [self testButtonUI];
+    
+ 
         
 }
 
+- (void)testButtonUI {
+    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 100)];
+    // 这样设置透明度会隐藏子视图，阻止事件响应性传递
+//    view1.backgroundColor = UIColor.redColor;
+//    view1.alpha = 0;
+    // 这样设置透明度不会隐藏子视图
+    view1.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick1)];
+    [view1 addGestureRecognizer:tap1];
+    [self.view addSubview:view1];
+    
+    UIButton *button1 = [UIButton buttonWithType:UIButtonTypeSystem];
+    button1.frame = CGRectMake(10, 10, 50, 50);
+    button1.backgroundColor = UIColor.yellowColor;
+    [button1 addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"111");
+    }];
+    [view1 addSubview:button1];
+    
+    
+    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 100)];
+    view2.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
+    view2.userInteractionEnabled = NO;
+//    [view1 addSubview:view2];
+    
+    UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
+    button2.frame = CGRectMake(110, 10, 50, 50);
+    button2.backgroundColor = UIColor.purpleColor;
+    [button2 addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"222");
+    }];
+    [view2 addSubview:button2];
+    
+}
+
+- (void)tapClick1 {
+    ADLog(@"tapClick1");
+}
 - (void)testNSLock {
     
 //    打印000
@@ -307,18 +349,19 @@
 
     
 }
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     ADLog(@"点击屏幕");
     
-    @try {
-        NSArray *arr= @[@1,@2];
-        ADLog(@"%@",arr[3]);
-    } @catch (NSException *exception) {
-        ADLog(@"catch");
-    } @finally {
-        ADLog(@"finally");
-    }
+//    @try {
+//        NSArray *arr= @[@1,@2];
+//        ADLog(@"%@",arr[3]);
+//    } @catch (NSException *exception) {
+//        ADLog(@"catch");
+//    } @finally {
+//        ADLog(@"finally");
+//    }
+    
+    
 //    @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"--- NSRangeException"] userInfo:nil];
     
 //    [CLKeepAlive startLocation];

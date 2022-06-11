@@ -72,14 +72,14 @@ __weak id temp = nil;
     ADLog(@"viewWillAppear - temp - %@",temp); // 有值
     ADLog(@"viewWillAppear - weakString - %@",self.weakString); // 有值
     ADLog(@"viewWillAppear - assignString - %@",self.assignString); // 有值
-
-//    [self.weakPerson eat];
+    
+    [self.weakPerson eat];
 //    [self.assignPerson eat]; // crash,EXC_BAD_ACCESS
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    ADLog(@"viewDidAppear - %@",temp); // null
-//    ADLog(@"viewDidAppear - weakString - %@",self.weakString); // null
+    ADLog(@"viewDidAppear - %@",temp); // null
+    ADLog(@"viewDidAppear - weakString - %@",self.weakString); // null
 //    ADLog(@"viewDidAppear - assignString - %@",self.assignString); //crash，EXC_BAD_ACCESS
     
 //    [self.weakPerson eat];
@@ -89,15 +89,16 @@ __weak id temp = nil;
     [super viewDidLoad];
     self.title = @"weak";
     
-    NSString *tempStr = [NSString stringWithFormat:@"12121fdsfergvcvdsfsfdsvcvsdfsd343434反倒是士大夫和数据库浪费计算机21"];
-    temp = tempStr;
-    self.weakString = tempStr;
-    self.assignString = tempStr;
-    
-    CMPerson *tempPerson = [[CMPerson alloc]init];
-    self.weakPerson = tempPerson;
-    self.assignPerson = temp;
-    
+//    NSString *tempStr = [NSString stringWithFormat:@"12121fdsfergvcvdsfsfdsvcvsdfsd343434反倒是士大夫和数据库浪费计算机21"];
+//
+//    temp = tempStr;
+//    self.weakString = tempStr;
+//    self.assignString = tempStr;
+//
+//    CMPerson *tempPerson = [[CMPerson alloc]init];
+//    self.weakPerson = tempPerson;
+//    self.assignPerson = temp;
+
 //    weakSelf和self是同一片内存空间，是映射关系，staticSelf持有的实际上是self，而staticSelf是一个全局的静态变量，所以self无法释放,用在block时会把weakSelf copy到堆中，堆中的weakSelf弱引用self
     
 //    po self
