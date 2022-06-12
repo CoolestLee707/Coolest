@@ -7,6 +7,7 @@
 //
 
 #import "LCMTestMachO.h"
+#import "WBCubeHeader.h"
 
 @ModTestDATA(18,beijing,131)
 
