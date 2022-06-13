@@ -31,6 +31,7 @@
 
 @property(nonatomic,copy) void(^cmBlock)(void);
 @property(nonatomic,copy) void(^cmBlock1)(void);
+@property(nonatomic,copy) void(^cmBlock2)(UIViewController *);
 
 @end
 
@@ -162,7 +163,27 @@ void test100() {
 //        weakSelf = nil;
 //    };
 //    self.cmBlock();
-   
+    
+  
+    [self threeMethodOfLeaksBlock];
+}
+
+- (void)threeMethodOfLeaksBlock {
+    
+    // 访问self 当做参数传到block里
+//    self.cmBlock2 = ^(UIViewController *vc){
+//        ADLog(@"%@",vc.title);
+//    };
+//    self.cmBlock2(self);
+
+    
+//    __block UIViewController *vc = self;
+//    self.cmBlock = ^(void){
+//        ADLog(@"%@",vc.title);
+//        vc = nil; // 这里一定得置空，否则还是会循环引用
+//    };
+//    self.cmBlock(); // 必须调用block才能vc = nil
+    
 }
 
 - (void)blockDemo3{

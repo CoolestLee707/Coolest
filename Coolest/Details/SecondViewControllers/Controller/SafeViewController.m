@@ -62,10 +62,22 @@ void myExchange(Method _Nonnull m1, Method _Nonnull m2){
         NSLog(@"自定义的按钮点击----被hook了！！！！！！！！");
     } error:nil];
     
+    [self checkHTTPEnable];
 }
 
 - (void)customBtnClick{
     NSLog(@"自定义的按钮点击----没有hook？？？？？？？？？");
 }
+
+- (void)checkHTTPEnable {
+    NSDictionary * ref = (__bridge NSDictionary *)CFNetworkCopySystemProxySettings();
+    BOOL enable = [[ref objectForKey:@"HTTPEnable"] boolValue];
+    if (enable) {
+        ADLog(@"开启了代理");
+    }else {
+        ADLog(@"没开代理");
+    }
+}
+
 
 @end
