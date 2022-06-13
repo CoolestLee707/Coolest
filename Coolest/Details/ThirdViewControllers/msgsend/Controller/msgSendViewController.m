@@ -12,6 +12,9 @@
 #import "msgCat.h"
 #import "msgKit.h"
 
+#import "CMProxy.h"
+#import "CMObject.h"
+
 @interface msgSendViewController ()
 
 @property (nonatomic,copy) NSString *name;
@@ -20,6 +23,9 @@
 @property (nonatomic,strong) msgDog *dog;
 @property (nonatomic,strong) msgCat *cat;
 @property (nonatomic,strong) msgKit *kit;
+
+@property (nonatomic,strong) CMProxy *cmProxy;
+@property (nonatomic,strong) CMObject *cmObject;
 
 @end
 
@@ -50,7 +56,35 @@
 //    self.dog = [msgDog new];
 //    [self.dog eat];
     
-   
+//    [self testAtomic];
+    
+    [self testProxy];
+}
+
+
+//通过继承自NSObject的代理类是不会自动转发respondsToSelector:和isKindOfClass:这两个方法的, 而继承自NSProxy的代理类却是可以的
+- (void)testProxy {
+    
+    NSString *string = @"test";
+
+    CMProxy *proxyA = [[CMProxy alloc] initWithObject:string];
+
+    CMObject *proxyB = [[CMObject alloc] initWithObject:string];
+
+    ADLog(@"%d", [proxyA respondsToSelector:@selector(length)]); // 1
+
+    ADLog(@"%d", [proxyB respondsToSelector:@selector(length)]); // 0
+
+    ADLog(@"%d", [proxyA isKindOfClass:[NSString class]]); // 1
+
+    ADLog(@"%d", [proxyB isKindOfClass:[NSString class]]); // 0
+    
+    
+//    CMProxy *proxyA = [[CMProxy alloc] initWithObject:self];
+//    CMObject *proxyB = [[CMObject alloc] initWithObject:self];
+//    [proxyA testAtomic];
+//    [proxyB testAtomic];
+
 }
 
 - (void)testAtomic {

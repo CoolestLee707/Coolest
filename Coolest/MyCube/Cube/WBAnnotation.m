@@ -108,7 +108,7 @@ static void lazy_load_dyld_callback(const struct mach_header *mhp, intptr_t vmad
 }
 
 //如果函数被设定为constructor属性，则该函数会在main（）函数执行之前被自动的执行；若函数被设定为destructor属性，则该函数会在main（）函数执行之后或者exit（）被调用后被自动的执行
-//__attribute__((constructor))
+__attribute__((constructor))
 void initProphet() {
 //_dyld_register_func_for_add_image：这个函数是用来注册回调，当dyld链接符号时，调用此回调函数。在dyld加载镜像时，会执行注册过的回调函数
     _dyld_register_func_for_add_image(dyld_callback);
