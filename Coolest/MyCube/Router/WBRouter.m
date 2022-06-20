@@ -36,7 +36,9 @@ typedef NS_ENUM(NSUInteger, WBRouterViewControlerEnterMode) {
 @end
 
 @implementation WBRouter
-
++(void)initialize {
+    ADLog(@"方法、协议延迟注册");
+}
 #pragma mark - 全局访问点
 + (instancetype)sharedInstance {
     static WBRouter *router;

@@ -122,6 +122,12 @@
 //    semaphore 线程同步 -- 信号量-最大并发数量
 //    [self semaphoreAsyncAndSync_MaxThreadNumber];
     
+    
+//    [self testByteDanceEnterLeave];
+    
+    [self testByteDanceSemaphore];
+
+    
 //    非线程安全
 //    [self initTicketStatusNotSave];
     
@@ -703,9 +709,9 @@
     });
     
     //    // 等待上面的任务全部完成后，会往下继续执行（会阻塞当前线程）
-    //    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+//        dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     //
-    //    ADLog(@"group---end");
+        ADLog(@"method---end");
 }
 
 
@@ -774,6 +780,65 @@
     
     ADLog(@"group---======");
 
+}
+
+#pragma mark ---   字节面试+++++++=线程依赖，(A->C, B)->D,dispatch_group_enter，dispatch_group_leave
+- (void)testByteDanceEnterLeave {
+    dispatch_group_t group = dispatch_group_create();
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    dispatch_group_enter(group);// 使用group
+    dispatch_group_async(group, queue, ^{
+        // 追加任务1
+        [NSThread sleepForTimeInterval:2];
+        ADLog(@"A---%@",[NSThread currentThread]);
+        
+        dispatch_barrier_async(queue, ^{
+            ADLog(@"C---%@",[NSThread currentThread]);
+            dispatch_group_leave(group);
+        });
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_group_async(group, queue, ^{
+        // 追加任务2
+        [NSThread sleepForTimeInterval:2];
+        ADLog(@"B---%@",[NSThread currentThread]);
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        ADLog(@"D---%@",[NSThread currentThread]);
+    });
+    
+    ADLog(@"end---%@",[NSThread currentThread]);
+}
+
+#pragma mark ---   字节面试+++++++=线程依赖，(A->C, B)->D,信号量加锁，卡死主线程
+- (void)testByteDanceSemaphore {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        ADLog(@"A---%@",[NSThread currentThread]);
+        
+        dispatch_async(queue, ^{
+            ADLog(@"C---%@",[NSThread currentThread]);
+            dispatch_semaphore_signal(semaphore);
+        });
+    });
+    dispatch_async(queue, ^{
+        [NSThread sleepForTimeInterval:2];
+        ADLog(@"B---%@",[NSThread currentThread]);
+        dispatch_semaphore_signal(semaphore);
+    });
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    ADLog(@"D---%@",[NSThread currentThread]);
+    
+    ADLog(@"end---%@",[NSThread currentThread]);
 }
 
 #pragma mark ---   快速迭代方法 dispatch_apply
