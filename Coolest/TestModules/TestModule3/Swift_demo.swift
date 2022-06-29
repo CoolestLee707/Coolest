@@ -24,3 +24,8 @@ class Swift_demo: NSObject,SwiftProtocol {
         block(["someOneOCTest":"Kill you!!!"])
     }
 }
+
+// 单例
+class Manager {
+    static let sharedInstance = Manager()
+}

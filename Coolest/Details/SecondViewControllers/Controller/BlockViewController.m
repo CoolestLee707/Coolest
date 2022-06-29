@@ -140,7 +140,7 @@ void test100() {
     
 //    [self test12];
     
-//    [self test14];
+    [self test14];
     
 //    [self weakTest1];
     
@@ -165,7 +165,7 @@ void test100() {
 //    self.cmBlock();
     
   
-    [self threeMethodOfLeaksBlock];
+//    [self threeMethodOfLeaksBlock];
 }
 
 - (void)threeMethodOfLeaksBlock {
@@ -359,8 +359,9 @@ void test100() {
 }
 - (void)test14 {
     
-    __block int a = 10;
+    static int a = 10;
     CMBlock101 = ^int(int number) {
+        a = 30;
         return a*number;
     };
     a = 20;
@@ -377,7 +378,7 @@ void test100() {
 int age = 10;
 - (void)createGlobalBlock
 {
-//    static int age = 10;
+    static int age = 10;
     void (^globalBlock) (void) = ^{
         ADLog(@"block-%d",age);
     };

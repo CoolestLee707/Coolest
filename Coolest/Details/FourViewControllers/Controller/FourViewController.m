@@ -158,13 +158,40 @@
 //    [self JDtest];
     
 //    [self buttonBindSomething];
+
+    //    [self testButtonUI];
     
-//    [self testButtonUI];
-    
- 
+    [self testGameV:@[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy];
         
 }
 
+- (void)testGameV:(NSMutableArray *)arr {
+//    safe
+//    for (int i=0; i<arr.count; i++) {
+//        if ([arr[i] isEqualToString:@"0"]) {
+//            [arr removeObject:arr[i]];
+//        }
+//    }
+    
+    
+//    ------- crash, was mutated while being enumerated，移除最后一个不会崩溃
+//    for (NSString *str in arr) {
+//        if ([str isEqualToString:@"0"]) {
+//            [arr removeObject:str];
+//        }
+//    }
+    
+    
+//    --------- safe
+//    NSMutableArray *tempArr = [arr mutableCopy];
+//    for (NSString *str in tempArr) {
+//        if ([str isEqualToString:@"0"]) {
+//            [arr removeObject:str];
+//        }
+//    }
+    ADLog(@"%@",arr);
+    
+}
 - (void)testButtonUI {
     UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 100)];
     // 这样设置透明度会隐藏子视图，阻止事件响应性传递
