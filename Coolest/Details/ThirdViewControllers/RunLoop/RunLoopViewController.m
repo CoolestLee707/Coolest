@@ -20,9 +20,9 @@
     [super viewDidLoad];
     self.title = @"RunLoopViewController";
     
-//    [self test1];
+    [self test1];
     
-    [self aboutRunloop];
+//    [self aboutRunloop];
     
 }
 

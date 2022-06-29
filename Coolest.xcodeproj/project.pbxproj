@@ -57,6 +57,7 @@
 		4A544C76284CB816004CBDEC /* UINavigationController+Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544C75284CB815004CBDEC /* UINavigationController+Dealloc.m */; };
 		4A544E212856E5A1004CBDEC /* CMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544E202856E5A1004CBDEC /* CMProxy.m */; };
 		4A544E242856E5C2004CBDEC /* CMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544E232856E5C2004CBDEC /* CMObject.m */; };
+		4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FCE286C77EE004CBDEC /* MyTimer.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -293,6 +294,8 @@
 		4A544E202856E5A1004CBDEC /* CMProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMProxy.m; sourceTree = "<group>"; };
 		4A544E222856E5C2004CBDEC /* CMObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMObject.h; sourceTree = "<group>"; };
 		4A544E232856E5C2004CBDEC /* CMObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMObject.m; sourceTree = "<group>"; };
+		4A544FCD286C77EE004CBDEC /* MyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTimer.h; sourceTree = "<group>"; };
+		4A544FCE286C77EE004CBDEC /* MyTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTimer.m; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -1200,6 +1203,8 @@
 				BFB72E5E221BF7D5002F4743 /* AsyncDisplayModel.m */,
 				3F8B330724D0289000A684E2 /* CLThread.h */,
 				3F8B330824D0289000A684E2 /* CLThread.m */,
+				4A544FCD286C77EE004CBDEC /* MyTimer.h */,
+				4A544FCE286C77EE004CBDEC /* MyTimer.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1731,6 +1736,7 @@
 				4A80C861281D594C00AEA974 /* CubeRouterViewController.m in Sources */,
 				4A5197BC281434A000561E41 /* SafeViewController.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
+				4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */,
 				1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,

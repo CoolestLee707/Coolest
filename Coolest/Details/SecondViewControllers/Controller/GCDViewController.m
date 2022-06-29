@@ -125,7 +125,7 @@
     
 //    [self testByteDanceEnterLeave];
     
-    [self testByteDanceSemaphore];
+//    [self testByteDanceSemaphore];
 
     
 //    非线程安全
@@ -165,7 +165,7 @@
     
 //    [self test10];
     
-//    [self test11];
+    [self test11];
     
 //    [self test12];
     

@@ -13,6 +13,8 @@
 @property (nonatomic,strong)UIView * blueView;
 @property (nonatomic,strong)UIView * redView;
 
+@property (nonatomic,strong)UIScrollView *sc;
+
 @end
 
 @implementation FrameAndBoundsViewController
@@ -23,8 +25,21 @@
     self.title = @"FrameAndBounds";
     
     [self test1];
+    
+//    [self test2];
 }
 
+- (void)test2 {
+    self.sc = [[UIScrollView alloc]initWithFrame:CGRectMake(10, 100, 200, 200)];
+    [self.view addSubview:self.sc];
+    self.sc.backgroundColor = UIColor.redColor;
+    [self.sc setContentSize:CGSizeMake(200, 300)];
+    
+    self.blueView = [[UIView alloc]initWithFrame:CGRectMake(0, 100, 200, 200)];
+    self.blueView.backgroundColor = [UIColor blueColor];
+    [self.sc addSubview:self.blueView];
+    
+}
 - (void)test1 {
     self.blueView = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 200, 200)];
     self.blueView.backgroundColor = [UIColor blueColor];
@@ -48,7 +63,7 @@
      after***redView-----frame:{{50, 50}, {100, 100}}------bounds:{{0, 0}, {100, 100}}---center:{100, 100}
     */
 //    self.blueView.bounds = CGRectMake(0, 0, 300, 300);
-    
+
     /*
      更改了bounds里的origin-------子-相对父视图左上移动
      before***blueView-----frame:{{100, 200}, {200, 200}}------bounds:{{0, 0}, {200, 200}}---center:{200, 300}
@@ -59,7 +74,13 @@
 //    self.blueView.bounds = CGRectMake(50, 50, 200, 200);
     
     
-    NSLog(@"after***blueView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.blueView.frame), NSStringFromCGRect(self.blueView.bounds),NSStringFromCGPoint(self.blueView.center));
-    NSLog(@"after***redView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.redView.frame), NSStringFromCGRect(self.redView.bounds),NSStringFromCGPoint(self.redView.center));
+//    NSLog(@"after***blueView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.blueView.frame), NSStringFromCGRect(self.blueView.bounds),NSStringFromCGPoint(self.blueView.center));
+//    NSLog(@"after***redView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.redView.frame), NSStringFromCGRect(self.redView.bounds),NSStringFromCGPoint(self.redView.center));
+    
+    
+//    self.sc.bounds = CGRectMake(0, 0, 300, 300);
+//    UIScrollView 滑动会改变bounds的起点，x 或 y
+//    NSLog(@"after***sc-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.sc.frame), NSStringFromCGRect(self.sc.bounds),NSStringFromCGPoint(self.sc.center));
+//    NSLog(@"after***redView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.redView.frame), NSStringFromCGRect(self.redView.bounds),NSStringFromCGPoint(self.redView.center));
 }
 @end

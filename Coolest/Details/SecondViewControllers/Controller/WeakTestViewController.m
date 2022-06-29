@@ -10,6 +10,8 @@
 #import "weakTestView.h"
 #import "WKWebviewViewController.h"
 #import "CMPerson.h"
+#import "MyProxy.h"
+#import "MyTimer.h"
 
 typedef void(^testBlock)(void);
 typedef void(^secondBlock)(WeakTestViewController *vc);
@@ -35,7 +37,8 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 /**
  weak 弱引用的变量初始化后用临时变量指向要不就会释放，除非timer用scheduledTimerWithTimeInterval初始化后就加到runloop中不会释放
  */
-@property (nonatomic,weak) NSTimer *timer;
+@property (nonatomic,strong) NSTimer *timer;
+@property (nonatomic,strong) MyTimer *timer1;
 
 @property (nonatomic,weak) UIView *weakView1;
 
@@ -53,6 +56,9 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 @property (nonatomic,weak) CMPerson *weakPerson;
 @property (nonatomic,assign) CMPerson *assignPerson;
 
+// weak Timer
+@property (nonatomic,weak) NSTimer *weakTimer;
+
 @end
 
 __weak id temp = nil;
@@ -63,8 +69,12 @@ __weak id temp = nil;
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
-//    timer强弱都可以dealloc， 非block的timer要在这里invalidate
+//    test 6
+//    timer强弱都可以dealloc，定时器失效
+//    非block的timer要在这里invalidate
     [self.timer invalidate];
+    self.timer = nil;
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -165,10 +175,48 @@ __weak id temp = nil;
 //    [self test14];
     
     
+//    [self test15];
     
+//    [[NSRunLoop mainRunLoop] run]; 卡死
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(test16) forControlEvents:UIControlEventTouchUpInside];
 
 }
+- (void)test15 {
+    
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:[MyProxy proxyWithTarget:self] selector:@selector(goggoo) userInfo:nil repeats:YES];
+}
+
+- (void)test16 {
+    
+//    self.timer1 = [MyTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        ADLog(@"test16");
+//    }];
+ 
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+//        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//            NSLog(@"111111");
+//        }];
+           
+//        [[NSRunLoop currentRunLoop] run];
+        
+        self.timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            NSLog(@"111111");
+        }];
+        
+//        NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 target:[MyProxy proxyWithTarget:self] selector:@selector(goggoo) userInfo:nil repeats:YES];
+        [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+        [[NSRunLoop currentRunLoop] run];
+//        子线程RunLoop有了任务就一直执行任务，不再向下执行，阻塞在这里，可以用 [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]]; 和 while (weakSelf && !weakSelf.isStoped) 终止阻塞
+
+        ADLog(@"do");
+    });
+}
+
 
 - (void)test14 {
     NSMutableString *str = [NSMutableString stringWithFormat:@"123"];
@@ -295,8 +343,10 @@ __weak id temp = nil;
 //    self.timer = doNotWorkTimer;
   
     
-//    weak-timer，为nil，strong-timer，不为nil
+//    strong-timer，pop - no dealloc，循环引用内存泄露
 //    self.timer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
+//    weak-timer，pop - dealloc，
+//    self.weakTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(outputLog:) userInfo:nil repeats:YES];
     
     
     //weak-timer，不为nil
@@ -306,7 +356,22 @@ __weak id temp = nil;
 //    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
 //        ADLog(@"it is log!");
 //    }];
+      
     
+    __weak  typeof(self) weakSelf = self;
+    // 这样不会dealloc
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:weakSelf selector:@selector(outputLog:) userInfo:nil repeats:YES];
+    
+//    这样会dealloc
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        // dealloc, timer come on 一直打印，需要在dealloc里invalidate
+        ADLog(@"timer come on ");
+//        ADLog(@"%@",weakSelf.title);
+        // dealloc, weakSelf = nil,给nil发消息，不会执行
+//        [weakSelf outputLog:timer];
+    }];
+    
+//    [[NSRunLoop mainRunLoop] run]; //主线程永远等待，但让出主线程时间片
     if (self.timer == nil) {
         ADLog(@"timer 被释放了");
     }
@@ -441,10 +506,10 @@ __weak id temp = nil;
 {
     ADLog(@"121212");
 }
-- (void)dealloc
-{
-//    block的timer可以在这里invalidate
-//    [self.timer invalidate];
+- (void)dealloc {
+//    scheduledTimerWithTimeInterval的timer可以在这里invalidate
+    [self.timer invalidate];
+    self.timer = nil;
     ADLog(@"self.name %@",self.name);
 
     ADLog(@"___________%s",__func__);
@@ -455,7 +520,15 @@ __weak id temp = nil;
     ADLog(@"touchesBegan - temp - %@",temp);
     ADLog(@"touchesBegan - assignString - %@",self.assignString);
 
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 
 @end
+
+// timer
+// 1 循环引用，内存泄露
+// 2 加到主线程RunLoop 的关闭,[self.timer1 invalidate] self.timer = nil;
+
+//[[NSRunLoop mainRunLoop] run]; //主线程永远等待，但让出主线程时间片
