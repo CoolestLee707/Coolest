@@ -28,4 +28,7 @@ class Swift_demo: NSObject,SwiftProtocol {
 // 单例
 class Manager {
     static let sharedInstance = Manager()
+    private init() {
+        // 不要忘记把构造器变成私有
+    }
 }

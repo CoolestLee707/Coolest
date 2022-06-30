@@ -182,12 +182,12 @@ __weak id temp = nil;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
     button.frame = CGRectMake(100, 100, 100, 100);
     [self.view addSubview:button];
-    [button addTarget:self action:@selector(test16) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(test15) forControlEvents:UIControlEventTouchUpInside];
 
 }
 - (void)test15 {
     
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:[MyProxy proxyWithTarget:self] selector:@selector(goggoo) userInfo:nil repeats:YES];
+    self.weakTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goggoo) userInfo:nil repeats:YES];
 }
 
 - (void)test16 {

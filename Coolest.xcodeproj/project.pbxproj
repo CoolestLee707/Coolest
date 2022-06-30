@@ -58,6 +58,8 @@
 		4A544E212856E5A1004CBDEC /* CMProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544E202856E5A1004CBDEC /* CMProxy.m */; };
 		4A544E242856E5C2004CBDEC /* CMObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544E232856E5C2004CBDEC /* CMObject.m */; };
 		4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FCE286C77EE004CBDEC /* MyTimer.m */; };
+		4A544FD3286C984E004CBDEC /* MallocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FD2286C984D004CBDEC /* MallocViewController.m */; };
+		4A544FD6286C99FB004CBDEC /* MallocPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FD5286C99FB004CBDEC /* MallocPerson.m */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -296,6 +298,10 @@
 		4A544E232856E5C2004CBDEC /* CMObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CMObject.m; sourceTree = "<group>"; };
 		4A544FCD286C77EE004CBDEC /* MyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTimer.h; sourceTree = "<group>"; };
 		4A544FCE286C77EE004CBDEC /* MyTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTimer.m; sourceTree = "<group>"; };
+		4A544FD1286C984D004CBDEC /* MallocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MallocViewController.h; sourceTree = "<group>"; };
+		4A544FD2286C984D004CBDEC /* MallocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MallocViewController.m; sourceTree = "<group>"; };
+		4A544FD4286C99FB004CBDEC /* MallocPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MallocPerson.h; sourceTree = "<group>"; };
+		4A544FD5286C99FB004CBDEC /* MallocPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MallocPerson.m; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -698,6 +704,17 @@
 				4A544C682845024A004CBDEC /* SonProxy.m */,
 			);
 			path = NSProxy;
+			sourceTree = "<group>";
+		};
+		4A544FD0286C9823004CBDEC /* MallocSize */ = {
+			isa = PBXGroup;
+			children = (
+				4A544FD1286C984D004CBDEC /* MallocViewController.h */,
+				4A544FD2286C984D004CBDEC /* MallocViewController.m */,
+				4A544FD4286C99FB004CBDEC /* MallocPerson.h */,
+				4A544FD5286C99FB004CBDEC /* MallocPerson.m */,
+			);
+			path = MallocSize;
 			sourceTree = "<group>";
 		};
 		4A80C841281A2BF200AEA974 /* TestModules */ = {
@@ -1239,6 +1256,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A544FD0286C9823004CBDEC /* MallocSize */,
 				4A544C5E2844FA44004CBDEC /* NSProxy */,
 				4A544AA62840E054004CBDEC /* HitTest */,
 				4AB63BE62832890800736AA9 /* AssociatedObject */,
@@ -1741,6 +1759,7 @@
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				4A544E212856E5A1004CBDEC /* CMProxy.m in Sources */,
+				4A544FD6286C99FB004CBDEC /* MallocPerson.m in Sources */,
 				4A5197DC2817E39700561E41 /* CLPermenantThread.m in Sources */,
 				BF18288221A8026200361219 /* CameraViewController.m in Sources */,
 				4A544C662844FABA004CBDEC /* MyProxy.m in Sources */,
@@ -1782,6 +1801,7 @@
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
 				1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
+				4A544FD3286C984E004CBDEC /* MallocViewController.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
 				BF769ED022643281004A3E9A /* PersonBlock.m in Sources */,
 				4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */,
