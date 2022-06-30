@@ -114,7 +114,7 @@
 //    [self groupWait];
     
 //    队列组 dispatch_group_enter、dispatch_group_leave
-//    [self groupEnterAndLeave];
+    [self groupEnterAndLeave];
     
 //    semaphore 线程同步 -- 信号量
 //    [self semaphoreSync];
@@ -165,16 +165,51 @@
     
 //    [self test10];
     
-    [self test11];
+//    [self test11];
     
 //    [self test12];
     
 //    [self test13];
     
+//    线依赖
+//    [self testByteDanceSemaphoreNew];
     
+//    [self testGCDtaskABCDE];
    
 }
+//ABC 异步并发执行，AB结束D,C结束E
+- (void)testGCDtaskABCDE {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_semaphore_t semaphore1 = dispatch_semaphore_create(0);
+    dispatch_semaphore_t semaphore2 = dispatch_semaphore_create(0);
 
+    dispatch_async(queue, ^{
+        ADLog(@"A");
+        sleep(2);
+        dispatch_semaphore_signal(semaphore1);
+    });
+    dispatch_async(queue, ^{
+        ADLog(@"B");
+        sleep(2);
+        dispatch_semaphore_signal(semaphore1);
+    });
+    dispatch_async(queue, ^{
+        ADLog(@"C");
+        dispatch_semaphore_signal(semaphore2);
+    });
+    
+    dispatch_async(queue, ^{
+        dispatch_semaphore_wait(semaphore1, DISPATCH_TIME_FOREVER);
+        dispatch_semaphore_wait(semaphore1, DISPATCH_TIME_FOREVER);
+        ADLog(@"D");
+    });
+    
+    dispatch_async(queue, ^{
+        dispatch_semaphore_wait(semaphore2, DISPATCH_TIME_FOREVER);
+        ADLog(@"E");
+    });
+    
+}
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     if (self.timer) {
         [self.timer invalidate];
@@ -783,38 +818,71 @@
 }
 
 #pragma mark ---   字节面试+++++++=线程依赖，(A->C, B)->D,dispatch_group_enter，dispatch_group_leave
-- (void)testByteDanceEnterLeave {
-    dispatch_group_t group = dispatch_group_create();
+//- (void)testByteDanceEnterLeave {
+//    dispatch_group_t group = dispatch_group_create();
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//
+//    dispatch_group_enter(group);// 使用group
+//    dispatch_group_async(group, queue, ^{
+//        // 追加任务1
+//        [NSThread sleepForTimeInterval:2];
+//        ADLog(@"A---%@",[NSThread currentThread]);
+//
+//        dispatch_barrier_async(queue, ^{
+//            ADLog(@"C---%@",[NSThread currentThread]);
+//            dispatch_group_leave(group);
+//        });
+//    });
+//
+//    dispatch_group_enter(group);
+//    dispatch_group_async(group, queue, ^{
+//        // 追加任务2
+//        [NSThread sleepForTimeInterval:2];
+//        ADLog(@"B---%@",[NSThread currentThread]);
+//        dispatch_group_leave(group);
+//    });
+//
+//    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+//        ADLog(@"D---%@",[NSThread currentThread]);
+//    });
+//
+//    ADLog(@"end---%@",[NSThread currentThread]);
+//}
+
+#pragma mark ---   字节面试+++++++=线程依赖，(A->C, B)->D,信号量加锁，卡死主线程 - new
+- (void)testByteDanceSemaphoreNew {
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    dispatch_group_t group = dispatch_group_create();
     
-    dispatch_group_enter(group);// 使用group
     dispatch_group_async(group, queue, ^{
-        // 追加任务1
-        [NSThread sleepForTimeInterval:2];
-        ADLog(@"A---%@",[NSThread currentThread]);
-        
-        dispatch_barrier_async(queue, ^{
-            ADLog(@"C---%@",[NSThread currentThread]);
-            dispatch_group_leave(group);
-        });
+        for (int i = 0; i < 2; ++i) {
+            [NSThread sleepForTimeInterval:1];
+            ADLog(@"A---");
+        }
+        dispatch_semaphore_signal(semaphore);
+    });
+
+    dispatch_group_async(group, queue, ^{
+        for (int i = 0; i < 2; ++i) {
+            [NSThread sleepForTimeInterval:2];
+            ADLog(@"B---");
+        }
     });
     
-    dispatch_group_enter(group);
     dispatch_group_async(group, queue, ^{
-        // 追加任务2
-        [NSThread sleepForTimeInterval:2];
-        ADLog(@"B---%@",[NSThread currentThread]);
-        dispatch_group_leave(group);
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        for (int i = 0; i < 1; ++i) {
+            ADLog(@"C---");
+        }
     });
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
-        ADLog(@"D---%@",[NSThread currentThread]);
+        // 等前面的异步任务1、任务2都执行完毕后，回到主线程执行下边任务
+        ADLog(@"D---");
     });
-    
-    ADLog(@"end---%@",[NSThread currentThread]);
+      
 }
-
-#pragma mark ---   字节面试+++++++=线程依赖，(A->C, B)->D,信号量加锁，卡死主线程
 - (void)testByteDanceSemaphore {
     dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);

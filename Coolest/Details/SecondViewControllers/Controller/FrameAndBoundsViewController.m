@@ -64,6 +64,7 @@
     */
 //    self.blueView.bounds = CGRectMake(0, 0, 300, 300);
 
+
     /*
      更改了bounds里的origin-------子-相对父视图左上移动
      before***blueView-----frame:{{100, 200}, {200, 200}}------bounds:{{0, 0}, {200, 200}}---center:{200, 300}
@@ -73,9 +74,14 @@
     */
 //    self.blueView.bounds = CGRectMake(50, 50, 200, 200);
     
+//    旋转，frame变化，bounds不变
+//    after***blueView-----frame:{{63.397459621556138, 163.39745962155612}, {273.20508075688775, 273.20508075688781}}------bounds:{{0, 0}, {200, 200}}---center:{200, 300}
     
-//    NSLog(@"after***blueView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.blueView.frame), NSStringFromCGRect(self.blueView.bounds),NSStringFromCGPoint(self.blueView.center));
-//    NSLog(@"after***redView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.redView.frame), NSStringFromCGRect(self.redView.bounds),NSStringFromCGPoint(self.redView.center));
+//    self.blueView.transform = CGAffineTransformRotate(self.blueView.transform, M_PI / 6);
+
+    
+    NSLog(@"after***blueView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.blueView.frame), NSStringFromCGRect(self.blueView.bounds),NSStringFromCGPoint(self.blueView.center));
+    NSLog(@"after***redView-----frame:%@------bounds:%@---center:%@",NSStringFromCGRect(self.redView.frame), NSStringFromCGRect(self.redView.bounds),NSStringFromCGPoint(self.redView.center));
     
     
 //    self.sc.bounds = CGRectMake(0, 0, 300, 300);
