@@ -123,12 +123,26 @@ static void stringCleanUp(__strong NSString **string) {
     UIButton *liveButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.view addSubview:liveButton];
     liveButton.titleLabel.font = [UIFont systemFontOfSize:13];
-    liveButton.frame = CGRectMake(10, 620, Main_Screen_Width-20, 50);
-    liveButton.backgroundColor = UIColor.blueColor;
-    [liveButton setTitle:@"打开直播间" forState:UIControlStateNormal];
+    liveButton.frame = CGRectMake(10, 620, Main_Screen_Width/2-20, 50);
+    liveButton.backgroundColor = UIColor.brownColor;
+    [liveButton setTitle:@"打开直播间首页" forState:UIControlStateNormal];
     [liveButton setTitleColor:UIColor.yellowColor forState:UIControlStateNormal];
     [liveButton addTargetSelected:^(UIButton * _Nonnull button) {
-        [WBRouter performTarget:@"OpenLiveHome" action:@"OpenLive" params:nil];
+        [WBRouter performTarget:@"OpenLiveHome" action:@"OpenLive" params:@{@"isGotoDetail":@"0"}];
+//        [WBRouter openURL:[NSURL URLWithString:@"lichuanmin://OpenLiveHome/OpenLive/#/modal"] withParams:@{@"isGotoDetail":@"1"}];
+    }];
+    
+    UIButton *liveDetailButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:liveDetailButton];
+    liveDetailButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    liveDetailButton.frame = CGRectMake(Main_Screen_Width/2+10, 620, Main_Screen_Width/2-20, 50);
+    liveDetailButton.backgroundColor = UIColor.brownColor;
+    [liveDetailButton setTitle:@"打开直播间详情" forState:UIControlStateNormal];
+    [liveDetailButton setTitleColor:UIColor.yellowColor forState:UIControlStateNormal];
+    [liveDetailButton addTargetSelected:^(UIButton * _Nonnull button) {
+//        [WBRouter performTarget:@"OpenLiveHome" action:@"OpenLiveDetail" params:nil];
+        [WBRouter openURL:[NSURL URLWithString:@"lichuanmin://OpenLiveHome/OpenLiveDetail/#/modal"]];
+
     }];
     
 }
