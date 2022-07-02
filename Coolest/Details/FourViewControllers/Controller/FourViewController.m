@@ -161,10 +161,14 @@
 
     //    [self testButtonUI];
     
-    [self testGameV:@[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy];
+//    [self testGameV:@[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy];
         
+    [self testMode];
 }
 
+- (void)testMode {
+    
+}
 - (void)testGameV:(NSMutableArray *)arr {
 //    safe
 //    for (int i=0; i<arr.count; i++) {

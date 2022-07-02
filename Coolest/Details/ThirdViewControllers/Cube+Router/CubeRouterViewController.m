@@ -120,7 +120,16 @@ static void stringCleanUp(__strong NSString **string) {
         [swiftObject aaaaa:@"oc->swift"];
     }];
     
- 
+    UIButton *liveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:liveButton];
+    liveButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    liveButton.frame = CGRectMake(10, 620, Main_Screen_Width-20, 50);
+    liveButton.backgroundColor = UIColor.blueColor;
+    [liveButton setTitle:@"打开直播间" forState:UIControlStateNormal];
+    [liveButton setTitleColor:UIColor.yellowColor forState:UIControlStateNormal];
+    [liveButton addTargetSelected:^(UIButton * _Nonnull button) {
+        [WBRouter performTarget:@"OpenLiveHome" action:@"OpenLive" params:nil];
+    }];
     
 }
 
@@ -203,6 +212,7 @@ static void stringCleanUp(__strong NSString **string) {
 //            调用 OC 方法
             NSDictionary *returnInfo = [WBRouter performTarget:@"testModule1" action:@"log" params:params];
             ADLog(@"returnInfo result - %@",returnInfo);
+
             break;
         }
         case 1:

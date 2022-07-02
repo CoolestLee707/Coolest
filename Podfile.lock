@@ -20,6 +20,18 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (6.5.10)
+  - LCMKitMod (0.1.0):
+    - LCMKitMod/Core (= 0.1.0)
+  - LCMKitMod/Categories (0.1.0)
+  - LCMKitMod/Core (0.1.0):
+    - LCMKitMod/Categories
+    - LCMKitMod/Theme
+  - LCMKitMod/Theme (0.1.0)
+  - LiveModule (0.1.0):
+    - LiveModule/Cube (= 0.1.0)
+    - LiveModule/Kit (= 0.1.0)
+  - LiveModule/Cube (0.1.0)
+  - LiveModule/Kit (0.1.0)
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
@@ -81,6 +93,8 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
   - IQKeyboardManager
+  - LCMKitMod (from `../../MyPods/LCMKitMod`)
+  - LiveModule (from `../../MyPods/LiveModule`)
   - Masonry
   - MBCircularProgressBar
   - MBProgressHUD
@@ -125,6 +139,10 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   CLHashString:
     :git: https://github.com/CoolestLee707/CLHashString.git
+  LCMKitMod:
+    :path: "../../MyPods/LCMKitMod"
+  LiveModule:
+    :path: "../../MyPods/LiveModule"
   PINCache:
     :branch: master
     :git: https://github.com/pinterest/PINCache.git
@@ -145,6 +163,8 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  LCMKitMod: 893db205ab5eda046a385a59fe52b19d624eaec6
+  LiveModule: 0b2174b807539b5cc7577fb7ce7d36aca41f224d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -163,6 +183,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: a998ea02519a6dbe5237c2101d41037899bf850d
+PODFILE CHECKSUM: e5ac05ea24aafc96c959b07e945ba88962b43d96
 
 COCOAPODS: 1.11.3

@@ -1,0 +1,32 @@
+{
+  "name": "LiveModule",
+  "version": "0.1.0",
+  "summary": "A short description of LiveModule.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/CoolestLee707/LiveModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "LiChuanmin": "1915540982@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/CoolestLee707/LiveModule.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "LiveModule/Classes/**/*",
+  "subspecs": [
+    {
+      "name": "Cube",
+      "source_files": "LiveModule/Classes/Cube/**/*.{h,m}"
+    },
+    {
+      "name": "Kit",
+      "source_files": "LiveModule/Classes/Kit/**/*.{h,m}"
+    }
+  ]
+}

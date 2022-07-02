@@ -1,0 +1,44 @@
+{
+  "name": "LCMKitMod",
+  "version": "0.1.0",
+  "summary": "A short description of LCMKitMod.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/CoolestLee707/LCMKitMod",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "LiChuanmin": "1915540982@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/CoolestLee707/LCMKitMod.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "default_subspecs": "Core",
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "LCMKitMod/Classes/*.h",
+      "dependencies": {
+        "LCMKitMod/Categories": [
+
+        ],
+        "LCMKitMod/Theme": [
+
+        ]
+      }
+    },
+    {
+      "name": "Categories",
+      "source_files": "LCMKitMod/Classes/Categories/**/*.{h,m}"
+    },
+    {
+      "name": "Theme",
+      "source_files": "LCMKitMod/Classes/Theme/**/*.{h,m}"
+    }
+  ]
+}
