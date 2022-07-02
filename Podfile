@@ -34,10 +34,12 @@ pod 'PINCache', :git => 'https://github.com/pinterest/PINCache.git', :branch => 
 
 pod 'CLHashString',:git =>"https://github.com/CoolestLee707/CLHashString.git"
 
-#pod "LiveModule",:git =>"https://github.com/CoolestLee707/LiveModule.git"
 
 pod 'LCMKitMod',:path => '../../MyPods/LCMKitMod'
-pod 'LiveModule',:path => '../../MyPods/LiveModule'
+
+#pod 'LiveModule',:path => '../../MyPods/LiveModule'
+pod 'LiveModule',:git =>"https://github.com/CoolestLee707/LiveModule.git"
+#pod 'LiveModule','0.1.1'
 
 end
 

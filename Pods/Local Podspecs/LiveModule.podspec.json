@@ -1,6 +1,6 @@
 {
   "name": "LiveModule",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "A short description of LiveModule.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/CoolestLee707/LiveModule",
@@ -13,12 +13,11 @@
   },
   "source": {
     "git": "https://github.com/CoolestLee707/LiveModule.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "10.0"
   },
-  "source_files": "LiveModule/Classes/**/*",
   "subspecs": [
     {
       "name": "Cube",

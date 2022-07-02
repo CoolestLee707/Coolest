@@ -1,1 +1,1 @@
-../../../../../../MyPods/LiveModule/LiveModule/Classes/Kit/LiveHomeViewController.h
+../../../LiveModule/LiveModule/Classes/Kit/LiveHomeViewController.h

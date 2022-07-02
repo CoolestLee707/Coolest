@@ -27,11 +27,11 @@ PODS:
     - LCMKitMod/Categories
     - LCMKitMod/Theme
   - LCMKitMod/Theme (0.1.0)
-  - LiveModule (0.1.0):
-    - LiveModule/Cube (= 0.1.0)
-    - LiveModule/Kit (= 0.1.0)
-  - LiveModule/Cube (0.1.0)
-  - LiveModule/Kit (0.1.0)
+  - LiveModule (0.1.2):
+    - LiveModule/Cube (= 0.1.2)
+    - LiveModule/Kit (= 0.1.2)
+  - LiveModule/Cube (0.1.2)
+  - LiveModule/Kit (0.1.2)
   - Masonry (1.1.0)
   - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
@@ -94,7 +94,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - IQKeyboardManager
   - LCMKitMod (from `../../MyPods/LCMKitMod`)
-  - LiveModule (from `../../MyPods/LiveModule`)
+  - LiveModule (from `https://github.com/CoolestLee707/LiveModule.git`)
   - Masonry
   - MBCircularProgressBar
   - MBProgressHUD
@@ -142,7 +142,7 @@ EXTERNAL SOURCES:
   LCMKitMod:
     :path: "../../MyPods/LCMKitMod"
   LiveModule:
-    :path: "../../MyPods/LiveModule"
+    :git: https://github.com/CoolestLee707/LiveModule.git
   PINCache:
     :branch: master
     :git: https://github.com/pinterest/PINCache.git
@@ -151,6 +151,9 @@ CHECKOUT OPTIONS:
   CLHashString:
     :commit: a0349794cb2e470ba92d0af6bca1bd9d4dd0af3e
     :git: https://github.com/CoolestLee707/CLHashString.git
+  LiveModule:
+    :commit: e633b8a10086ef5d6564b8e1f1e1a73aa1805c5a
+    :git: https://github.com/CoolestLee707/LiveModule.git
   PINCache:
     :commit: 9ca06045b5aff12ee8c0ef5880aa8469c4896144
     :git: https://github.com/pinterest/PINCache.git
@@ -164,7 +167,7 @@ SPEC CHECKSUMS:
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
   LCMKitMod: 893db205ab5eda046a385a59fe52b19d624eaec6
-  LiveModule: 0b2174b807539b5cc7577fb7ce7d36aca41f224d
+  LiveModule: d0895e12c8e9c01285ef2fcf7749ac8813d65ac9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -183,6 +186,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: e5ac05ea24aafc96c959b07e945ba88962b43d96
+PODFILE CHECKSUM: eda14cae59ec779fb6f59ffb9513248e60e07774
 
 COCOAPODS: 1.11.3
