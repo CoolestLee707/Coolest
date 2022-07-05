@@ -1,1 +1,1 @@
-../../../../../../MyPods/LCMKitMod/LCMKitMod/Classes/LCMKit.h
+../../../LCMKitMod/LCMKitMod/Classes/LCMKit.h

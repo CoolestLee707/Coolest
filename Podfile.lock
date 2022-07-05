@@ -93,7 +93,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - FDFullscreenPopGesture
   - IQKeyboardManager
-  - LCMKitMod (from `../../MyPods/LCMKitMod`)
+  - LCMKitMod (from `https://github.com/CoolestLee707/LCMKitMod.git`)
   - LiveModule (from `https://github.com/CoolestLee707/LiveModule.git`)
   - Masonry
   - MBCircularProgressBar
@@ -140,7 +140,7 @@ EXTERNAL SOURCES:
   CLHashString:
     :git: https://github.com/CoolestLee707/CLHashString.git
   LCMKitMod:
-    :path: "../../MyPods/LCMKitMod"
+    :git: https://github.com/CoolestLee707/LCMKitMod.git
   LiveModule:
     :git: https://github.com/CoolestLee707/LiveModule.git
   PINCache:
@@ -151,6 +151,9 @@ CHECKOUT OPTIONS:
   CLHashString:
     :commit: a0349794cb2e470ba92d0af6bca1bd9d4dd0af3e
     :git: https://github.com/CoolestLee707/CLHashString.git
+  LCMKitMod:
+    :commit: cbf68941fbd3a496b82b109cbf345cd2c31f52c0
+    :git: https://github.com/CoolestLee707/LCMKitMod.git
   LiveModule:
     :commit: e633b8a10086ef5d6564b8e1f1e1a73aa1805c5a
     :git: https://github.com/CoolestLee707/LiveModule.git
@@ -186,6 +189,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: eda14cae59ec779fb6f59ffb9513248e60e07774
+PODFILE CHECKSUM: 4689ae42f4337f9c651c0ab78c17d78afeaa2d38
 
 COCOAPODS: 1.11.3
