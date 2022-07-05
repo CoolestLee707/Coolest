@@ -13,6 +13,8 @@
     dispatch_semaphore_t  semaphoreLock;
 }
 
+@property (nonatomic,strong)NSRecursiveLock *recursiveLock;
+
 @property (nonatomic,copy) NSArray *array;
 
 @property (nonatomic,assign)int ticketSurplusCount;
@@ -114,7 +116,7 @@
 //    [self groupWait];
     
 //    队列组 dispatch_group_enter、dispatch_group_leave
-    [self groupEnterAndLeave];
+//    [self groupEnterAndLeave];
     
 //    semaphore 线程同步 -- 信号量
 //    [self semaphoreSync];
@@ -171,11 +173,82 @@
     
 //    [self test13];
     
-//    线依赖
+//    线程依赖
 //    [self testByteDanceSemaphoreNew];
     
 //    [self testGCDtaskABCDE];
-   
+    
+    
+//    锁
+//    [self testNSRecursiveLock];
+    
+//    [self testSynchronized];
+    
+    [self testNSLock];
+
+
+}
+
+- (void)testNSLock {
+
+    NSLock *lock = [[NSLock alloc] init];
+        for (int i= 0; i < 5; i++) {
+            
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                static void (^testMethod)(int,int);
+                testMethod = ^(int value,int index){
+                if (value > 0) {
+                    NSLog(@"current value = %d-  i=%d",value,index);
+                    testMethod(value - 1,index);
+                }
+            };
+                
+             [lock lock];
+             testMethod(10,i);
+             [lock unlock];
+        });
+            
+    }
+}
+
+//上面的打印结果是正确的，Synchronized锁，是多线程递归锁。
+- (void)testSynchronized {
+
+    for (int i= 0; i < 5; i++) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                static void (^testMethod)(int,int);
+                testMethod = ^(int value, int index){
+                    @synchronized (self) {
+                        if (value > 0) {
+                            NSLog(@"current value = %d-  i=%d",value,index);
+                            testMethod(value - 1,index);
+                        }
+                    }
+                };
+       
+                testMethod(10,i);
+            });
+    }
+}
+//打印结果是有序的10....1，i=0,do not dealloc 但是本来应该打印10遍的，结果只打印了1遍。该锁是递归锁，但是不支持多线程的递归。
+- (void)testNSRecursiveLock {
+    self.recursiveLock = [[NSRecursiveLock alloc] init];
+
+    for (int i= 0; i < 5; i++) {
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                static void (^testMethod)(int,int);
+                testMethod = ^(int value,int index){
+                    [self.recursiveLock lock];
+                        if (value > 0) {
+                            NSLog(@"current value = %d-  i=%d",value,index);
+                            testMethod(value - 1,index);
+                        }
+                    [self.recursiveLock unlock];
+                };
+       
+                testMethod(10,i);
+            });
+    }
 }
 //ABC 异步并发执行，AB结束D,C结束E
 - (void)testGCDtaskABCDE {
