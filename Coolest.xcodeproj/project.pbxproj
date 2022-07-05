@@ -27,6 +27,7 @@
 		3FEA17F62503CC68007D102F /* AppCodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA17F52503CC68007D102F /* AppCodeTest.m */; };
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
+		4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */; };
 		4A519664280D076F00561E41 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A519663280D076F00561E41 /* RunLoopViewController.m */; };
 		4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196882812943D00561E41 /* CLTaskTimer.m */; };
 		4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196CE2813A27300561E41 /* WBModuleManager.m */; };
@@ -231,6 +232,8 @@
 		3FEA17F52503CC68007D102F /* AppCodeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCodeTest.m; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
+		4A42C8B92874535700C99E57 /* CL_AppLaunchTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CL_AppLaunchTime.h; sourceTree = "<group>"; };
+		4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CL_AppLaunchTime.m; sourceTree = "<group>"; };
 		4A519662280D076F00561E41 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		4A519663280D076F00561E41 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		4A519666280EE75100561E41 /* msgProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgProtocol.h; sourceTree = "<group>"; };
@@ -572,6 +575,8 @@
 				4A5197DB2817E39700561E41 /* CLPermenantThread.m */,
 				4A5197CF2817E21200561E41 /* CL_ExceptionHander.h */,
 				4A5197CE2817E21200561E41 /* CL_ExceptionHander.m */,
+				4A42C8B92874535700C99E57 /* CL_AppLaunchTime.h */,
+				4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */,
 				4A5197D42817E2F600561E41 /* fishhook.c */,
 				4A5197D52817E2F600561E41 /* fishhook.h */,
 			);
@@ -1781,6 +1786,7 @@
 				BF59E211210067250004EC56 /* HeaderCollectionReusableView.m in Sources */,
 				3F8B330924D0289000A684E2 /* CLThread.m in Sources */,
 				3F3E4E162521C97800748318 /* CLRouter.m in Sources */,
+				4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */,
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				4A80C847281A352600AEA974 /* testModule2.m in Sources */,
 				BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */,

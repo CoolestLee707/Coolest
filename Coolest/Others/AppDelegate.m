@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CL_ExceptionHander.h"
+#import "CL_AppLaunchTime.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +23,8 @@ extern CFAbsoluteTime startTime;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    main函数执行后时间
-    ADLog(@"Lanched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
-        
+//    ADLog(@"Lanched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
+    [CL_AppLaunchTime markTime];
         
 //    NSString *selectLanguage = @"en";
 
