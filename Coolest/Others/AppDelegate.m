@@ -26,6 +26,19 @@ extern CFAbsoluteTime startTime;
 //    ADLog(@"Lanched time %f",(CFAbsoluteTimeGetCurrent() - startTime));
     [CL_AppLaunchTime markTime];
         
+    
+    
+    // 读取应用配置信息，放入上下文
+    static NSString *key = @"app_configuration";
+    NSMutableDictionary *options = [NSMutableDictionary dictionaryWithDictionary:launchOptions];
+    NSDictionary *app_configuration = [[[NSBundle mainBundle] infoDictionary] objectForKey:key];
+    if (app_configuration.allKeys.count > 0) {
+        [options setObject:app_configuration forKey:key];
+    }
+    [WBContext shareInstance].application = application;
+    [WBContext shareInstance].launchOptions = options;
+    
+    
 //    NSString *selectLanguage = @"en";
 
 //    NSString *selectLanguage = @"zh-Hans";

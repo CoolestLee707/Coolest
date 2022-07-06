@@ -89,5 +89,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>app_configuration</key>
+	<dict>
+		<key>app_name</key>
+		<string>lichuanmin</string>
+		<key>app_version</key>
+		<string>1.0</string>
+	</dict>
 </dict>
 </plist>

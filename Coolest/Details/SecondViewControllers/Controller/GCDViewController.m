@@ -184,7 +184,8 @@
     
 //    [self testSynchronized];
     
-    [self testNSLock];
+//    [self testNSLock];
+    
 
 
 }
