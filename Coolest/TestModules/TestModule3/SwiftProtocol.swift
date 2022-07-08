@@ -10,4 +10,6 @@ import Foundation
 @objc protocol SwiftProtocol {
     @objc func action_someOneTest(_ params:NSDictionary) -> Void;
     @objc func action_someOneOCTest(_ block:(_ result: NSDictionary)->()) ->Void;
+    @objc func action_selectStrings(_ orignString:String) ->String;
+
 }

@@ -267,6 +267,8 @@ static void stringCleanUp(__strong NSString **string) {
         case 1:
         {
             id<SwiftProtocol> p2 = [WBRouter createService:@protocol(SwiftProtocol)];
+            NSString *str = [p2 action_selectStrings:@"aaadasdccasdccccdddasddasqwecczcaaaaa"];
+            ADLog(@"%@",str);
             [p2 action_someOneTest:params];
             [p2 action_someOneOCTest:^(NSDictionary * _Nonnull) {
                 ADLog(@"action_someOneOCTest");
