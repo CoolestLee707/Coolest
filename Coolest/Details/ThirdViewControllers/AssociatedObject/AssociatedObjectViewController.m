@@ -17,16 +17,56 @@ static char keyBlock;
 
 @property (nonatomic,strong)AssociatedPerson *StrongPerson;
 
+@property (nonatomic,assign)AssociatedPerson *assPerson;
+
 @end
 
 @implementation AssociatedObjectViewController
 
+__weak id referenceObject = nil;
+__weak id referenceStr = nil;
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    ADLog(@"%@ - %@",referenceObject,referenceStr);  // (null) - lcmdsdsjlsdjljdklsjdlksjds
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    ADLog(@"%@ - %@",referenceObject,referenceStr);  // (null) - (null)
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    AssociatedPerson *person = [AssociatedPerson new];
-//    [self test1];
+//    AssociatedPerson *person = [AssociatedPerson new];
+
+//    self.assPerson = [AssociatedPerson new];
     
+    
+//    @autoreleasepool {
+//        AssociatedPerson *person = [AssociatedPerson new];
+//        referenceObject = person;
+//
+//        NSString *str = [NSString stringWithFormat:@"lcmdsdsjlsdjljdkl5678sjdlksjds"];
+//        referenceStr = str;
+//    }
+//    ADLog(@"%@ - %@",referenceObject,referenceStr);   // (null) - (null)
+    
+    
+    
+    AssociatedPerson *person = [AssociatedPerson new];
+    // referenceObject是一个autorelease对象，设置一个weak的引用来观察它
+    referenceObject = person;
+
+    NSString *str = [NSString stringWithFormat:@"lcmdsdsjlsdjljdkl5678sjdlksjds"];
+    referenceStr = str;
+ 
+    
+    ADLog(@"%p - %p",referenceObject,referenceStr);
+    
+    
+//    [self test1];
 //    [self test2];
     
 

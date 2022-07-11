@@ -186,10 +186,27 @@
     
 //    [self testNSLock];
     
-
+         
+//    [self testMainAsync];
+    
 
 }
 
+// 0 1 1 3
+//调用dispatch_sync把NSLog(@"%d", ++y);任务同步调度到主线程队列中, 主线程会去执行该任务, 不死锁的原因是dispatch_sync并没有在主线程中创建, 而是在dispatch_get_global_queue中创建并等待任务执行结束, 由于它是子线程, 所以并不会阻塞.
+- (void)testMainAsync {
+    __block int x = 0;
+    __block int y = 0;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"%d", x++);
+    dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"%d", ++y);
+        });
+    NSLog(@"%d", y++);
+    NSLog(@"%d", x + y);
+    while (1) {}
+   });
+}
 - (void)testNSLock {
 
     NSLock *lock = [[NSLock alloc] init];
