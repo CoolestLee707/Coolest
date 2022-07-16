@@ -28,6 +28,8 @@
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
 		4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */; };
+		4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6628819E5B00C99E57 /* DBViewController.m */; };
+		4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */; };
 		4A519664280D076F00561E41 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A519663280D076F00561E41 /* RunLoopViewController.m */; };
 		4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196882812943D00561E41 /* CLTaskTimer.m */; };
 		4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196CE2813A27300561E41 /* WBModuleManager.m */; };
@@ -234,6 +236,10 @@
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
 		4A42C8B92874535700C99E57 /* CL_AppLaunchTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CL_AppLaunchTime.h; sourceTree = "<group>"; };
 		4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CL_AppLaunchTime.m; sourceTree = "<group>"; };
+		4A42CA6528819E5B00C99E57 /* DBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBViewController.h; sourceTree = "<group>"; };
+		4A42CA6628819E5B00C99E57 /* DBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBViewController.m; sourceTree = "<group>"; };
+		4A42CA6B28824C4700C99E57 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
+		4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
 		4A519662280D076F00561E41 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		4A519663280D076F00561E41 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		4A519666280EE75100561E41 /* msgProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgProtocol.h; sourceTree = "<group>"; };
@@ -774,6 +780,8 @@
 			children = (
 				4A80C858281D207D00AEA974 /* ArithmeticViewController.h */,
 				4A80C859281D207D00AEA974 /* ArithmeticViewController.m */,
+				4A42CA6528819E5B00C99E57 /* DBViewController.h */,
+				4A42CA6628819E5B00C99E57 /* DBViewController.m */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -1044,6 +1052,8 @@
 				BF59E1D421003BA30004EC56 /* NSURL+CFURL.m */,
 				BFDC0F2021072F3500185A31 /* NSObject+SwizzledMethod.h */,
 				BFDC0F2121072F3500185A31 /* NSObject+SwizzledMethod.m */,
+				4A42CA6B28824C4700C99E57 /* NSObject+DLIntrospection.h */,
+				4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */,
 				4AF8E9EC28276BAD00D41876 /* UITabBar+badge.h */,
 				4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */,
 			);
@@ -1758,7 +1768,9 @@
 				4A5196EB2813A27600561E41 /* WBRouter+WBExtension.m in Sources */,
 				4A80C861281D594C00AEA974 /* CubeRouterViewController.m in Sources */,
 				4A5197BC281434A000561E41 /* SafeViewController.m in Sources */,
+				4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */,
 				BF4AAC6E21EC6A97005FB62C /* PresentViewController.m in Sources */,
+				4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */,
 				4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */,
 				1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,

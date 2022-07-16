@@ -140,7 +140,7 @@ void test100() {
     
 //    [self test12];
     
-    [self test14];
+//    [self test14];
     
 //    [self weakTest1];
     
@@ -155,6 +155,7 @@ void test100() {
 //        ADLog(@"%@",self.title);
 //    };
 //    self.cmBlock();
+//    [self.cmBlock invoke];
     
     
 //    __block id weakSelf = self;
