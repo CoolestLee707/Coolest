@@ -78,7 +78,14 @@
     
     //tabbar 背景色
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, BottomBarHeight)];
-    backView.backgroundColor = TabbarColor;
+    
+//    backView.backgroundColor = TabbarColor;
+    if (@available(iOS 11.0, *)) {
+        backView.backgroundColor = [UIColor colorNamed:@"BgColor"];
+    } else {
+        backView.backgroundColor = TabbarColor;
+    }
+    
     [self.tabBar insertSubview:backView atIndex:0];
     
 }

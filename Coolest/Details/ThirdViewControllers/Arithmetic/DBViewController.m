@@ -20,7 +20,10 @@ typedef NS_ENUM(NSUInteger, DBType) {
 
 
 @interface DBViewController ()
+
+//类扩展中申明的方法没有被实现，编译器会报警
 - (void)eat;
+
 @end
 
 @implementation DBViewController
@@ -30,7 +33,27 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
     self.title = @"算法1";
 
-    [self isEqualString];
+//    手动切换Light和Dark
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    button.backgroundColor = UIColor.grayColor;
+    [button addTargetSelected:^(UIButton * _Nonnull button) {
+        
+        UIWindow *keyWindow = [UIApplication sharedApplication].windows.firstObject;
+
+         if(@available(iOS 13.0, *)) {
+            if (keyWindow.overrideUserInterfaceStyle == UIUserInterfaceStyleDark) {
+                keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+            }else {
+                keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+            }
+        }else {
+            // Fallback on earlier versions
+        }
+    }];
+    [self.view addSubview:button];
+    
+//    [self isEqualString];
        
 //    [self function_0];
        
@@ -47,9 +70,21 @@ typedef NS_ENUM(NSUInteger, DBType) {
 //    UIViewController *vc = [self getControllerFromView:view];
 //
 //    ADLog(@"%@-%p",vc,vc);
-
+    
+//    [self testMethod];
+    
+    
 }
 
+//performSelector是运行时系统负责去找方法的，在编译时候不做任何校验；如果直接调用编译是会自动校验,所以有时候如果使用了performSelector，为了程序的健壮性，会使用检查方法- (BOOL)respondsToSelector:(SEL)aSelector; 如果在子线程延迟执行要开启对应的RunLoop1
+
+// 2.performSelector可以不用import头文件包含方法的对象，直接用performSelector调用，字符串映射
+
+- (void)testMethod {
+//    [self noMethod];
+    SEL sel = NSSelectorFromString(@"noMethod");
+    [self performSelector:sel];
+}
 
 //Equal,当使用==来判断两个变量是否相等的时候，如果是基本类型变量，且都是数值型（类型可以不同）,则只要值相等，就会返回真；
 //如果是两个指针类型变量【例如OC对象】，则必须是两个指针变量保存的内存地址相同才会返回真

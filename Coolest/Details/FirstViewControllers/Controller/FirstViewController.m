@@ -128,6 +128,8 @@ static IMP __origin_method_imp = nil;
 - (void)oldData {
     self.dataArray = @[@"北京",@"上海",@"广州",@"深圳",@"重庆",@"天津",@"苏州",@"成都",@"武汉",@"杭州",@"南京",@"长沙",@"郑州",@"西安",@"沈阳",@"合肥",@"青岛",@"大连",@"石家庄",@"太原",@"南昌",@"邢台"];
     [self.mainTableView reloadData];
+    
+    [self changeLightOrDark];
 }
 - (void)swizeCreateUI
 {
@@ -224,5 +226,17 @@ static IMP __origin_method_imp = nil;
     NSLog(@"reloadNewData11 - %@", [NSThread currentThread]);
     self.dataArray = newDatas;
     [self.mainTableView reloadData];
+}
+
+// 手动切换Light和Dark
+- (void)changeLightOrDark {
+    UIWindow *keyWindow = [UIApplication sharedApplication].windows.firstObject;
+     if(@available(iOS 13.0, *)) {
+        if (keyWindow.overrideUserInterfaceStyle == UIUserInterfaceStyleDark) {
+            keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
+        }else {
+            keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+        }
+    }else {}
 }
 @end
