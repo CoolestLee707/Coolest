@@ -30,6 +30,8 @@
 		4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */; };
 		4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6628819E5B00C99E57 /* DBViewController.m */; };
 		4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */; };
+		4A42CF6A2883C38900C99E57 /* HLJViewTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */; };
+		4A42CF6B2883C38900C99E57 /* UIView+Statistical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF692883C38800C99E57 /* UIView+Statistical.m */; };
 		4A519664280D076F00561E41 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A519663280D076F00561E41 /* RunLoopViewController.m */; };
 		4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196882812943D00561E41 /* CLTaskTimer.m */; };
 		4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196CE2813A27300561E41 /* WBModuleManager.m */; };
@@ -240,6 +242,10 @@
 		4A42CA6628819E5B00C99E57 /* DBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBViewController.m; sourceTree = "<group>"; };
 		4A42CA6B28824C4700C99E57 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		4A42CF662883C38500C99E57 /* UIView+Statistical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Statistical.h"; sourceTree = "<group>"; };
+		4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLJViewTrackModel.m; sourceTree = "<group>"; };
+		4A42CF682883C38700C99E57 /* HLJViewTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLJViewTrackModel.h; sourceTree = "<group>"; };
+		4A42CF692883C38800C99E57 /* UIView+Statistical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Statistical.m"; sourceTree = "<group>"; };
 		4A519662280D076F00561E41 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		4A519663280D076F00561E41 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		4A519666280EE75100561E41 /* msgProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgProtocol.h; sourceTree = "<group>"; };
@@ -782,6 +788,10 @@
 				4A80C859281D207D00AEA974 /* ArithmeticViewController.m */,
 				4A42CA6528819E5B00C99E57 /* DBViewController.h */,
 				4A42CA6628819E5B00C99E57 /* DBViewController.m */,
+				4A42CF682883C38700C99E57 /* HLJViewTrackModel.h */,
+				4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */,
+				4A42CF662883C38500C99E57 /* UIView+Statistical.h */,
+				4A42CF692883C38800C99E57 /* UIView+Statistical.m */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -1889,6 +1899,8 @@
 				BF59E200210050D60004EC56 /* FirstViewController.m in Sources */,
 				4A544C632844FA93004CBDEC /* NSProxyViewController.m in Sources */,
 				BF7B055922845035008EDCF8 /* objc1.m in Sources */,
+				4A42CF6B2883C38900C99E57 /* UIView+Statistical.m in Sources */,
+				4A42CF6A2883C38900C99E57 /* HLJViewTrackModel.m in Sources */,
 				1AFE4BCB26DF52F300BD3048 /* FishHookViewController.m in Sources */,
 				BF59E1E4210044DC0004EC56 /* BaseViewController.m in Sources */,
 				4AF8E9FD282B99D000D41876 /* BlockTestObject.m in Sources */,

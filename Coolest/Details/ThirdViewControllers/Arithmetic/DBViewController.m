@@ -32,26 +32,8 @@ typedef NS_ENUM(NSUInteger, DBType) {
     [super viewDidLoad];
     
     self.title = @"算法1";
-
-//    手动切换Light和Dark
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(100, 100, 100, 100);
-    button.backgroundColor = UIColor.grayColor;
-    [button addTargetSelected:^(UIButton * _Nonnull button) {
-        
-        UIWindow *keyWindow = [UIApplication sharedApplication].windows.firstObject;
-
-         if(@available(iOS 13.0, *)) {
-            if (keyWindow.overrideUserInterfaceStyle == UIUserInterfaceStyleDark) {
-                keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleLight;
-            }else {
-                keyWindow.overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
-            }
-        }else {
-            // Fallback on earlier versions
-        }
-    }];
-    [self.view addSubview:button];
+    
+//   NSHashTable
     
 //    [self isEqualString];
        
@@ -74,6 +56,37 @@ typedef NS_ENUM(NSUInteger, DBType) {
 //    [self testMethod];
     
     
+//    [self NSHashTable];
+    
+//    [self testBounds];
+    
+}
+
+// scrollView通过修改bounds的x或y来实现滚动效果
+- (void)testBounds {
+    
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    bgView.backgroundColor = UIColor.redColor;
+    [self.view addSubview:bgView];
+    
+    UIView *subView = [[UIView alloc]initWithFrame:CGRectMake(0, 80, 20, 20)];
+    subView.backgroundColor = UIColor.greenColor;
+    [bgView addSubview:subView];
+    
+    
+    [UIView animateWithDuration:3.0 animations:^{
+        bgView.bounds = CGRectMake(0, 50, 100, 100);
+    }];
+}
+
+
+- (void)NSHashTable {
+    NSHashTable *hashTable = [NSHashTable hashTableWithOptions:NSPointerFunctionsCopyIn];
+    [hashTable addObject:@"foo"];
+    [hashTable addObject:@"bar"];
+    [hashTable addObject:@42];
+    [hashTable removeObject:@"bar"];
+    NSLog(@"Members: %@", [hashTable allObjects]);
 }
 
 //performSelector是运行时系统负责去找方法的，在编译时候不做任何校验；如果直接调用编译是会自动校验,所以有时候如果使用了performSelector，为了程序的健壮性，会使用检查方法- (BOOL)respondsToSelector:(SEL)aSelector; 如果在子线程延迟执行要开启对应的RunLoop1

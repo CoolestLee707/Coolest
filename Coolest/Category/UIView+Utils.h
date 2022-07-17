@@ -140,4 +140,7 @@
 
 - (void)addBottomShadow;
 
+//判断控件是否显示在当前窗口
+- (BOOL)isShowingOnKeyWindow;
+
 @end

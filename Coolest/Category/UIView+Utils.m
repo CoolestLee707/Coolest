@@ -333,4 +333,20 @@ static char kDTActionHandlerLongPressGestureKey;
     self.layer.shadowRadius = 4.0;//半径
 }
 
+//判断控件是否显示在当前窗口
+- (BOOL)isShowingOnKeyWindow {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    
+//    self转换坐标从self.superview到keyWindow上
+    CGRect newFrame = [keyWindow convertRect:self.frame fromView:self.superview];
+    CGRect windowBounds = keyWindow.bounds;
+    
+//    判断矩形结构是否交叉，两个矩形对象是否重叠
+    BOOL intersects = CGRectIntersectsRect(newFrame, windowBounds);
+    
+    CGRect intersectionRect = CGRectIntersection(newFrame, windowBounds);
+
+    
+    return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow && intersects;
+}
 @end

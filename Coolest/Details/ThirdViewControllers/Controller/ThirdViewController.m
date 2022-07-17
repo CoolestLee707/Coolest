@@ -29,12 +29,15 @@
 #import <UserNotifications/UserNotifications.h>
 #import "NSProxyViewController.h"
 #import "MallocViewController.h"
+
 #import "DBViewController.h"
+#import "UIView+Statistical.h"
 
 @interface ThirdViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView *mainTableView;
 @property (nonatomic,copy) NSArray *dataArray;
+@property (nonatomic,strong) UIView *flagView;
 
 @end
 
@@ -42,12 +45,19 @@
 
 #pragma mark --- Lazy
 
+- (UIView *)flagView {
+    if (!_flagView) {
+        _flagView = [[UIView alloc]initWithFrame:CGRectMake(0, 10, 10, 80)];
+        _flagView.backgroundColor = UIColor.redColor;
+    }
+    return _flagView;
+}
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
         
         _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight, Main_Screen_Width, Main_Screen_Height - kNavigationBarHeight - BottomBarHeight) style:UITableViewStyleGrouped];
         
-        _mainTableView.rowHeight = 60;
+        _mainTableView.rowHeight = 88;
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -90,7 +100,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CoolestCell *cell = [CoolestCell CreateCoolestCell:tableView];
     cell.textLabel.text = self.dataArray[indexPath.row];
+
+//    埋点曝光测试
+    if ([self.dataArray[indexPath.row] isEqualToString:@"13-KVO"]) {
+        if (![cell.contentView.subviews containsObject:self.flagView]) {
+            [cell.contentView addSubview:self.flagView];
+        }
+    }else {
+        if ([cell.contentView.subviews containsObject:self.flagView]) {
+            [self.flagView removeFromSuperview];
+        }
+    }
+  
     return cell;
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if(self.flagView.isShowingOnKeyWindow){
+        ADLog(@"flag 曝光");
+    }else {
+        ADLog(@"flag -----隐藏");
+    }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell hlj_setTrackTag:@"ThirdViewTableView" position:indexPath.row+1];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
