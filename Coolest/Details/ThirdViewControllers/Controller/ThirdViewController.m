@@ -124,7 +124,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    [cell hlj_setTrackTag:@"ThirdViewTableView" position:indexPath.row+1];
+//    [cell hlj_setTrackTag:@"ThirdViewTableView" position:indexPath.row+1];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

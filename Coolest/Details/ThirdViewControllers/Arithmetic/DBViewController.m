@@ -8,7 +8,7 @@
 
 #import "DBViewController.h"
 #import "NSObject+DLIntrospection.h"
-
+#import "CLOrderDictionary.h"
 
 typedef NS_ENUM(NSUInteger, DBType) {
     DBTypeDev,       // 开发
@@ -21,12 +21,21 @@ typedef NS_ENUM(NSUInteger, DBType) {
 
 @interface DBViewController ()
 
+@property (nonatomic,strong) CLOrderDictionary *CLDic;
+
 //类扩展中申明的方法没有被实现，编译器会报警
 - (void)eat;
 
 @end
 
 @implementation DBViewController
+
+- (CLOrderDictionary *)CLDic {
+    if (!_CLDic) {
+        _CLDic = [[CLOrderDictionary alloc]init];
+    }
+    return _CLDic;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +69,30 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
 //    [self testBounds];
     
+    [self testOrderSet];
+    
+
 }
+
+// 设计一个key是有序的字典
+- (void)testOrderSet {
+    
+    //    NSMutableDictionary *tempDic = [NSMutableDictionary dictionary];
+    //    for (int i=0; i<100; i++) {
+    //        [tempDic setValue:[NSString stringWithFormat:@"--- %d",i] forKey:[NSString stringWithFormat:@"%d",i]];
+    //    }
+    //    NSLog(@"%@",tempDic);  // 无序
+        
+        
+    for (int i=0; i<100; i++) {
+        [self.CLDic CLSetValue:[NSString stringWithFormat:@"+++ %d",i] forKey:[NSString stringWithFormat:@"%d",i]];
+    }
+    NSLog(@"+++= %@",[self.CLDic CLvalueOfIndex:10]); // 有序访问
+    [self.CLDic CLSetValue:@"XXX" atIndex:10]; // 有序修改
+    
+    NSLog(@"self.CLDic - %@",self.CLDic.CLallKeys);  // 有序
+}
+
 
 // scrollView通过修改bounds的x或y来实现滚动效果
 - (void)testBounds {

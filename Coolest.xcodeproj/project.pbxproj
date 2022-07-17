@@ -32,6 +32,7 @@
 		4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */; };
 		4A42CF6A2883C38900C99E57 /* HLJViewTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */; };
 		4A42CF6B2883C38900C99E57 /* UIView+Statistical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF692883C38800C99E57 /* UIView+Statistical.m */; };
+		4A42CF6E2883FA8500C99E57 /* CLOrderDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF6D2883FA8500C99E57 /* CLOrderDictionary.m */; };
 		4A519664280D076F00561E41 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A519663280D076F00561E41 /* RunLoopViewController.m */; };
 		4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196882812943D00561E41 /* CLTaskTimer.m */; };
 		4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196CE2813A27300561E41 /* WBModuleManager.m */; };
@@ -246,6 +247,8 @@
 		4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLJViewTrackModel.m; sourceTree = "<group>"; };
 		4A42CF682883C38700C99E57 /* HLJViewTrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HLJViewTrackModel.h; sourceTree = "<group>"; };
 		4A42CF692883C38800C99E57 /* UIView+Statistical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Statistical.m"; sourceTree = "<group>"; };
+		4A42CF6C2883FA8500C99E57 /* CLOrderDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLOrderDictionary.h; sourceTree = "<group>"; };
+		4A42CF6D2883FA8500C99E57 /* CLOrderDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLOrderDictionary.m; sourceTree = "<group>"; };
 		4A519662280D076F00561E41 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		4A519663280D076F00561E41 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		4A519666280EE75100561E41 /* msgProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgProtocol.h; sourceTree = "<group>"; };
@@ -792,6 +795,8 @@
 				4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */,
 				4A42CF662883C38500C99E57 /* UIView+Statistical.h */,
 				4A42CF692883C38800C99E57 /* UIView+Statistical.m */,
+				4A42CF6C2883FA8500C99E57 /* CLOrderDictionary.h */,
+				4A42CF6D2883FA8500C99E57 /* CLOrderDictionary.m */,
 			);
 			path = Arithmetic;
 			sourceTree = "<group>";
@@ -1783,6 +1788,7 @@
 				4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */,
 				4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */,
 				1ACED0C526CBA72900EEC483 /* FileViewController.m in Sources */,
+				4A42CF6E2883FA8500C99E57 /* CLOrderDictionary.m in Sources */,
 				BF14136B21AFC76F002E5FAB /* msgSendViewController.m in Sources */,
 				BF2D870F223A436B00A51E33 /* MVVM_RAC_Cell.m in Sources */,
 				4A544E212856E5A1004CBDEC /* CMProxy.m in Sources */,
