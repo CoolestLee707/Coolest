@@ -22,7 +22,9 @@ typedef NS_ENUM(NSUInteger, DBType) {
 @interface DBViewController ()
 
 @property (nonatomic,strong) CLOrderDictionary *CLDic;
-
+@property (nonatomic,strong) UIView *v1;
+@property (nonatomic,strong) UIView *v2;
+@property (nonatomic,strong) UIView *bgView;
 //类扩展中申明的方法没有被实现，编译器会报警
 - (void)eat;
 
@@ -69,10 +71,45 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
 //    [self testBounds];
     
-    [self testOrderSet];
+//    [self testOrderSet];
     
-
+//    [self testKK];
+    
 }
+- (void)testKK {
+    self.v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
+    self.v1.backgroundColor = UIColor.redColor;
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(v1Hidden)];
+    [self.v1 addGestureRecognizer:tap1];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.v1];
+  
+    self.v2 = [[UIView alloc]initWithFrame:CGRectMake(100, 200, 100, 100)];
+    self.v2.backgroundColor = UIColor.blueColor;
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(v2Hidden)];
+    [self.v2 addGestureRecognizer:tap2];
+    
+    self.bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height)];
+    self.bgView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.bgView];
+    
+    [self.bgView addSubview:self.v1];
+    [self.bgView addSubview:self.v2];
+
+    self.v1.hidden = YES;
+    
+}
+- (void)v1Hidden {
+//    self.v1.hidden = YES;
+    [self.v1 removeFromSuperview];
+    [self.bgView removeFromSuperview];
+}
+
+- (void)v2Hidden {
+//    self.v2.hidden = YES;
+    [self.v2 removeFromSuperview];
+    self.v1.hidden = NO;
+}
+
 
 // 设计一个key是有序的字典
 - (void)testOrderSet {
@@ -279,4 +316,5 @@ NSInteger global_foo_1 = 0;
     
     
 }
+
 @end

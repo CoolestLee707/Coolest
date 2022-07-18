@@ -39,7 +39,7 @@
 
 /*
 对于class NSObject而言，接收到消息后先去自身的方法列表里找匹配的selector，如果找不到，会沿着继承体系去superclass的方法列表找；如果还找不到，先后会经过+resolveInstanceMethod:和-forwardingTargetForSelector:处理，处理失败后，才会到-methodSignatureForSelector:/-forwardInvocation:进行最后的挣扎.
-        但对于NSProxy，接收unknown selector后，直接回调-methodSignatureForSelector:/-forwardInvocation:，消息转发过程比class NSObject要简单得多。
+ 但对于NSProxy，接收unknown selector后，直接回调-methodSignatureForSelector:/-forwardInvocation:，消息转发过程比class NSObject要简单得多。
         相对于class NSObject，NSProxy的另外一个非常重要的不同点也值得注意：NSProxy会将自省相关的selector直接forward到-forwardInvocation:回调中，这些自省方法包括：
 
 (BOOL)isKindOfClass:(Class)aClass;
