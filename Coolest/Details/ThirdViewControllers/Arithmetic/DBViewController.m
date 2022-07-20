@@ -75,6 +75,14 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
 //    [self testKK];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 100, 50, 40);
+    button.backgroundColor = UIColor.grayColor;
+    [button addTargetSelected:^(UIButton * _Nonnull button) {
+        [self testKK];
+    }];
+    
+    [self.view addSubview:button];
 }
 - (void)testKK {
     self.v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];

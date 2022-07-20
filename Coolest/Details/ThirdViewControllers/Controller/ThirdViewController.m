@@ -124,9 +124,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [cell hlj_setTrackTag:@"ThirdViewTableView" position:indexPath.row+1];
+//    [cell hlj_setTrackTag:@"ThirdViewTableView - willDisplayCell" position:indexPath.row+1];
 }
 
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"--- %ld",(long)indexPath.row);
+//    [cell hlj_setTrackTag:@"ThirdViewTableView - didEndDisplayingCell" position:indexPath.row+1];
+}
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     return [[UIView alloc]init];
 }
