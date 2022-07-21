@@ -27,6 +27,7 @@
 		3FEA17F62503CC68007D102F /* AppCodeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA17F52503CC68007D102F /* AppCodeTest.m */; };
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
+		4A12E6A92887E23E004509D0 /* HitTestSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12E6A82887E23E004509D0 /* HitTestSubViewController.m */; };
 		4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */; };
 		4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6628819E5B00C99E57 /* DBViewController.m */; };
 		4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */; };
@@ -237,6 +238,8 @@
 		3FEA17F52503CC68007D102F /* AppCodeTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCodeTest.m; sourceTree = "<group>"; };
 		3FEC103C2456B0600003B2AD /* CLBtn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CLBtn.bundle; sourceTree = "<group>"; };
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
+		4A12E6A72887E23E004509D0 /* HitTestSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestSubViewController.h; sourceTree = "<group>"; };
+		4A12E6A82887E23E004509D0 /* HitTestSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestSubViewController.m; sourceTree = "<group>"; };
 		4A42C8B92874535700C99E57 /* CL_AppLaunchTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CL_AppLaunchTime.h; sourceTree = "<group>"; };
 		4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CL_AppLaunchTime.m; sourceTree = "<group>"; };
 		4A42CA6528819E5B00C99E57 /* DBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBViewController.h; sourceTree = "<group>"; };
@@ -701,6 +704,8 @@
 			children = (
 				4A544AA72840E0A5004CBDEC /* HitTestDemoViewController.h */,
 				4A544AA82840E0A5004CBDEC /* HitTestDemoViewController.m */,
+				4A12E6A72887E23E004509D0 /* HitTestSubViewController.h */,
+				4A12E6A82887E23E004509D0 /* HitTestSubViewController.m */,
 				4A544AAA2840E0C0004CBDEC /* HitTestDemoView.h */,
 				4A544AAB2840E0C0004CBDEC /* HitTestDemoView.m */,
 				4A544AAD2840E7D6004CBDEC /* HitTestDemoSubView1.h */,
@@ -1818,6 +1823,7 @@
 				BF59E1D221003B580004EC56 /* UIView+Utils.m in Sources */,
 				4A80C847281A352600AEA974 /* testModule2.m in Sources */,
 				BF4E2063239F767D001FCAAA /* HitTestSubView.m in Sources */,
+				4A12E6A92887E23E004509D0 /* HitTestSubViewController.m in Sources */,
 				BF59E1C921003AC30004EC56 /* AppDelegate+AppService.m in Sources */,
 				BFDC9DC022B7837500D78527 /* Son.m in Sources */,
 				BF2D87032238EA4C00A51E33 /* MVVM+RAC_ViewController.m in Sources */,

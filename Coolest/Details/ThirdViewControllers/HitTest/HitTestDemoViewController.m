@@ -11,7 +11,7 @@
 #import "HitTestDemoSubView1.h"
 #import "HitTestButton.h"
 #import "UIButton+TestButtonC.h"
-
+#import "HitTestSubViewController.h"
 @interface HitTestDemoViewController ()
 
 @property(nonatomic,strong)HitTestDemoView *demoView;
@@ -57,8 +57,11 @@
     self.buttonC.backgroundColor = UIColor.greenColor;
 //    [self.buttonC setEnlargeEdgeWithTop:20 right:30 bottom:40 left:50];
     [self.buttonC setEnLargeEdge:10];
+    __weak typeof(self)weakSelf = self;
     [self.buttonC addTargetSelected:^(UIButton * _Nonnull button) {
         ADLog(@"self.buttonC--Click");
+        HitTestSubViewController *vc = [HitTestSubViewController new];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
     }];
     
 }
@@ -69,5 +72,10 @@
 
 - (void)tapCLick111 {
     ADLog(@"%s",__func__);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    ADLog(@"%s",__func__);
+
 }
 @end
