@@ -75,6 +75,11 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
 //    [self testKK];
     
+//    [self testString1];
+    
+//    [self testString2];
+
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 100, 50, 40);
     button.backgroundColor = UIColor.grayColor;
@@ -84,6 +89,34 @@ typedef NS_ENUM(NSUInteger, DBType) {
     
     [self.view addSubview:button];
 }
+
+
+- (void)testString1 {
+    //    crash testStr : NSString  1
+//    1218hkjdh0duouklmskldj88xnkjndsjdh89xi 在静态区 0x108b05dd0
+    NSMutableString *testStr = [NSMutableString string];
+    testStr = @"1218hkjdh0duouklmskldj88xnkjndsjdh89xi";
+    NSLog(@"%@ - %p",testStr,testStr);
+   
+    [testStr appendString:@"aaaaa"];
+    NSLog(@"%@",testStr);
+}
+
+- (void)testString2 {
+    //    crash testStr : NSString  1
+    //    1218hkjdh0duouklmskldj88xnkjndsjdh89xi 在堆区 0x6000022101c0
+    NSMutableString *testStr = [NSMutableString string];
+    
+//  testStr 变成 NSString 类型
+    testStr = [NSString stringWithFormat:@"1218hkjdh0duouklmskldj88xnkjndsjdh89xi"];
+    
+    NSLog(@"%@ - %p",testStr,testStr);
+    [testStr appendString:@"aaaaa"];
+    NSLog(@"%@",testStr);
+}
+
+
+
 - (void)testKK {
     self.v1 = [[UIView alloc]initWithFrame:CGRectMake(100, 100, 200, 200)];
     self.v1.backgroundColor = UIColor.redColor;
