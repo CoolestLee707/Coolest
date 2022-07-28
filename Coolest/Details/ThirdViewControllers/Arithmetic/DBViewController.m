@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, DBType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"算法1";
+    self.title = @"DBViewController";
     
 //   NSHashTable
     
@@ -81,15 +81,50 @@ typedef NS_ENUM(NSUInteger, DBType) {
 
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 100, 50, 40);
+//    button.frame = CGRectMake(0, 100, 50, 40);
     button.backgroundColor = UIColor.grayColor;
     [button addTargetSelected:^(UIButton * _Nonnull button) {
         [self testKK];
     }];
+        
+    UIView *bgView = [UIView new];
+    bgView.backgroundColor = UIColor.redColor;
+    [self.view addSubview:bgView];
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(100);
+        make.leading.mas_equalTo(100);
+    }];
     
-    [self.view addSubview:button];
+    [bgView addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(10);
+        make.left.mas_equalTo(10);
+        make.width.height.mas_equalTo(50);
+    }];
+    
+//    bgView.clipsToBounds = YES;
+    
+    
+    
+//    [self testStringPerform:YES];
+//    objc_msgSend(self, @selector(testStringPerform:),NO);
+//    [self performSelector:@selector(testStringPerform:) withObject:@YES];
+    
+//    [self performSelector:@selector(testStringPerformStr:) withObject:@"121212"];
+
 }
 
+- (void)testStringPerform:(BOOL)isOk {
+    if (isOk) {
+        NSLog(@"isOk");
+    }else {
+        NSLog(@"isFail");
+    }
+}
+
+- (void)testStringPerformStr:(NSString *)isOkStr {
+    NSLog(@"%@",isOkStr);
+}
 
 - (void)testString1 {
     //    crash testStr : NSString  1
