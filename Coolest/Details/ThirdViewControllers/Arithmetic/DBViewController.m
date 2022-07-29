@@ -10,6 +10,8 @@
 #import "NSObject+DLIntrospection.h"
 #import "CLOrderDictionary.h"
 
+#import <CMtestSDK/CoolTest.h>
+
 typedef NS_ENUM(NSUInteger, DBType) {
     DBTypeDev,       // 开发
     DBTypeTest,      // 测试
@@ -80,6 +82,22 @@ typedef NS_ENUM(NSUInteger, DBType) {
 //    [self testString2];
 
     
+//    [self testKKK];
+    
+ 
+    [self testSDK];
+
+}
+
+- (void)testSDK {
+
+    CoolTest *sdk = [[CoolTest alloc]init];
+    NSString *str = [sdk factoryCoolTest];
+    NSLog(@"%@",str);
+}
+
+- (void)testKKK {
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(0, 100, 50, 40);
     button.backgroundColor = UIColor.grayColor;
@@ -111,9 +129,7 @@ typedef NS_ENUM(NSUInteger, DBType) {
 //    [self performSelector:@selector(testStringPerform:) withObject:@YES];
     
 //    [self performSelector:@selector(testStringPerformStr:) withObject:@"121212"];
-
 }
-
 - (void)testStringPerform:(BOOL)isOk {
     if (isOk) {
         NSLog(@"isOk");
