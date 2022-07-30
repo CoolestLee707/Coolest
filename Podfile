@@ -28,7 +28,7 @@ pod 'ZXingObjC'
 pod 'YYText'
 pod 'BlockHook'
 pod 'Aspects'
-pod "MBCircularProgressBar"
+#pod "MBCircularProgressBar"
 pod 'pop'
 pod 'PINCache', :git => 'https://github.com/pinterest/PINCache.git', :branch => 'master'
 

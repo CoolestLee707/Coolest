@@ -33,7 +33,6 @@ PODS:
   - LiveModule/Cube (0.1.2)
   - LiveModule/Kit (0.1.2)
   - Masonry (1.1.0)
-  - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.4.1)
   - MJRefresh (3.7.5)
@@ -96,7 +95,6 @@ DEPENDENCIES:
   - LCMKitMod (from `https://github.com/CoolestLee707/LCMKitMod.git`)
   - LiveModule (from `https://github.com/CoolestLee707/LiveModule.git`)
   - Masonry
-  - MBCircularProgressBar
   - MBProgressHUD
   - MJExtension
   - MJRefresh
@@ -120,7 +118,6 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - IQKeyboardManager
     - Masonry
-    - MBCircularProgressBar
     - MBProgressHUD
     - MJExtension
     - MJRefresh
@@ -172,7 +169,6 @@ SPEC CHECKSUMS:
   LCMKitMod: 893db205ab5eda046a385a59fe52b19d624eaec6
   LiveModule: d0895e12c8e9c01285ef2fcf7749ac8813d65ac9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
@@ -189,6 +185,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 4689ae42f4337f9c651c0ab78c17d78afeaa2d38
+PODFILE CHECKSUM: 5710b6ef6cbb0137d128ea2293c639817765f4a9
 
 COCOAPODS: 1.11.3

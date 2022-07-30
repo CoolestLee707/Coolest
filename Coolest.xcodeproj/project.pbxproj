@@ -83,7 +83,6 @@
 		4A80C86C281E60D600AEA974 /* SwiftProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */; };
 		4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86D281E61E200AEA974 /* Swift_demo.swift */; };
 		4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */; };
-		4A9D9C202893829C00F78FDD /* CMtestSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D9C1F2893829C00F78FDD /* CMtestSDK.framework */; };
 		4AB63BE92832892D00736AA9 /* AssociatedObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */; };
 		4AB63BEC2832894100736AA9 /* AssociatedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BEB2832894100736AA9 /* AssociatedPerson.m */; };
 		4AF8E9EE28276BAD00D41876 /* UITabBar+badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */; };
@@ -356,7 +355,6 @@
 		4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocol.swift; sourceTree = "<group>"; };
 		4A80C86D281E61E200AEA974 /* Swift_demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_demo.swift; sourceTree = "<group>"; };
 		4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service_testModule12.swift; sourceTree = "<group>"; };
-		4A9D9C1F2893829C00F78FDD /* CMtestSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CMtestSDK.framework; sourceTree = "<group>"; };
 		4AB63BE72832892C00736AA9 /* AssociatedObjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedObjectViewController.h; sourceTree = "<group>"; };
 		4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedObjectViewController.m; sourceTree = "<group>"; };
 		4AB63BEA2832894100736AA9 /* AssociatedPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedPerson.h; sourceTree = "<group>"; };
@@ -564,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91A2795490ABB63370D710E /* libPods-Coolest.a in Frameworks */,
-				4A9D9C202893829C00F78FDD /* CMtestSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,7 +830,6 @@
 		4A9D9C1E2893826500F78FDD /* SDKs */ = {
 			isa = PBXGroup;
 			children = (
-				4A9D9C1F2893829C00F78FDD /* CMtestSDK.framework */,
 			);
 			path = SDKs;
 			sourceTree = "<group>";

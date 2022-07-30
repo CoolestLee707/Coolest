@@ -1,6 +1,0 @@
-framework module CMtestSDK {
-  umbrella header "CMtestSDK.h"
-
-  export *
-  module * { export * }
-}
