@@ -10,7 +10,7 @@
 #import "NSObject+DLIntrospection.h"
 #import "CLOrderDictionary.h"
 
-//#import <CMtestSDK/CoolTest.h>
+#import <CMtestSDK/CoolTest.h>
 
 typedef NS_ENUM(NSUInteger, DBType) {
     DBTypeDev,       // 开发
@@ -91,9 +91,9 @@ typedef NS_ENUM(NSUInteger, DBType) {
 
 - (void)testSDK {
 
-//    CoolTest *sdk = [[CoolTest alloc]init];
-//    NSString *str = [sdk factoryCoolTest];
-//    NSLog(@"%@",str);
+    CoolTest *sdk = [[CoolTest alloc]init];
+    NSString *str = [sdk factoryCoolTest];
+    NSLog(@"%@",str);
 }
 
 - (void)testKKK {
