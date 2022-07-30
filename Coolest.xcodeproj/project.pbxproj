@@ -67,6 +67,7 @@
 		4A544FCF286C77EE004CBDEC /* MyTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FCE286C77EE004CBDEC /* MyTimer.m */; };
 		4A544FD3286C984E004CBDEC /* MallocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FD2286C984D004CBDEC /* MallocViewController.m */; };
 		4A544FD6286C99FB004CBDEC /* MallocPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A544FD5286C99FB004CBDEC /* MallocPerson.m */; };
+		4A5C70732895643E003F63FA /* CMtestSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5C70722895643E003F63FA /* CMtestSDK.framework */; };
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
@@ -83,7 +84,6 @@
 		4A80C86C281E60D600AEA974 /* SwiftProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */; };
 		4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C86D281E61E200AEA974 /* Swift_demo.swift */; };
 		4A80C871281E6E6E00AEA974 /* Service_testModule12.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */; };
-		4A9D9DCA28951DC500F78FDD /* CMtestSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9D9DC928951DC500F78FDD /* CMtestSDK.framework */; };
 		4AB63BE92832892D00736AA9 /* AssociatedObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */; };
 		4AB63BEC2832894100736AA9 /* AssociatedPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AB63BEB2832894100736AA9 /* AssociatedPerson.m */; };
 		4AF8E9EE28276BAD00D41876 /* UITabBar+badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AF8E9ED28276BAD00D41876 /* UITabBar+badge.m */; };
@@ -324,6 +324,7 @@
 		4A544FD2286C984D004CBDEC /* MallocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MallocViewController.m; sourceTree = "<group>"; };
 		4A544FD4286C99FB004CBDEC /* MallocPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MallocPerson.h; sourceTree = "<group>"; };
 		4A544FD5286C99FB004CBDEC /* MallocPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MallocPerson.m; sourceTree = "<group>"; };
+		4A5C70722895643E003F63FA /* CMtestSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CMtestSDK.framework; sourceTree = "<group>"; };
 		4A65E8922803BE4F0015AB52 /* person.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = person.cpp; sourceTree = "<group>"; };
 		4A65E8942803C1910015AB52 /* person-arm64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "person-arm64.cpp"; sourceTree = "<group>"; };
 		4A65E896280856300015AB52 /* CMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMPerson.h; sourceTree = "<group>"; };
@@ -356,7 +357,6 @@
 		4A80C86B281E60D600AEA974 /* SwiftProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftProtocol.swift; sourceTree = "<group>"; };
 		4A80C86D281E61E200AEA974 /* Swift_demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_demo.swift; sourceTree = "<group>"; };
 		4A80C870281E6E6E00AEA974 /* Service_testModule12.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service_testModule12.swift; sourceTree = "<group>"; };
-		4A9D9DC928951DC500F78FDD /* CMtestSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CMtestSDK.framework; sourceTree = "<group>"; };
 		4AB63BE72832892C00736AA9 /* AssociatedObjectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedObjectViewController.h; sourceTree = "<group>"; };
 		4AB63BE82832892C00736AA9 /* AssociatedObjectViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedObjectViewController.m; sourceTree = "<group>"; };
 		4AB63BEA2832894100736AA9 /* AssociatedPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedPerson.h; sourceTree = "<group>"; };
@@ -564,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91A2795490ABB63370D710E /* libPods-Coolest.a in Frameworks */,
-				4A9D9DCA28951DC500F78FDD /* CMtestSDK.framework in Frameworks */,
+				4A5C70732895643E003F63FA /* CMtestSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -833,7 +833,7 @@
 		4A9D9C1E2893826500F78FDD /* SDKs */ = {
 			isa = PBXGroup;
 			children = (
-				4A9D9DC928951DC500F78FDD /* CMtestSDK.framework */,
+				4A5C70722895643E003F63FA /* CMtestSDK.framework */,
 			);
 			path = SDKs;
 			sourceTree = "<group>";
