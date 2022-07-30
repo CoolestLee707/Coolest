@@ -1,6 +1,6 @@
 {
   "name": "LCMKitMod",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "A short description of LCMKitMod.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/CoolestLee707/LCMKitMod",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/CoolestLee707/LCMKitMod.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "10.0"
@@ -28,6 +28,12 @@
 
         ],
         "LCMKitMod/Theme": [
+
+        ],
+        "Masonry": [
+
+        ],
+        "MBCircularProgressBar": [
 
         ]
       }

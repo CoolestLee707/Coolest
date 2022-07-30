@@ -20,19 +20,22 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - FDFullscreenPopGesture (1.1)
   - IQKeyboardManager (6.5.10)
-  - LCMKitMod (0.1.0):
-    - LCMKitMod/Core (= 0.1.0)
-  - LCMKitMod/Categories (0.1.0)
-  - LCMKitMod/Core (0.1.0):
+  - LCMKitMod (0.1.1):
+    - LCMKitMod/Core (= 0.1.1)
+  - LCMKitMod/Categories (0.1.1)
+  - LCMKitMod/Core (0.1.1):
     - LCMKitMod/Categories
     - LCMKitMod/Theme
-  - LCMKitMod/Theme (0.1.0)
+    - Masonry
+    - MBCircularProgressBar
+  - LCMKitMod/Theme (0.1.1)
   - LiveModule (0.1.2):
     - LiveModule/Cube (= 0.1.2)
     - LiveModule/Kit (= 0.1.2)
   - LiveModule/Cube (0.1.2)
   - LiveModule/Kit (0.1.2)
   - Masonry (1.1.0)
+  - MBCircularProgressBar (0.3.5)
   - MBProgressHUD (1.2.0)
   - MJExtension (3.4.1)
   - MJRefresh (3.7.5)
@@ -118,6 +121,7 @@ SPEC REPOS:
     - FDFullscreenPopGesture
     - IQKeyboardManager
     - Masonry
+    - MBCircularProgressBar
     - MBProgressHUD
     - MJExtension
     - MJRefresh
@@ -149,7 +153,7 @@ CHECKOUT OPTIONS:
     :commit: a0349794cb2e470ba92d0af6bca1bd9d4dd0af3e
     :git: https://github.com/CoolestLee707/CLHashString.git
   LCMKitMod:
-    :commit: cbf68941fbd3a496b82b109cbf345cd2c31f52c0
+    :commit: 347da13d4ec5e724af725194892205cd95e08c08
     :git: https://github.com/CoolestLee707/LCMKitMod.git
   LiveModule:
     :commit: e633b8a10086ef5d6564b8e1f1e1a73aa1805c5a
@@ -166,9 +170,10 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
-  LCMKitMod: 893db205ab5eda046a385a59fe52b19d624eaec6
+  LCMKitMod: 33eeb9a1b9d13cea0a21749e3606c9bac273502b
   LiveModule: d0895e12c8e9c01285ef2fcf7749ac8813d65ac9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
@@ -185,6 +190,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZXingObjC: fdbb269f25dd2032da343e06f10224d62f537bdb
 
-PODFILE CHECKSUM: 5710b6ef6cbb0137d128ea2293c639817765f4a9
+PODFILE CHECKSUM: a85d80d88d56ffa4045f78b7744da581952ea814
 
 COCOAPODS: 1.11.3

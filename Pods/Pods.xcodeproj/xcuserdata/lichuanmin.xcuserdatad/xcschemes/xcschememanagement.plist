@@ -49,6 +49,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MBCircularProgressBar-MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MBCircularProgressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
