@@ -34,6 +34,8 @@
 		4A42CF6A2883C38900C99E57 /* HLJViewTrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF672883C38600C99E57 /* HLJViewTrackModel.m */; };
 		4A42CF6B2883C38900C99E57 /* UIView+Statistical.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF692883C38800C99E57 /* UIView+Statistical.m */; };
 		4A42CF6E2883FA8500C99E57 /* CLOrderDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CF6D2883FA8500C99E57 /* CLOrderDictionary.m */; };
+		4A4FF83F2897D96000E83B27 /* SuperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4FF83E2897D96000E83B27 /* SuperView.m */; };
+		4A4FF8422897D97C00E83B27 /* SonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4FF8412897D97C00E83B27 /* SonView.m */; };
 		4A519664280D076F00561E41 /* RunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A519663280D076F00561E41 /* RunLoopViewController.m */; };
 		4A51968A2812943F00561E41 /* CLTaskTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196882812943D00561E41 /* CLTaskTimer.m */; };
 		4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5196CE2813A27300561E41 /* WBModuleManager.m */; };
@@ -253,6 +255,10 @@
 		4A42CF692883C38800C99E57 /* UIView+Statistical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Statistical.m"; sourceTree = "<group>"; };
 		4A42CF6C2883FA8500C99E57 /* CLOrderDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLOrderDictionary.h; sourceTree = "<group>"; };
 		4A42CF6D2883FA8500C99E57 /* CLOrderDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CLOrderDictionary.m; sourceTree = "<group>"; };
+		4A4FF83D2897D96000E83B27 /* SuperView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuperView.h; sourceTree = "<group>"; };
+		4A4FF83E2897D96000E83B27 /* SuperView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperView.m; sourceTree = "<group>"; };
+		4A4FF8402897D97C00E83B27 /* SonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SonView.h; sourceTree = "<group>"; };
+		4A4FF8412897D97C00E83B27 /* SonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SonView.m; sourceTree = "<group>"; };
 		4A519662280D076F00561E41 /* RunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopViewController.h; sourceTree = "<group>"; };
 		4A519663280D076F00561E41 /* RunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopViewController.m; sourceTree = "<group>"; };
 		4A519666280EE75100561E41 /* msgProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgProtocol.h; sourceTree = "<group>"; };
@@ -767,6 +773,10 @@
 				4A80C850281B874900AEA974 /* HookObject+swize1.m */,
 				4A80C852281B88AA00AEA974 /* HookObject+swize2.h */,
 				4A80C853281B88AA00AEA974 /* HookObject+swize2.m */,
+				4A4FF83D2897D96000E83B27 /* SuperView.h */,
+				4A4FF83E2897D96000E83B27 /* SuperView.m */,
+				4A4FF8402897D97C00E83B27 /* SonView.h */,
+				4A4FF8412897D97C00E83B27 /* SonView.m */,
 			);
 			path = Hook;
 			sourceTree = "<group>";
@@ -1824,6 +1834,8 @@
 				BFBF7721224B1CE400A3FE88 /* RACViewController.m in Sources */,
 				4A5197BF2814381E00561E41 /* FrameAndBoundsViewController.m in Sources */,
 				BF59E209210051090004EC56 /* FourViewController.m in Sources */,
+				4A4FF83F2897D96000E83B27 /* SuperView.m in Sources */,
+				4A4FF8422897D97C00E83B27 /* SonView.m in Sources */,
 				BFDC0F2221072F3500185A31 /* NSObject+SwizzledMethod.m in Sources */,
 				BF59E1EA210046320004EC56 /* CommonMethods.m in Sources */,
 				4A544C6C2847B4AA004CBDEC /* HitTestButton.m in Sources */,
