@@ -12,6 +12,12 @@
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     ADLog(@"HitTestDemoView - hitTest");
+    
+//    可以直接返回self，阻断事件继续传递查找（v1 add v2）
+//    if (CGRectContainsPoint(self.bounds, point)) {
+//        return self;
+//    }
+    
     return [super hitTest:point withEvent:event];
 }
 
@@ -20,7 +26,7 @@
     return [super pointInside:point withEvent:event];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    ADLog(@"touchesBegan - withEvent");
+//    ADLog(@"touchesBegan - withEvent");
 }
 @end
 

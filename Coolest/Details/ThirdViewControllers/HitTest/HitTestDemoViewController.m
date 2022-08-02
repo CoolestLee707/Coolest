@@ -35,9 +35,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCLick)];
     [self.demoView addGestureRecognizer:tap];
     
-    self.subView1 = [[HitTestDemoSubView1 alloc] initWithFrame:CGRectMake(20, 20, 50, 150)];
+//    self.subView1 = [[HitTestDemoSubView1 alloc] initWithFrame:CGRectMake(20, 20, 50, 150)];
+    self.subView1 = [[HitTestDemoSubView1 alloc] initWithFrame:CGRectMake(120, 120, 50, 150)];
     self.subView1.backgroundColor = UIColor.yellowColor;
-    [self.demoView addSubview:self.subView1];
+    [self.view addSubview:self.subView1];
     
     UITapGestureRecognizer *tap111 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapCLick111)];
     [self.subView1 addGestureRecognizer:tap111];
