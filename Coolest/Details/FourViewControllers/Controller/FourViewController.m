@@ -53,10 +53,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     
 //    [self.objc1 run];
+    self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
 //    [self testNSLock];
     
@@ -159,7 +159,7 @@
     
 //    [self buttonBindSomething];
 
-    //    [self testButtonUI];
+        [self testButtonUI];
     
 //    [self testGameV:@[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy];
         
@@ -205,7 +205,7 @@
     view1.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0];
     UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick1)];
     [view1 addGestureRecognizer:tap1];
-    [self.view addSubview:view1];
+//    [self.view addSubview:view1];
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeSystem];
     button1.frame = CGRectMake(10, 10, 50, 50);
@@ -219,7 +219,7 @@
     UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 100)];
     view2.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:1];
     view2.userInteractionEnabled = NO;
-//    [view1 addSubview:view2];
+    [view1 addSubview:view2];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
     button2.frame = CGRectMake(110, 10, 50, 50);
@@ -227,7 +227,10 @@
     [button2 addTargetSelected:^(UIButton * _Nonnull button) {
         ADLog(@"222");
     }];
-    [view2 addSubview:button2];
+    [button2 addTargetSelected:^(UIButton * _Nonnull button) {
+        ADLog(@"333");
+    }];
+    [self.view addSubview:button2];
     
 }
 

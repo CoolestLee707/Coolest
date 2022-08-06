@@ -10,6 +10,10 @@
 
 @implementation Inherit_Father
 
++ (void)initialize {
+    NSLog(@"Inherit_Father - initialize");
+}
+
 - (void)eat
 {
     testInheritString = NSStringFromClass([self class]);

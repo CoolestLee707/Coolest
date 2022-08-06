@@ -73,6 +73,9 @@
 		4A65E898280856300015AB52 /* CMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65E897280856300015AB52 /* CMPerson.m */; };
 		4A65EA43280ABC4D0015AB52 /* msgCat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA41280ABC4C0015AB52 /* msgCat.m */; };
 		4A65EA46280AE8BB0015AB52 /* msgKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A65EA45280AE8BB0015AB52 /* msgKit.m */; };
+		4A784795289E8DF50072551B /* Inherit_Father+TestInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A784794289E8DF50072551B /* Inherit_Father+TestInitialize.m */; };
+		4A784798289E8ED30072551B /* Inherit_Son+TestInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A784797289E8ED30072551B /* Inherit_Son+TestInitialize.m */; };
+		4A78479B289E8F610072551B /* Inherit_SonSon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A78479A289E8F600072551B /* Inherit_SonSon.m */; };
 		4A80C844281A2C2D00AEA974 /* testModule1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C843281A2C2D00AEA974 /* testModule1.m */; };
 		4A80C847281A352600AEA974 /* testModule2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C846281A352600AEA974 /* testModule2.m */; };
 		4A80C84B281B867500AEA974 /* HookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A80C84A281B867500AEA974 /* HookViewController.m */; };
@@ -339,6 +342,12 @@
 		4A65EA42280ABC4C0015AB52 /* msgCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = msgCat.h; sourceTree = "<group>"; };
 		4A65EA44280AE8BB0015AB52 /* msgKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgKit.h; sourceTree = "<group>"; };
 		4A65EA45280AE8BB0015AB52 /* msgKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = msgKit.m; sourceTree = "<group>"; };
+		4A784793289E8DF50072551B /* Inherit_Father+TestInitialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inherit_Father+TestInitialize.h"; sourceTree = "<group>"; };
+		4A784794289E8DF50072551B /* Inherit_Father+TestInitialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Inherit_Father+TestInitialize.m"; sourceTree = "<group>"; };
+		4A784796289E8ED30072551B /* Inherit_Son+TestInitialize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inherit_Son+TestInitialize.h"; sourceTree = "<group>"; };
+		4A784797289E8ED30072551B /* Inherit_Son+TestInitialize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Inherit_Son+TestInitialize.m"; sourceTree = "<group>"; };
+		4A784799289E8F600072551B /* Inherit_SonSon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inherit_SonSon.h; sourceTree = "<group>"; };
+		4A78479A289E8F600072551B /* Inherit_SonSon.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inherit_SonSon.m; sourceTree = "<group>"; };
 		4A80C842281A2C2D00AEA974 /* testModule1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testModule1.h; sourceTree = "<group>"; };
 		4A80C843281A2C2D00AEA974 /* testModule1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testModule1.m; sourceTree = "<group>"; };
 		4A80C845281A352600AEA974 /* testModule2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testModule2.h; sourceTree = "<group>"; };
@@ -637,8 +646,14 @@
 				3F68E2632490DD7D00045F2D /* InheritViewController.m */,
 				3F68E2652490DEE400045F2D /* Inherit_Father.h */,
 				3F68E2662490DEE400045F2D /* Inherit_Father.m */,
+				4A784793289E8DF50072551B /* Inherit_Father+TestInitialize.h */,
+				4A784794289E8DF50072551B /* Inherit_Father+TestInitialize.m */,
 				3F68E2682490DF1600045F2D /* Inherit_Son.h */,
 				3F68E2692490DF1600045F2D /* Inherit_Son.m */,
+				4A784796289E8ED30072551B /* Inherit_Son+TestInitialize.h */,
+				4A784797289E8ED30072551B /* Inherit_Son+TestInitialize.m */,
+				4A784799289E8F600072551B /* Inherit_SonSon.h */,
+				4A78479A289E8F600072551B /* Inherit_SonSon.m */,
 			);
 			path = inherit;
 			sourceTree = "<group>";
@@ -1864,6 +1879,7 @@
 				BF6B6D3C214FA2830000B157 /* CoolDispalyView.m in Sources */,
 				BF1A0D3422409C48007D0789 /* drawRectTestView.m in Sources */,
 				1ACED38026CE04EB00EEC483 /* SwiftFile.swift in Sources */,
+				4A784798289E8ED30072551B /* Inherit_Son+TestInitialize.m in Sources */,
 				BF2D870C223A430B00A51E33 /* MVVM_RAC_Service.m in Sources */,
 				4A544FD3286C984E004CBDEC /* MallocViewController.m in Sources */,
 				BF59E1DE210044A50004EC56 /* BaseTabBarViewController.m in Sources */,
@@ -1875,12 +1891,14 @@
 				3F68E2672490DEE400045F2D /* Inherit_Father.m in Sources */,
 				BF7B054E228286F0008EDCF8 /* FDtwoViewController.m in Sources */,
 				4A5196E52813A27600561E41 /* WBModuleManager.m in Sources */,
+				4A784795289E8DF50072551B /* Inherit_Father+TestInitialize.m in Sources */,
 				4A5197D92817E37700561E41 /* CLKeepAlive.m in Sources */,
 				4A5196EC2813A27600561E41 /* WBServiceManager.m in Sources */,
 				4A80C84B281B867500AEA974 /* HookViewController.m in Sources */,
 				4A5197C3281677B900561E41 /* DrawRectViewController.m in Sources */,
 				1ACED38526D33B7000EEC483 /* WebViewPDFViewController.m in Sources */,
 				4A80C86E281E61E200AEA974 /* Swift_demo.swift in Sources */,
+				4A78479B289E8F610072551B /* Inherit_SonSon.m in Sources */,
 				BF59E1D8210043BF0004EC56 /* UIViewController+MBProgressHUD.m in Sources */,
 				4A544AAC2840E0C0004CBDEC /* HitTestDemoView.m in Sources */,
 				BF2D87062238EA8500A51E33 /* MVVM_RAC_ViewModel.m in Sources */,

@@ -10,4 +10,8 @@
 
 @implementation Inherit_Son
 
++ (void)initialize {
+    NSLog(@"Inherit_Son - initialize");
+}
+
 @end

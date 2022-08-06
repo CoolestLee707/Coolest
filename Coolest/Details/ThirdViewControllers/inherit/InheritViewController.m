@@ -9,6 +9,8 @@
 #import "InheritViewController.h"
 #import "Inherit_Father.h"
 #import "Inherit_Son.h"
+#import "Inherit_SonSon.h"
+
 #import <objc/message.h>
 
 @interface InheritViewController ()
@@ -41,8 +43,10 @@
 //    [self test4];
     
     
-    [self testInherit];
-    
+//    [self testInherit];
+ 
+    Inherit_SonSon *son = [Inherit_SonSon new];
+
 }
 
 #pragma mark --- 1.weakself打破循环引用
