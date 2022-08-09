@@ -41,7 +41,8 @@ pod 'LCMKitMod',:git => "https://github.com/CoolestLee707/LCMKitMod.git"
 #pod 'LiveModule',:path => '../../MyPods/LiveModule'
 pod 'LiveModule',:git =>"https://github.com/CoolestLee707/LiveModule.git"
 
-#pod 'LCMTestMod',:path => '../../MyPods/LCMTestMod'
+pod 'LCMTestMod',:path => '../../MyPods/LCMTestMod'
+#pod 'LCMTestMod',:path => 'https://github.com/CoolestLee707/LCMTestMod'
 
 end
 

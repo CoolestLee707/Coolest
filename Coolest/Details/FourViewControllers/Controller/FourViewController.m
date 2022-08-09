@@ -159,10 +159,13 @@
     
 //    [self buttonBindSomething];
 
-        [self testButtonUI];
+//        [self testButtonUI];
     
-//    [self testGameV:@[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy];
-        
+//    NSMutableArray *arr = @[@"0",@"1",@"2",@"0",@"1",@"3"].mutableCopy;
+//    ADLog(@"%@",arr);
+//    [self testGameV:arr];
+//    ADLog(@"%@",arr);
+
     [self testMode];
 }
 
@@ -171,11 +174,12 @@
 }
 - (void)testGameV:(NSMutableArray *)arr {
 //    safe
-//    for (int i=0; i<arr.count; i++) {
-//        if ([arr[i] isEqualToString:@"0"]) {
+    for (int i=0; i<arr.count; i++) {
+        if ([arr[i] isEqualToString:@"0"]) {
 //            [arr removeObject:arr[i]];
-//        }
-//    }
+            [arr removeObjectAtIndex:i];
+        }
+    }
     
     
 //    ------- crash, was mutated while being enumerated，移除最后一个不会崩溃
