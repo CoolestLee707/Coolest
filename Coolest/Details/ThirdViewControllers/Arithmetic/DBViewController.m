@@ -84,13 +84,49 @@ typedef NS_ENUM(NSUInteger, DBType) {
 //    [self testString2];
 
     
-//    [self testKKK];
+//    [self testKKK];r
     
- 
-    [self testSDK];
+//    oc中的数组，数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不相同
+//    CoolTest *sdk = [[CoolTest alloc]init];
+//    NSArray *arr = @[@32,@"fdfd",sdk];
+//    NSLog(@"%@",arr);
     
-    [self testSDKPod];
+//    [self testSDK];
+//
+//    [self testSDKPod];
 
+    
+    [self testMutsbleString];
+  
+
+}
+- (void)testMutsbleString {
+
+    NSMutableString *str1 = @"12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是".mutableCopy;
+    NSMutableString *str2 = str1;
+    NSLog(@"%@ - %p + %@ - %p",str1,str1,str2,str2);
+//   12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是 - 0x6000013169d0 + 12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是 - 0x6000013169d0
+    
+    str1.string = @"数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不";
+    NSLog(@"%@ - %p + %@ - %p",str1,str1,str2,str2);
+    
+//    数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不 - 0x6000013169d0 + 数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不 - 0x6000013169d0
+}
+
+- (void)testString {
+    
+    NSString *str1 = @"12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是";
+    NSString *str2 = str1;
+    NSLog(@"%@ - %p + %@ - %p",str1,str1,str2,str2);
+    
+//    12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是 - 0x10b800e60 + 12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是 - 0x10b800e60
+    
+    
+    str1 = @"数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不";
+    NSLog(@"%@ - %p + %@ - %p",str1,str1,str2,str2);
+    
+    
+//    数组成员一般是oc对象(也可以间接存储基本数据类型(int,float)或复合类型的数据)，数组成员的数据类型可以不 - 0x10b800ea0 + 12368754fkjdfjk47y38hfkjs8dy783dbe动环监控是 - 0x10b800e60
 }
 
 - (void)testSDK {
