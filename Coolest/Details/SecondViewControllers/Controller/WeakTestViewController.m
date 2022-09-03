@@ -56,7 +56,7 @@ typedef void(^secondBlock)(WeakTestViewController *vc);
 @property (nonatomic,weak) CMPerson *weakPerson;
 @property (nonatomic,assign) CMPerson *assignPerson;
 
-// weak Timer
+// weak Timer，方案不可取，可以解决循环引用问题，但是self被强引用，生命周期不可控，不能再dealloc里面停止定时器，可以在viewwilldisappear里面停止，但是不好，timer加入到主线程的RunLoop里面就不会取消，直到主线程死掉
 @property (nonatomic,weak) NSTimer *weakTimer;
 
 @end
@@ -72,8 +72,10 @@ __weak id temp = nil;
 //    test 6
 //    timer强弱都可以dealloc，定时器失效
 //    非block的timer要在这里invalidate
-    [self.timer invalidate];
-    self.timer = nil;
+    
+//    这里停止timer，不如在dealloc里面停止
+//    [self.timer invalidate];
+//    self.timer = nil;
 
 }
 
@@ -187,7 +189,10 @@ __weak id temp = nil;
 }
 - (void)test15 {
     
-    self.weakTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goggoo) userInfo:nil repeats:YES];
+//    self.weakTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goggoo) userInfo:nil repeats:YES];
+    
+//    self.weakTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(goggoo) userInfo:nil repeats:NO];
+
 }
 
 - (void)test16 {
@@ -366,7 +371,7 @@ __weak id temp = nil;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
         // dealloc, timer come on 一直打印，需要在dealloc里invalidate
         ADLog(@"timer come on ");
-//        ADLog(@"%@",weakSelf.title);
+        ADLog(@"%@",weakSelf.title);
         // dealloc, weakSelf = nil,给nil发消息，不会执行
 //        [weakSelf outputLog:timer];
     }];
