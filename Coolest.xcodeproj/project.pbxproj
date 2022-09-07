@@ -28,6 +28,7 @@
 		3FEC103D2456B0600003B2AD /* CLBtn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC103C2456B0600003B2AD /* CLBtn.bundle */; };
 		3FEC10432456B4370003B2AD /* testBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3FEC10422456B4370003B2AD /* testBundle.bundle */; };
 		4A12E6A92887E23E004509D0 /* HitTestSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A12E6A82887E23E004509D0 /* HitTestSubViewController.m */; };
+		4A21DF5128C83B77000E8CD6 /* GestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A21DF5028C83B77000E8CD6 /* GestureViewController.m */; };
 		4A42C8BB2874535800C99E57 /* CL_AppLaunchTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */; };
 		4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6628819E5B00C99E57 /* DBViewController.m */; };
 		4A42CA6D28824C4700C99E57 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A42CA6C28824C4700C99E57 /* NSObject+DLIntrospection.m */; };
@@ -246,6 +247,8 @@
 		3FEC10422456B4370003B2AD /* testBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = testBundle.bundle; sourceTree = "<group>"; };
 		4A12E6A72887E23E004509D0 /* HitTestSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HitTestSubViewController.h; sourceTree = "<group>"; };
 		4A12E6A82887E23E004509D0 /* HitTestSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HitTestSubViewController.m; sourceTree = "<group>"; };
+		4A21DF4F28C83B77000E8CD6 /* GestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GestureViewController.h; sourceTree = "<group>"; };
+		4A21DF5028C83B77000E8CD6 /* GestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GestureViewController.m; sourceTree = "<group>"; };
 		4A42C8B92874535700C99E57 /* CL_AppLaunchTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CL_AppLaunchTime.h; sourceTree = "<group>"; };
 		4A42C8BA2874535700C99E57 /* CL_AppLaunchTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CL_AppLaunchTime.m; sourceTree = "<group>"; };
 		4A42CA6528819E5B00C99E57 /* DBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBViewController.h; sourceTree = "<group>"; };
@@ -656,6 +659,15 @@
 				4A78479A289E8F600072551B /* Inherit_SonSon.m */,
 			);
 			path = inherit;
+			sourceTree = "<group>";
+		};
+		4A21DF4E28C83B52000E8CD6 /* Gesture */ = {
+			isa = PBXGroup;
+			children = (
+				4A21DF4F28C83B77000E8CD6 /* GestureViewController.h */,
+				4A21DF5028C83B77000E8CD6 /* GestureViewController.m */,
+			);
+			path = Gesture;
 			sourceTree = "<group>";
 		};
 		4A519661280D074700561E41 /* RunLoop */ = {
@@ -1328,6 +1340,7 @@
 		BF59E1F6210050240004EC56 /* ThirdViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A21DF4E28C83B52000E8CD6 /* Gesture */,
 				4A544FD0286C9823004CBDEC /* MallocSize */,
 				4A544C5E2844FA44004CBDEC /* NSProxy */,
 				4A544AA62840E054004CBDEC /* HitTest */,
@@ -1823,6 +1836,7 @@
 				BF59E1CC21003AF70004EC56 /* NSString+StringTool.m in Sources */,
 				BF1F2A50229FEB9300ED248C /* WeakTestViewController.m in Sources */,
 				4A5196EB2813A27600561E41 /* WBRouter+WBExtension.m in Sources */,
+				4A21DF5128C83B77000E8CD6 /* GestureViewController.m in Sources */,
 				4A80C861281D594C00AEA974 /* CubeRouterViewController.m in Sources */,
 				4A5197BC281434A000561E41 /* SafeViewController.m in Sources */,
 				4A42CA6728819E5B00C99E57 /* DBViewController.m in Sources */,

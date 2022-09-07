@@ -29,6 +29,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "NSProxyViewController.h"
 #import "MallocViewController.h"
+#import "GestureViewController.h"
 
 #import "DBViewController.h"
 #import "UIView+Statistical.h"
@@ -74,7 +75,7 @@
 
 //    [self Runloop];
 
-    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17-hook",@"18-Arithmetic算法",@"19-CubeRouter",@"20 AssociatedObjectViewController",@"21-HitTestDemo",@"22-NSProxyViewController",@"23-内存大小",@"24-DBViewController"];
+    self.dataArray = @[@"1-拍照",@"2-消息转发",@"3-MVP",@"4-MVVM+RAC",@"5-RAC",@"6-简单工厂模式",@"7-Http",@"8",@"9",@"10-推送",@"11-sortedArrayUsingComparator",@"12-Inherit",@"13-KVO",@"14 - router",@"15 -RunLoop",@"16-DrawRect-绘制",@"17-hook",@"18-Arithmetic算法",@"19-CubeRouter",@"20 AssociatedObjectViewController",@"21-HitTestDemo",@"22-NSProxyViewController",@"23-内存大小",@"24-DBViewController",@"GestureViewController.h"];
     
     [self createUI];
 }
@@ -286,6 +287,11 @@
         case 23:
         {
             DBViewController *vc = [[DBViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 24: {
+            GestureViewController *vc = [[GestureViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }

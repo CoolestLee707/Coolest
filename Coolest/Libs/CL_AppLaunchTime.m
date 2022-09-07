@@ -33,6 +33,7 @@ double __t3; // didfinsh
 /// 开始记录：在DidFinish中调用
 + (void)markTime {
     double __t1 = [self processStartTime];
+    NSLog(@"t1 - %f",__t1);
     dispatch_async(dispatch_get_main_queue(), ^{ // 确保didFihish代码执行后调用
         if (__t3 == 0) {
           __t3 = CFAbsoluteTimeGetCurrent() + kCFAbsoluteTimeIntervalSince1970;
